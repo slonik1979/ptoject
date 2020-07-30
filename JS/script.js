@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 "use strict"
 /* Задание на урок:
 
@@ -43,3 +44,8 @@ const a = prompt('Один из последних просмотренных ф
       personalMovieDB.movies[c] = d;
 
       console.log(personalMovieDB);
+=======
+"use strict";
+
+const numberOfFilms = +prompt("Сколько фильмов Вы уже посмотрели?", "")
+>>>>>>> Stashed changes
