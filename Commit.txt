@@ -11,3 +11,5 @@ git commit -a -m"имя записи"
 git push
 
 git pull
+
+git clone имя папки
