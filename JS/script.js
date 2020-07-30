@@ -1,8 +1,14 @@
 "use strict";
 
-const category = "toys";
+let incr = 10,
+    decr = 10;
 
-console.log();
+    // incr++;
+    // decr--;
 
-const user = "Maxim";
-alert(`Привет, ${user}, тебе 20 лет`);
+    // console.log(incr);
+    // console.log(decr);
+
+    const isChecked = true,
+        isClose = true;
+        console.log(isChecked || isClose);
