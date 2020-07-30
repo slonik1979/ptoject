@@ -1,4 +1,3 @@
-<<<<<<< Updated upstream
 "use strict"
 /* Задание на урок:
 
