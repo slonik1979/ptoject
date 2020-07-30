@@ -1,0 +1,8 @@
+git status
+
+git config local.name "user"
+git config local.email 111@gmail.com
+
+git add -A
+
+git commit -a -m"имя записи"
