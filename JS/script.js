@@ -1,4 +1,4 @@
-"use strict"
+"use strict";
 /* Задание на урок:
 
 1) Создать переменную numberOfFilms и в неё поместить ответ от пользователя на вопрос:
@@ -23,28 +23,92 @@
 Проверить, чтобы все работало без ошибок в консоли */
 
 
+// const numberOfFilms = +prompt('Сколько фильмов вы уже посмотрели?','');
 
-const numberOfFilms = +prompt('Сколько фильмов вы уже посмотрели?', '');
+// const personalMovieDB = {
+//     count: numberOfFilms,
+//     movies:{},
+//     actors:{},
+//     genres:[],
+//     privat: false
+// };
+
+// const a = prompt('Один из последних просмотренных фильмов?', ''),
+//     b = prompt('На сколько оцените его?', ''),
+//     c = prompt('Один из последних просмотренных фильмов?', ''),
+//     d = prompt('На сколько оцените его?', '');
+
+//     personalMovieDB.movies[a] = b;
+//     personalMovieDB.movies[c] = d;
+
+// console.log(personalMovieDB);
+
+// const num = 50;
+// switch(num){
+//     case 49:
+//         console.log('Не верно');
+//         break;
+//     case 100:
+//         console.log('Не верно');
+//         break;
+//         case 50:
+//             console.log('верно');
+//             break;
+//         default:  
+//         console.log('Не в этот раз');
+//         break;
+// } 
+
+ let num = 50;
+// while (num < 60) {
+//     console.log(num);
+//     num++;
+// }
+
+// do {
+//     console.log(num);
+//     num++;
+// }
+// while (num <60);
+
+// for (let i = 1; i < 8; i++) {
+//     console.log(i);
+// }
+
+/* Задание на урок:
+
+1) Автоматизировать вопросы пользователю про фильмы при помощи цикла
+
+2) Сделать так, чтобы пользователь не мог оставить ответ в виде пустой строки,
+отменить ответ или ввести название фильма длинее, чем 50 символов. Если это происходит - 
+возвращаем пользователя к вопросам опять
+
+3) При помощи условий проверить  personalMovieDB.count, и если он меньше 10 - вывести сообщение
+"Просмотрено довольно мало фильмов", если от 10 до 30 - "Вы классический зритель", а если больше - 
+"Вы киноман". А если не подошло ни к одному варианту - "Произошла ошибка"
+
+4) Потренироваться и переписать цикл еще двумя способами*/
+
+
+
+// Код возьмите из предыдущего домашнего задания
+
+const numberOfFilms = +prompt('Сколько фильмов вы уже посмотрели?','');
 
 const personalMovieDB = {
     count: numberOfFilms,
-    movies: {},
-    actors: {},
-    genres: [],
+    movies:{},
+    actors:{},
+    genres:[],
     privat: false
 };
 
 const a = prompt('Один из последних просмотренных фильмов?', ''),
-      b = prompt('На сколько оцените его?', ''), 
-      c = prompt('Один из последних просмотренных фильмов?', ''),
-      d = prompt('На сколько оцените его?', '');
+    b = prompt('На сколько оцените его?', ''),
+    c = prompt('Один из последних просмотренных фильмов?', ''),
+    d = prompt('На сколько оцените его?', '');
 
-      personalMovieDB.movies[a] = b;
-      personalMovieDB.movies[c] = d;
+    personalMovieDB.movies[a] = b;
+    personalMovieDB.movies[c] = d;
 
-      console.log(personalMovieDB);
-=======
-"use strict";
-
-const numberOfFilms = +prompt("Сколько фильмов Вы уже посмотрели?", "")
->>>>>>> Stashed changes
+console.log(personalMovieDB);
