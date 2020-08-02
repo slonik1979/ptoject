@@ -99,10 +99,17 @@
 //     num = 10;
     
 // }
+<<<<<<< HEAD
 
 // showFitsrMessage('Привет Василий');
 // console.log(num);
 
+=======
+
+// showFitsrMessage('Привет Василий');
+// console.log(num);
+
+>>>>>>> master
 // function calc(a, b){
 //     return(a + b);
 // }
@@ -112,6 +119,7 @@
 //     console.log('функция');
 // };
 // logger();
+<<<<<<< HEAD
 
 // const logg = 'Hello world'
 
@@ -129,9 +137,42 @@ false - выводит в консоль главный объект прогр�
 3) Создать функцию writeYourGenres в которой пользователь будет 3 раза отвечать на вопрос 
 "Ваш любимый жанр под номером ${номер по порядку}". Каждый ответ записывается в массив данных
 genres
+=======
+
+// const logg = 'Hello world'
+
+// console.log(logg.slice(-5, -1));
+
+// console.log(logg.substring());
+
+
+
+const numberOfFilms = +prompt('Сколько фильмов вы уже посмотрели?','');
+
+const personalMovieDB = {
+    count: numberOfFilms,
+    movies:{},
+    actors:{},
+    genres:[],
+    privat: false
+};
+
+for (let i = 0; i < 2; i++){
+    const a = prompt('Один из последних просмотренных фильмов?', ''),
+          b = prompt('На сколько оцените его?', '');
+          if (a != null && b != null && a != '' && b != '' && a.length < 50){
+             personalMovieDB.movies[a] = b;
+             console.log('Done');
+} else {
+    console.log("error");
+    i--;}
+}
+
+>>>>>>> master
 
 P.S. Функции вызывать не обязательно*/
 
+<<<<<<< HEAD
 
 
 let numberOfFilms;
@@ -194,3 +235,17 @@ function writeYourGenres() {
     }
 }
 writeYourGenres();
+=======
+ if (personalMovieDB.count < 10) {
+    console.log("Просмотрено довольно мало фильмов");
+  } else if (personalMovieDB.count >= 10 && personalMovieDB.count < 30){
+    console.log("Вы классический зрител");
+    } else if (personalMovieDB.count >= 30) {
+        console.log("Вы киноман");
+    } else{
+        console.log("Произошла ошибка");
+    }
+
+
+console.log(personalMovieDB);
+>>>>>>> master
