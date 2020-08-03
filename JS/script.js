@@ -148,24 +148,24 @@ logger();
 
 
 // console.log(personalMovieDB);
-=======
+
 // let num = 20;
 // function showFitsrMessage(text){
 //     console.log(text);
 //     num = 10;
     
 // }
-<<<<<<< HEAD
+
 
 // showFitsrMessage('Привет Василий');
 // console.log(num);
 
-=======
+
 
 // showFitsrMessage('Привет Василий');
 // console.log(num);
 
->>>>>>> master
+
 // function calc(a, b){
 //     return(a + b);
 // }
@@ -175,7 +175,7 @@ logger();
 //     console.log('функция');
 // };
 // logger();
-<<<<<<< HEAD
+
 
 // const logg = 'Hello world'
 
