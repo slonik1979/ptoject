@@ -93,7 +93,7 @@
 
 // Код возьмите из предыдущего домашнего задания
 
-<<<<<<< HEAD
+
 let num = 20;
 function showFitsrMessage(text){
     console.log(text);
@@ -224,11 +224,10 @@ for (let i = 0; i < 2; i++){
     i--;}
 }
 
->>>>>>> master
+
 
 P.S. Функции вызывать не обязательно*/
 
-<<<<<<< HEAD
 
 
 let numberOfFilms;
@@ -291,18 +290,3 @@ function writeYourGenres() {
     }
 }
 writeYourGenres();
-=======
- if (personalMovieDB.count < 10) {
-    console.log("Просмотрено довольно мало фильмов");
-  } else if (personalMovieDB.count >= 10 && personalMovieDB.count < 30){
-    console.log("Вы классический зрител");
-    } else if (personalMovieDB.count >= 30) {
-        console.log("Вы киноман");
-    } else{
-        console.log("Произошла ошибка");
-    }
-
-
-console.log(personalMovieDB);
->>>>>>> master
->>>>>>> master
