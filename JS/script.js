@@ -15,6 +15,16 @@ first();
 second();
 
 
-function learnJS(lang, callback) {
+
+
+function learnJS(lang, call) {
+    console.log(`Я учу: ${lang}`);
+    call();
     
 }
+function done(){
+    console.log('Я прошел этот урок'); 
+}
+
+learnJS('DDDD', done);
+    
