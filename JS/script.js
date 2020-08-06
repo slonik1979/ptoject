@@ -1,25 +1,24 @@
 
 "use strict";
 
-<<<<<<< HEAD
-function first() {
-setTimeout(function() {
-        console.log(1);
-    }, 500);
-}
+// <<<<<<< HEAD
+// function first() {
+// setTimeout(function() {
+//         console.log(1);
+//     }, 500);
+// }
 
-function second() {
-    console.log(2);
-}
+// function second() {
+//     console.log(2);
+// }
 
-first();
-second();
+// first();
+// second();
 
 
-function learnJS(lang, callback) {
+// function learnJS(lang, callback) {
     
-}
-=======
+// }
 
 /* Задание на урок:
 
@@ -102,4 +101,4 @@ const box1 = document.getElementById('box');
 
 box1.style.background = 'green';
 box1.style.width = '500px'
->>>>>>> master
+
