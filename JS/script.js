@@ -36,96 +36,118 @@
 
 // Код возьмите из предыдущего домашнего задания
 
-// const personalMovieDB = {
-//     count: 0,
-//     movies: {},
-//     actors: {},
-//     genres: [],
-//     privat: false,
-//     start: function() {
-//         personalMovieDB.count = +prompt('Сколько фильмов вы уже посмотрели?', '');
+/* Задания на урок:
+1) Удалить все рекламные блоки со страницы (правая часть сайта)
+2) Изменить жанр фильма, поменять "комедия" на "драма"
+3) Изменить задний фон с постером фильма на изображение "bg.jpg". Оно лежит в папке img.
+Реализовать только при помощи JS
+4) Список фильмов на странице сформировать на основании данных из этого JS файла.
+Отсортировать их по алфавиту 
+5) Добавить нумерацию выведенных фильмов */
+
+const personalMovieDB = {
+    count: 0,
+    movies: {},
+    actors: {},
+    genres: [],
+    privat: false,
+    start: function() {
+        personalMovieDB.count = +prompt('Сколько фильмов вы уже посмотрели?', '');
     
-//         while (personalMovieDB.count == '' || personalMovieDB.count == null || isNaN(personalMovieDB.count)) {
-//             personalMovieDB.count = +prompt('Сколько фильмов вы уже посмотрели?', '');
-//         }
-//     }, 
-//     rememberMyFilms: function() {
-//         for (let i = 0; i < 2; i++) {
-//             const a = prompt('Один из последних просмотренных фильмов?', ''),
-//                   b = prompt('На сколько оцените его?', '');
+        while (personalMovieDB.count == '' || personalMovieDB.count == null || isNaN(personalMovieDB.count)) {
+            personalMovieDB.count = +prompt('Сколько фильмов вы уже посмотрели?', '');
+        }
+    }, 
+    rememberMyFilms: function() {
+        for (let i = 0; i < 2; i++) {
+            const a = prompt('Один из последних просмотренных фильмов?', ''),
+                  b = prompt('На сколько оцените его?', '');
         
-//             if (a != null && b != null && a != '' && b != '' && a.length < 50) {
-//                 personalMovieDB.movies[a] = b;
-//                 console.log('done');
-//             } else {
-//                 console.log('error');
-//                 i--;
-//             }
-//         }
-//     },
-//     detectPersonalLevel: function() {
-//         if (personalMovieDB.count < 10) {
-//             console.log("Просмотрено довольно мало фильмов");
-//         } else if (personalMovieDB.count >= 10 && personalMovieDB.count < 30) {
-//             console.log("Вы классический зритель");
-//         } else if (personalMovieDB.count >= 30) {
-//             console.log("Вы киноман");
-//         } else {
-//             console.log("Произошла ошибка");
-//         }
-//     },
-//     showMyDB: function(hidden) {
-//         if (!hidden) {
-//             console.log(personalMovieDB);
-//         }
-//     },
-//     toggleVisibleMyDB: function(){
-//         if (personalMovieDB.privat){
-//             personalMovieDB.privat = false;
-//         } else
-//         {personalMovieDB.privat = true;
+            if (a != null && b != null && a != '' && b != '' && a.length < 50) {
+                personalMovieDB.movies[a] = b;
+                console.log('done');
+            } else {
+                console.log('error');
+                i--;
+            }
+        }
+    },
+    detectPersonalLevel: function() {
+        if (personalMovieDB.count < 10) {
+            console.log("Просмотрено довольно мало фильмов");
+        } else if (personalMovieDB.count >= 10 && personalMovieDB.count < 30) {
+            console.log("Вы классический зритель");
+        } else if (personalMovieDB.count >= 30) {
+            console.log("Вы киноман");
+        } else {
+            console.log("Произошла ошибка");
+        }
+    },
+    showMyDB: function(hidden) {
+        if (!hidden) {
+            console.log(personalMovieDB);
+        }
+    },
+    toggleVisibleMyDB: function(){
+        if (personalMovieDB.privat){
+            personalMovieDB.privat = false;
+        } else
+        {personalMovieDB.privat = true;
 
-//         }
-//     },
-//     writeYourGenres: function() {
-//         for (let i = 1; i <= 3; i++) {
-//             personalMovieDB.genres[i - 1] = prompt(`Ваш любимый жанр под номером ${i}`);
-//         }
-//     }
-// };
+        }
+    },
+    writeYourGenres: function() {
+        for (let i = 1; i <= 3; i++) {
+            personalMovieDB.genres[i - 1] = prompt(`Ваш любимый жанр под номером ${i}`);
+        }
+    }
+};
+
+const movieDB = {
+    movies: [
+        "Логан",
+        "Лига справедливости",
+        "Ла-ла лэнд",
+        "Одержимость",
+        "Скотт Пилигрим против..."
+    ]
+};
 
 
 
 
-const box1 = document.getElementById('box'),
-      bot = document.getElementsByTagName('button'),
-      circle = document.getElementsByClassName('circle'),
-      heart = document.querySelectorAll('.heart'),
-      oneHeart = document.querySelector('.heart'),
-      wrapper = document.querySelector('.wrapper');
+
+
+
+// const box1 = document.getElementById('box'),
+//       bot = document.getElementsByTagName('button'),
+//       circle = document.getElementsByClassName('circle'),
+//       heart = document.querySelectorAll('.heart'),
+//       oneHeart = document.querySelector('.heart'),
+//       wrapper = document.querySelector('.wrapper');
       
-      box1.style.cssText = 'background-color: blue; width:700px';
+//       box1.style.cssText = 'background-color: blue; width:700px';
 
-      bot[1].style.borderRadius = '100%';
-      circle[0].style.backgroundColor = 'green';
+//       bot[1].style.borderRadius = '100%';
+//       circle[0].style.backgroundColor = 'green';
 
       
-      heart.forEach( it => {
-        it.style.backgroundColor = 'green';
-      }
-        );
+//       heart.forEach( it => {
+//         it.style.backgroundColor = 'green';
+//       }
+//         );
 
-const div = document.createElement('div');
-div.classList.add('black');
+// const div = document.createElement('div');
+// div.classList.add('black');
 
-wrapper.append(div);
-//wrapper.prepend(div);
+// wrapper.append(div);
+// //wrapper.prepend(div);
 
-//heart[1].before(div);
+// //heart[1].before(div);
 
-//circle[0].remove();
-//heart[0].replaceWith(circle[0]);
+// //circle[0].remove();
+// //heart[0].replaceWith(circle[0]);
 
-div.innerHTML = '<h1>Hello world</h1>';
+// div.innerHTML = '<h1>Hello world</h1>';
 
-div.insertAdjacentHTML('beforeend', '<h2>Hello</h2>');
+// div.insertAdjacentHTML('beforeend', '<h2>Hello</h2>');
