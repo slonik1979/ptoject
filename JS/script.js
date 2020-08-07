@@ -97,8 +97,35 @@
 
 
 
-const box1 = document.getElementById('box');
+const box1 = document.getElementById('box'),
+      bot = document.getElementsByTagName('button'),
+      circle = document.getElementsByClassName('circle'),
+      heart = document.querySelectorAll('.heart'),
+      oneHeart = document.querySelector('.heart'),
+      wrapper = document.querySelector('.wrapper');
+      
+      box1.style.cssText = 'background-color: blue; width:700px';
 
-box1.style.background = 'green';
-box1.style.width = '500px';
+      bot[1].style.borderRadius = '100%';
+      circle[0].style.backgroundColor = 'green';
 
+      
+      heart.forEach( it => {
+        it.style.backgroundColor = 'green';
+      }
+        );
+
+const div = document.createElement('div');
+div.classList.add('black');
+
+wrapper.append(div);
+//wrapper.prepend(div);
+
+//heart[1].before(div);
+
+//circle[0].remove();
+//heart[0].replaceWith(circle[0]);
+
+div.innerHTML = '<h1>Hello world</h1>';
+
+div.insertAdjacentHTML('beforeend', '<h2>Hello</h2>');
