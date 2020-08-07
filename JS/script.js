@@ -100,5 +100,5 @@
 const box1 = document.getElementById('box');
 
 box1.style.background = 'green';
-box1.style.width = '500px'
+box1.style.width = '500px';
 
