@@ -113,8 +113,10 @@ const movieDB = {
     ]
 };
 
-
-
+const promo = document.querySelectorAll('.promo__adv img'); 
+promo.forEach( item => {
+    item.remove();
+});
 
 
 
