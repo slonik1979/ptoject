@@ -45,6 +45,9 @@
 Отсортировать их по алфавиту 
 5) Добавить нумерацию выведенных фильмов */
 
+
+/*
+
 const personalMovieDB = {
     count: 0,
     movies: {},
@@ -102,54 +105,41 @@ const personalMovieDB = {
         }
     }
 };
+*/
+
 
 const movieDB = {
     movies: [
         "Логан",
         "Лига справедливости",
         "Ла-ла лэнд",
-        "Одержимость",
+         "Одержимость",
         "Скотт Пилигрим против..."
     ]
 };
 
-const promo = document.querySelectorAll('.promo__adv img'); 
-promo.forEach( item => {
-    item.remove();
+const adv = document.querySelectorAll('.promo__adv img'),
+      post =document.querySelector('.promo__bg'),
+      genre = post.querySelector('.promo__genre'),
+     // genre = document.querySelector('.promo__genre');
+     movieList = document.querySelector('.promo__interactive-list');
+adv.forEach(item => {
+        item.remove();
+    });
+
+genre.textContent = "драма";
+
+post.style.background = 'url("img/bg.jpg")';
+
+movieList.innerHTML = "";
+
+movieDB.movies.sort();
+
+movieDB.movies.forEach((film, i) => {
+    movieList.innerHTML += `
+      <li class="promo__interactive-item">${i + 1}. ${film}
+         <div class="delete"></div>
+      </li>
+    `;
 });
 
-
-
-
-// const box1 = document.getElementById('box'),
-//       bot = document.getElementsByTagName('button'),
-//       circle = document.getElementsByClassName('circle'),
-//       heart = document.querySelectorAll('.heart'),
-//       oneHeart = document.querySelector('.heart'),
-//       wrapper = document.querySelector('.wrapper');
-      
-//       box1.style.cssText = 'background-color: blue; width:700px';
-
-//       bot[1].style.borderRadius = '100%';
-//       circle[0].style.backgroundColor = 'green';
-
-      
-//       heart.forEach( it => {
-//         it.style.backgroundColor = 'green';
-//       }
-//         );
-
-// const div = document.createElement('div');
-// div.classList.add('black');
-
-// wrapper.append(div);
-// //wrapper.prepend(div);
-
-// //heart[1].before(div);
-
-// //circle[0].remove();
-// //heart[0].replaceWith(circle[0]);
-
-// div.innerHTML = '<h1>Hello world</h1>';
-
-// div.insertAdjacentHTML('beforeend', '<h2>Hello</h2>');
