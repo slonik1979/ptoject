@@ -108,7 +108,7 @@ const personalMovieDB = {
 */
 
 
-const movieDB = {
+/*const movieDB = {
     movies: [
         "Логан",
         "Лига справедливости",
@@ -142,4 +142,6 @@ movieDB.movies.forEach((film, i) => {
       </li>
     `;
 });
+*/
+
 
