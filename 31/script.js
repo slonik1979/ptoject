@@ -14,5 +14,4 @@ const deleteElement = (event) => {
 
 }; 
 
-
 btr.addEventListener('click', deleteElement);
