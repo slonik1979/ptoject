@@ -122,7 +122,6 @@ const personalMovieDB = {
 };
 
 
-
 const movieDB = {
     movies: [
         "Логан",
@@ -157,6 +156,8 @@ movieDB.movies.forEach((film, i) => {
       </li>
     `;
 });
+
+
 
 
 
