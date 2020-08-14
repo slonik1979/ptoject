@@ -1,5 +1,5 @@
 
-"use strict";
+
 
 // <<<<<<< HEAD
 // function first() {
@@ -63,7 +63,7 @@ P.S. Здесь есть несколько вариантов решения з
 
 5) Фильмы должны быть отсортированы по алфавиту */
 
-const personalMovieDB = {
+/*const personalMovieDB = {
     count: 0,
     movies: {},
     actors: {},
@@ -120,44 +120,47 @@ const personalMovieDB = {
         }
     }
 };
+*/
 
+"use strict";
 
-const movieDB = {
-    movies: [
-        "Логан",
-        "Лига справедливости",
-        "Ла-ла лэнд",
-         "Одержимость",
-        "Скотт Пилигрим против..."
-    ]
-};
-
-const adv = document.querySelectorAll('.promo__adv img'),
-      post =document.querySelector('.promo__bg'),
-      genre = post.querySelector('.promo__genre'),
-     // genre = document.querySelector('.promo__genre');
-     movieList = document.querySelector('.promo__interactive-list');
-adv.forEach(item => {
-        item.remove();
+document.addEventListener('DOMContentLoaded', () => {
+    const movieDB = {
+        movies: [
+            "Логан",
+            "Лига справедливости",
+            "Ла-ла лэнд",
+             "Одержимость",
+            "Скотт Пилигрим против..."
+        ]
+    };
+    
+    const adv = document.querySelectorAll('.promo__adv img'),
+          post =document.querySelector('.promo__bg'),
+          genre = post.querySelector('.promo__genre'),
+         // genre = document.querySelector('.promo__genre');
+         movieList = document.querySelector('.promo__interactive-list');
+    adv.forEach(item => {
+            item.remove();
+        });
+    
+    genre.textContent = "драма";
+    
+    post.style.background = 'url("img/bg.jpg")';
+    
+    movieList.innerHTML = "";
+    
+    movieDB.movies.sort();
+    
+    movieDB.movies.forEach((film, i) => {
+        movieList.innerHTML += `
+          <li class="promo__interactive-item">${i + 1}. ${film}
+             <div class="delete"></div>
+          </li>
+        `;
     });
-
-genre.textContent = "драма";
-
-post.style.background = 'url("img/bg.jpg")';
-
-movieList.innerHTML = "";
-
-movieDB.movies.sort();
-
-movieDB.movies.forEach((film, i) => {
-    movieList.innerHTML += `
-      <li class="promo__interactive-item">${i + 1}. ${film}
-         <div class="delete"></div>
-      </li>
-    `;
+       
 });
-
-
 
 
 
