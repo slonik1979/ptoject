@@ -139,8 +139,22 @@ document.addEventListener('DOMContentLoaded', () => {
           post =document.querySelector('.promo__bg'),
           genre = post.querySelector('.promo__genre'),
          // genre = document.querySelector('.promo__genre');
-         movieList = document.querySelector('.promo__interactive-list');
-    adv.forEach(item => {
+         movieList = document.querySelector('.promo__interactive-list'),
+        addForm = document.querySelector('form.add'),
+        addInput = addForm.querySelector('.adding__input'),
+        checkbox = addForm.querySelector('[type="checkbox"]');
+
+addForm.addEventListener('submit', (event) => {
+    event.preventDefault();
+
+    const newFilm = addForm.value;
+    const favorite = checkbox.checked;
+
+    movieDB.movies.push(newFilm);
+    movieDB.movies.sort();
+});
+
+         adv.forEach(item => {
             item.remove();
         });
     
