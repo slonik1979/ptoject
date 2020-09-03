@@ -1,0 +1,30 @@
+button {
+    /*width: 150px;
+    height: 50px;
+    background-color: green;
+    border: none;
+    color: #fff;
+    border-radius: 10px;
+    outline: none;
+    cursor: pointer;
+    transition: 0.3s;*/
+    height: 50px;
+    border: none;
+    
+    width: 100px;
+    background-color: yellow;
+  }
+    
+  div :first-child {
+    background-color: blue;
+
+  }
+  div {
+    background-color: gray;
+    padding: 10px;
+  }
+
+  .red {
+    background-color: red;
+  }
+  
