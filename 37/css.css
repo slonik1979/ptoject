@@ -15,16 +15,16 @@ button {
     background-color: yellow;
   }
     
-  div :first-child {
-    background-color: blue;
-
-  }
+  
   div {
     background-color: gray;
     padding: 10px;
   }
-
+  .blue {
+    background-color: blue;
+  }
   .red {
     background-color: red;
   }
+  
   
