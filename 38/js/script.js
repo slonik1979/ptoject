@@ -5,13 +5,13 @@ window.addEventListener('DOMcontentLoaded', () => {
         tabsParent = document.querySelector('.tabheader__items');
 
     function hideTabContent () {
-        tabsContent.forEach(element => {
-            element.style.display = 'none';
+        tabsContent.forEach(item => {
+            item.style.display = 'none';
             
         });
 
-        tabs.forEach(element => {
-            element.classList.remove('tabheader__item_active');
+        tabs.forEach(item => {
+            item.classList.remove('tabheader__item_active');
         });
     }
     function showTabContent(i) {
