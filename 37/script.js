@@ -23,3 +23,8 @@ const btns = document.querySelectorAll('button');
                 console.log('Hello');
             }
         });
+
+    const btn = document.createElement('button');
+    btn.classList.add('red');
+
+    wrapper.append(btn);
