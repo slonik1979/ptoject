@@ -1,10 +1,7 @@
 window.addEventListener('DOMContentLoaded', () => {
 
-<<<<<<< HEAD
-=======
     //Tabs
 
->>>>>>> master
     const tabs = document.querySelectorAll('.tabheader__item');
         const tabsContent = document.querySelectorAll('.tabcontent');
         const tabsParent = document.querySelector('.tabheader__items');
@@ -41,8 +38,6 @@ window.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-<<<<<<< HEAD
-=======
     //Timer
 
     const deadline = '2020-09-11';
@@ -96,5 +91,5 @@ window.addEventListener('DOMContentLoaded', () => {
         }
     }
     setClock('.timer', deadline);
->>>>>>> master
+
 });
