@@ -261,6 +261,11 @@ window.addEventListener('DOMContentLoaded', () => {
                 });
             });
         }
-   
+        
+        // Формы 
+        // Красивое оповещение пользователя
+
+        
+        }
     });
     
