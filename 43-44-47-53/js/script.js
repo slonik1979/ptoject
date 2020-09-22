@@ -266,6 +266,12 @@ window.addEventListener('DOMContentLoaded', () => {
         // Красивое оповещение пользователя
 
         
+        function showThanksModal() {
+            const prevModalDialog =document.querySelector('.modal__dialog');
+            prevModalDialog.classList.add('hide');
+            OpenModal();
+            const 
+
         }
     });
     
