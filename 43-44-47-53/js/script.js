@@ -269,13 +269,14 @@ window.addEventListener('DOMContentLoaded', () => {
             const prevModalDialog = document.querySelector('.modal__dialog');
             prevModalDialog.classList.add('hide');
             OpenModal();
+            
             const thanksModal = document.createElement('div');
             thanksModal.classList.add('modal__dialog');
             thanksModal.innerHTML = `
             <div class="modal__content"
                 <div class="modal__close" data-close>×</div>
-                <div class=modal__title>${message}</div>
-                </div>
+                <div class="modal__title">${message}</div>
+            </div>
             `;
 
             document.querySelector('.modal').append(thanksModal);
