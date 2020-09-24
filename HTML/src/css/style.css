@@ -1,8 +1,12 @@
+*{
+    box-sizing: border-box;
+}
+
 body {
     background-color: khaki;
 }
 
-h1 {
+h1, h2, h3 {
     text-align: center;
 }
 
@@ -31,6 +35,8 @@ h2 {
 }
 
 .box {
+    position: absolute;
+    display: inline-block;
     width: 300px;
     height: 300px;
     background-color: green;
@@ -40,4 +46,42 @@ h2 {
     border-color: black; */
     border: 3px solid violet;
     margin: 20px;
+    z-index: 3;
+}
+.pink {
+    color: pink;
+}
+
+a {
+    padding: 20px;
+    margin: 20px;
+    width: 500px;
+}
+img {
+    width: 500p;
+    display: block;
+    margin: 0 auto;
+}
+
+/*Блочные*/
+/*Строчные*/
+/*Строчно-блочные*/
+
+nav {
+    /*static, relative, absolute */
+    position: inherit;
+    
+    top: 50px;
+    /*left: 130px;*/
+    /*bottom, top, right, left */
+}
+.red {
+    background-color: red;
+    position: absolute;
+    left: 80px;
+    z-index: 5;
+}
+.example {
+     
+    position: relative;
 }
