@@ -85,7 +85,7 @@ nav {
 .promo {
     min-height: 800px;
     background: url('../img/fon/fon.png') center center/cover no-repeat;
-    padding: 150px 0 135px 0;
+    padding: 67px;
 }
 .promo .promo_header {
     color: #ffffff;
@@ -103,6 +103,6 @@ nav {
     font-size: 36px;
     line-height: 36px;
     margin: 0;
-    margin-top: 22px;
+    margin-top:  22px;
     text-align: center;
 }
