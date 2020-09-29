@@ -31,30 +31,15 @@ nav {
     height: 84px;
     background-color: rgba(0,0,0, .6);
     
-   
-    
-}
-
-.subheader .subheader_logo {
-    display: inline-block;
-
-    max-width: 100%;
-}
-
-
-.subheader .subheader_text {
-    display: inline-block;
-   margin-top: 16px;
-    
-    color: #ffffff;
-    font-size: 25px;
-    
-    text-transform: uppercase;
-
-    letter-spacing: 1.95px;
  }
 
+.subheader .subheader_logo {
+    display: block;
+    max-width: 100%;
+    margin-top: 16px;
+}
  .subheader .subheader_oficial {
+    margin-top: 6px;
     opacity: 0.5;
     color: #ffffff;
     
