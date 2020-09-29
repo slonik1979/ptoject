@@ -1,3 +1,16 @@
 * {
     font-family: 'Roboto', sans-serif;
 }
+
+header {
+    height: 50px;
+    background-color: #212121;      
+}
+
+.menu {
+    display: flex;
+    justify-content: space-between;
+    padding: 13px 70px;
+    margin: 0 auto;
+    list-style-type: none;
+}
