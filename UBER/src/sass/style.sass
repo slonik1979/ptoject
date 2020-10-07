@@ -1,3 +1,11 @@
+$main-color: #1eacc7
+$second-color: #ff5656
+
+=btn_hover 
+  &:hover
+    background-image: none
+    background-color: $main-color
+  
 *
   font-family: 'Roboto', sans-serif
 
@@ -73,6 +81,8 @@ nav
     font-size: 14px
     font-weight: 400
     text-transform: uppercase
+    +btn_hover
+    
 
 .promo
   min-height: 800px
@@ -119,37 +129,53 @@ nav
     font-size: 18px
     font-weight: 400
     text-transform: uppercase
+    +btn_hover
+    
 
 .reasons
   padding: 71px 0 65px 0
 
 .label
-  margin: 0 auto
-  height: 24px
-  width: 112px
-  padding: 5px 12px
-  background-color: #000000
-  color: #ffffff
-  font-size: 11px
-  font-weight: 300
-  text-transform: uppercase
-  text-align: center
+	position: relative
+	margin: 0 auto
+	height: 24px
+	width: 112px
+	padding: 5px 12px
+	background-color: #000000
+	color: #ffffff
+	font-size: 11px
+	font-weight: 300
+	text-transform: uppercase
+	text-align: center
+	z-index: 2
+	&_white 
+		background-color: #fff
+		color: #000
 
 .title
-  margin-bottom: 0
-  margin-top: 38px
-  color: #222222
-  font-size: 38px
-  font-weight: 700
-  text-transform: uppercase
-  text-align: center
+	position: relative
+	margin-bottom: 0
+	margin-top: 38px
+	color: #222222
+	font-size: 38px
+	line-height: 38px
+	font-weight: 700
+	text-transform: uppercase
+	text-align: center
+	z-index: 2
+	&_white 
+		color: #fff
 
 .subtitle
-  margin-top: 19px
-  color: #222222
-  font-size: 17px
-  font-weight: 400
-  text-align: center 
+	position: relative
+	margin-top: 19px
+	color: #222222
+	font-size: 17px
+	font-weight: 400
+	text-align: center
+	z-index: 2
+	&_white 
+		color: #fff
 
   
 
@@ -231,7 +257,55 @@ nav
   background-color: #000000
   border-radius: 100%
   cursor: pointer
-  
+  &::before
+    content: ''
+    display: block
+    width: 14px
+    height: 2px
+    background-color: $main-color
+  &::after
+    content: ''
+    position: absolute
+    left: 50%
+    transform: translateX(-50%)
+    display: block
+    height: 14px
+    width: 2px
+    background-color: $main-color
+  &:hover 
+    &::before, &::after
+      transition: 0.3s
+      background-color: $second-color
+    
+    
+
+
+
+.choice 
+	position: relative
+	min-height: 895px
+	padding: 57px 0 138px 0
+	background: url('../img/bg/mobile_fon.png') center (center / cover) no-repeat
+	&_img 
+		position: relative
+		display: block
+		margin: 56px auto 0 auto
+		z-index: 2
+	&_descr 
+		text-align: center
+		color: #222222
+		font-size: 17px
+		font-weight: 300
+		line-height: 24px
+	.black 
+		position: absolute 
+		top: 0
+		left: 0
+		height: 499px
+		width: 100%
+		background-color: #070716
+		z-index: 1
+
   
     
   
