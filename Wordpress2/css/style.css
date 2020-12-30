@@ -98,7 +98,7 @@ h2.title {
 }
 
 .awaits {
-    height: 604px;
+    min-height: 604px;
     background-color: #efefef;
     padding: 85px 0 75px 0;
 }
@@ -126,16 +126,23 @@ h2.title {
     margin-top: 17px;
 }
 .awaits_packing {
+    display: flex;
+    justify-content: space-between;
     margin-top: 45px;
 }
 .awaits_item {
-    display: inline-block;
-    vertical-align: top;
-    margin: 0 15px;
     width: 339px;
     text-align: center;
 }
 .awaits_img {
     width: 100%;
 }
-    
+.awaits_text {
+    margin-top: 33px;
+    font-family: Roboto;
+    font-size: 15px;
+    line-height: 21px;
+    font-weight: 300;
+    color: #4a4a4a;
+}
+
