@@ -129,11 +129,13 @@ h2.title {
     margin-top: 45px;
 }
 .awaits_item {
+    display: inline-block;
+    vertical-align: top;
+    margin: 0 15px;
     width: 339px;
+    text-align: center;
 }
-.awaits_packing {
-    margin-top: 45px;
+.awaits_img {
+    width: 100%;
 }
-.awaits_item {
     
-}
