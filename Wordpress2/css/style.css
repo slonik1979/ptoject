@@ -145,4 +145,8 @@ h2.title {
     font-weight: 300;
     color: #4a4a4a;
 }
+.optimization {
+    min-height: 550px;
+    padding: 102px 0 107px 0;
+}
 
