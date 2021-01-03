@@ -6,6 +6,7 @@
 .container{
     width: 1140px;
     margin: 0 auto;
+    position: relative;
 }
 .promo {
     height: 800px;
@@ -149,4 +150,38 @@ h2.title {
     min-height: 550px;
     padding: 102px 0 107px 0;
 }
-
+.optimization_header {
+    margin-left: 391px;
+    font-family: Roboto;
+    font-size: 29px;
+    font-weight: 400;
+    text-transform: uppercase;
+    color: #299cbd;
+}
+.optimization_text {
+    margin-left: 391px;
+    font-family: Roboto;
+    font-size: 17px;
+    line-height: 27px;
+    font-weight: 300;
+    color: #4a4a4a;
+    margin-top: 25px;
+}
+.optimization_text span {
+    font-weight: 700;
+    font-family: Roboto - Bold;
+}
+.optimization-img {
+    position: absolute;
+    top: -54px;
+    left: -240px;
+    z-index: -1;
+}
+.graduation {
+    min-height: 447px;
+    padding: 86px 0 79px 0;
+    background: url('../img/bg/second.png') center center/cover no-repeat;
+}
+.graduation .awaits_header {
+    color: #efefef;
+}
