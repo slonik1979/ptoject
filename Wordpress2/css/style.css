@@ -185,3 +185,30 @@ h2.title {
 .graduation .awaits_header {
     color: #efefef;
 }
+.graduation_packing {
+    margin-top: 41px;
+    display: flex;
+    justify-content: space-between;
+}
+.graduation_item{
+    width: 204px;
+}
+.graduation_round {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    width: 115px;
+    height: 115px;
+    background-color: #b4e2ff;
+    border-radius: 100%;
+}
+.graduation_text {
+    text-align: center;
+    font-family: Roboto;
+    font-size: 17px;
+    line-height: 20px;
+    font-weight: 300;
+    color: #efefef;
+    margin-top: 25px;
+}
