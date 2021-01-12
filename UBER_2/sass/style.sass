@@ -1,5 +1,7 @@
+$text_color: #1eacc7
 *
   font-family: 'Roboto', sans-serif
+
 
 nav
   width: 100%
@@ -166,16 +168,16 @@ nav
     margin-left: 26px
 
 .reasons_subtitle
-    line-height: 21px;
-    color: #1eacc7;
-    font-size: 17px;
-    font-weight: 400;
+    line-height: 21px
+    color: $text_color
+    font-size: 17px
+    font-weight: 400
 
 .reasons_text 
-    color: #202020;
-    font-size: 15px;
-    font-weight: 300;
-    line-height: 21px;
+    color: #202020
+    font-size: 15px
+    font-weight: 300
+    line-height: 21px
 
 .mobile
     min-height: 864px
@@ -184,9 +186,11 @@ nav
     .row
       margin-top: 32px
     &_item
+        position: relative
         width: 320px
         height: 280px
         margin-bottom: 19px
+        padding-top: 92px
         &_1
             background: url('../img/mobile/1.png') center (center / cover) no-repeat
         &_2
@@ -199,3 +203,25 @@ nav
             background: url('../img/mobile/1.png') center (center / cover) no-repeat
         &_6
             background: url('../img/mobile/1.png') center (center / cover) no-repeat
+        &_subtitle
+            color: #ffffff
+            font-size: 24px
+            font-weight: 400
+            line-height: 31px
+            text-align: center
+            text-transform: uppercase
+        &_plus
+            display: flex
+            justify-content: center
+            align-items: center
+            position: absolute
+            left: 147px
+            bottom: 35px
+            width: 26px
+            height: 26px
+            background-color: #000000
+            margin: 0 auto
+            border-radius: 100%
+            cursor: pointer
+            
+                
