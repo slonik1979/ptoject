@@ -1,4 +1,8 @@
 $text_color: #1eacc7
+=bnt_hover
+    &:hover
+      background-image: none
+      background-color: $text_color
 *
   font-family: 'Roboto', sans-serif
 
@@ -74,6 +78,7 @@ nav
   font-weight: 400
   text-align: center
   text-transform: uppercase
+  +bnt_hover
 
 .promo
   min-height: 800px
@@ -119,9 +124,7 @@ nav
   font-size: 14px
   font-weight: 400
   text-align: center
-
-
-
+  +bnt_hover
 
 .reasons
     min-height: 780px
@@ -224,6 +227,24 @@ nav
             margin: 0 auto
             border-radius: 100%
             cursor: pointer
+            &::before
+                content: ''
+                width: 14px
+                height: 2px
+                background-color: $text_color
+                transition: 0.5s all
+            &::after
+                content: ''
+                position: absolute
+                center
+                width: 2px
+                height: 14px
+                background-color: $text_color
+                transition: 0.5s all
+            &:hover
+                &::before, &:after
+                    background-color: red
+
             
 .choice
     min-height: 900px
@@ -250,6 +271,23 @@ nav
       
 .subtitle_choice
       color: #ffffff
-                
-        
+
+.require
+    padding: 68px 0 84px 0
+    &_block
+        margin: 33px 0 33px 0   
+        &_nmb
+            margin-bottom: 0px      
+    &_title
+        color: #1ca8c3;
+        font-size: 22px;
+        font-weight: 400;  
+    &_list
+        list-style-type: none
+        padding-left: 50px
+        padding-top: 22px
+        li
+        font-size: 17px;
+        font-weight: 300;
+        line-height: 24px;
         
