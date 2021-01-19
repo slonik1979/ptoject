@@ -72,7 +72,7 @@
         position: absolute
         right: 10px
         top: 20px
-        // transform: translateY(-10%)
+        //transform: translateY(-10%)
         width: 26px
         span
             display: block
@@ -90,4 +90,32 @@
                     display: none
                 &:nth-child(3)
                     transform: rotate(45deg)
-                    
+    // .subheader_phone
+    //     text-align: right
+    // .subheader_call
+    //     font-size: 14px
+    .xs-hidden
+        display: none
+    .xs-visible
+        display: block
+    .promo
+        &_header
+            font-size: 37px
+        &_subheader
+            font-size: 23px;
+
+@media (max-width: 575px)
+    .subheader
+        &_text
+            display: none
+        &_logo
+            margin-top: 27px
+        &_phone
+            font-size: 18px
+        &_btn
+            width: 140px
+            height: 32px
+            margin-top: 15px
+            font-size: 10px
+
+    
