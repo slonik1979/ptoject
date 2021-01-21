@@ -25,21 +25,35 @@
     }
     &__icons {
         margin-top: 65px;
-        
+        width: 425px;
         display: flex;
         justify-content: space-between;
     }
     &__icon {
-        width: 600px;
-        // text-align: center;
-        color: #ffffff;
+        width: 108px;
+        text-align: center;
         font-size: 14px;
+        line-height: 1.2;
         font-weight: 500;
-    //     img {
-    //         display: block;
-    //         margin: 0 auto;
-    //         margin-bottom: 20px;
-    //     }
+        color: #ffffff;
+        img {
+            display: block;
+            margin: 0 auto;
+            margin-bottom: 20px;
+        }
+    }
+    &__link {
+        margin-top: 18px;
+        font-size: 16px;
+        font-weight: 500;
+        color: #ffffff;
+           a {
+                color: #ffffff;
+                text-transform: uppercase;
+                text-decoration: underline;
+            }
+    
+        
     }
    
 
