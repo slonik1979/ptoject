@@ -7,12 +7,7 @@
     min-width: 950px;
     margin: 0 auto;
  }
-//  .promo {
-    
-//  }
- .header {
-     min-height: 650px;
- }
-
-    
+ @import 'blocks/promo';
+ @import 'blocks/header';
+ @import 'blocks/button'; 
 
