@@ -11,4 +11,9 @@ window.addEventListener('DOMContentLoaded', () => {
              }
         );
       });
+      $('ul.catalog__tab').on('click', 'li:not(.catalog__tab_active)', function() {
+        $(this)
+          .addClass('catalog__tab_active').siblings().removeClass('catalog__tab_active')
+          .closest('div.tabs').find('div.tabs__content').removeClass('active').eq($(this).index()).addClass('active');
+      });
 })
