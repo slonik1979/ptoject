@@ -10,11 +10,12 @@
     <link rel="stylesheet" href="css/bootstrap-grid.min.css">
     <link rel="stylesheet" href="css/font.css">
     <link rel="stylesheet" href="css/slick.css">
+    <link rel="stylesheet" href="css/animate.css">
     <link rel="stylesheet" href="css/style.min.css">
    
 </head>
 
-    <section class="promo">
+    <section id="up" class="promo">
         <div class="container">
             <div class="header">
                 <a href="#" class="header__logo"><img src="img/logo/logo.png" alt=""></a>
@@ -53,7 +54,7 @@
                                  поделиться своим опытом, 
                                 так как сами бегают полумарафоны, переплыли Босфор, готовятся к соревнованиям по триатлону!</div>
                         </div>
-                        <div class="advantages__icon">
+                        <div class="advantages__icon advantages__icon_animated">
                             <img src="img/icons/heart.png" alt="">
                             <div class="advantages__title">Заботимся о здоровье</div>
                             <div class="advantages__subtitle">Мы работаем для того, 
@@ -72,8 +73,8 @@
     </section>
 
     <section class="consultation">
-        <div class="container">
-            <h2 class="title title_left">
+        <div class="container fadeInUp wow" data-wow-duration="2s" data-wow-delay="1s">
+            <h2 class="title title_left"
                 Получите бесплатную консультацию<br>
                 по подбору пульсометра 
             </h2>
@@ -420,11 +421,17 @@
         </div>
     </div>
 
+    <a href="#up" class="pageup"><img src="icons/up.svg" alt="" ></a>
+    
+    
+
+
 <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
 <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
 <script src="js/slick.min.js"></script>
 <script src="js/jquery.validate.min.js"></script>
 <script src="js/jquery.maskedinput.min.js"></script>
+<script src="js/wow.min.js"></script>
 <script src="js/script.js"></script>
 <body>
    
