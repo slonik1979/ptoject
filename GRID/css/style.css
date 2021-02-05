@@ -23,3 +23,18 @@
     border: 1px solid #000;
     border-radius: 4px;
 }
+
+#first {
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
+
+#s2 {
+    grid-row: 3;
+    grid-column: 2;
+}
+
+#t3 {
+    grid-row: 2/4;
+    grid-column: 3;
+}
