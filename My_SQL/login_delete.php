@@ -1,40 +1,34 @@
 <?php
 
+    include 'db_connection.php';
+
     if (isset($_POST['submit'])) {
         $email = $_POST['email'];
         $password = $_POST['password'];
         $login = $_POST['login'];
-        echo "Ваши данные записаны";
+        $id = $_POST['id'];
+        // echo "Ваши данные записаны";
 
-        // echo $email;
-        // echo $password;
-
-        $connect = mysqli_connect('localhost', 'root', 'root', base09022021);
-        // $query = 'SELECT * FROM users;';
-
-        if ($connect) {
-            echo "Связь установлена";
-
-
-
-            // $query_result = mysqli_query($connect, $query);
-            // if ($query_result) {
-            //     $data_array = mysqli_fetch_object($query_result);
-            //     print_r($data_array);
-            // }
-        } else {
-            die('Связи нет');
-               }
-
-               $user = "INSERT INTO users (login, email, password) VALUES ('$login', '$email', '$password');";
-
-               $user_result = mysqli_query($connect, $user);
-               
-               if (!$user) {
-                   die("Ошибка".msqli_error());
-               }
-
+        $update_query = "DELETE FROM users";
+        // $update_query .= " login = '$login',";
+        // $update_query .= " email = '$email',";
+        // $update_query .= " password = '$password'";
+        $update_query .= " WHERE id = $id";
+        
+        $update_query_result = mysqli_query($connect, $update_query);
+        if (!$update_query_result) {
+            die("Ошибка".mysqli_error($connect));
+        }
     }
+
+    
+
+    $query = 'SELECT * FROM users;';
+    $query_result = mysqli_query($connect, $query);
+    if (!$query_result) {
+        die("Query failed".mysqli_error($connect));
+    }
+
 
 ?>
 
@@ -50,7 +44,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
 </head>
 <body>
-    <form action="login.php" method="post">
+    <form action="login_delete.php" method="post">
     <div class="mb-3">
         <label for="exampleInputLogin1" class="form-label">Login</label>
         <input type="text" class="form-control" name="login" id="exampleInputLogin1" aria-describedby="emailHelp">
@@ -65,11 +59,19 @@
         <label for="exampleInputPassword1" class="form-label">Password</label>
         <input type="password" class="form-control" name="password" id="exampleInputPassword1">
     </div>
-    <div class="mb-3 form-check">
-        <input type="checkbox" class="form-check-input" id="exampleCheck1">
-        <label class="form-check-label" for="exampleCheck1">Check me out</label>
+    <div class="form-group">
+        <select name="id">
+        <?php
+        while ($row = mysqli_fetch_assoc($query_result)) {
+        $id = $row['id'];
+        echo "<option value='$id'>$id</option>";
+        }
+    ?>
+
+        
+        </select>
     </div>
-    <button type="submit" class="btn btn-primary" name="submit">Submit</button>
+    <button type="submit" class="btn btn-primary" name="submit">DELETE</button>
     </form>
 </body>
 </html>
