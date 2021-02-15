@@ -1,3 +1,5 @@
+"use strict";
+
 /* Задание на урок:
 1) Создать переменную numberOfFilms и в неё поместить ответ от пользователя на вопрос:
 'Сколько фильмов вы уже посмотрели?'
@@ -17,4 +19,18 @@
     }
 Проверить, чтобы все работало без ошибок в консоли */
 
-console.log('1');
+// alert('Hello');
+
+// const resukt = confirm('Вы здесь?');
+// console.log(resukt);
+
+// const answer  = +prompt('Вам есть 18 лет?', '18');
+// console.log(answer + 5);
+
+const answers = [];
+
+answers[0] = prompt("Как Ваше имя?", '');
+answers[1] = prompt("Как Ваше Фамилия?", '');
+answers[2] = prompt("Сколько Вам лет?", '');
+
+document.write(answers);
