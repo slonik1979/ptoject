@@ -27,10 +27,29 @@
 // const answer  = +prompt('Вам есть 18 лет?', '18');
 // console.log(answer + 5);
 
-const answers = [];
+// const answers = [];
 
-answers[0] = prompt("Как Ваше имя?", '');
-answers[1] = prompt("Как Ваше Фамилия?", '');
-answers[2] = prompt("Сколько Вам лет?", '');
+// answers[0] = prompt("Как Ваше имя?", '');
+// answers[1] = prompt("Как Ваше Фамилия?", '');
+// answers[2] = prompt("Сколько Вам лет?", '');
 
-document.write(answers);
+// document.write(answers);
+
+const numberOfFilms = +prompt('Сколько фильмов вы уже посмотрели?', '');
+
+const personalMovieDB = {
+    count: numberOfFilms,
+    movies: {},
+    actors: {},
+    genres: [],
+    privat: false
+};
+
+const a = prompt('Один из последних просмотренных фильмов?', ''),
+        b = prompt('На сколько оцените его?', ''),
+        c = prompt('Один из последних просмотренных фильмов?', ''),
+        d = prompt('На сколько оцените его?', ''); 
+
+personalMovieDB.movies[a] = b;
+
+console.log(personalMovieDB.movies);
