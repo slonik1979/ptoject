@@ -1,5 +1,46 @@
 "use strict";
 
+
+
+// ЦИКЛЫ
+
+// let num = 50;
+// while (num <= 55) {
+//     console.log(num);
+//     num++;
+// }
+
+// let num = 50;
+// do {
+//     console.log(num);
+//     num++;
+// }
+// while (num <= 55);
+
+// let num = 50;
+// for (let i = 1; i <= 9; i++) {
+//     num++;
+//     console.log(num);
+// }
+
+// for (let i = 1; i <= 9; i++) {
+//     if (i === 6) {
+//         break;
+//     }
+//     console.log(i);
+// }
+
+// for (let i = 1; i <= 9; i++) {
+//     if (i === 6) {
+//         continue;
+//     }
+//     console.log(i);
+// }
+
+
+
+
+
 /* Задание на урок:
 1) Создать переменную numberOfFilms и в неё поместить ответ от пользователя на вопрос:
 'Сколько фильмов вы уже посмотрели?'
@@ -19,22 +60,6 @@
     }
 Проверить, чтобы все работало без ошибок в консоли */
 
-// alert('Hello');
-
-// const resukt = confirm('Вы здесь?');
-// console.log(resukt);
-
-// const answer  = +prompt('Вам есть 18 лет?', '18');
-// console.log(answer + 5);
-
-// const answers = [];
-
-// answers[0] = prompt("Как Ваше имя?", '');
-// answers[1] = prompt("Как Ваше Фамилия?", '');
-// answers[2] = prompt("Сколько Вам лет?", '');
-
-// document.write(answers);
-
 const numberOfFilms = +prompt('Сколько фильмов вы уже посмотрели?', '');
 
 const personalMovieDB = {
@@ -46,10 +71,11 @@ const personalMovieDB = {
 };
 
 const a = prompt('Один из последних просмотренных фильмов?', ''),
-        b = prompt('На сколько оцените его?', ''),
-        c = prompt('Один из последних просмотренных фильмов?', ''),
-        d = prompt('На сколько оцените его?', ''); 
+    b = prompt('На сколько оцените его?', ''),
+    c = prompt('Один из последних просмотренных фильмов?', ''),
+    d = prompt('На сколько оцените его?', '');
 
-personalMovieDB.movies[a] = b;
+    personalMovieDB.movies[a] = b;
+    personalMovieDB.movies[c] = d;
 
-console.log(personalMovieDB.movies);
+    console.log(personalMovieDB);
