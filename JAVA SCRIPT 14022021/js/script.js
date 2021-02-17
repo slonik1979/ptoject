@@ -38,6 +38,55 @@
 // }
 
 
+// ФУНКЦИИ
+
+// 1 function declaration
+// let num = 20;
+// function showFirstMessage(text) {
+//     console.log(text);
+//     num = 10;
+// }
+// showFirstMessage("Hello!");
+// console.log(num);
+
+
+// function calc (a ,b) {
+//     return (a+b);
+// }
+// console.log(calc(5, 6));
+
+
+// const ret2 = ret();
+// console.log(ret2);
+// function ret() {
+//     let num = 50;
+//     return num;
+// }
+
+
+// 2 function expression
+
+// const logger = function () {
+//     console.log('Hello!');
+// };
+// logger();
+
+// 3 СТРЕЛОЧНЫЕ ФУНКЦИИ
+
+// const calcul = (a, b) => {return a + b};
+// console.log(calcul(5, 7));
+
+
+
+// МЕТОДЫ И СВОЙСТВА СТРОК И ЧИСЕЛ
+
+// const str = 'test';
+// console.log(str.length);
+
+const str = 'test';
+str.toLocaleUpperCase();
+console.log(str);
+
 
 
 
@@ -77,37 +126,37 @@ str.length - и получить её длину)
 4) Потренироваться и переписать цикл еще двумя способами*/
 
 
-const numberOfFilms = +prompt('Сколько фильмов вы уже посмотрели?', '');
+// const numberOfFilms = +prompt('Сколько фильмов вы уже посмотрели?', '');
 
-const personalMovieDB = {
-    count: numberOfFilms,
-    movies: {},
-    actors: {},
-    genres: [],
-    privat: false
-};
+// const personalMovieDB = {
+//     count: numberOfFilms,
+//     movies: {},
+//     actors: {},
+//     genres: [],
+//     privat: false
+// };
 
-for (let i = 0; i < 1; i++) {
-    const a = prompt('Один из последних просмотренных фильмов?', ''),
-    b = prompt('На сколько оцените его?', '');
-    if (a != null && b != null && a != '' && b != '' && a.length < 50) {
-    personalMovieDB.movies[a] = b;
-} else {
-    i--;
-}
-}
+// for (let i = 0; i < 2; i++) {
+//     const a = prompt('Один из последних просмотренных фильмов?', ''),
+//     b = prompt('На сколько оцените его?', '');
+//     if (a != null && b != null && a != '' && b != '' && a.length < 50) {
+//     personalMovieDB.movies[a] = b;
+// } else {
+//     i--;
+// }
+// }
 
-if (personalMovieDB.count < 10) {
-    console.log("Просмотрено довольно мало фильмов");
-    }else if (personalMovieDB.count >= 10 && personalMovieDB.count < 30) {
-        console.log("Вы классический зритель");
-    } else if (personalMovieDB.count >= 30) {
-        console.log("Вы киноман");
-    } else {
-        console.log("Произошла ошибка");
-    }
+// if (personalMovieDB.count < 10) {
+//     console.log("Просмотрено довольно мало фильмов");
+//     }else if (personalMovieDB.count >= 10 && personalMovieDB.count < 30) {
+//         console.log("Вы классический зритель");
+//     } else if (personalMovieDB.count >= 30) {
+//         console.log("Вы киноман");
+//     } else {
+//         console.log("Произошла ошибка");
+//     }
 
 
 
-console.log(personalMovieDB);
+// console.log(personalMovieDB);
 
