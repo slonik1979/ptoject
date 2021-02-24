@@ -127,12 +127,15 @@ const options = {
     }
 };
 
-console.log(options.name);
+// console.log(options.name);
 
-delete options.name;
+// delete options.name;
 
-console.log(options);
+// console.log(options);
 
+for (let key in options) {
+    console.log(`Свойство ${key} имеет значение ${options[key].[key].[key]}`);
+}
 
 
 /*  1 Задание на урок:
