@@ -117,15 +117,26 @@
 
 // Объекты, деструктуризация объектов (ES6)
 
-const options = {
-    name: 'test',
-    widht: 1024,
-    height: 1024,
-    colors: {
-        border: 'black',
-        bg: 'red'
-    }
-};
+// const options = {
+//     name: 'test',
+//     widht: 1024,
+//     height: 1024,
+//     colors: {
+//         border: 'black',
+//         bg: 'red'
+//     },
+//     maketTest: function() {
+//         console.log("Тест");        
+//     }
+// };
+
+// options.maketTest();
+
+// const {border, bg} = options.colors;
+// console.log(border);
+
+// console.log(Object.keys(options));
+// console.log(Object.keys(options).length);
 
 // console.log(options.name);
 
@@ -133,9 +144,87 @@ const options = {
 
 // console.log(options);
 
-for (let key in options) {
-    console.log(`Свойство ${key} имеет значение ${options[key].[key].[key]}`);
-}
+// let counter =0;
+// for (let key in options) {
+//     if (typeof(options[key]) === 'object') {
+//         for (let i in options[key]) {
+//             console.log(`Свойство ${i} имеет значение ${options[key][i]}`);
+//         }
+//     } else {
+//         console.log(`Свойство ${key} имеет значение ${options[key]}`);
+        
+//     }
+//     counter++;
+// }
+// console.log(counter);
+
+
+// Массивы и псевдомассивы
+
+// const arr = [1, 2, 3, 6, 8, 12];
+// arr[99] = 0;
+// console.log(arr.length);
+// console.log(arr);
+
+// const arr = [1, 25, 34, 64, 8, 12];
+// arr.sort(compareNum);
+// console.log(arr);
+
+// function compareNum(a, b) {
+//     return a -b;
+// }
+
+
+// arr.forEach(function(item, i, arr) {
+//     console.log(`${i}: ${item} внутри ${arr}`);
+// });
+
+// arr.pop();
+// arr.push(10);
+
+// console.log(arr);
+
+// for (let i =0; i < arr.length; i++) {
+//     console.log(arr[i]);
+// }
+
+// for (let value of arr) {
+//     console.log(value);
+// }
+
+// const str = prompt("", "");
+// const products = str.split(", ");
+// products.sort();
+// console.log(products);
+
+
+
+// Передача по ссылке или по значению, Spread
+// оператор (ES6-ES9)
+
+const video = ['youtube', 'vimeo', 'rutube'],
+      blogs = ['wordpress', 'livejopurnal', 'blogger'],
+      internet = [...video, ...blogs, 'vk', 'facebook'];  
+
+console.log(internet);
+
+const object = {
+    name: 'test',
+    widht: 1024,
+    height: 1024,
+    colors: {
+        border: 'black',
+        bg: 'red'
+            }
+};
+
+const newObject = {...object};
+    newObject.name = 'hello';
+
+console.log(object);
+console.log(newObject);
+
+
 
 
 /*  1 Задание на урок:
@@ -187,71 +276,71 @@ genres
 
 P.S. Функции вызывать не обязательно */
 
-let numberOfFilms;
+// let numberOfFilms;
 
-function start() {
-    numberOfFilms = +prompt('Сколько фильмов вы уже посмотрели?', '');
+// function start() {
+//     numberOfFilms = +prompt('Сколько фильмов вы уже посмотрели?', '');
 
-    while (numberOfFilms == '' || numberOfFilms == null || isNaN(numberOfFilms)) {
-        numberOfFilms = +prompt('Сколько фильмов вы уже посмотрели?', '');
-    }
-}
+//     while (numberOfFilms == '' || numberOfFilms == null || isNaN(numberOfFilms)) {
+//         numberOfFilms = +prompt('Сколько фильмов вы уже посмотрели?', '');
+//     }
+// }
 
-start();
+// start();
 
-const personalMovieDB = {
-    count: numberOfFilms,
-    movies: {},
-    actors: {},
-    genres: [],
-    privat: false
-};
-
-
-
-function rememberMyFilms() {
-    for (let i = 0; i < 2; i++) {
-        const a = prompt('Один из последних просмотренных фильмов?', ''),
-        b = prompt('На сколько оцените его?', '');
-        if (a != null && b != null && a != '' && b != '' && a.length < 50) {
-        personalMovieDB.movies[a] = b;
-    } else {
-        i--;
-    }
-    }
-}
-
-// rememberMyFilms();
+// const personalMovieDB = {
+//     count: numberOfFilms,
+//     movies: {},
+//     actors: {},
+//     genres: [],
+//     privat: false
+// };
 
 
 
+// function rememberMyFilms() {
+//     for (let i = 0; i < 2; i++) {
+//         const a = prompt('Один из последних просмотренных фильмов?', ''),
+//         b = prompt('На сколько оцените его?', '');
+//         if (a != null && b != null && a != '' && b != '' && a.length < 50) {
+//         personalMovieDB.movies[a] = b;
+//     } else {
+//         i--;
+//     }
+//     }
+// }
 
-function personalLevel() {
-        if (personalMovieDB.count < 10) {
-            console.log("Просмотрено довольно мало фильмов");
-            }else if (personalMovieDB.count >= 10 && personalMovieDB.count < 30) {
-                console.log("Вы классический зритель");
-            } else if (personalMovieDB.count >= 30) {
-                console.log("Вы киноман");
-            } else {
-                console.log("Произошла ошибка");
-            }
-    }
+// // rememberMyFilms();
 
-// personalLevel();
 
-function showMyDb(hidden) {
-    if (!hidden) {
-        console.log(personalMovieDB);
-    }
-}
 
-showMyDb(personalMovieDB.privat);
 
-function writeYourGenres() {
-    for (let i = 1; i < 4; i++ ) {
-        personalMovieDB.genres[i - 1] = prompt(`Ваш любимый жанр под номером ${i}`);;
-    } 
-}
+// function personalLevel() {
+//         if (personalMovieDB.count < 10) {
+//             console.log("Просмотрено довольно мало фильмов");
+//             }else if (personalMovieDB.count >= 10 && personalMovieDB.count < 30) {
+//                 console.log("Вы классический зритель");
+//             } else if (personalMovieDB.count >= 30) {
+//                 console.log("Вы киноман");
+//             } else {
+//                 console.log("Произошла ошибка");
+//             }
+//     }
 
-writeYourGenres();
+// // personalLevel();
+
+// function showMyDb(hidden) {
+//     if (!hidden) {
+//         console.log(personalMovieDB);
+//     }
+// }
+
+// showMyDb(personalMovieDB.privat);
+
+// function writeYourGenres() {
+//     for (let i = 1; i < 4; i++ ) {
+//         personalMovieDB.genres[i - 1] = prompt(`Ваш любимый жанр под номером ${i}`);;
+//     } 
+// }
+
+// writeYourGenres();
