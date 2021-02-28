@@ -391,5 +391,4 @@ P.S. Функции вызывать не обязательно */
 // };
 // personalMovieDB.writeYourGenres();
 
-let x = 5;
-alert(x++);
+alert( +"Infinity");
