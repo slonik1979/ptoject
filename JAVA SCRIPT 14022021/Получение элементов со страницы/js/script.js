@@ -50,6 +50,8 @@ const div = document.createElement('div');
     //document.body.append(div);
 
     wrapper.append(div);
+
+   
     //wrapper.prepend(div);
 
     //hearts[0].before(div);
@@ -61,6 +63,6 @@ const div = document.createElement('div');
     // hearts[1].replaceWith(circle[1]);
 
     div.innerHTML = '<h1>Hello world</h1>';
-    //div.textContent = 'HELLO';
+    //div.textContent = 'HELLO'; // добавляет и изменяет текст !!!
 
     div.insertAdjacentHTML("beforebegin", '<h1>Hello</h1>');
