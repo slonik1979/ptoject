@@ -49,30 +49,77 @@ document.addEventListener('DOMContentLoaded', () => {
           genre = poster.querySelector('.promo__genre'),
           promoList = document.querySelectorAll('.promo__interactive-list'),
           addForm = document.querySelector('form.add'),
-          addInput = addForm.querySelector('adding__input'),
+          addingInput = addForm.querySelector('.adding__input'),
           checkbox = addForm.querySelector('[type="checkbox"]');
-          
-    
-           advertising.forEach(item => {
-                item.remove();
-           });
-    
-           genre.textContent = 'драма';
-    
+        
+        addForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+
+            let newFilm = addingInput.value;
+            const favorite = checkbox.checked;
+
+            if (newFilm) {
+
+                if (newFilm.length > 21) {
+                    newFilm = `${newFilm.substring(0, 22)}...`;
+                }
+
+                if (checkbox) {
+                    console.log("Добавляем любимый фильм");
+                }
+                
+
+                movieDB.movies.push(newFilm);
+                
+                sortArr(movieDB.movies);
+
+            createPromoList(movieDB.movies, promoList[0]);
+            }            
+
+            e.target.reset();
+
+          });
+
+    const deketeadvertising = (arr) => {
+        arr.forEach(item => {
+            item.remove();
+       });
+    };
+         
+    const makeChanges = () => {
+        genre.textContent = 'драма';
         poster.style.backgroundImage = 'url("img/bg.jpg")';
-    
-        promoList[0].innerHTML = '';
-    
-        movieDB.movies.sort();
-    
-        movieDB.movies.forEach ((film, i) => {
-            promoList[0].innerHTML = promoList[0].innerHTML + `
+    };
+     
+    const sortArr = (arr) => {
+        arr.sort();
+    };
+
+function createPromoList(films, parent) {
+    parent.innerHTML = '';
+    sortArr(films);
+    films.forEach ((film, i) => {
+            parent.innerHTML = parent.innerHTML + `
             <li class="promo__interactive-item">${i + 1} ${film}
                                 <div class="delete"></div>
             </li>
             `;
         });
 
+        document.querySelectorAll('.delete').forEach( (basket, i) => {
+            basket.addEventListener('click', () =>{
+                basket.parentElement.remove();
+                films.splice(i, 1);
+
+                createPromoList(films, parent);
+            });
+        });
+}
+
+deketeadvertising(advertising);
+makeChanges();
+
+createPromoList(movieDB.movies, promoList[0]);
 
 
 });
