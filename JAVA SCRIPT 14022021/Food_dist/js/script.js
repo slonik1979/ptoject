@@ -184,24 +184,29 @@ window.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    const getResourse = async (url, data) => {
-        const res = await fetch(url);
+    // const getResourse = async (url, data) => {
+    //     const res = await fetch(url);
         
-        if (!res.ok) {
-            throw new Error (`Could nit fetch ${url}, status: ${res.status}`);
-        }
+    //     if (!res.ok) {
+    //         throw new Error (`Could nit fetch ${url}, status: ${res.status}`);
+    //     }
 
-        return await res.json();
-    };
+    //     return await res.json();
+    // };
 
-    getResourse('http://localhost:3000/menu')
+    // getResourse('http://localhost:3000/menu')
+    // .then(data => {
+    //     data.forEach(({img, altimg, title, descr, price}) => {
+    //         new MenuCard(img, altimg, title, descr, price, '.menu .container').render();
+    //     });
+    // });
+
+    axios.get('http://localhost:3000/menu')
     .then(data => {
-        data.forEach(({img, altimg, title, descr, price}) => {
-            new MenuCard(img, altimg, title, descr, price, '.menu .container').render();
-        });
+    data.data.forEach(({img, altimg, title, descr, price}) => {
+    new MenuCard(img, altimg, title, descr, price, '.menu .container').render();
     });
-
-    
+    });
     
     // Forms
 
@@ -297,5 +302,31 @@ window.addEventListener('DOMContentLoaded', function() {
     fetch('http://localhost:3000/menu')
     .then(data => data.json())
     .then(res => console.log(res));
+
+
+// SLIDER
+
+const slider = document.querySelectorAll('.offer__slide'),
+    sliderPrev = document.querySelector('.offer__slider-prev'),
+    sliderNext = document.querySelector('.offer__slider-next');
+
+    let sliderIndex = 1;
+
+    function showSlider(n) {
+        if (n > slider.length) {
+            sliderIndex = 1;
+        }
+        if (n < 1) {
+            sliderIndex = slider.length;
+        }
+
+        slider.forEach(item => {
+
+        });
+    }
+
+
+
+
 
 });
