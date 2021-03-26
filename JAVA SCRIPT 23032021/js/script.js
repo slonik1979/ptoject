@@ -32,8 +32,35 @@ str.length - и получить её длину)
 4) Потренироваться и переписать цикл еще двумя способами*/
 
 
-const numberOfFilms = +prompt('Сколько фильмов вы уже посмотрели?', '');
-console.log(numberOfFilms);
+/* 3 Задание на урок:
+1) Первую часть задания повторить по уроку
+2) Создать функцию showMyDB, которая будет проверять свойство privat. Если стоит в позиции
+false - выводит в консоль главный объект программы
+3) Создать функцию writeYourGenres в которой пользователь будет 3 раза отвечать на вопрос 
+"Ваш любимый жанр под номером ${номер по порядку}". Каждый ответ записывается в массив данных
+genres
+P.S. Функции вызывать не обязательно */
+
+let numberOfFilms;
+
+function start() {
+    
+
+    for ( let i = 0; i < 1; i++ ) {
+        numberOfFilms = +prompt('Сколько фильмов вы уже посмотрели?', '');
+        console.log(numberOfFilms);
+        if (numberOfFilms == null || numberOfFilms == '' || isNaN(numberOfFilms)) {
+            numberOfFilms = +prompt('Сколько фильмов вы уже посмотрели?', '');
+            i--;
+        }
+    
+    }
+      
+    }
+    
+
+
+start();
 
 const personalMovieDB = {
     count: numberOfFilms,
@@ -71,24 +98,66 @@ if (personalMovieDB.count < 10) {
 console.log(personalMovieDB);
 
 
-const logger = (a, b) => {
-    const num = 50;
-    return a + b;
-};
 
-console.log(logger(5, 5));
+
+
+// 1. FUNCTION DECLARATION
+
+function showFirstMesagge() {
+    console.log('Hello world');
+}
+showFirstMesagge();
+
+let num = 20;
+function showFirstMesagge(text) {
+    console.log(text);
+    let num = 10;
+}
+showFirstMesagge('Hello world');
 console.log(num);
 
 
-const log = function (a, b) {
+// function calc(a, b) {
+//     return a + b;
+// }
+// console.log(calc(4, 7));
+// console.log(calc(5, 12));
+
+// выходит num наружу
+function ret() {
+    let num = 50;
+    return num; // выходит num наружу (с функции)
+}
+const actors = ret();
+console.log(actors);
+
+// Замыкание функций
+
+let num2 = 20;
+function showFirstMesagge(text) {
+    console.log(text);
+    console.log(num2); // ищет вышестоящее значение
+}
+showFirstMesagge('Hello world');
+console.log(num2);
+
+// 2. FUNCTION EXPRESSION
+
+const log = function() {
+    console.log('Hello world');
+};
+log();
+
+// 3. СТРЕЛОЧНЫЕ ФУНКЦИИ
+const log1 = () => {
+    console.log('Hello world');
+};
+log1();
+
+const calc = (a,b) => {
     return a + b;
 };
-console.log(log(5, 5));
+console.log(calc(4, 7));
+console.log(calc(5, 12));
 
 
-
-
-function logg(a, b) {
-    return a + b;
-}
-console.log(logg(5, 5));
