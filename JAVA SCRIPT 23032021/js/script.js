@@ -43,59 +43,92 @@ P.S. Функции вызывать не обязательно */
 
 let numberOfFilms;
 
-function start() {
+// function start() {
     
 
-    for ( let i = 0; i < 1; i++ ) {
-        numberOfFilms = +prompt('Сколько фильмов вы уже посмотрели?', '');
-        console.log(numberOfFilms);
-        if (numberOfFilms == null || numberOfFilms == '' || isNaN(numberOfFilms)) {
-            numberOfFilms = +prompt('Сколько фильмов вы уже посмотрели?', '');
-            i--;
-        }
-    
-    }
-      
-    }
+//     for ( let i = 0; i < 1; i++ ) {
+//         // numberOfFilms = +prompt('Сколько фильмов вы уже посмотрели?', '');
+//         // console.log(numberOfFilms);
+//         if (numberOfFilms == null || numberOfFilms == '' || isNaN(numberOfFilms)) {
+//             numberOfFilms = +prompt('Сколько фильмов вы уже посмотрели?', '');
+//             i--;
+//         }
+//         }
+//      }
     
 
 
-start();
+// start();
 
 const personalMovieDB = {
     count: numberOfFilms,
     movies: {},
     actors: {},
     genres: [],
-    privat: false
+    privat: false,
+    start: () => {
+        for ( let i = 0; i < 1; i++ ) {
+            // numberOfFilms = +prompt('Сколько фильмов вы уже посмотрели?', '');
+            // console.log(numberOfFilms);
+            if (numberOfFilms == null || numberOfFilms == '' || isNaN(numberOfFilms)) {
+                numberOfFilms = +prompt('Сколько фильмов вы уже посмотрели?', '');
+                i--;
+            }
+            }
+    }
 };
 
+personalMovieDB.start();
 
-
-    for ( let i = 0; i < 2; i++) {
-        const a = prompt('Один из последних просмотренных фильмов?',''),
-            b = prompt('На сколько оцените его?','');
-       if (a != null && b != null && a != '' && b != '' && a.length < 50) {
-        personalMovieDB.movies[a] = b;
-        console.log('ok');
-       } else {
-        console.log('error');
-        i--;
-       }
-     
+    function rememberMyFilms() {
+        for ( let i = 0; i < 2; i++) {
+            const a = prompt('Один из последних просмотренных фильмов?',''),
+                b = prompt('На сколько оцените его?','');
+           if (a != null && b != null && a != '' && b != '' && a.length < 50) {
+            personalMovieDB.movies[a] = b;
+            console.log('ok');
+           } else {
+            console.log('error');
+            i--;
+           }
+         
+        }
     }
-   
-if (personalMovieDB.count < 10) {
-    console.log("Просмотрено довольно мало фильмов");
-} else if (personalMovieDB.count >= 10 && personalMovieDB.count <= 30) {
-    console.log("Вы классический зритель");
-}  else if (personalMovieDB.count >30) {
-    console.log("Вы киноман");
-} else {
-    console.log("Произошла ошибка");
-}  
 
-console.log(personalMovieDB);
+rememberMyFilms();
+
+function viewFilms() {
+    if (personalMovieDB.count < 10) {
+        console.log("Просмотрено довольно мало фильмов");
+    } else if (personalMovieDB.count >= 10 && personalMovieDB.count <= 30) {
+        console.log("Вы классический зритель");
+    }  else if (personalMovieDB.count >30) {
+        console.log("Вы киноман");
+    } else {
+        console.log("Произошла ошибка");
+    }  
+}
+
+viewFilms();
+
+function showMyDB(hidden) {
+    if (!hidden) {
+        console.log(personalMovieDB);
+    }
+}
+
+const BasePrivat = personalMovieDB.privat;
+showMyDB(BasePrivat);
+
+function writeYourGenres() {
+    for (let i = 1; i <=3; i++) {
+        const genre = prompt(`Ваш любимый жанр под номером ${i}`);
+        const genres = personalMovieDB.genres;
+        genres[i - 1] = genre;
+    }
+}
+
+writeYourGenres();
 
 
 
@@ -161,3 +194,48 @@ console.log(calc(4, 7));
 console.log(calc(5, 12));
 
 
+
+
+// 20. Объекты, деструктуризация объектов (ES6)
+
+const options = {
+    name: 'text',
+    widht: 1024,
+    height: 1024,
+    colors: {
+        border: 'black',
+        bg: 'red'
+    },
+    makeTest: function() {   // делаем метод в объекте
+        console.log('test');
+    }
+};
+
+options.makeTest();  // запускаем метод    круто!!!
+
+//деструктуризация объектов (ES6)
+
+const {border, bg} = options.colors;
+console.log(border);
+
+// узнать количсетво свойств в объекте
+
+console.log(Object.keys(options).length);
+
+// узнать свойство в объекте
+
+//console.log(options.name);
+
+
+// перебор свойств в объекте
+
+for (let key in options) {
+    if (typeof(options[key]) === 'object') {
+        for (let i in options[key]) {
+            console.log(`Свойство ${i} равно ${options[key][i]}`);
+        }
+    } else {
+        console.log(`Свойство ${key} равно ${options[key]}`);
+    }
+    
+}
