@@ -220,3 +220,21 @@ const test = '12.2px';
 
 console.log(parseInt(test)); // метод превращает строку в целое число (12)
 console.log(parseFloat(test)); //метод превращает строку в число (12.2)
+
+
+//19. Callback- функции
+
+function learnJS(lang, callback) {
+    console.log(`Я учу ${lang}`);
+    callback();
+}
+
+function done() {
+    console.log('Я прошел этот урок');
+}
+
+learnJS('JS', done);
+
+learnJS('JS', function(){
+    console.log('Я прошел этот урок'); 
+});
