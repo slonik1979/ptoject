@@ -43,42 +43,28 @@ P.S. Функции вызывать не обязательно */
 
 let numberOfFilms;
 
-// function start() {
+function start() {
+    for ( let i = 0; i < 1; i++ ) {
+        numberOfFilms = +prompt('Сколько фильмов вы уже посмотрели?', '');
+        console.log(numberOfFilms);
+        if (numberOfFilms == null || numberOfFilms == '' || isNaN(numberOfFilms)) {
+            numberOfFilms = +prompt('Сколько фильмов вы уже посмотрели?', '');
+            i--;
+        }
+     }
+    }
     
 
-//     for ( let i = 0; i < 1; i++ ) {
-//         // numberOfFilms = +prompt('Сколько фильмов вы уже посмотрели?', '');
-//         // console.log(numberOfFilms);
-//         if (numberOfFilms == null || numberOfFilms == '' || isNaN(numberOfFilms)) {
-//             numberOfFilms = +prompt('Сколько фильмов вы уже посмотрели?', '');
-//             i--;
-//         }
-//         }
-//      }
-    
 
-
-// start();
+start();
 
 const personalMovieDB = {
     count: numberOfFilms,
     movies: {},
     actors: {},
     genres: [],
-    privat: false,
-    start: () => {
-        for ( let i = 0; i < 1; i++ ) {
-            // numberOfFilms = +prompt('Сколько фильмов вы уже посмотрели?', '');
-            // console.log(numberOfFilms);
-            if (numberOfFilms == null || numberOfFilms == '' || isNaN(numberOfFilms)) {
-                numberOfFilms = +prompt('Сколько фильмов вы уже посмотрели?', '');
-                i--;
-            }
-            }
-    }
+    privat: false
 };
-
-personalMovieDB.start();
 
     function rememberMyFilms() {
         for ( let i = 0; i < 2; i++) {
@@ -91,13 +77,12 @@ personalMovieDB.start();
             console.log('error');
             i--;
            }
-         
         }
     }
 
-rememberMyFilms();
+    //rememberMyFilms();
 
-function viewFilms() {
+function detectPersonalLevel() {
     if (personalMovieDB.count < 10) {
         console.log("Просмотрено довольно мало фильмов");
     } else if (personalMovieDB.count >= 10 && personalMovieDB.count <= 30) {
@@ -109,7 +94,7 @@ function viewFilms() {
     }  
 }
 
-viewFilms();
+//detectPersonalLevel();
 
 function showMyDB(hidden) {
     if (!hidden) {
@@ -117,22 +102,24 @@ function showMyDB(hidden) {
     }
 }
 
-const BasePrivat = personalMovieDB.privat;
-showMyDB(BasePrivat);
+showMyDB(personalMovieDB.privat);
 
 function writeYourGenres() {
-    for (let i = 1; i <=3; i++) {
+    for ( let i = 1; i <= 3; i++) {
         const genre = prompt(`Ваш любимый жанр под номером ${i}`);
-        const genres = personalMovieDB.genres;
-        genres[i - 1] = genre;
-    }
+        personalMovieDB.genres[i-1] = genre;
+        
+        
+       }
 }
-
 writeYourGenres();
 
 
 
 
+
+
+//16. Функции, стрелочные ф-ции (ES6)
 
 // 1. FUNCTION DECLARATION
 
@@ -194,58 +181,42 @@ console.log(calc(4, 7));
 console.log(calc(5, 12));
 
 
+// 17. Методы и свойства строк и чисел
 
+const str = 'test';
 
-// 20. Объекты, деструктуризация объектов (ES6)
+console.log(str.length); // свойство строки
 
-const options = {
-    name: 'text',
-    widht: 1024,
-    height: 1024,
-    colors: {
-        border: 'black',
-        bg: 'red'
-    },
-    makeTest: function() {   // делаем метод в объекте
-        console.log('test');
-    }
-};
+// методы строк
 
-options.makeTest();  // запускаем метод    круто!!!
+const strUpper = str.toUpperCase(); // метод строки
+//console.log(str.toUpperCase());
+console.log(str);
+console.log(strUpper);
 
-//деструктуризация объектов (ES6)
+// метод поиск подстроки
+const fruit = 'Some fruit';
 
-const {border, bg} = options.colors;
-console.log(border);
+console.log(fruit.indexOf('fruit')); // поиск подстроки 
 
-// узнать количсетво свойств в объекте
+// метод slice()
+const logg = 'Hello world';
 
-console.log(Object.keys(options).length);
+console.log(logg.slice(6, 11)); // вырезает кусочек строки с 6 по 11 индекс. (получаем world)
 
-// узнать свойство в объекте
+// метод substring()   тоже самое что и slice()
 
-//console.log(options.name);
+// метод substr()
 
+console.log(logg.substr(6, 4)); // вырезает кусочек с 6 индекса (2 цифра сколько вырезать)
 
-// перебор свойств в объекте
+// Числа
 
-for (let key in options) {
-    if (typeof(options[key]) === 'object') {
-        for (let i in options[key]) {
-            console.log(`Свойство ${i} равно ${options[key][i]}`);
-        }
-    } else {
-        console.log(`Свойство ${key} равно ${options[key]}`);
-    }
-    
-}
+const number = 12.2;
 
+console.log(Math.round(number)); // округление
 
+const test = '12.2px';
 
-//   21. Массивы и псевдомассивы
-
-
-const arr = [1, 2, 3, 6, 8];
-
-arr.pop();
-
+console.log(parseInt(test)); // метод превращает строку в целое число (12)
+console.log(parseFloat(test)); //метод превращает строку в число (12.2)
