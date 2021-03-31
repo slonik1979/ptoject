@@ -56,7 +56,7 @@ function start() {
     
 
 
-start();
+//start();
 
 const personalMovieDB = {
     count: numberOfFilms,
@@ -106,13 +106,11 @@ showMyDB(personalMovieDB.privat);
 
 function writeYourGenres() {
     for ( let i = 1; i <= 3; i++) {
-        const genre = prompt(`Ваш любимый жанр под номером ${i}`);
-        personalMovieDB.genres[i-1] = genre;
-        
-        
+        personalMovieDB.genres[i-1] = prompt(`Ваш любимый жанр под номером ${i}`);
+           
        }
 }
-writeYourGenres();
+//writeYourGenres();
 
 
 
@@ -123,10 +121,10 @@ writeYourGenres();
 
 // 1. FUNCTION DECLARATION
 
-function showFirstMesagge() {
-    console.log('Hello world');
-}
-showFirstMesagge();
+// function showFirstMesagge() {
+//     console.log('Hello world');
+// }
+// showFirstMesagge();
 
 let num = 20;
 function showFirstMesagge(text) {
@@ -153,13 +151,13 @@ console.log(actors);
 
 // Замыкание функций
 
-let num2 = 20;
-function showFirstMesagge(text) {
-    console.log(text);
-    console.log(num2); // ищет вышестоящее значение
-}
-showFirstMesagge('Hello world');
-console.log(num2);
+// let num2 = 20;
+// function showFirstMesagge(text) {
+//     console.log(text);
+//     console.log(num2); // ищет вышестоящее значение
+// }
+// showFirstMesagge('Hello world');
+// console.log(num2);
 
 // 2. FUNCTION EXPRESSION
 
@@ -238,3 +236,98 @@ learnJS('JS', done);
 learnJS('JS', function(){
     console.log('Я прошел этот урок'); 
 });
+
+
+
+// 20. Объекты, деструктуризация объектов (ES6)
+
+const options = {
+    name: 'text',
+    widht: 1024,
+    height: 1024,
+    colors: {
+        border: 'black',
+        bg: 'red'
+    },
+    makeTest: function() {   // делаем метод в объекте
+        console.log('test');
+    }
+};
+
+options.makeTest();  // запускаем метод    круто!!!
+
+//деструктуризация объектов (ES6)
+
+const {border, bg} = options.colors;
+console.log(border);
+
+// узнать количество свойств в объекте
+
+console.log(Object.keys(options).length);
+
+// узнать свойство в объекте
+
+//console.log(options.name);
+
+
+// перебор свойств в объекте
+
+for (let key in options) {
+    if (typeof(options[key]) === 'object') {
+        for (let i in options[key]) {
+            console.log(`Свойство ${i} равно ${options[key][i]}`);
+        }
+    } else {
+        console.log(`Свойство ${key} равно ${options[key]}`);
+    }
+    
+}
+
+
+//21. Массивы и псевдомассивы
+
+const arr = [1, 2, 3, 6, 8];
+
+arr[99] = 7;
+console.log(arr.length); // свойство length +1 !!!
+console.log(arr);
+
+// методы которые работают с концом массива
+arr.pop(); // удаляет последнее элеиент массива [1, 2, 3, 6]
+arr.push(10); // добавляет в конец элемент массива [1, 2, 3, 6, 8, 10]
+
+// перебор элементов в массиве
+
+// метод forEach !!!
+arr.forEach(function(item, index, arr){
+    console.log(item);
+});
+
+for (let i = 0; i < arr.length; i++) {
+    console.log(arr[i]);
+}
+
+for (let i of arr) {
+    console.log(i);
+}
+
+
+// метод split('.')          из строки (через точку('.')) превращает в массив
+const str3 = prompt("", "");
+const products = str3.split('.');
+console.log(products);
+
+// метод join(";")   наоборот       из массиа (через (";")) превращает в строку
+const str4 = prompt("", "");
+const products1 = str4.split('.');
+products1.sort();     // метод sort() сортирует строки
+console.log(products1.join(";"));
+
+// метод sort()
+const arr2 = [21, 5, 10, 82, 9];
+arr2.sort(compareNum);
+console.log(arr2);
+
+function compareNum(a, b) {  // с этой функцией метод sort сортирует числа по порядку.
+    return a - b;
+}
