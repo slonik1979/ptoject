@@ -378,3 +378,40 @@ clone.d = 10;
 console.log(clone);
 console.log(numbers);
 
+// Оператор разворота Spread (...)
+
+//массивы
+const video = ['youtube', 'vimio', 'rutube'],
+    blogs = ['wordpress', 'livejouurnal', 'blogger'],
+    internet = [...video, ...blogs, 'vk', 'facebook'];
+
+    console.log(internet);
+
+function log(a, b, c) {
+    console.log(a);
+    console.log(b);
+    console.log(c);
+}
+const num = [1, 5, 10];
+
+log(...num);
+
+const array = ['a', 'b'];
+
+const newArray = [...array];
+
+//объекты
+
+const obj = {
+    a: 1,
+    b:5,
+    c: {
+        f: 15,
+        g: 20
+    }
+};
+
+const newObj = {...obj};
+newObj.a = 10;
+console.log(newObj);
+console.log(obj);
