@@ -14,7 +14,7 @@ $mail->isSMTP();                                      // Set mailer to use SMTP
 $mail->Host = 'smtp.mail.ru';  // Specify main and backup SMTP servers
 $mail->SMTPAuth = true;                               // Enable SMTP authentication
 $mail->Username = 'novgorodzev@mail.ru';                 // Наш логин
-$mail->Password = 'zhelnin972021zhelnin';                           // Наш пароль от ящика
+$mail->Password = 'zhelnin241524zhelnin';                           // Наш пароль от ящика
 $mail->SMTPSecure = 'ssl';                            // Enable TLS encryption, `ssl` also accepted
 $mail->Port = 465;                                    // TCP port to connect to
  

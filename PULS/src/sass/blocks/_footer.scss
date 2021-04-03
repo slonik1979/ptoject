@@ -12,13 +12,20 @@ footer {
         height: 270px;
         background-color: #c70101;
         transform: translateX(-50%);
-        padding: 50px 0 60px 0;
+        padding: 30px 0 60px 0;
         }
     &__address {
         font-size: 20px;
         font-weight: 500;
         color: #ffffff;
         text-align: center;
+    }
+    &__schedule {
+        font-size: 15px;
+        font-weight: 500;
+        color: #ffffff;
+        text-align: center;
+
     }
     &__phone {
         display: block;

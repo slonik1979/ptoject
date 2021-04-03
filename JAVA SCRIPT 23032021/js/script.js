@@ -69,7 +69,7 @@ const personalMovieDB = {
             personalMovieDB.count = +prompt('Сколько фильмов вы уже посмотрели?', '');
             console.log(personalMovieDB.count);
             if (personalMovieDB.count == null || personalMovieDB.count == '' || isNaN(personalMovieDB.count)) {
-                personalMovieDB.count = +prompt('Сколько фильмов вы уже посмотрели?', '');
+                //personalMovieDB.count = +prompt('Сколько фильмов вы уже посмотрели?', '');
                 i--;
             }
          }
@@ -105,16 +105,30 @@ const personalMovieDB = {
         },
         writeYourGenres:() => {
             for ( let i = 1; i <= 3; i++) {
-                personalMovieDB.genres[i-1] = prompt(`Ваш любимый жанр под номером ${i}`);
-                   
+                let genre = prompt(`Ваш любимый жанр под номером ${i}`);
+                    if (genre == null || personalMovieDB.genres === '' ) {
+                    i--;
+                   } else {
+                    personalMovieDB.genres[i-1] = genre;
+                   }
                }
-        },
-        toggleVisibleMyDB: () => {
+               personalMovieDB.genres.forEach((item , i) => {
+                   console.log(`Любимый жанр ${i+1} это ${item}`);
+               });
 
-        }    
+        },
+
+        toggleVisibleMyDB: () => {
+            if (personalMovieDB.privat) {
+                personalMovieDB.privat = false;
+            } else {personalMovieDB.privat = true;}
+        }   
+
 };
 
 personalMovieDB.start();
+personalMovieDB.writeYourGenres();
+
 
 
 
@@ -358,60 +372,86 @@ personalMovieDB.start();
 // const numbers2 = copy(numbers);
 // console.log(numbers2);
 
-const numbers = {
-    a: 10,
-    b: 12,
-    c: {
-        d: 2,
-        e: 5
-    }
-};
+// const numbers = {
+//     a: 10,
+//     b: 12,
+//     c: {
+//         d: 2,
+//         e: 5
+//     }
+// };
 
-const add = {
-    f: 10,
-    k: 2
-};
+// const add = {
+//     f: 10,
+//     k: 2
+// };
 
-const clone = Object.assign({}, numbers);
-clone.a = 20;
-clone.d = 10;
-console.log(clone);
-console.log(numbers);
+// const clone = Object.assign({}, numbers);
+// clone.a = 20;
+// clone.d = 10;
+// console.log(clone);
+// console.log(numbers);
 
-// Оператор разворота Spread (...)
+// // Оператор разворота Spread (...)
 
-//массивы
-const video = ['youtube', 'vimio', 'rutube'],
-    blogs = ['wordpress', 'livejouurnal', 'blogger'],
-    internet = [...video, ...blogs, 'vk', 'facebook'];
+// //массивы
+// const video = ['youtube', 'vimio', 'rutube'],
+//     blogs = ['wordpress', 'livejouurnal', 'blogger'],
+//     internet = [...video, ...blogs, 'vk', 'facebook'];
 
-    console.log(internet);
+//     console.log(internet);
 
-function log(a, b, c) {
-    console.log(a);
-    console.log(b);
-    console.log(c);
-}
-const num = [1, 5, 10];
+// function log(a, b, c) {
+//     console.log(a);
+//     console.log(b);
+//     console.log(c);
+// }
+// const num = [1, 5, 10];
 
-log(...num);
+// log(...num);
 
-const array = ['a', 'b'];
+// const array = ['a', 'b'];
 
-const newArray = [...array];
+// const newArray = [...array];
 
-//объекты
+// //объекты
 
-const obj = {
-    a: 1,
-    b:5,
-    c: {
-        f: 15,
-        g: 20
-    }
-};
+// const obj = {
+//     a: 1,
+//     b:5,
+//     c: {
+//         f: 15,
+//         g: 20
+//     }
+// };
 
-const newObj = {...obj};
-newObj.a = 10;
-console.log(newObj);
-console.log(obj);
+// const newObj = {...obj};
+// newObj.a = 10;
+// console.log(newObj);
+// console.log(obj);
+
+
+//23. Основы ООП, прототипно-ориентированное наследование
+
+// const soldier = {
+//     health: 400,
+//     armor: 100,
+//     sayHello: () => {
+//         console.log('Hello');
+//     }
+// };
+
+// // const jonh = {
+// //     health: 100
+// // };
+
+// //jonh.__proto__ = soldier; // прототип старый __proto__
+
+// //Object.setPrototypeOf(jonh, soldier); // прототип новый с помощью Object.setPrototypeOf
+
+// const jonh = Object.create(soldier); // создаем новый объект-прототип с помощью Object.create
+
+// jonh.health = 100;
+
+// console.log(jonh.health);
+// jonh.sayHello();
