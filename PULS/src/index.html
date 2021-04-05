@@ -32,7 +32,7 @@
                     <div class="promo__icon"><img src="img/icons/3.png" alt="">Ответим
                         на все вопросы</div>
                 </div>
-                <button data-modal="concultation" class="button button_main">подобрать запчасти</button>
+                <button data-modal="order" class="button button_mini">подобрать запчасти</button>
                 <div class="promo__link">или <a href="#catalog">ПЕРЕЙТИ В КАТАЛОГ</a></div>
             </div>
         </div>
@@ -402,9 +402,11 @@
             <div class="modal__subtitle">Ваш заказ</div>
             <div class="modal__descr">Пульсометр Polar FT1</div>
             <form class="feed-form feed-form_mt25" action="#">
+                <input name="autopart" required placeholder="Запчасти, " type="text">
+                <input name="brand" required placeholder="Марка автомобиля" type="text">
+                <input name="vin" required placeholder="Номер кузова/Vin" type="text">
                 <input name="name" required placeholder="Ваше имя" type="text"> 
                 <input name="phone" required placeholder="Ваш телефон"> 
-                <input name="email" required placeholder="Ваш E-mail" type="email"> 
 
                 <button class="button button_submit">купить</button>
             </form>
