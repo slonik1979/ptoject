@@ -1,6 +1,48 @@
 
-const btn = document.querySelector('button');
+const btns = document.querySelectorAll('button'),
+    overlay = document.querySelector('.overlay');
 
-btn.addEventListener('click', () => {
-    alert('click');
+//навешиваем обработчик события + объект события "event"
+
+    // btn.addEventListener('click', (event) => {
+    //     console.log(e.target);
+    //     e.target.remove();
+    //     //alert('click');
+    // });
+
+
+// удаляем обработчик события после 1 нажатия на кнопку
+    //     let i = 0;
+    // const deleteElement = (event) => {
+    //     console.log(event.target);
+    //     i++;
+    //     if (i == 2) {
+    //         btn.removeEventListener('click', deleteElement);
+    //     }
+    // };
+    //     btn.addEventListener('click', deleteElement);
+
+
+//всплытие событий   сначала срабатывает на вложенном элементе, потом  по иерархии вверх на родителе
+//     let i = 0;
+const deleteElement = (event) => {
+    console.log(event.target);
+//     i++;
+//     if (i == 2) {
+//         btn.removeEventListener('click', deleteElement);
+//     }
+ };
+//     btn.addEventListener('click', deleteElement);
+//     overlay.addEventListener('click', deleteElement);
+
+//отменяем стандартное поведение браузера
+
+// const link = document.querySelector('a');
+
+// link.addEventListener('click', (event) => {
+//     event.preventDefault();
+// });
+
+btns.forEach(item => {
+    item.addEventListener('click', deleteElement);
 });
