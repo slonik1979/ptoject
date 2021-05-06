@@ -32,6 +32,7 @@
 
 
 // this в констуктарах и класах - это новый экземпляр объекта
+
 // function User(name, id) {
 //     this.name = name;
 //     this.id = id;
@@ -47,22 +48,28 @@
 // console.log(ivan);
 
 // ручная привязка this: call, apply и bind
-function sayName (surName) {
-    console.log(this);
-    console.log(this.name + ', ' + surName);
-}
 
-const user = {
-    name: 'John'
-};
+// function sayName (surName) {
+//     console.log(this);
+//     console.log(this.name + ', ' + surName);
+// }
 
-sayName.call(user, 'Smith');
-sayName.apply(user, ['Smith']);
+// const user = {
+//     name: 'John'
+// };
 
-function count(num) {
-    return this * num;
-}
+// sayName.call(user, 'Smith');
+// sayName.apply(user, ['Smith']);
 
-const double = count.bind(2);
-console.log(double(15));
-console.log(double(45));
+// function count(num) {
+//     return this * num;
+// }
+
+// const double = count.bind(2);
+// console.log(double(15));
+// console.log(double(45));
+
+const btn = document.querySelector('button');
+    btn.addEventListener('click', function() {
+        console.log(this);
+    });
