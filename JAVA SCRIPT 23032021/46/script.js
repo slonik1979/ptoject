@@ -20,7 +20,7 @@
 // showThis(4, 10);
 
 
-//Контекст у методов объекта - сам объект
+// 2)Контекст у методов объекта - сам объект
 // const obj = {
 //     a: 20,
 //     b: 15,
@@ -31,7 +31,7 @@
 // obj.sum();
 
 
-// this в констуктарах и класах - это новый экземпляр объекта
+// 3) this в констуктарах и класах - это новый экземпляр объекта
 
 // function User(name, id) {
 //     this.name = name;
@@ -47,7 +47,7 @@
 
 // console.log(ivan);
 
-// ручная привязка this: call, apply и bind
+// 4) ручная привязка this: call, apply и bind
 
 // function sayName (surName) {
 //     console.log(this);
@@ -73,3 +73,17 @@ const btn = document.querySelector('button');
     btn.addEventListener('click', function() {
         console.log(this);
     });
+
+
+// ОЧЕНЬ ВАЖНО    стрелочная функция не имеет контекста THIS, поэтому она обращается к функции выше, а функция обращается к NUM    
+const obj = {
+    num: 10,
+    sayNumber: function () {
+        const say = () => {
+            console.log(this.num);
+        };
+        say();
+    }
+};
+
+obj.sayNumber();
