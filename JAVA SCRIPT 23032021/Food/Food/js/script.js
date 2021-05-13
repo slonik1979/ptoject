@@ -144,49 +144,66 @@ window.addEventListener('DOMContentLoaded', function() {
 
     // Используем классы для создание карточек меню
 
-    class MenuCarrd {
-        constructor(src, alt, title, descr, price, parentSelector) {
+    class MenuField {
+        constructor(src, title, descr, price, parent, ...classes) {
             this.src = src;
-            this.alt = alt;
             this.title = title;
             this.descr = descr;
             this.price = price;
-            this.parent = document.querySelector(parentSelector);
-            this.transfer = 75;
-            this.changToRub();
+            this.parent = document.querySelector(parent);
+            this.classes = classes;
+            this.ttansfer = 75;
+            this.transferToRub();
         }
-
-        changToRub() {
-            this.price = this.price * this.transfer;
+        transferToRub() {
+            this.price = this.price * this.ttansfer;
         }
-
         render() {
-            const element = document.createElement('div');
-            element.innerHTML = `
-            <div class="menu__item">
-                    <img src=${this.src} alt=${this.alt}>
-                    <h3 class="menu__item-subtitle">${this.title}</h3>
-                    <div class="menu__item-descr">${this.descr}</div>
-                    <div class="menu__item-divider"></div>
-                    <div class="menu__item-price">
-                        <div class="menu__item-cost">Цена:</div>
-                        <div class="menu__item-total"><span>${this.price}</span> грн/день</div>
-                    </div>
-                </div>
+            const card = document.createElement('яяя');
+            this.classes.forEach(className => {
+                card.classList.add(className);
+            });
+            card.innerHTML = `
+            
+            <img src=${this.src} alt="vegy">
+            <h3 class="menu__item-subtitle">${this.title}</h3>
+            <div class="menu__item-descr">${this.descr}</div>
+            <div class="menu__item-divider"></div>
+            <div class="menu__item-price">
+                <div class="menu__item-cost">Цена:</div>
+                <div class="menu__item-total"><span>${this.price}</span> руб/день</div>
+            </div>
+            
             `;
-
-            this.parent.append(element);
+            this.parent.append(card);
         }
     }
-
-    new MenuCarrd(
-        "img/tabs/vegy.jpg",
-        'vegy',
+    new MenuField(
+        'img/tabs/vegy.jpg',
         'Меню "Фитнес"',
         'Меню "Фитнес" - это новый подход к приготовлению блюд: больше свежих овощей и фруктов. Продукт активных и здоровых людей. Это абсолютно новый продукт с оптимальной ценой и высоким качеством!',
         9,
-        '.menu .container'
+        '.menu .container',
+        'menu__item',
+        'big'
     ).render();
 
+    new MenuField(
+        'img/tabs/elite.jpg',
+        'Меню “Премиум”',
+        'В меню “Премиум” мы используем не только красивый дизайн упаковки, но и качественное исполнение блюд. Красная рыба, морепродукты, фрукты - ресторанное меню без похода в ресторан!',
+        11,
+        '.menu .container',
+        'menu__item'
+    ).render();
+
+    new MenuField(
+        'img/tabs/post.jpg',
+        'Меню "Постное"',
+        'Меню “Постное” - это тщательный подбор ингредиентов: полное отсутствие продуктов животного происхождения, молоко из миндаля, овса, кокоса или гречки, правильное количество белков за счет тофу и импортных вегетарианских стейков.',
+        5,
+        '.menu .container',
+        'menu__item'
+    ).render();
     
 });
