@@ -3,7 +3,7 @@ const inputRub = document.querySelector('#rub'),
     inputUsd = document.querySelector('#usd');
     
     inputRub.addEventListener('input', () => {
-        const inquiry = new XMLHttpRequest(); // первый объект
+        const inquiry = new XMLHttpRequest(); // первый способ для работы с асинхронным кодом
 
         //методы XMLHttpRequest()
         // первый метод open(metod, url, async, login, password)
@@ -28,7 +28,7 @@ const inputRub = document.querySelector('#rub'),
         //       }
         // });
         
-        // 2. load 
+        // 2. load второй метод
         inquiry.addEventListener('load', () => { // это событие отслеживает статус готовности запроса
           if (inquiry.status === 200) {
               const data = JSON.parse(inquiry.response); // получаем ответ(response) от сервера js/current.js 

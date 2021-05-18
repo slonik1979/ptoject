@@ -206,4 +206,35 @@ window.addEventListener('DOMContentLoaded', function() {
         'menu__item'
     ).render();
     
+    //Forms
+
+    const forms = document.querySelectorAll('form');
+
+    const message = {
+        loading: "загрузка",
+        success: "Спасибо! Скоро мы с Вами свяжемся",
+        failure: "Что-то пошло не так"
+    };
+
+    function postData(form1) {
+        form1.addEventListener('submit', (e) => {
+            e.preventDefault();
+
+            const statusMessage = document.createElement('div1');
+            statusMessage.classList.add('status');
+            statusMessage.textContent = message.loading;
+
+            const r = new XMLHttpRequest();
+            r.open('POST', 'server.php');
+
+            // 1 способ отправки данных formData
+
+            r.setRequestHeader('Content-type', 'multipart/form-data');
+            const formData = new FormData(form1);
+            r.send(formData);
+
+        });
+    }
+
+
 });
