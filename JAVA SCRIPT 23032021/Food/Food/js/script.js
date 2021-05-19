@@ -216,22 +216,36 @@ window.addEventListener('DOMContentLoaded', function() {
         failure: "Что-то пошло не так"
     };
 
+    forms.forEach(item => {
+        postData(item);
+    });
+
     function postData(form1) {
         form1.addEventListener('submit', (e) => {
             e.preventDefault();
 
-            const statusMessage = document.createElement('div1');
+            const statusMessage = document.createElement('div');
             statusMessage.classList.add('status');
             statusMessage.textContent = message.loading;
+            form1.append(statusMessage);
 
             const r = new XMLHttpRequest();
             r.open('POST', 'server.php');
 
             // 1 способ отправки данных formData
 
-            r.setRequestHeader('Content-type', 'multipart/form-data');
+            //r.setRequestHeader('Content-type', 'multipart/form-data');
             const formData = new FormData(form1);
             r.send(formData);
+
+            r.addEventListener('load', () => {
+                if (r.status === 200) {
+                    console.log(r.response);
+                    statusMessage.textContent = message.success;
+                } else {
+                    statusMessage.textContent = message.failure;
+                }
+            });
 
         });
     }
