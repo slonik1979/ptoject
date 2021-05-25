@@ -234,15 +234,46 @@ window.addEventListener('DOMContentLoaded', function() {
 
             // 1 способ отправки данных formData
 
-            //r.setRequestHeader('Content-type', 'multipart/form-data');
+            
+            // const formData = new FormData(form1);
+            // r.send(formData);
+
+            // r.addEventListener('load', () => {
+            //     if (r.status === 200) {
+            //         console.log(r.response);
+            //         statusMessage.textContent = message.success;
+            //         form1.reset(); // очищаем форму после отправки
+            //         setTimeout( () => {
+            //             statusMessage.remove();
+            //         }, 2000);       // удаляем сообщение statusMessage
+            //      } else {
+            //         statusMessage.textContent = message.failure;
+            //     }
+            // });
+
+
+            // 2 способ отправки данных formData
+            r.setRequestHeader('Content-type', 'application/json');
             const formData = new FormData(form1);
-            r.send(formData);
+            
+
+            const object = {};    // прием - помещаем данные из formData в обычный объект
+            formData.forEach( (value, key) => {
+                object[key] = value;
+            });
+
+            const json = JSON.stringify(object);
+            r.send(json);
 
             r.addEventListener('load', () => {
                 if (r.status === 200) {
                     console.log(r.response);
                     statusMessage.textContent = message.success;
-                } else {
+                    form1.reset(); // очищаем форму после отправки
+                    setTimeout( () => {
+                        statusMessage.remove();
+                    }, 2000);       // удаляем сообщение statusMessage
+                 } else {
                     statusMessage.textContent = message.failure;
                 }
             });
