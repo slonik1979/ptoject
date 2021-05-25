@@ -208,14 +208,13 @@ window.addEventListener('DOMContentLoaded', function() {
     
     //Forms
 
-    const forms = document.querySelectorAll('form');
+    const forms = document.querySelectorAll('form'); // получаем все формы по тэгу form
 
-    const message = {
-        loading: "загрузка",
-        success: "Спасибо! Скоро мы с Вами свяжемся",
-        failure: "Что-то пошло не так"
-    };
+    forms.forEach(item => {
+        postData(item);
+    });
 
+<<<<<<< HEAD
     forms.forEach(item => {
         postData(item);
     });
@@ -277,8 +276,27 @@ window.addEventListener('DOMContentLoaded', function() {
                     statusMessage.textContent = message.failure;
                 }
             });
+=======
+    function postData(argument) {
+        argument.addEventListener('submit', (e) => {
+            e.preventDefault();
 
+            const r = new XMLHttpRequest();
+            r.open('POST', 'server.php');
+
+            r.setRequestHeader('Content-type', 'multipart/form-data');
+            const formData = new FormData(argument);
+
+            r.send(formData);
+>>>>>>> master
+
+            r.addEventListener('load', () =>{
+                if (r.status === 200) {
+                    console.log(r.response);
+                }
+            } );
         });
+        
     }
 
 
