@@ -97,8 +97,8 @@ window.addEventListener('DOMContentLoaded', function() {
     // Modal
 
     const modalTrigger = document.querySelectorAll('[data-modal]'),
-        modal = document.querySelector('.modal'),
-        modalCloseBtn = document.querySelector('[data-close]');
+        modal = document.querySelector('.modal');
+        
 
     modalTrigger.forEach(btn => {
         btn.addEventListener('click', openModal);
@@ -117,10 +117,10 @@ window.addEventListener('DOMContentLoaded', function() {
         clearInterval(modalTimerId);
     }
     
-    modalCloseBtn.addEventListener('click', closeModal);
+ 
 
     modal.addEventListener('click', (e) => {
-        if (e.target === modal) {
+        if (e.target === modal || e.target.getAttribute('data-close') == '') {
             closeModal();
         }
     });
@@ -131,7 +131,7 @@ window.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // const modalTimerId = setTimeout(openModal, 3000);
+    const modalTimerId = setTimeout(openModal, 50000);
     // Закомментировал, чтобы не отвлекало
 
     function showModalByScroll() {
@@ -210,14 +210,17 @@ window.addEventListener('DOMContentLoaded', function() {
 
     const forms = document.querySelectorAll('form'); // получаем все формы по тэгу form
 
+    const message = {
+        loading: 'Загружаю',
+        success: 'Спасибо! Скоро мы с Вами свяжемся',
+        failure: 'Ошибка'
+    };
+
     forms.forEach(item => {
         postData(item);
     });
 
-<<<<<<< HEAD
-    forms.forEach(item => {
-        postData(item);
-    });
+
 
     function postData(form1) {
         form1.addEventListener('submit', (e) => {
@@ -267,7 +270,10 @@ window.addEventListener('DOMContentLoaded', function() {
             r.addEventListener('load', () => {
                 if (r.status === 200) {
                     console.log(r.response);
-                    statusMessage.textContent = message.success;
+                    showThanksModal(message.success);
+                    
+
+
                     form1.reset(); // очищаем форму после отправки
                     setTimeout( () => {
                         statusMessage.remove();
@@ -276,28 +282,28 @@ window.addEventListener('DOMContentLoaded', function() {
                     statusMessage.textContent = message.failure;
                 }
             });
-=======
-    function postData(argument) {
-        argument.addEventListener('submit', (e) => {
-            e.preventDefault();
-
-            const r = new XMLHttpRequest();
-            r.open('POST', 'server.php');
-
-            r.setRequestHeader('Content-type', 'multipart/form-data');
-            const formData = new FormData(argument);
-
-            r.send(formData);
->>>>>>> master
-
-            r.addEventListener('load', () =>{
-                if (r.status === 200) {
-                    console.log(r.response);
-                }
-            } );
-        });
-        
+          });
     }
 
+    function showThanksModal(message) {
+        const modalDialog = document.querySelector('.modal__dialog');
+        
+        modalDialog.classList.add('hide');
+        openModal();
+
+        const thanksModal = document.createElement('div');
+        thanksModal.classList.add('modal__dialog');
+        thanksModal.innerHTML = `
+            <div class="modal__content">
+            <div class="modal__close" data-close>×</div>
+            <div class="modal__title">${message}</div>
+        </div>
+        `;
+        const modalAppend = document.querySelector('.modal');
+        modalAppend.append(thanksModal);
+        thanksModal.remove();
+        modalDialog.classList.add('show');
+        modalDialog.classList.remove('hide');
+    }
 
 });
