@@ -206,12 +206,14 @@ window.addEventListener('DOMContentLoaded', function() {
         'menu__item'
     ).render();
     
+
+
     //Forms
 
     const forms = document.querySelectorAll('form'); // получаем все формы по тэгу form
 
     const message = {
-        loading: 'Загружаю',
+        loading: 'img/form/spinner.svg',
         success: 'Спасибо! Скоро мы с Вами свяжемся',
         failure: 'Ошибка'
     };
@@ -226,10 +228,17 @@ window.addEventListener('DOMContentLoaded', function() {
         form1.addEventListener('submit', (e) => {
             e.preventDefault();
 
-            const statusMessage = document.createElement('div');
-            statusMessage.classList.add('status');
-            statusMessage.textContent = message.loading;
-            form1.append(statusMessage);
+            const statusMessage = document.createElement('img');
+            statusMessage.src = message.loading;
+            statusMessage.style.cssText = `
+                display: block;
+                margin-top: 10px;
+                margin: 0 auto;
+            `;
+            //form1.append(statusMessage); убираем так как спинер встает
+            // не посередине формы а в конец формы
+            
+            form1.insertAdjacentElement('afterend', statusMessage); // insertAdjacentElement вставляет div спинер после формы (посередине)
 
             const r = new XMLHttpRequest();
             r.open('POST', 'server.php');
@@ -271,15 +280,12 @@ window.addEventListener('DOMContentLoaded', function() {
                 if (r.status === 200) {
                     console.log(r.response);
                     showThanksModal(message.success);
-                    
-
-
                     form1.reset(); // очищаем форму после отправки
                     setTimeout( () => {
                         statusMessage.remove();
                     }, 2000);       // удаляем сообщение statusMessage
                  } else {
-                    statusMessage.textContent = message.failure;
+                    showThanksModal(message.failure);
                 }
             });
           });
@@ -301,9 +307,14 @@ window.addEventListener('DOMContentLoaded', function() {
         `;
         const modalAppend = document.querySelector('.modal');
         modalAppend.append(thanksModal);
-        thanksModal.remove();
-        modalDialog.classList.add('show');
-        modalDialog.classList.remove('hide');
+        setTimeout(() => {
+            thanksModal.remove();
+            modalDialog.classList.add('show');
+            modalDialog.classList.remove('hide');
+            closeModal();
+        }, 4000);
+        
+            
     }
 
 });
