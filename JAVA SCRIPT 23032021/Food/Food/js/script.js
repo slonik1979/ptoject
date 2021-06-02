@@ -313,8 +313,16 @@ window.addEventListener('DOMContentLoaded', function() {
             modalDialog.classList.remove('hide');
             closeModal();
         }, 4000);
-        
-            
     }
 
+
+     fetch('https://jsonplaceholder.typicode.com/posts', {
+         method: "POST",
+         body: JSON.stringify({name: 'Alex'}),
+         haders: {
+             'Content-type': 'application/json'
+         }
+     })
+    .then(response => response.json())
+    .then(json => console.log(json));
 });
