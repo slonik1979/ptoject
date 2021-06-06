@@ -1,0 +1,28 @@
+
+
+/* Start:/bitrix/templates/track/template_styles.css?16037279151160*/
+li.menu-item.top-item {
+    text-transform: uppercase;
+    font-weight: 700;
+}
+li.menu-item.sub-item a {
+    padding-left: 20px;
+}
+.events-table h4 span {font-size:13px;font-weight:normal;}
+.wpcf7-text.error, .wpcf7-select.error, .wpcf7-textarea.error {border: 1px solid red;}
+
+.row.form-build .custom-heading:only-child {margin-top:-30px;}
+.form-build .service-feature-box {margin-bottom:20px;}
+.row.form-build.build-more .custom-heading:only-child {margin-top:-50px;}
+.service-feature-box{cursor:pointer;}
+.service-feature-box:hover,.service-feature-box.selected{border:1px solid #c5c5c5;}
+.service-feature-box .select-icon{display:none;position:absolute;top:10px;right:15px;font-size:20px;z-index: 1;}
+.service-feature-box.selected .select-icon{display:block;}
+.service-feature-box.form-switch{position:relative;}
+.driver-app-form .half-width fieldset{width:50%;}
+.driver-app-form .half-width fieldset:nth-child(2n){padding-right: 0;}
+.driver-app-form .half-width fieldset:nth-child(3n){padding-right: 15px;}
+body{background:url(/bitrix/templates/track/img/cont-bg.jpg) repeat center center transparent!important;}
+.service-feature-box .service-media,.clients-li {background:#fff;}
+/* End */
+/* /bitrix/templates/track/template_styles.css?16037279151160 */
