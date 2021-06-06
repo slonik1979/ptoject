@@ -4,9 +4,16 @@
     align-items: center;
     &__logo {
         width: 250px;
-        img {
-            width: 100%;
+        font-size: 40px;
+        font-weight: 500;
+        color: #ffffff;
+        text-align: center;
+        text-transform: uppercase;
+        span {
+            display: block;
+            font-size: 18px;
         }
+        
     }
     &__official {
         color: #ffffff;

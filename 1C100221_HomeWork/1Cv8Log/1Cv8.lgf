@@ -18,4 +18,12 @@ e460a1b5-234a-481e-8385-90b433ad9baa
 {3,"1CV8C",2},
 {3,"BackgroundJob",3},
 {4,"_$Transaction$_.Begin",8},
-{4,"_$Transaction$_.Commit",9}
+{4,"_$Transaction$_.Commit",9},
+{2,"Maxim",2},
+{12,
+{0},2},
+{13,2,1},
+{4,"_$InfoBase$_.DBConfigUpdateStart",10},
+{4,"_$PerformError$_",11},
+{4,"_$Transaction$_.Rollback",12},
+{3,"1CV8",4}
