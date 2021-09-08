@@ -53,7 +53,11 @@ P.S. Функции вызывать не обязательно */
 "Любимый жанр #(номер по порядку, начиная с 1) - это (название из массива)"*/
 
 
-const numberOfFilms = +prompt('Сколько фильмов вы уже посмотрели?', "");
+const numberOfFilms = prompt('Сколько фильмов вы уже посмотрели?', "");
+
+    if (numberOfFilms != null && numberOfFilms != '') {
+
+    }
 
 const personalMovieDB = {
     count: numberOfFilms,
@@ -64,22 +68,42 @@ const personalMovieDB = {
 };
 
 
-     
-for (let i = 0; i < 2; i++) {
-  
-    const a = prompt('Один из последних просмотренных фильмов?', ""),
+ let i = 0;
+
+ while (i < 2) {
+        const a = prompt('Один из последних просмотренных фильмов?', ""),
           b = prompt('На сколько оцените его?', "");
 
           if (a != null && b != null && a != '' && b != '' && a.length < 50)
           {
+              i++;
             personalMovieDB.movies[a] = b;
             console.log('ok');
+            
           } else {
               console.log('error');
               i--;
           }
+ }
+
+
+
+
+// for (let i = 0; i < 2; i++) {
+  
+//     const a = prompt('Один из последних просмотренных фильмов?', ""),
+//           b = prompt('На сколько оцените его?', "");
+
+//           if (a != null && b != null && a != '' && b != '' && a.length < 50)
+//           {
+//             personalMovieDB.movies[a] = b;
+//             console.log('ok');
+//           } else {
+//               console.log('error');
+//               i--;
+//           }
     
-}
+// }
 
     if (personalMovieDB.count < 10) {
         console.log("Просмотрено довольно мало фильмов");
