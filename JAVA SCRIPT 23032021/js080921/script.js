@@ -72,3 +72,45 @@ const a = prompt('Один из последних просмотренных ф
       personalMovieDB.movies[c] = d;
       
       console.log(personalMovieDB);
+
+
+
+      
+
+      // 1. Пока 
+      let num = 50;
+      while (num <= 55) {
+          console.log(num);
+          num++;
+      }
+
+
+      // 2. do делать что-то, пока while
+      let num = 50;
+      do {
+          console.log(num);
+          num++;
+      }
+      while (num <= 55)
+
+      //3. for для
+      let num = 50;
+      for (let i = 0; i <= 5; i++ ) {
+          console.log(num);
+          num++;
+      }
+
+      // операторы break и continue
+      for (let i = 0; i <= 10; i++ ) {
+          if (i ===6) {
+            break;   // прерываемся на i === 6
+          }
+          console.log(i);
+      }
+
+      for (let i = 0; i <= 10; i++ ) {
+        if (i ===6) {
+            continue;   // пропускаем i === 6 и продолжаем дальше
+        }
+        console.log(i);
+    }
