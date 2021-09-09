@@ -53,11 +53,26 @@ P.S. Функции вызывать не обязательно */
 "Любимый жанр #(номер по порядку, начиная с 1) - это (название из массива)"*/
 
 
-const numberOfFilms = prompt('Сколько фильмов вы уже посмотрели?', "");
+let numberOfFilms;
 
-    if (numberOfFilms != null && numberOfFilms != '') {
+    function start() {
+        //numberOfFilms = +prompt('Сколько фильмов вы уже посмотрели?', "");
+        // while(numberOfFilms == "" || numberOfFilms == null || isNaN(numberOfFilms)) {
+        //     numberOfFilms = +prompt('Сколько фильмов вы уже посмотрели?', "");
+        // }
+        
+        for (let i = 0; i < 1; i++) {
+              numberOfFilms = +prompt('Сколько фильмов вы уже посмотрели?', "");
+                if (numberOfFilms == "" || numberOfFilms == null || isNaN(numberOfFilms))
+                {
+                    i--;
+                } 
+            
+        }
 
     }
+
+    start();
 
 const personalMovieDB = {
     count: numberOfFilms,
@@ -68,42 +83,22 @@ const personalMovieDB = {
 };
 
 
- let i = 0;
-
- while (i < 2) {
-        const a = prompt('Один из последних просмотренных фильмов?', ""),
+ 
+for (let i = 0; i < 2; i++) {
+  
+    const a = prompt('Один из последних просмотренных фильмов?', ""),
           b = prompt('На сколько оцените его?', "");
 
           if (a != null && b != null && a != '' && b != '' && a.length < 50)
           {
-              i++;
             personalMovieDB.movies[a] = b;
             console.log('ok');
-            
           } else {
               console.log('error');
               i--;
           }
- }
-
-
-
-
-// for (let i = 0; i < 2; i++) {
-  
-//     const a = prompt('Один из последних просмотренных фильмов?', ""),
-//           b = prompt('На сколько оцените его?', "");
-
-//           if (a != null && b != null && a != '' && b != '' && a.length < 50)
-//           {
-//             personalMovieDB.movies[a] = b;
-//             console.log('ok');
-//           } else {
-//               console.log('error');
-//               i--;
-//           }
     
-// }
+}
 
     if (personalMovieDB.count < 10) {
         console.log("Просмотрено довольно мало фильмов");
@@ -116,10 +111,3 @@ const personalMovieDB = {
     }
 
       console.log(personalMovieDB);
-
-
-
-
-      
-
-    
