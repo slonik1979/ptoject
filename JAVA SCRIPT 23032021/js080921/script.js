@@ -127,3 +127,9 @@ personalMovieDB.toggleVisibleMyDB();
 personalMovieDB.start();
 
 console.log(personalMovieDB);
+
+personalMovieDB.toggleVisibleMyDB();
+
+personalMovieDB.start();
+
+console.log(personalMovieDB);
