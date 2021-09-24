@@ -1,12 +1,12 @@
 function button() {
-    return 'button'
+    return 'button';
 }
 
 class Slider {
     constructor(widht, height, count) {
         this.widht = widht;
         this.height = height;
-        this.count = count
+        this.count = count;
     }
     nextSlider() {
         console.log('Moving forward')
