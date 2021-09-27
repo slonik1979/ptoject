@@ -19,5 +19,5 @@ class Slider {
     }
 }
 
-const slider = new Slider(500, 600, 5);
-slider.whoAmI();
+// const slider = new Slider(500, 600, 5);
+// slider.whoAmI();
