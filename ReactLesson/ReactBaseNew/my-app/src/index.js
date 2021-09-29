@@ -6,16 +6,10 @@ import reportWebVitals from './reportWebVitals';
 
 const max = 'Привет Макс';
 
-const elem = (
-  <div>
-    <h2 className='text'>Текст: {max}</h2>
-    <input type="text" />
-    <button>Click</button>
-  </div>
-);
+
 
 ReactDOM.render(
-  elem,
+  <App/>,
   document.getElementById('root')
 );
 
