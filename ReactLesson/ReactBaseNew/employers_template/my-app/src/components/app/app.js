@@ -8,7 +8,7 @@ import './app.css';
 
 function App() {
 
-    const dats = [
+    const dat = [
         {name:"John C.", salary: 800},
         {name:"Alex D.", salary: 3000},
         {name:"Mike F.", salary: 5000},
@@ -23,7 +23,7 @@ function App() {
             <div className="search-panel">
                 <SearchPanel/>
                 <AppFilter/>
-                <EmploersList data={dats}/>
+                <EmploersList data={dat}/>
                 <EmployeesAddForm/>
             </div>
         </div>
