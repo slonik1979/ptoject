@@ -1,13 +1,33 @@
-
+import { Component } from 'react';
 import './App.css';
 
 
-function WhoAmI({name, surname, link}) {
-  return (
-    <div>
-    <h1>My names is {name}, surname - .surname}</h1>
-    <a href={link}>My profile</a></div>
-  )
+class WhoAmI extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      yers: 27
+    }
+  }
+
+  nextYear = () => {
+  
+    this.setState(state => ({
+      yers: state.yers + 2,
+      text: "+++"
+    }))
+  }
+
+  render() {
+    const {name, surname, link} = this.props;
+    return (
+      <div>
+         <button onClick={this.nextYear} >{this.state.text}</button>
+         <h1>My names is {name}, surname - {surname}, age - {this.state.yers}</h1>
+         <a href={link}>My profile</a>
+      </div>
+    )
+  }
 }
 
 function App() {
