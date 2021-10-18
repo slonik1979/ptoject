@@ -6,15 +6,16 @@ class WhoAmI extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      yers: 27
+      years: 27,
+      text: "+++"
+
     }
   }
 
-  nextYear = () => {
-  
+
+  nextYears = () => {
     this.setState(state => ({
-      yers: state.yers + 2,
-      text: "+++"
+      years: state.years + 1
     }))
   }
 
@@ -22,8 +23,8 @@ class WhoAmI extends Component {
     const {name, surname, link} = this.props;
     return (
       <div>
-         <button onClick={this.nextYear} >{this.state.text}</button>
-         <h1>My names is {name}, surname - {surname}, age - {this.state.yers}</h1>
+         <button onClick={this.nextYears} >{this.state.text}</button>
+         <h1>My names is {name}, surname - {surname}, age - {this.state.years}</h1>
          <a href={link}>My profile</a>
       </div>
     )
