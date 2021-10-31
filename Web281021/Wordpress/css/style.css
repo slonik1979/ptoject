@@ -88,4 +88,5 @@
     align-items: center;
     text-align: center;
     text-transform: uppercase;
+    cursor: pointer;
 }
