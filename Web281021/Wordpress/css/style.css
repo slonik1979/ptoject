@@ -144,12 +144,18 @@
     margin-top: 18px;
 }
 
+.waiting_wrapper {
+    display: flex;
+    justify-content: space-between;
+}
+
+.waiting_wrapper img {
+    width: 100%;
+}
+
 .waiting_item {
-    display: inline-block;
-    vertical-align: top;
-    width: 340px;
+    width: 342px;
     text-align: center;
-    margin: 0 68px;
     margin-top: 45px;
 }
 
@@ -162,13 +168,5 @@
     color: #4A4A4A;
 }
 
-.waiting_wrapper img {
-    width: 100%;
-}
 
-.flex-container-block {
-    width: 150px;
-    height: 150px;
-    background-color: red;
-    text-align: center;
-}
+
