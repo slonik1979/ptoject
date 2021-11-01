@@ -143,3 +143,20 @@
     color: #4A4A4A;
     margin-top: 18px;
 }
+
+.waiting_item {
+    display: inline-block;
+    vertical-align: top;
+    width: 340px;
+    text-align: center;
+    margin: 0 68px;
+    margin-top: 45px;
+}
+
+.waiting_text {
+    margin-top: 26px;
+}
+
+.waiting_wrapper img {
+    width: 100%;
+}
