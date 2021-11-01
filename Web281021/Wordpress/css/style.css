@@ -165,3 +165,10 @@
 .waiting_wrapper img {
     width: 100%;
 }
+
+.flex-container-block {
+    width: 150px;
+    height: 150px;
+    background-color: red;
+    text-align: center;
+}
