@@ -90,3 +90,56 @@
     text-transform: uppercase;
     cursor: pointer;
 }
+
+.more{
+    margin-top: 71px;
+}
+
+.more .more_text{
+    font-family: Roboto;
+    font-weight: 200;
+    font-size: 15px;
+    text-align: center;
+    text-transform: uppercase;
+    color: #FFFFFF;
+}
+
+.more .more_img{
+    display: block;
+    margin: 0 auto;
+    margin-top: 5px;
+}
+
+.waiting {
+    height: 607px;
+    background: #EFEFEF;
+    padding: 85px 0 75px 0;
+}
+
+.description_header {
+    font-family: Roboto;
+    font-weight: normal;
+    font-size: 30px;
+    text-align: center;
+    text-transform: uppercase;
+    color: #252525;
+}
+
+.description_band {
+    margin: 0 auto;
+    margin-top: 18px;
+    width: 220px;
+    height: 7px;
+    background: #F9BF3B;    
+}
+
+.description_subheader {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 23px;
+    line-height: 20px;
+    text-align: center;
+    color: #4A4A4A;
+    margin-top: 18px;
+}
