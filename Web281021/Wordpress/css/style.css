@@ -155,6 +155,11 @@
 
 .waiting_text {
     margin-top: 26px;
+    font-family: Roboto;
+    font-weight: 300;
+    font-size: 15px;
+    line-height: 21px;
+    color: #4A4A4A;
 }
 
 .waiting_wrapper img {
