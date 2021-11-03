@@ -30,13 +30,11 @@ nav {
     padding-right: 29px;
 }
 
-.header {
-    position: absolute;
-}
-
 .subheader {
+    position: absolute;
     height: 84px;
     background-color: rgba(0, 0, 0, 0.6);
+    width: 100%;
 }
 
 .subheader_logo {
