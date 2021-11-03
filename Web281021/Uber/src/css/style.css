@@ -78,3 +78,8 @@ nav {
     text-transform: uppercase;
     color: #FFFFFF;
 }
+
+.promo {
+    height: 800px;
+    background: url('../img/bg/main_bg.jpg') center center/cover no-repeat;
+}
