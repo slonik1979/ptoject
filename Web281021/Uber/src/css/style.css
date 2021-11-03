@@ -1,3 +1,7 @@
+* {
+    font-family: 'Roboto', san-serif;
+}
+
 nav {
     height: 53px;
     background: #212121;
@@ -20,4 +24,22 @@ nav {
 .menu-item {
     border-right: 3px dotted black;
     padding-right: 29px;
+}
+
+.subheader {
+    height: 84px;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.subheader_logo {
+    display: flex;
+    margin-top: 16px;
+}
+
+.subheader_official {
+    font-weight: 200;
+    font-size: 13px;
+    color: #FFFFFF;
+    opacity: 0.6;
+    margin-top: 6px;
 }
