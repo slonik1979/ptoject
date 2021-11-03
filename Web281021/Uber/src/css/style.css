@@ -134,3 +134,53 @@ nav {
     align-items: center;
     text-transform: uppercase;
 }
+
+.reasons {
+    min-height: 800px;
+}
+
+.reasons_begin {
+    margin-top: 33px;
+    font-weight: 700;
+    font-size: 38px;
+    line-height: 48px;
+    align-items: center;
+    text-align: center;
+    text-transform: uppercase;
+    color: #222222;
+}
+
+.reasons_advantages {
+    margin: 20px auto 0;
+    width: 115px;
+    height: 27px;
+    background: #000000;
+    font-weight: 300;
+    font-size: 11px;
+    line-height: 30px;
+    text-align: center;
+    text-transform: uppercase;
+    color: #FFFFFF;
+}
+
+.reasons_item {
+    margin-top: 16px;
+    display: flex;
+
+}
+
+.reasons_round {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    width: 116px;
+    height: 116px;
+    background: #1EACC7;
+    border-radius: 100%;
+    width: 100%;
+}
+
+.reasons_desc {
+    margin-left: 45px;
+}
