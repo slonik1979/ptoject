@@ -2,6 +2,10 @@
     font-family: 'Roboto', san-serif;
 }
 
+header {
+    position: relative;
+}
+
 nav {
     height: 53px;
     background: #212121;
@@ -24,6 +28,10 @@ nav {
 .menu-item {
     border-right: 3px dotted black;
     padding-right: 29px;
+}
+
+.header {
+    position: absolute;
 }
 
 .subheader {
