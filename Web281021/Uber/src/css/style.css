@@ -163,9 +163,15 @@ nav {
     color: #FFFFFF;
 }
 
-.reasons_item {
+.reasons_block {
     margin-top: 16px;
+}
+
+.reasons_item {
+    margin-bottom: 30px;
+    margin-left: 20px;
     display: flex;
+    
 
 }
 
@@ -173,14 +179,24 @@ nav {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 0 auto;
     width: 116px;
     height: 116px;
     background: #1EACC7;
     border-radius: 100%;
-    width: 100%;
+    width: 19%;
 }
 
 .reasons_desc {
-    margin-left: 45px;
+    margin-left: 25px;
+    font-weight: 300;
+    font-size: 15px;
+    line-height: 21px;
+    align-items: center;
+    color: #202020;
+    width: 350px;
+}
+
+.reasons_desc span {
+    color: #1EACC7;
+    font-weight: 700;
 }
