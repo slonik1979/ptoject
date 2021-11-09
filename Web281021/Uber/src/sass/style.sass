@@ -308,9 +308,46 @@ nav
       font-size: 17px;
       line-height: 24px;
       margin-bottom: 10px
+      &::before
+        content: ''
+        display: inline-block
+        vertical-align: middle
+        transform: translateX(-10px)
+        width: 21px
+        height: 20px
+        background: url('../icons/check_blue.svg') center center/cover no-repeat
+  &_descr
+    font-weight: 300;
+    font-size: 17px;
+    line-height: 24px;
+    color: #1CA8C3;
+  .warning
+    .require_title
+      color: #FF5656
+    .require_list
+      li
+        &::before
+          background: url('../icons/check_red.svg') center center/cover no-repeat
     
-
-
-
-
+.cities
+  height: 716px
+  background: url('../img/bg/map.jpg') center (center / cover) no-repeat
+  padding: 46px 0 22px 0
+  .label
+    background: #FFFFFF
+    color: #070716
+  .title
+    color: #FFFFFF
+  .subtitle
+    color: #FFFFFF
+  .look
+    display: block
+    
+    font-weight: 300
+    font-size: 15px
+    line-height: 68px
+    text-align: center
+    margin-top: 456px
+    text-transform: uppercase
+    color: #1FBAD6
 
