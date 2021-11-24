@@ -1,1 +1,1 @@
-*{font-family:"Museo Sans Cyrl",sans-serif}.container{width:950px;margin:0 auto}
+*{font-family:"Museo Sans Cyrl",sans-serif}.promo{min-height:650px;padding:21px 0 93px 0;background:url(../../img/fon/fon.png) center center/cover no-repeat}.header{display:flex;justify-content:space-between;align-items:center}.header__logo{width:250px}.header__logo img{width:100%}.header__official{width:200px;font-weight:500;font-size:12px;text-align:center;color:#fff}.header__official span{font-size:18px}.container{width:950px;margin:0 auto}
