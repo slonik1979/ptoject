@@ -4,6 +4,8 @@ $(document).ready(function(){
         //slidesToScroll: 1,
         //speed: 1200,
         //adaptiveHeight: true,
+        slidesToShow: 3,
+        slidesToScroll: 1,
         autoplay: true,
         autoplaySpeed: 1000,
         prevArrow: '<button type="button" class="slick-prev"><img src="../icons/left.svg" alt="xxxxxxxxx" /></button>',
