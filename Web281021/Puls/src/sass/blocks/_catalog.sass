@@ -37,12 +37,30 @@
             border: none
     &__content
         margin-top: 60px
+        display: none
+        justify-content: space-between
+        flex-wrap: wrap
+        &_active
+            display: flex
     &-item
         width: 303px
         min-height: 442px
         border: 2px solid #E8E8E8
         padding: 20px
         overflow: hidden
+        margin-bottom: 20px
+        &__back
+            display: block
+            font-weight: 500
+            font-size: 14px
+            line-height: 14px
+            text-align: center
+            text-decoration-line: underline
+            color: $main-color
+            text-transform: uppercase
+            margin-top: 70px
+            &:hover
+                    color: $main-color
         &__img
             display: block
             margin: 0 auto
@@ -104,12 +122,25 @@
             transform: translateX(0%)
             padding-right: 20px
             transition: 0.5s all
-            
+            padding-left: 19px
+            list-style-type: none
             &_active
                 transform: translateX(-100%)
                 margin-left: 0px
             li
+                position: relative
                 font-weight: 300
                 font-size: 14px
                 line-height: 21px
                 color: #555555
+                margin-bottom: 20px
+
+                &::before
+                    content: ''
+                    position: absolute
+                    width: 5px
+                    height: 5px
+                    background-color: $main-color
+                    left: -14px
+                    top: 8px
+                   
