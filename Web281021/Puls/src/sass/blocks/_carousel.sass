@@ -37,11 +37,25 @@
         img
             width: 31px
             height: 50px
-    &___block
+    &__block
         display: flex
         flex-direction: column
-        
-    
+        &__old-price
+            font-weight: 700
+            font-size: 22px
+            text-decoration-line: line-through
+            color: #555555
+            text-align: center
+            color: $main-color
+        &__price
+            font-weight: 700
+            font-size: 25px
+            
+            color: #555555
+            text-align: center
+            color: #39c647
+
+            
     &__descr
         
         text-align: center
@@ -54,6 +68,6 @@
         span
             font-weight: 700
             font-size: 25px
-            color: red
+            color: $main-color
             
             
