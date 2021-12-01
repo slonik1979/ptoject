@@ -22,7 +22,7 @@
                 <div class="header__official">Официальный представитель<span> Idemitsu, CTR, AISIN </span></div>
                 <div class="header__contacs">
                     <a href="tel:84242602223" class="header__phone">8 (4242) 60-22-23</a>
-                    <button data-modal="concultation" class="button">заказать звонок</button>
+                    <button data-modal="consultation" class="button">заказать звонок</button>
                 </div>
             </div>
             <div class="promo__wrapper">
@@ -36,7 +36,7 @@
                     <div class="promo__icon"><img src="img/icons/3.png" alt="">Ответим
                         на все вопросы</div>
                 </div>
-                <button data-modal="concultation" class="button button_mini">подобрать запчасти</button>
+                <button data-modal="consultation" class="button button_mini">подобрать запчасти</button>
                 <div class="promo__link">или <a href="#catalog">ПЕРЕЙТИ В КАТАЛОГ</a></div>
             </div>
         </div>
@@ -62,20 +62,20 @@
             </div>
         </section>
 
-        <section class="consultation">
+        <!-- <section class="consultation">
             <div class="container">
                 <div class="consultation__header">Получите бесплатную консультацию по подбору пульсометра </div>
                 <div class="consultation__descr">Просто заполните форму заявки и мы перезвоним вам в течении 10 минут</div>
-                <form class="feed-form" action="#">
-                    <input name"name" required placeholder="Ваше имя" type="text">
+                <form id="consultation-form" class="feed-form" action="#">
+                    <input name"name" required maxlength="15" placeholder="Ваше имя" type="text">
                     <input name"phone" required placeholder="Ваш телефон" type="number">
-                    <input name"e-mail" required placeholder="Ваш E-mail" type="email">
+                    <input name"email" required placeholder="Ваш E-mail" type="email">
                     
                     <button class="button button_submit">заказать кОНСУЛЬТАЦИЮ</button>
 
                 </form>
             </div>
-        </section>
+        </section> -->
     <section class="carousel">
         <div class="container">
             <div class="carousel__header">Специальные предложения АКЦИИ</div>
@@ -140,10 +140,10 @@
                         <a href="" class="catalog-item__link">ПОДРОБНЕЕ</a>
                     </div>
                     <div class="catalog-item__list">
-                        <li>Вы услышите звуковое оповещение о нужном пульсе во время тренировки;</li>
-                        <li>Вы увидите информативный графический индикатор целевых тренировочных зон пульса;</li>
-                        <li>Также Вы увидите информацию о расходе калорий за тренировку;</li>
-                        <li>Вы сможете посмотреть данные по 10 тренировкам.</li>
+                        <li>Аккумулятор ALPHALINE SD 44 (46B19);</li>
+                        <li>Аккумулятор ALPHALINE SD 44 (46B19);</li>
+                        <li>Аккумулятор ALPHALINE SD 44 (46B19);</li>
+                        <li>Аккумулятор ALPHALINE SD 44 (46B19).</li>
                         <a href="#" class="catalog-item__back">назад</a>
                     </div>
                 </div>
@@ -159,13 +159,13 @@
             <!-- 2 -->
             <div class="catalog-item">
                 <div class="catalog-item__wrapper">
-                    <div class="catalog-item__block">
+                    <div class="catalog-item__block catalog-item__block_active">
                         <img src="img/pulsometr.jpg" alt="" class="catalog-item__img">
-                        <div class="catalog-item__subtitle">Пульсометр Polar FT1</div>
+                        <div class="catalog-item__subtitle">Пульсометр FT1</div>
                         <div class="catalog-item__descr">Для первых шагов в тренировках, основанных на сердечном ритме</div>
                         <a href="" class="catalog-item__link">ПОДРОБНЕЕ</a>
                     </div>
-                    <div class="catalog-item__list catalog-item__list_active">
+                    <div class="catalog-item__list">
                         <li>Вы услышите звуковое оповещение о нужном пульсе во время тренировки;</li>
                         <li>Вы увидите информативный графический индикатор целевых тренировочных зон пульса;</li>
                         <li>Также Вы увидите информацию о расходе калорий за тренировку;</li>
@@ -187,7 +187,7 @@
                 <div class="catalog-item__wrapper">
                     <div class="catalog-item__block">
                         <img src="img/pulsometr.jpg" alt="" class="catalog-item__img">
-                        <div class="catalog-item__subtitle">Пульсометр Polar FT1</div>
+                        <div class="catalog-item__subtitle">Polar FT1</div>
                         <div class="catalog-item__descr">Для первых шагов в тренировках, основанных на сердечном ритме</div>
                         <a href="" class="catalog-item__link">ПОДРОБНЕЕ</a>
                     </div>
@@ -420,14 +420,13 @@
 
     <div class="overlay">
         <div class="modal-window" id="consultation">
-            <div class="modal-window__close">&times;</div>
+            <div data-modal="close" class="modal-window__close">&times;</div>
             <div class="modal-window__subtitle">Просто заполните форму</div>
             <div class="modal-window__descr">и мы вам перезвоним в течении 10 минут</div>
             <form class="feed-form feed-form_mt25" action="#">
                 <input name"name" required placeholder="Ваше имя" type="text">
                 <input name"phone" required placeholder="Ваш телефон" type="number">
-                <input name"e-mail" required placeholder="Ваш E-mail" type="email">
-                
+                <input name"email" required placeholder="Ваш E-mail" type="email">
                 <button class="button button_submit">заказать кОНСУЛЬТАЦИЮ</button>
 
             </form>
@@ -440,7 +439,7 @@
             <form class="feed-form feed-form_mt25" action="#">
                 <input name"name" required placeholder="Ваше имя" type="text">
                 <input name"phone" required placeholder="Ваш телефон" type="number">
-                <input name"e-mail" required placeholder="Ваш E-mail" type="email">
+                <input name"email" required placeholder="Ваш E-mail" type="email">
                 <button class="button button_submit">купить</button>
             </form>
         </div>
@@ -456,6 +455,7 @@
     <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
     <script src="js/slick.min.js"></script>
+    <script src="js/jquery.validate.min.js" ></script>
     <script src="js/script.js"></script>
 </body>
 </html>
