@@ -45,7 +45,24 @@ $(document).ready(function(){
     toggleSlide('.catalog-item__list');
 
     //Модальные окна
+    $('[data-modal=consultation]').on('click', function() {
+      $('.overlay, #consultation').fadeIn(500);
+    });
+    $('.modal-window__close').on('click', function() {
+      $('.overlay, #consultation, #order, #thanks').fadeOut(500);
+    });
+    
 
+    $('.button_mini').each(function(i) {
+      $(this).on('click', function() {
+        $('#order .modal-window__descr').text($('.catalog-item__subtitle').eq(--i).text());
+        $('.overlay, #order').fadeIn(500);
+      });
+    });
 
+    
+    
+
+    
 
   });
