@@ -30,6 +30,7 @@ $(document).ready(function(){
           .closest('div.container').find('div.catalog__content').removeClass('catalog__content_active').eq($(this).index()).addClass('catalog__content_active');
       });
 
+      //меняем блоки местами в карточке
     function toggleSlide(item) {
         $(item).each(function(i) {
             $(this).on('click', function(e) {
@@ -42,5 +43,9 @@ $(document).ready(function(){
 
     toggleSlide('.catalog-item__block');
     toggleSlide('.catalog-item__list');
+
+    //Модальные окна
+
+
 
   });
