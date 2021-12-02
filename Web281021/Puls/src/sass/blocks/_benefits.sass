@@ -12,7 +12,6 @@
         justify-content: space-between
     &__icon
         width: 277px
-        
         text-align: center
         font-weight: 700
         font-size: 18px
@@ -20,6 +19,7 @@
             display: block
             margin: 0 auto
             margin-bottom: 35px
+            cursor: pointer
     &__text
         margin-top: 20px
         font-weight: 300
@@ -27,3 +27,9 @@
         line-height: 18px
         span
             color: $main-color
+    &__heart
+            animation-name: heartbeat
+            animation-duration: 1.5s
+            animation-iteration-count: infinite
+            &:hover
+                animation-play-state: paused
