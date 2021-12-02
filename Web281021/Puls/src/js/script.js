@@ -60,6 +60,7 @@ $(document).ready(function(){
       });
     });
 
+    //Валидация форм
     function validateForms(form){
       $(form).validate({
           rules: {
@@ -90,9 +91,11 @@ $(document).ready(function(){
   
   validateForms('#consultation form');
   validateForms('#order form');
-    
+  
+  //маска ввода номера на сайте
   $('input[name=phone]').mask("+7 (999) 999-99-99");
 
+  //отправка писем с сайта
   $('form').submit(function(e) {
     e.preventDefault();
 
@@ -113,5 +116,20 @@ $(document).ready(function(){
     });
     return false;
   });
+
+  //скролл по ссылкам и элемент "вверх"
+  $(window).scroll(function() {
+    if ($(this).scrollTop() > 800) {
+      $('.pageup').fadeIn();
+    } else {
+      $('.pageup').fadeOut();
+    }
+  });
+       // плавный скролл
+//   $("a[href^='#']").click(function(){
+//     const _href = $(this).attr("href");
+//     $("html, body").animate({scrollTop: $(_href).offset().top+"px"});
+//     return false;
+// });
 
   });
