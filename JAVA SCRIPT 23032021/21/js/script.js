@@ -6,6 +6,13 @@ const arr = [1, 5, 10, 8, 6];
 //     console.log(arr[i]);
 // }
 
-arr.forEach(function(i, n) {
-    console.log(i, n);
-});
+// arr.forEach(function(i, n) {
+//     console.log(i, n);
+// });
+
+arr.sort(num);
+console.log(arr);
+
+function num(a, b) {
+ return a - b;
+}
