@@ -1,10 +1,12 @@
 .carousel
+    
     padding: 25px 0 20px 0
     &__header
         font-weight: 700
         font-size: 30px
         text-align: center
     &__inner
+        position: relative
         width: 1000px
         margin: 0 auto
         img
@@ -17,7 +19,7 @@
             height: 300px
             cursor: pointer
             
-    .slick-prev
+    &__slick-prev
         position: absolute
         top: 50%
         transform: translateY(-50%)
@@ -27,7 +29,7 @@
         img
             width: 31px
             height: 50px
-    .slick-next
+    &__slick-next
         position: absolute
         top: 50%
         transform: translateY(-50%)
