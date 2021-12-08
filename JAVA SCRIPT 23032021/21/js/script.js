@@ -33,3 +33,23 @@ for (let i =1; i <= 10; i++) {
     console.log(num)
     num++;
 }
+
+
+let num = 10;
+
+// while (num < 15) {
+//     num++;
+//     console.log(num);
+    
+// }
+
+// do {
+//     num++;
+//     console.log(num);
+// }
+// while (num < 15);
+
+for (let i= 1; i < 10; i++) {
+    num++;
+    console.log(num);
+}
