@@ -42,50 +42,21 @@ const personalMovieDB = {
 
 for (let i =0; i < 2; i++) {
     const a = prompt('Один из последних просмотренных фильмов?');
-    const b = prompt('На сколько оцените его?');
+    
     
     if (a == '' || a == null || a.length > 50 ) {
         i--;
         console.log('error')
-    } else if (b == '' || b == null) {
-        i--;
-    }
-     else
-    {
-        personalMovieDB.movies[a]= b;
-    }
-
-
-
-    // if (a != '' && b != '' && a != null && b != null && a.length < 50) {
-    //     personalMovieDB.movies[a] = b;
-    // } else {
-    //     console.log('error');
-    //     i--;
-    // }
-
-    // if (a != '' && a !== null && a.length > 50) {
+     } else {
+        const v = a;
         
-    // } else  if (b != '' && b !== null) {
-    //     personalMovieDB.movies[a] = b;
-    // } else {
-    //     console.log('error');
-    //     i--;
+    }
+    // else {
+    //     personalMovieDB.movies[a]= b;
     // }
-    
-    
-   
-//     } else if (b = '' && b === null) 
-//     {
-//         console.log('error');
-//         i--;
-//     } else {
-//         personalMovieDB.movies[a] = b;
-//     }
- }
- 
-
-
+    //const b = prompt('На сколько оцените его?');
+       
+    }
 
 
 console.log(personalMovieDB);
