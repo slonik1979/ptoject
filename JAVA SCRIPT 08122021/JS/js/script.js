@@ -60,3 +60,11 @@ for (let i =0; i < 2; i++) {
 
 
 console.log(personalMovieDB);
+
+let num = 10;
+while (num < 15);
+{
+    console.log(num);
+    num++;
+}
+
