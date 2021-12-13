@@ -162,3 +162,70 @@ function sort(a,b) {
 }
 
 
+
+
+
+
+
+
+
+let num = 15;
+
+// while (num < 20) {
+//     console.log(num);
+//     num++;
+// }
+
+// do {console.log(num);
+//     num++;}
+//     while (num < 20);
+
+for (let i = 1; i < 10; i++) {
+    console.log(num);
+    num++;
+}
+    
+
+const arr = [5,21,78,56,45,36];
+
+arr.sort(number);
+console.log(arr);
+
+function number(a, b) {
+    return a - b;
+}
+
+
+
+
+
+
+//циклы
+
+// let number = 15;
+
+// // while (number <= 20) {
+// //     console.log(number);
+// //     number++;
+// // }
+
+// // do {console.log(number);
+// //     number++;} 
+// //     while (number <= 20);
+
+// for (let i = 0; i <=10; i++) {
+//     console.log(number);
+//     number++;
+// }
+
+//массивы
+
+let arr = [10,5,25,16,24,50]
+
+arr.sort(number2);
+console.log(arr);
+
+function number2(a,b) {
+    return a - b;
+}
+
