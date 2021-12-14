@@ -233,7 +233,7 @@ let num = 15;
 
 
 
-let num = 5;
+// let num = 5;
 
 // while (num <= 10) {
 //     console.log(num);
@@ -250,10 +250,64 @@ let num = 5;
 // }
 
 
-let arr = [1, 5, 54, 30, 25];
-arr.sort(number);
-console.log(arr);
+// let arr = [1, 5, 54, 30, 25];
+// arr.sort(number);
+// console.log(arr);
 
-function number (a, b) {
-return a - b
-};
+// function number (a, b) {
+// return a - b
+// };
+
+
+
+
+
+
+
+
+//обычная функция
+
+function showMessage() {
+    console.log('Hello');
+}
+
+showMessage();
+
+//внутри скобок - аргумент
+
+function showMessage(text) {
+    console.log(text);
+}
+
+showMessage('Hello');
+
+//глобальные и локальные переменные
+
+let num = 20;
+function showMessage(text) {
+    console.log(text);
+    num = 10;
+}
+showMessage('Hello');
+console.log(num);
+
+//замыкание функции
+//ищет переменную на уровень выше и т. д.
+
+//return - возвращает во внешний мир (наружу)     после return все мертво
+
+function calc(a, b) {
+    return a + b;
+    console.log('hello');  // это не будет работать
+}
+
+console.log(calc(4, 5));
+
+//return - возвращает во внешний мир (наружу)
+
+function result() {
+    let num = 50;
+    return num;
+}
+
+console.log(result());
