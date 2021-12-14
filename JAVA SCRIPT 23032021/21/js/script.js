@@ -180,20 +180,20 @@ let num = 15;
 //     num++;}
 //     while (num < 20);
 
-for (let i = 1; i < 10; i++) {
-    console.log(num);
-    num++;
-}
+// for (let i = 1; i < 10; i++) {
+//     console.log(num);
+//     num++;
+// }
     
 
-const arr = [5,21,78,56,45,36];
+// const arr = [5,21,78,56,45,36];
 
-arr.sort(number);
-console.log(arr);
+// arr.sort(number);
+// console.log(arr);
 
-function number(a, b) {
-    return a - b;
-}
+// function number(a, b) {
+//     return a - b;
+// }
 
 
 
@@ -220,12 +220,40 @@ function number(a, b) {
 
 //массивы
 
-let arr = [10,5,25,16,24,50]
+// let arr = [10,5,25,16,24,50]
 
-arr.sort(number2);
+// arr.sort(number2);
+// console.log(arr);
+
+// function number2(a,b) {
+//     return a - b;
+// }
+
+
+
+
+
+let num = 5;
+
+// while (num <= 10) {
+//     console.log(num);
+//     num++;
+// }
+
+// do {console.log(num);
+//        num++;} 
+//        while (num <= 10);
+
+// for (let i = 1; i <= 10; i++) {
+//     console.log(num);
+//      num++;
+// }
+
+
+let arr = [1, 5, 54, 30, 25];
+arr.sort(number);
 console.log(arr);
 
-function number2(a,b) {
-    return a - b;
-}
-
+function number (a, b) {
+return a - b
+};
