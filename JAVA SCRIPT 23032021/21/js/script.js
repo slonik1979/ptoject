@@ -332,11 +332,11 @@ console.log(result());
 //     num3++
 // }
 
-let arr = [45, 5, 12, 3, 87]
+// let arr = [45, 5, 12, 3, 87]
 
-arr.sort(number5);
-console.log(arr);
+// arr.sort(number5);
+// console.log(arr);
 
-function number5 (a, b) {
-    return a - b;
-}
+// function number5 (a, b) {
+//     return a - b;
+// }
