@@ -311,3 +311,32 @@ function result() {
 }
 
 console.log(result());
+
+
+
+// let nums = 5;
+// while (nums < 10) {
+//     console.log(nums);
+//     nums++;
+// }
+
+// do   {console.log(nums)
+//     nums++
+// } 
+// while (nums < 10)
+
+
+// let num3 = 10;
+// for (let i = 1; i < 10; i++) {
+//     console.log(num3)
+//     num3++
+// }
+
+let arr = [45, 5, 12, 3, 87]
+
+arr.sort(number5);
+console.log(arr);
+
+function number5 (a, b) {
+    return a - b;
+}
