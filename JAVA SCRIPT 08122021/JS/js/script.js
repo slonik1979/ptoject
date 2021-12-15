@@ -31,6 +31,13 @@ str.length - и получить её длину)
 4) Потренироваться и переписать цикл еще двумя способами*/
 
 const numberOfFilms = prompt('Сколько фильмов вы уже посмотрели?');
+if (numberOfFilms < 10) {
+    alert("Просмотрено довольно мало фильмов")
+} else if (numberOfFilms <= 30) {
+    alert("Вы классический зритель")
+} else if (numberOfFilms > 30) {
+    alert("Вы киноман")
+} else alert("Произошла ошибка");
 
 const personalMovieDB = {
     count: numberOfFilms,
@@ -42,25 +49,16 @@ const personalMovieDB = {
 
 for (let i =0; i < 2; i++) {
     const a = prompt('Один из последних просмотренных фильмов?', '');
-    // const b = prompt('На сколько оцените его?');        
+    const b = prompt('На сколько оцените его?');     
     
-    if (a == '' || a == null || a.length > 50 ) {
+    if (a == '' || a == null || a.length > 50 || b == '' || b == null) {
         i--;
-        console.log('error')
-     } else {
-        personalMovieDB.movies[''] = a;
-        
-    }
-    // else {
-    //     personalMovieDB.movies[a]= b;
-    // }
-    //const b = prompt('На сколько оцените его?');
-       
-    }
-
+        console.log('error')}
+    else {
+     personalMovieDB.movies[a] = b;
+    } 
+   
 
 console.log(personalMovieDB);
-
-
 
 
