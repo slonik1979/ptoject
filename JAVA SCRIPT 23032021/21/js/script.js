@@ -303,7 +303,7 @@ function calc(a, b) {
 
 console.log(calc(4, 5));
 
-//return - возвращает во внешний мир (наружу)
+//return - возвращает во внешний мир (наружу) = 50
 
 function result() {
     let num = 50;
@@ -313,30 +313,58 @@ function result() {
 console.log(result());
 
 
+//function declaration
 
-// let nums = 5;
-// while (nums < 10) {
-//     console.log(nums);
-//     nums++;
-// }
+function showMessage() {
+    console.log('Hello');
+}
 
-// do   {console.log(nums)
-//     nums++
-// } 
-// while (nums < 10)
+showMessage();
+
+//function expression
+
+let showMessage = function () {
+    console.log('Hello');
+}
+
+showMessage();
+
+//Стрелочные функции
+
+let showMessage = () => {
+    console.log('Hello');
+}
+
+showMessage();
 
 
-// let num3 = 10;
-// for (let i = 1; i < 10; i++) {
-//     console.log(num3)
-//     num3++
-// }
 
-// let arr = [45, 5, 12, 3, 87]
+function learnJS(lang, functionCallback) {
+    console.log(`Я учу : ${lang}`);
+    functionCallback();
+}
 
-// arr.sort(number5);
-// console.log(arr);
+function done() {
+    console.log('Я прошел этот урок');
+}
 
-// function number5 (a, b) {
-//     return a - b;
-// }
+learnJS('JS', done);
+
+
+
+
+
+
+
+
+
+function learnJS(learn, callb) {
+    console.log(`Я учу ${learn}`);
+    callb();
+}
+
+function make() {
+    console.log('Я прошел этот урок');
+}
+
+learnJS('JS', make);
