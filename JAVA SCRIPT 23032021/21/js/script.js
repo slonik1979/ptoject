@@ -97,31 +97,68 @@
 // //циклы
 // let number = 10; 
 
-// // while (number < 15) {
+// // // while (number < 15) {
+// // //     console.log(number);
+// // //     number++;
+// // // }
+
+// // // do {console.log(number);
+// // //     number++;} 
+// // //     while (number < 15
+// // //     );
+
+// // for (let i = 1; i < 10; i++)
+// // {
 // //     console.log(number);
 // //     number++;
 // // }
 
-// // do {console.log(number);
-// //     number++;} 
-// //     while (number < 15
-// //     );
 
-// for (let i = 1; i < 10; i++)
-// {
-//     console.log(number);
-//     number++;
-// }
+// // //массивы перебор
+
+// // const arr = [4, 58, 14, 52, 25]
+// // arr.sort(sortNumber);
+// // console.log(arr);
+
+// // function sortNumber(a, b) {
+// //     return a - b;
+// // }
 
 
-// //массивы перебор
 
-// const arr = [4, 58, 14, 52, 25]
-// arr.sort(sortNumber);
+
+
+
+// // let num = 10;
+
+// // while (num < 15) {
+// //     console.log(num);
+// //     num++;
+// // }
+
+// // do { console.log(num);
+// //     num++;}
+// //     while (num < 15);
+
+
+//     // for (let a =1; a < 5; a++) {
+//     //     console.log(num);
+//     //     num++;
+//     // }
+
+// const arr = [1, 2]
+// arr.forEach(function (item) {
+//     console.log(item);
+// })
+
+
+// const arr = [1, 15, 2, 50, 45]
+// arr.sort(sort);
 // console.log(arr);
 
-// function sortNumber(a, b) {
-//     return a - b;
+
+// function sort(a,b) {
+//     return a-b;
 // }
 
 
@@ -129,47 +166,10 @@
 
 
 
-// let num = 10;
-
-// while (num < 15) {
-//     console.log(num);
-//     num++;
-// }
-
-// do { console.log(num);
-//     num++;}
-//     while (num < 15);
-
-
-    // for (let a =1; a < 5; a++) {
-    //     console.log(num);
-    //     num++;
-    // }
-
-const arr = [1, 2]
-arr.forEach(function (item) {
-    console.log(item);
-})
-
-
-const arr = [1, 15, 2, 50, 45]
-arr.sort(sort);
-console.log(arr);
-
-
-function sort(a,b) {
-    return a-b;
-}
 
 
 
-
-
-
-
-
-
-let num = 15;
+// let num = 15;
 
 // while (num < 20) {
 //     console.log(num);
@@ -339,18 +339,16 @@ showMessage();
 
 
 
-function learnJS(lang, functionCallback) {
-    console.log(`Я учу : ${lang}`);
-    functionCallback();
-}
+// function learnJS(lang, functionCallback) {
+//     console.log(`Я учу : ${lang}`);
+//     functionCallback();
+// }
 
-function done() {
-    console.log('Я прошел этот урок');
-}
+// function done() {
+//     console.log('Я прошел этот урок');
+// }
 
-learnJS('JS', done);
-
-
+// learnJS('JS', done);
 
 
 
@@ -358,13 +356,73 @@ learnJS('JS', done);
 
 
 
-function learnJS(learn, callb) {
-    console.log(`Я учу ${learn}`);
-    callb();
-}
 
-function make() {
-    console.log('Я прошел этот урок');
-}
 
-learnJS('JS', make);
+// function learnJS(learn, callb) {
+//     console.log(`Я учу ${learn}`);
+//     callb();
+// }
+
+// function make() {
+//     console.log('Я прошел этот урок');
+// }
+
+// learnJS('JS', make);
+
+
+
+
+// function learnJS(learn, call) {
+//     console.log(`Я учу ${learn} `);
+//     call();
+// }
+
+// // function make() {
+// //     console.log('Я прошел этот урок');
+// // }
+
+// learnJS('JS', function() {
+//     console.log('Я прошел этот урок');
+// });
+
+
+//let num = 30;
+// while (num < 40) {
+//     console.log(num);
+//     num++;
+// }
+
+// do {
+//     console.log(num);
+//     num++;
+// }
+// while (num < 40);
+
+// for (let i = 1; i < 10; i++) {
+//     console.log(num);
+//     num++;
+// }
+
+// let arr = [50, 4, 32, 17, 12]
+
+//  arr.forEach((item) => {
+//          console.log(item);
+//      });
+
+// function make(a, b) {
+//     return a - b;
+// }
+
+// arr.sort(make);
+// console.log(arr);
+
+// function learnJS(learn, calbk) {
+//     console.log(`Я учу ${learn}`);
+//     calbk();
+// }
+
+// learnJS('JS', done);
+
+// function done() {
+//     console.log('Я прошел этот урок');
+// }
