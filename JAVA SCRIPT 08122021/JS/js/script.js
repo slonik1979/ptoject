@@ -96,11 +96,20 @@ const personalMovieDB = {
             }
         },
         writeYourGenres: function() {
-            for (let i = 0; i <= 2; i++) {
-                const genre = prompt(`Ваш любимый жанр под номером ${i+1}`);
-                personalMovieDB.genres[i] = genre;
+            for (let i = 1; i <= 3; i++) {
+                const genre = prompt(`Ваш любимый жанр под номером ${i}`);
+                    if (genre == null || genre == '') {
+                    i--;
+                } else {
+                personalMovieDB.genres[i-1] = genre;
+                
+                }
             }
+            personalMovieDB.genres.forEach((item, n) => {
+                console.log(`Любимый жанр ${n+1} - это ${item}`)
+            })
         },
+
         showMyDB: function(i) {
             if (!i) {
                 console.log(personalMovieDB);
@@ -120,8 +129,8 @@ const personalMovieDB = {
 // personalMovieDB.start();
 // personalMovieDB.rememberMyFilms();
 // personalMovieDB.detectPersonalLevel();
-// personalMovieDB.writeYourGenres();
-// personalMovieDB.showMyDB(personalMovieDB.privat);
+ personalMovieDB.writeYourGenres();
+ personalMovieDB.showMyDB(personalMovieDB.privat);
 // personalMovieDB.toggleVisibleMyDB();
 
 
