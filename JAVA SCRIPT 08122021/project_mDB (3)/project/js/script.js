@@ -84,6 +84,8 @@ form.addEventListener('submin', (event) => {
     
     movieDB.movies.push(newFilm);
     movieDB.movies.sort();
+
+    
 });
 
 
