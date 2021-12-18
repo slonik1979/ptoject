@@ -66,15 +66,21 @@ genre.textContent = 'драма';
 
 bg.style.backgroundImage = 'url("img/bg.jpg")';
 
-list.innerHTML = '';
+function createMovieList(films, parent) {
+    parent.innerHTML = '';
 
 movieDB.movies.sort();
 
-movieDB.movies.forEach((item, n) => {
-    list.innerHTML += `<li class="promo__interactive-item">${n+1}. ${item}
+films.forEach((item, n) => {
+    parent.innerHTML += `<li class="promo__interactive-item">${n+1}. ${item}
     <div class="delete"></div>
 </li>`
 });
+}
+
+createMovieList(movieDB.movies, list);
+
+
 
 form.addEventListener('submin', (event) => {
     event.preventDefault();
@@ -85,6 +91,7 @@ form.addEventListener('submin', (event) => {
     movieDB.movies.push(newFilm);
     movieDB.movies.sort();
 
+        
     
 });
 
