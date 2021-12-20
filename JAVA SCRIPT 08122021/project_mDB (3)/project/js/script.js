@@ -67,10 +67,22 @@ genre.textContent = 'драма';
 bg.style.backgroundImage = 'url("img/bg.jpg")';
 
 
+form.addEventListener('submin', (event) => {
+    event.preventDefault();
+
+    const newFilm = input.value;
+    const favorite = checkbox.checked;
+    
+    movieDB.movies.push(newFilm);
+    movieDB.movies.sort();
+});
+
+movieDB.movies.sort();
+
 function createMovieList(films, parent) {
     parent.innerHTML = '';
 
-movieDB.movies.sort();
+    films.movies.sort();
 
 films.forEach((item, n) => {
     parent.innerHTML += `<li class="promo__interactive-item">${n+1}. ${item}
