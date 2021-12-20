@@ -44,6 +44,8 @@ const movieDB = {
     ]
 };
 
+
+
 const adv = document.querySelectorAll('.promo__adv img'),
       genre = document.querySelector('.promo__genre'),
       bg = document.querySelector('.promo__bg'),
@@ -57,26 +59,40 @@ const adv = document.querySelectorAll('.promo__adv img'),
         arr.forEach(item => {
             item.remove();
         });
-      }
+      };
 
       const makeChanges = () => {
         genre.textContent = 'драма';
 
         bg.style.backgroundImage = 'url("img/bg.jpg")';
-      }
+      };
+
+      movieDB.movies.sort();
 
       const sortArr = (arr) => {
         arr.sort();
-      }
+      };
 
       form.addEventListener('submit', (event) => {
         event.preventDefault();
     
-        const newFilm = input.value;
+        let newFilm = input.value;
         const favorite = checkbox.checked;
         
-        if (newFilm) {    
-            movieDB.movies.push(newFilm);
+        if (newFilm) {  
+            
+            if (newFilm.length > 22) {
+                newFilm = `${newFilm.slice(0, 22)}...`;
+            }
+            
+            if (favorite) {
+                const twoFilm = 'это любимый фильм   ';
+                newFilm = twoFilm + newFilm;
+                console.log('Добавляем любимый фильм');
+                }
+            
+            movieDB.movies.push(
+                newFilm);
             sortArr(movieDB.movies);
 
             createMovieList(list, movieDB.movies);
@@ -85,22 +101,31 @@ const adv = document.querySelectorAll('.promo__adv img'),
         } else {
             input.placeholder = "введите что-нибудь";
         }        
+            
     });
           
     function createMovieList(parent, films) {
         parent.innerHTML = '';
+        sortArr(films);
         films.forEach((item, n) => {
             parent.innerHTML += `<li class="promo__interactive-item">${n+1}. ${item}
         <div class="delete"></div>
-        </li>`
+        </li>`;
 });
-    sortArr(movieDB.movies);
+
+        document.querySelectorAll('.delete').forEach((btn, i) => {
+        btn.addEventListener('click', () => {       
+            btn.parentElement.remove(); // удаляем родителя
+            movieDB.movies.splice(i, 1); //вырезаем элемент с массива (один номер)
+            createMovieList(list, movieDB.movies);
+
+        });
+    });
 }
 
 deleteAdv(adv);
 makeChanges();
-
-
+createMovieList(list, movieDB.movies);
 
 
 });
