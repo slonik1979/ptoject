@@ -53,6 +53,22 @@ const adv = document.querySelectorAll('.promo__adv img'),
       checkbox = document.querySelector('[type="checkbox"]');
 
 
+      const deleteAdv = (arr) => {
+        arr.forEach(item => {
+            item.remove();
+        });
+      }
+
+      const makeChanges = () => {
+        genre.textContent = 'драма';
+
+        bg.style.backgroundImage = 'url("img/bg.jpg")';
+      }
+
+      const sortArr = (arr) => {
+        arr.sort();
+      }
+
       form.addEventListener('submit', (event) => {
         event.preventDefault();
     
@@ -60,37 +76,24 @@ const adv = document.querySelectorAll('.promo__adv img'),
         const favorite = checkbox.checked;
         
         movieDB.movies.push(newFilm);
-        movieDB.movies.sort();
+        sortArr(movieDB.movies);
+
+        createMovieList(list, movieDB.movies);
     });
-    
-    console.log(movieDB.movies);
-        
-
-adv.forEach(item => {
-    item.remove();
+          
+    function createMovieList(parent, films) {
+        parent.innerHTML = '';
+        films.forEach((item, n) => {
+            parent.innerHTML += `<li class="promo__interactive-item">${n+1}. ${item}
+        <div class="delete"></div>
+        </li>`
 });
+    sortArr(movieDB.movies);
+}
 
-genre.textContent = 'драма';
+deleteAdv(adv);
+makeChanges();
 
-bg.style.backgroundImage = 'url("img/bg.jpg")';
-
-
-
-
- movieDB.movies.sort();
-
-// function createMovieList(films, parent) {
-//     parent.innerHTML = '';
-    
-
-// films.forEach((item, n) => {
-//     parent.innerHTML += `<li class="promo__interactive-item">${n+1}. ${item}
-//     <div class="delete"></div>
-// </li>`
-// });
-// }
-
-// createMovieList(movieDB.movies, list);
 
 
 
