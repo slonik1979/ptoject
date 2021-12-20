@@ -54,7 +54,7 @@ const adv = document.querySelectorAll('.promo__adv img'),
 
 
 
-      form.addEventListener('submit' , (event) => {
+    form.addEventListener('submit' , (event) => {
         event.preventDefault();
       });      
 
@@ -66,15 +66,6 @@ genre.textContent = 'драма';
 
 bg.style.backgroundImage = 'url("img/bg.jpg")';
 
-list.innerHTML = '';
-
-movieDB.movies.sort();
-
-movieDB.movies.forEach((item, n) => {
-    list.innerHTML += `<li class="promo__interactive-item">${n+1}. ${item}
-    <div class="delete"></div>
-</li>`
-});
 
 form.addEventListener('submin', (event) => {
     event.preventDefault();
@@ -85,6 +76,20 @@ form.addEventListener('submin', (event) => {
     movieDB.movies.push(newFilm);
     movieDB.movies.sort();
 });
+
+movieDB.movies.sort();
+
+function createList(films, parents) {
+    parents.innerHTML = '';
+
+    films.forEach((item, n) => {
+        parents.innerHTML += `<li class="promo__interactive-item">${n+1}. ${item}
+    <div class="delete"></div>
+</li>`
+});
+}
+
+function createList(movieDB.movies.);
 
 
 });
