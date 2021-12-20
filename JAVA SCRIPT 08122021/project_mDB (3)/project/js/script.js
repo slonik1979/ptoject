@@ -75,10 +75,16 @@ const adv = document.querySelectorAll('.promo__adv img'),
         const newFilm = input.value;
         const favorite = checkbox.checked;
         
-        movieDB.movies.push(newFilm);
-        sortArr(movieDB.movies);
+        if (newFilm) {    
+            movieDB.movies.push(newFilm);
+            sortArr(movieDB.movies);
 
-        createMovieList(list, movieDB.movies);
+            createMovieList(list, movieDB.movies);
+
+            event.target.reset();  //
+        } else {
+            input.placeholder = "введите что-нибудь";
+        }        
     });
           
     function createMovieList(parent, films) {
