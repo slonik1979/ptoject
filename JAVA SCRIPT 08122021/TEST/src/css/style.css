@@ -1,0 +1,58 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.tabs {
+    padding: 50px 0 100px 0;
+}
+
+.tabcontents {
+    margin-top: 50px;
+    display: flex;
+    
+}
+
+.tabheader__items {
+    display: flex;
+    justify-content: space-between;
+}
+
+.tabheader__item {
+    font-weight: bold;
+    font-size: 18px;
+    font-weight: 300;
+    margin-top: 10px;
+    color: rgba(0, 0, 0, 0.6);
+    cursor: pointer;
+    transition: 0.3s all;
+}
+.tabheader__item_active {
+        color: #000;
+        font-size: 22px;
+        font-weight: 700;
+    }
+
+.hide {
+    display: none;
+}
+
+.show {
+    display: block;
+}
+
+.fade {
+    animation-name: fade;
+    animation-duration: 3s;
+}
+
+@keyframes fade {
+    from{opacity: 0.1;}to{opacity: 1;}
+}

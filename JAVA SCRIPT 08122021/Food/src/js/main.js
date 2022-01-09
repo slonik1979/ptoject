@@ -8,35 +8,33 @@ const tabs = document.querySelectorAll('.tabheader__item'),
       content = document.querySelectorAll('.tabcontent'),
       tabsParent = document.querySelector('.tabheader');
 
-    function hideTabs() {
+    const hideShowTabsContent =  function(i = 0) {
         content.forEach(item => {
-            item.style.display = 'none';
+            item.classList.add('hide','fade');
+            item.classList.remove('show');
         });
-        tabs.forEach(item =>{
+        tabs.forEach(item => {
             item.classList.remove('tabheader__item_active');
         });
-    }
 
-    function showTabs(i = 0) {
-        content[i].style.display = 'block';
+        content[i].classList.add('show', 'fade');
+        content[i].classList.remove('hide');
+
         tabs[i].classList.add('tabheader__item_active');
-    }
+    };
 
-    hideTabs();
-    showTabs();
+    hideShowTabsContent();
 
-    tabsParent.addEventListener('click', (e) => {
-        if (e.target && e.target.classList.contains('tabheader__item'))
-        {
-            tabs.forEach((item, i) => {
-                if (e.target == item) {
-                    hideTabs();
-                    showTabs(i);
-                    
-                }
-            });
-        }
+    tabs.forEach((item, i) => {
+        item.addEventListener('click', (e) => {
+            if (e.target == item) {
+                hideShowTabsContent(i);
+            }
+        });
     });
+
+
+    
 
 
 //Используем классы для карточек
