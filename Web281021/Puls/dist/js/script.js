@@ -64,6 +64,20 @@ $(document).ready(function(){
       });
     });
 
+    // Модальное окно таймаути интервал
+
+    const modalId = document.querySelector('.overlay'),
+          modalId2 = document.querySelector('#consultation');
+    
+
+          function modalOpenTime() {
+            modalId.classList.add('show');
+            modalId2.classList.add('show');
+          }
+
+    const timeId = setTimeout(modalOpenTime, 10000);
+    
+
     //Валидация форм
     function validateForms(form){
       $(form).validate({
