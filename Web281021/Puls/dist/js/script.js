@@ -51,6 +51,7 @@ $(document).ready(function(){
     //Модальные окна
     $('[data-modal=consultation]').on('click', function() {
       $('.overlay, #consultation').fadeIn(500);
+      clearInterval(timeId);
     });
     $('.modal__close').on('click', function() {
       $('.overlay, #consultation, #order, #thanks').fadeOut(500);
@@ -76,6 +77,14 @@ $(document).ready(function(){
           }
 
     const timeId = setTimeout(modalOpenTime, 10000);
+
+    function showModalByScroll() {
+      if (window.pageYOffset + document.documentElement.clientHeight >= document.documentElement.scrollHeight -1) {
+        modalOpenTime();
+          window.removeEventListener('scroll', showModalByScroll);
+      }
+   }
+   window.addEventListener('scroll', showModalByScroll);
     
 
     //Валидация форм
@@ -205,7 +214,7 @@ $(document).ready(function(){
 
   // Timer
 
-const finaldate = '2022-01-15'
+const finaldate = '2022-01-15';
 
 function getTimeRemaining(endtime) {
     const total = Date.parse(endtime) - Date.parse(new Date()),
