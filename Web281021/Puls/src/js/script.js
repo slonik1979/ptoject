@@ -267,13 +267,14 @@ function setClock(selector, endtime) {
 
 //Используем классы для карточек
 
-class akb {
-  constructor(src, alt, subtitle, descr, price) {
+class Akb {
+  constructor(src, subtitle, descr, price, parentSelector) {
     this.src = src;
-    this.alt = alt;
+    //this.alt = alt;
     this.subtitle = subtitle;
     this.descr = descr;
     this.price = price;
+    this.parent = document.querySelector(parentSelector);
     this.transfer = 75;
     this.old = 35;
     this.changeToRUB();
@@ -283,8 +284,96 @@ class akb {
     this.price = this.price * this.transfer;
     this.descr = this.descr * this.old;
   }
+
+  render() {
+    const element = document.createElement('div');
+    element.innerHTML = `
+    <div class="akb__item">
+                    <img src=${this.src}>
+                    <h3 class="akb__item-subtitle">${this.subtitle}</h3>
+                    <div class="akb__item-descr">Скидка за старый <span>${this.descr}</span> руб</div>
+                    <div class="akb__item-divider"></div>
+                    <div class="akb__item-price">
+                        <div class="akb__item-cost">Цена:</div>
+                        <div class="akb__item-total"><span>${this.price}</span> руб</div>
+                    </div>
+                </div>
+    `;
+    this.parent.append(element);
+  }
 }
 
+  new Akb(
+    "img/akb/akb2.png",
+    "Аккумулятор ALPHALINE SD 46B19 (44 А/ч)",
+    10,
+    58,
+    '.akb__wrapper'
+).render();
+
+new Akb(
+  "img/akb/akb2.png",
+  "Аккумулятор ALPHALINE SD 70B24 (55 А/ч)",
+  12,
+  65,
+  '.akb__wrapper'
+).render();
+
+new Akb(
+  "img/akb/akb2.png",
+  "Аккумулятор ALPHALINE SD 85D23 (70 А/ч)",
+  16,
+  85,
+  '.akb__wrapper'
+).render();
+
+new Akb(
+  "img/akb/akb2.png",
+  "Аккумулятор ALPHALINE SD 95D26 (80 А/ч)",
+  17,
+  92,
+  '.akb__wrapper'
+).render();
+
+new Akb(
+  "img/akb/akb2.png",
+  "Аккумулятор ALPHALINE SD 115D31 (100 А/ч)",
+  22,
+  116,
+  '.akb__wrapper'
+).render();
+
+new Akb(
+  "img/akb/akb2.png",
+  "Аккумулятор ALPHALINE SD 125D33 (115 А/ч)",
+  23,
+  118,
+  '.akb__wrapper'
+).render();
+
+new Akb(
+  "img/akb/akb2.png",
+  "Аккумулятор ALPHALINE SD 135F51 (135 А/ч)",
+  35,
+  173,
+  '.akb__wrapper'
+).render();
+
+new Akb(
+  "img/akb/akb2.png",
+  "Аккумулятор ALPHALINE SD (31S-1000)резьба(140 А/ч)",
+  27,
+  141,
+  '.akb__wrapper'
+).render();
+
+new Akb(
+  "img/akb/akb2.png",
+  "Аккумулятор ALPHALINE SD 190G51 (190 А/ч)",
+  45,
+  203,
+  '.akb__wrapper'
+).render();
 
   });
 
