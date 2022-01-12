@@ -264,6 +264,28 @@ function setClock(selector, endtime) {
 }
   setClock('.timer', finaldate);
 
+
+//Используем классы для карточек
+
+class akb {
+  constructor(src, alt, subtitle, descr, price) {
+    this.src = src;
+    this.alt = alt;
+    this.subtitle = subtitle;
+    this.descr = descr;
+    this.price = price;
+    this.transfer = 75;
+    this.old = 35;
+    this.changeToRUB();
+  
+  }
+  changeToRUB() {
+    this.price = this.price * this.transfer;
+    this.descr = this.descr * this.old;
+  }
+}
+
+
   });
 
 
