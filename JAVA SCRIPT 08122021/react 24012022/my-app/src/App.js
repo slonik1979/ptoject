@@ -1,16 +1,28 @@
 import logo from './logo.svg';
 import './App.css';
 
+
+const Header = () => {
+  return <h2>Hello</h2>
+}
+
+const Field = () => {
+  return <input placeholder='Введите имя' type="text" />
+}
+
+function Btn() {
+  const text = 'log in';
+  const logged = true;
+
+  return <button>{logged ? 'Enter' : text}</button>
+}
+
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        
-      </header>
+      <Header/>
+      <Field/>
+      <Btn/>
     </div>
   );
 }
