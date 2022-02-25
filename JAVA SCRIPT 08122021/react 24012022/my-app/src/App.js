@@ -26,6 +26,11 @@ class WhoAmi extends Component {  //Деструктурируем
          <button onClick={this.nextYear} >{this.state.text}</button>
         <h1>my names {name}, surname - {surname}, years - {this.state.years}, country - {this.state.experience} </h1> 
         <a href={link}>My profile</a>
+        <form>
+          <span>Введите должность</span>
+          <input type="text" onChange={} />
+        </form>
+
       </div>
     )
   }
