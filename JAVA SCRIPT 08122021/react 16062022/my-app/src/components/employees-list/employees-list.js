@@ -2,12 +2,12 @@ import EmployeesListItem from "../employees-list-item/employees-list-item";
 
 import './employees-list.css';
 
-const EmployeesList = () => {
+const EmployeesList = ({data}) => {
     return (
         <ul className="app-list list-group">
-            <EmployeesListItem/>
-            <EmployeesListItem/>
-            <EmployeesListItem/>
+            <EmployeesListItem name="Carl K." salary="500"/>
+            <EmployeesListItem name="Petro O." salary="1000"/>
+            <EmployeesListItem name="Alex D." salary="1500"/>
         </ul>
     )
 }

@@ -9,6 +9,12 @@ import './app.css';
 
 
 function App() {
+    const server = [
+        {name: "Carl K.", salary: "500"},
+        {name: "Petro O.", salary: "1000"},
+        {name: "Alex D.", salary: "1500"}
+    ];
+
     return(
         <div className="app">
             <AppIhfo/>
@@ -18,7 +24,7 @@ function App() {
                 <AppFilter/>
             </div>
 
-            <EmployeesList/>
+            <EmployeesList data={server} />
 
             <EmployeesAddForm/>
         </div>
