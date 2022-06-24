@@ -8,6 +8,12 @@ class WhoAmi extends Component {
       years: 27
     }
   }
+
+  nextYaer = () => {
+    console.log('!!!!!!');
+  }
+
+
   render() {
     const {name, surname, link} = this.props;
     return (  
