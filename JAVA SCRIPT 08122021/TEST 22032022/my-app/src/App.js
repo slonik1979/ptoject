@@ -20,7 +20,7 @@ class WhoAmi extends Component {
           }
   }
 
-  commitInputChanges = (e, color) => {
+  commitInputChanges = (e, color) => { //аргументы 'some color'
     console.log(color);
     this.setState({
       position: e.target.value
