@@ -2,12 +2,21 @@ import EmployeesListItem from "../employees-list-item/employees-list-item";
 
 import './employees-list.css';
 
-const EmployeesList = () => {
+
+const EmployeesList = ({bases}) => {
+
+    const elements = bases.map(item => {
+        const {id, ...itemP} = item; 
+        return (
+            <EmployeesListItem  key = {id} {...itemP}/> 
+            // спред оператор разворачивает item {item.name} salary = {item.salary} 
+            // key = для праильного работы алгоритма согласования = для оптимизации скорости приложения
+        )
+    })
+
     return (
         <ul className="app-list list-group">
-            <EmployeesListItem name = "Mike R." salary = {1000}/>
-            <EmployeesListItem name = "Alex Z." salary = {1200}/>
-            <EmployeesListItem name = "Rik F." salary = {3600}/>
+            {elements}
         </ul>
     )
 }
