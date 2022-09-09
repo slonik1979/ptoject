@@ -3,14 +3,15 @@ import EmployeesListItem from "../employees-list-item/employees-list-item";
 import './employees-list.css';
 
 
-const EmployeesList = ({bases}) => {
+const EmployeesList = ({bases, onDelete}) => {
 
     const elements = bases.map(item => {
         const {id, ...itemP} = item; 
         return (
-            <EmployeesListItem  key = {id} {...itemP}/> 
+            <EmployeesListItem  key = {id} {...itemP}
             // спред оператор разворачивает item {item.name} salary = {item.salary} 
             // key = для праильного работы алгоритма согласования = для оптимизации скорости приложения
+            onDelete = {() => onDelete(id)}/> 
         )
     })
 

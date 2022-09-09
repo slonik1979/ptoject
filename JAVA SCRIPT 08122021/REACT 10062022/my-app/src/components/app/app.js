@@ -1,3 +1,5 @@
+import { Component } from 'react';
+
 import AppInfo from '../app-info/app-info';
 import SearchPanel from '../search-panel/search-panel';
 import AppFilter from '../app-filter/app-filter';
@@ -10,31 +12,39 @@ import './app.css';
 
 
 
-function App() {
-
-    const data = [
-        {name: "Mike R.", salary: 1000, increase: false, id: 1},
-        {name: "Alex Z.", salary: 1200, increase: true, id: 2},
-        {name: "Rik F.", salary: 15000, increase: false, id: 3}
-    ]
-
-    return (
-        <div className="app">
-            <AppInfo/>
-
-            <div className="search-panel">
-                <SearchPanel/>
-                <AppFilter/>
+class App extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            data: [
+                {name: "Mike R.", salary: 1000, increase: false, id: 1},
+                {name: "Alex Z.", salary: 1200, increase: true, id: 2},
+                {name: "Rik F.", salary: 15000, increase: false, id: 3}
+            ]
+        }
+    }
+    
+    render() {
+        return (
+            <div className="app">
+                <AppInfo/>
+    
+                <div className="search-panel">
+                    <SearchPanel/>
+                    <AppFilter/>
+                </div>
+    
+                
+                <EmployeesList
+                    bases = {this.state.data}
+                    onDelete={id => console.log(id)}/>
+    
+                <EmployeesAddForm/>
+    
             </div>
-
-            
-            <EmployeesList bases = {data}/>
-
-            <EmployeesAddForm/>
-
-        </div>
-
-    );
+    
+        );
+    }
 }
 
 export default App;
