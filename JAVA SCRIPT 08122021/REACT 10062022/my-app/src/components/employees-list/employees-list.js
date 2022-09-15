@@ -3,7 +3,7 @@ import EmployeesListItem from "../employees-list-item/employees-list-item";
 import './employees-list.css';
 
 
-const EmployeesList = ({bases, onDelete, onToggleIncrease, onToggleRise}) => {
+const EmployeesList = ({bases, onDelete, onToggleProp}) => {
 
     const elements = bases.map(item => {
         const {id, ...itemP} = item; 
@@ -12,8 +12,7 @@ const EmployeesList = ({bases, onDelete, onToggleIncrease, onToggleRise}) => {
             // спред оператор разворачивает item {item.name} salary = {item.salary} 
             // key = для праильного работы алгоритма согласования = для оптимизации скорости приложения
             onDelete = {() => onDelete(id)}
-            onToggleIncrease = {() => onToggleIncrease(id)}
-            onToggleRise = {() => onToggleRise(id)}/> 
+            onToggleProp = {(e) => onToggleProp(id, e.currentTarget.getAttribute('data-toggle'))}/> 
         )
     })
 
