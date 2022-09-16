@@ -20,7 +20,8 @@ class App extends Component {
                 {name: "Mike R.", salary: 1000, increase: false, rise: false, id: 1},
                 {name: "Alex Z.", salary: 1200, increase: true, rise: true, id: 2},
                 {name: "Rik F.", salary: 15000, increase: false, rise: false, id: 3}
-            ]
+            ],
+            term: ''
         }
         this.maxId = 4;
     }
@@ -65,6 +66,7 @@ class App extends Component {
     }
     
     render() {
+        const {data, term} = this.state;
         const employees = this.state.data.length;
         const increased = this.state.data.filter(item => item.increase).length;
         return (
@@ -75,7 +77,7 @@ class App extends Component {
                     <AppFilter/>
                 </div>
                 <EmployeesList
-                    bases = {this.state.data}
+                    bases = {data}
                     onDelete={this.deleteItem}
                     onToggleProp={this.onToggleProp}/>
     
