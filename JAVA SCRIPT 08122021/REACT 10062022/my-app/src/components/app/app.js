@@ -65,6 +65,10 @@ class App extends Component {
         console.log(`Rise ${id}`);
     }
     
+    searchEmp = () => {
+        
+    }
+
     render() {
         const {data, term} = this.state;
         const employees = this.state.data.length;
