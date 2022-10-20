@@ -17,11 +17,11 @@ class App extends Component {
         super(props);
         this.state = {
             data: [
-                {name: "Mike R.", salary: 1000, increase: false, rise: false, id: 1},
-                {name: "Alex Z.", salary: 1200, increase: true, rise: true, id: 2},
-                {name: "Rik F.", salary: 15000, increase: false, rise: false, id: 3}
+                // {name: "Mike R.", salary: 1000, increase: false, rise: false, id: 1},
+                // {name: "Alex Z.", salary: 1200, increase: true, rise: true, id: 2},
+                // {name: "Rik F.", salary: 15000, increase: false, rise: false, id: 3}
             ],
-            term: 'R'
+            term: ''
         }
         this.maxId = 4;
     }
