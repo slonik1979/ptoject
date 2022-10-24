@@ -1,10 +1,11 @@
-
+import { Component } from 'react';
 
 import './employees-list-item.css';
 
-const EmployeesListItem = (props) => {
+class EmployeesListItem extends Component{
    
-        const {name, salary, onDelete, onToggleProp, increase, rise} = props;
+        render() {
+            const {name, salary, onDelete, onToggleProp, increase, rise} = this.props;
         
 
             // изменяем цвет печеньки
@@ -36,6 +37,7 @@ return (
         </div>
     </li>
 )
+        }
     }
 
 
