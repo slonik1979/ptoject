@@ -1,17 +1,18 @@
 package main
 
-import (
-	"fmt"
-	"net/http"
-)
+const pi = 3.1415
 
 func main() {
-	fmt.Println("port 3000")
 
-	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
+	printCircleArea(2)
+	printCircleArea(4)
 
-		fmt.Println(w, "hello")
-	})
+}
 
-	http.ListenAndServe(":5500", nil)
+func printCircleArea(radius int) float32 {
+	//var circleRadius = 2
+	return float32(radius) * float32(radius) * pi
+	//fmt.Println(circleArea)
+	circleArea = printCircleArea
+	fmt.println(circleArea)
 }
