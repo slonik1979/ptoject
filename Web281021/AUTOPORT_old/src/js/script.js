@@ -214,7 +214,7 @@ $(document).ready(function(){
 
   // Timer
 
-const finaldate = '2022-01-31';
+const finaldate = '2022-12-31';
 
 function getTimeRemaining(endtime) {
     const total = Date.parse(endtime) - Date.parse(new Date()),
@@ -275,8 +275,8 @@ class Akb {
     this.descr = descr;
     this.price = price;
     this.parent = document.querySelector(parentSelector);
-    this.transfer = 75;
-    this.old = 35;
+    this.transfer = 78;
+    this.old = 25;
     this.changeToRUB();
   
   }
