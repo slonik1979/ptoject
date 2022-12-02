@@ -281,9 +281,11 @@ class Akb {
   
   }
   changeToRUB() {
-    this.price = this.price * this.transfer;
-    this.descr = this.descr * this.old;
+    this.price = Math.round((this.price * this.transfer)/50) * 50;
+    this.descr = Math.round((this.descr * this.old)/50) * 50;
   }
+
+  
 
   render() {
     const element = document.createElement('div');
@@ -303,6 +305,82 @@ class Akb {
   }
 }
 
+//Solite
+  new Akb(
+    "img/akb/sol2.png",
+    "Аккумулятор SOLITE SD 44B19 (44 А/ч)",
+    10,
+    48,
+    '.akb__sol'
+  ).render();
+
+  new Akb(
+    "img/akb/sol2.png",
+    "Аккумулятор SOLITE SD 65B24 (50 А/ч)",
+    12,
+    55,
+    '.akb__sol'
+  ).render();
+
+  new Akb(
+    "img/akb/sol2.png",
+    "Аккумулятор SOLITE SD 85D23 (70 А/ч)",
+    16,
+    73,
+    '.akb__sol'
+  ).render();
+
+  new Akb(
+    "img/akb/sol2.png",
+    "Аккумулятор SOLITE SD 95D26 (85 А/ч)",
+    17,
+    79,
+    '.akb__sol'
+  ).render();
+
+  new Akb(
+    "img/akb/sol2.png",
+    "Аккумулятор SOLITE SD SD 115D31 (95 А/ч)",
+    22,
+    91,
+    '.akb__sol'
+  ).render();
+
+  new Akb(
+    "img/akb/sol2.png",
+    "Аккумулятор SOLITE SD 130F51 (120 А/ч)",
+    33,
+    151,
+    '.akb__sol'
+  ).render();
+
+  new Akb(
+    "img/akb/sol2.png",
+    "Аккумулятор SOLITE SD 155G51 (150 А/ч)",
+    41,
+    166,
+    '.akb__sol'
+  ).render();
+
+  new Akb(
+    "img/akb/sol2.png",
+    "Аккумулятор SOLITE SD 115E41 (115 А/ч)",
+    23,
+    106,
+    '.akb__sol'
+  ).render();
+
+  new Akb(
+    "img/akb/sol2.png",
+    "Аккумулятор SOLITE SD 195G51 (200 А/ч)",
+    45,
+    185,
+    '.akb__sol'
+  ).render();
+
+
+
+    //Alpha
   new Akb(
     "img/akb/akb2.png",
     "Аккумулятор ALPHALINE SD 46B19 (44 А/ч)",
@@ -361,7 +439,7 @@ new Akb(
 
 new Akb(
   "img/akb/akb2.png",
-  "Аккумулятор ALPHALINE SD (31S-1000)резьба(140 А/ч)",
+  "Аккумулятор ALPHALINE SD(31S-1000)резьба(140А/ч)",
   27,
   141,
   '.akb__wrapper'
