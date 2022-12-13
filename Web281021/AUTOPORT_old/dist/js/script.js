@@ -59,7 +59,7 @@ $(document).ready(function () {
   //Модальные окна
   $('[data-modal=consultation]').on('click', function () {
     $('.overlay, #consultation').fadeIn(500);
-    clearInterval(timeId);
+    //clearInterval(timeId);
   });
   $('.modal__close').on('click', function () {
     $('.overlay, #consultation, #order, #thanks').fadeOut(500);
