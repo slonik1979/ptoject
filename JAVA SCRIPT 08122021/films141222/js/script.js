@@ -38,3 +38,44 @@ personalMovieDB.movies.a = b;
 personalMovieDB.movies.c = d;
 
 console.log(personalMovieDB.movies);
+
+
+for (i=20; i<=10; i--) {
+    // if (i===13) {
+    //     break;
+    // }
+    num--;
+console.log(num)
+
+}
+
+for (let i = 20; i >= 10; i-- ) {
+    if (i ===13) {
+      break;   
+    }
+    console.log(i);
+}
+
+for (let i = 2; i <= 10; i++ ) {
+    if (i%2 == 0) {
+        console.log(i);
+    }
+   
+}
+
+let num = 2;
+while (num <= 10) {
+    if (num%2 == 0) {
+        console.log(num);
+       
+    }
+    num++;
+    
+}
+
+const arr = [];
+for (let i = 5; i <= 10; i++ ) {
+    arr[i-5] = i;
+    
+}
+console.log(arr)
