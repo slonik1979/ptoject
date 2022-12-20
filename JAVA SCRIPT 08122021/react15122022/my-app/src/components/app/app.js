@@ -8,10 +8,10 @@ import './app.css';
 
 function App() {
   const dataServer = [
-    {name:'Ivan', salary:500, increase:false, id:1},
-    {name:'Petr', salary:800, increase:true, id:2},
-    {name:'Karl', salary:1000, increase:false, id:3}, 
-    {name:'Mike', salary:1100, increase:false, id:4}
+    {name:'Ivan', salary:500, increase:'', id:1},
+    {name:'Petr', salary:800, increase:'', id:2},
+    {name:'Karl', salary:1000, increase:'', id:3}, 
+    {name:'Mike', salary:1100, increase:'', id:4}
   ]
 
   return (
