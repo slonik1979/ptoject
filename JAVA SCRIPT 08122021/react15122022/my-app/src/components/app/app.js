@@ -8,23 +8,23 @@ import './app.css';
 
 function App() {
   const dataServer = [
-    {name:'Ivan', salary:500, increase:'', id:1},
-    {name:'Petr', salary:800, increase:'', id:2},
-    {name:'Karl', salary:1000, increase:'', id:3}, 
-    {name:'Mike', salary:1100, increase:'', id:4}
-  ]
+    { name: 'Ivan', salary: 500, increase: '', id: 1 },
+    { name: 'Petr', salary: 800, increase: '', id: 2 },
+    { name: 'Karl', salary: 1000, increase: '', id: 3 },
+    { name: 'Mike', salary: 1100, increase: '', id: 4 },
+  ];
 
   return (
     <div className="app">
-        <AppInfo />
+      <AppInfo />
 
-        <div className="search-panel">
-            <SearchPanel/>
-            <AppFilter/>
-        </div>
-        
-        <EmployeesList data={dataServer}/>
-        <EmployeesAddForm/>
+      <div className="search-panel">
+        <SearchPanel />
+        <AppFilter />
+      </div>
+
+      <EmployeesList data={dataServer} onDelete555={(i) => console.log(i)} />
+      <EmployeesAddForm />
     </div>
   );
 }
