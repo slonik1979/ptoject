@@ -1,3 +1,4 @@
+import { Component } from 'react';
 import AppInfo from '../app-info/app-info';
 import SearchPanel from '../search-panel/search-panel';
 import AppFilter from '../app-filter/app-filter';
@@ -6,27 +7,58 @@ import EmployeesAddForm from '../employees-add-form/employees-add-form';
 
 import './app.css';
 
-function App() {
-  const dataServer = [
-    { name: 'Ivan', salary: 500, increase: '', id: 1 },
-    { name: 'Petr', salary: 800, increase: '', id: 2 },
-    { name: 'Karl', salary: 1000, increase: '', id: 3 },
-    { name: 'Mike', salary: 1100, increase: '', id: 4 },
-  ];
+class App extends Component{
+  constructor(props) {
+    super(props);
+    this.state = {
+      dataServer: [
+        { name: 'Ivan', salary: 500, increase: '', id: 1 },
+        { name: 'Petr', salary: 800, increase: '', id: 2 },
+        { name: 'Karl', salary: 1000, increase: '', id: 3 },
+        { name: 'Mike', salary: 1100, increase: '', id: 4 },
+      ]
+    };
+    this.maxId = 5;
+  }
 
-  return (
-    <div className="app">
-      <AppInfo />
+  deleteItem = (i) => {
+    this.setState(({dataServer}) => {
+      return {
+        dataServer: dataServer.filter(item => item.id !== i)
+      }
+    })
+  }
 
-      <div className="search-panel">
-        <SearchPanel />
-        <AppFilter />
+  addItem = (name, salary) => {
+    const newItem = {
+        name, 
+        salary,
+        increase: '',
+        id: this.maxId++
+    }
+    this.setState(({dataServer}) => {
+        const newArr = [...dataServer, newItem];
+        return {
+          dataServer: newArr
+        }
+    });
+}
+
+   render() {
+    return (
+      <div className="app">
+        <AppInfo />
+  
+        <div className="search-panel">
+          <SearchPanel />
+          <AppFilter />
+        </div>
+  
+        <EmployeesList data={this.state.dataServer} onDelete555={this.deleteItem} />
+        <EmployeesAddForm onAdd={this.addItem}/>
       </div>
-
-      <EmployeesList data={dataServer} onDelete555={(i) => console.log(i)} />
-      <EmployeesAddForm />
-    </div>
-  );
+    );
+  }
 }
 
 export default App;
