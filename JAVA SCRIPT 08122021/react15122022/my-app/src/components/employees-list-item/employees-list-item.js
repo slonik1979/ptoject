@@ -11,6 +11,8 @@ class EmployeesListItem extends Component {
     };
   }
 
+
+
   onIncrease = () => {
     this.setState(({ increase }) => ({
       increase: !increase,
