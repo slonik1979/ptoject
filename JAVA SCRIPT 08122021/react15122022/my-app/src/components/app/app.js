@@ -11,6 +11,7 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      like: '',
       dataServer: [
         { name: 'Ivan', salary: 500, increase: true, like: true, id: 1 },
         { name: 'Petr', salary: 800, increase: false, like: false, id: 2 },
