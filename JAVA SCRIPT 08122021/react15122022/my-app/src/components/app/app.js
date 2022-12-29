@@ -7,55 +7,70 @@ import EmployeesAddForm from '../employees-add-form/employees-add-form';
 
 import './app.css';
 
-class App extends Component{
+class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
       dataServer: [
-        { name: 'Ivan', salary: 500, increase: '', id: 1 },
-        { name: 'Petr', salary: 800, increase: '', id: 2 },
-        { name: 'Karl', salary: 1000, increase: '', id: 3 },
-        { name: 'Mike', salary: 1100, increase: '', id: 4 },
-      ]
+        { name: 'Ivan', salary: 500, increase: true, like: true, id: 1 },
+        { name: 'Petr', salary: 800, increase: false, like: false, id: 2 },
+        { name: 'Karl', salary: 1000, increase: false, like: false, id: 3 },
+        { name: 'Mike', salary: 1100, increase: false, like: false, id: 4 },
+      ],
     };
     this.maxId = 5;
   }
 
   deleteItem = (i) => {
-    this.setState(({dataServer}) => {
+    this.setState(({ dataServer }) => {
       return {
-        dataServer: dataServer.filter(item => item.id !== i)
-      }
-    })
-  }
+        dataServer: dataServer.filter((item) => item.id !== i),
+      };
+    });
+  };
 
   addItem = (name, salary) => {
     const newItem = {
-        name, 
-        salary,
-        increase: '',
-        id: this.maxId++
-    }
-    this.setState(({dataServer}) => {
-        const newArr = [...dataServer, newItem];
-        return {
-          dataServer: newArr
-        }
+      name,
+      salary,
+      increase: '',
+      id: this.maxId++,
+    };
+    this.setState(({ dataServer }) => {
+      const newArr = [...dataServer, newItem];
+      return {
+        dataServer: newArr,
+      };
     });
-}
+  };
 
-   render() {
+  onToggleIIncrease = (id1) => {
+    console.log(`${id1}`);
+  };
+
+  onToggleRise = (id1) => {
+    this.setState(({ like }) => ({
+      like: !like,
+    }));
+  };
+
+  render() {
     return (
       <div className="app">
         <AppInfo />
-  
+
         <div className="search-panel">
           <SearchPanel />
           <AppFilter />
         </div>
-  
-        <EmployeesList data={this.state.dataServer} onDelete555={this.deleteItem} />
-        <EmployeesAddForm onAdd={this.addItem}/>
+
+        <EmployeesList
+          data={this.state.dataServer}
+          onDelete555={this.deleteItem}
+          onToggleIIncrease={this.onToggleIIncrease}
+          onToggleRise={this.onToggleRise}
+        />
+        <EmployeesAddForm onAdd={this.addItem} />
       </div>
     );
   }
