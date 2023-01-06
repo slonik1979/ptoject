@@ -214,7 +214,7 @@ $(document).ready(function () {
 
   // Timer
 
-  const finaldate = '2022-12-31';
+  const finaldate = '2023-01-31';
 
   function getTimeRemaining(endtime) {
     const total = Date.parse(endtime) - Date.parse(new Date()),
