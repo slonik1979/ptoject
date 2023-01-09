@@ -35,7 +35,8 @@ class App extends Component {
       name,
       salary,
       increase: '',
-      id: this.maxId++,
+      like: false,
+      id: this.maxId++
     };
     this.setState(({ dataServer }) => {
       const newArr = [...dataServer, newItem];
@@ -46,13 +47,34 @@ class App extends Component {
   };
 
   onToggleIIncrease = (id1) => {
-    console.log(`${id1}`);
-  };
+    // this.setState(({dataServer}) => {
+    //   const index = dataServer.findIndex(elem => elem.id === id1);
+    
+    //   const old = dataServer[index];
+    //   const newItem = {...old, increase: !old.increase};
+    //   const newArr = [...dataServer.slice(0, index), newItem, ...dataServer.slice(index + 1)]
+
+    //   return {
+    //     dataServer: newArr
+    //   }
+    
+    // })
+
+    this.setState(({dataServer}) => ({
+      dataServer: dataServer.map(item => {
+        if (item.id1 === id1) {
+          return {...item, increase: !item.increase}
+        }
+        return item;
+      })
+  }))
+}
 
   onToggleRise = (id1) => {
-    this.setState(({ like }) => ({
-      like: !like,
-    }));
+    console.log(`${id1}`);
+    // this.setState(({like}) => ({
+    //   like: !like
+    // }));
   };
 
   render() {

@@ -22,7 +22,7 @@ const EmployeesListItem = (props) => {
     onToggleIIncrease,
     onToggleRise,
     increase,
-    like,
+    like
   } = props;
 
   let classNames = 'list-group-item d-flex justify-content-between';
