@@ -19,8 +19,7 @@ const EmployeesListItem = (props) => {
     name,
     salary,
     onDelete,
-    onToggleIIncrease,
-    onToggleRise,
+    onToggleProp,
     increase,
     like
   } = props;
@@ -35,9 +34,8 @@ const EmployeesListItem = (props) => {
 
   return (
     <li className={classNames}>
-      <span className="list-group-item-label" onClick={onToggleRise}>
-        {name}
-      </span>
+      <span className="list-group-item-label" onClick={onToggleProp} data-toggle='like'>
+        {name} </span>
       <input
         type="text"
         className="list-group-item-input"
@@ -47,8 +45,8 @@ const EmployeesListItem = (props) => {
         <button
           type="button"
           className="btn-cookie btn-sm "
-          onClick={onToggleIIncrease}
-        >
+          onClick={onToggleProp}
+          data-toggle='increase'>
           <i className="fas fa-cookie"></i>
         </button>
 

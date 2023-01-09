@@ -5,8 +5,7 @@ import './employees-list.css';
 const EmployeesList = ({
   data,
   onDelete555,
-  onToggleIIncrease,
-  onToggleRise,
+  onToggleProp
 }) => {
   const elements = data.map((item) => {
     const { id, ...iProps } = item;
@@ -15,8 +14,8 @@ const EmployeesList = ({
         key={id}
         {...iProps}
         onDelete={() => onDelete555(id)}
-        onToggleIIncrease={() => onToggleIIncrease(id)}
-        onToggleRise={() => onToggleRise(id)}
+        onToggleProp={(e) => onToggleProp(id, e.currentTarget.getAttribute('data-toggle'))}
+        
       />
     );
   });

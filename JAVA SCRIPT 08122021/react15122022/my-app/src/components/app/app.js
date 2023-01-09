@@ -46,7 +46,7 @@ class App extends Component {
     });
   };
 
-  onToggleIIncrease = (id1) => {
+  onToggleProp = (id1, prop) => {
     // this.setState(({dataServer}) => {
     //   const index = dataServer.findIndex(elem => elem.id === id1);
     
@@ -62,25 +62,32 @@ class App extends Component {
 
     this.setState(({dataServer}) => ({
       dataServer: dataServer.map(item => {
-        if (item.id1 === id1) {
-          return {...item, increase: !item.increase}
+        if (item.id === id1) {
+          return {...item, [prop]: !item[prop]}
         }
         return item;
       })
   }))
 }
 
-  onToggleRise = (id1) => {
-    console.log(`${id1}`);
-    // this.setState(({like}) => ({
-    //   like: !like
-    // }));
-  };
+  // onToggleRise = (id1) => {
+  //   this.setState(({dataServer}) => ({
+  //     dataServer: dataServer.map(item => {
+  //       if (item.id === id1) {
+  //         return {...item, like: !item.like}
+  //       }
+  //       return item;
+  //     })
+  // }))
+  // };
 
   render() {
+    const employees = this.state.dataServer.length;
+    const increased = this.state.dataServer.filter(item => item.increase).length;
     return (
       <div className="app">
-        <AppInfo />
+        <AppInfo 
+        employees={employees} increased={increased}/>
 
         <div className="search-panel">
           <SearchPanel />
@@ -90,9 +97,8 @@ class App extends Component {
         <EmployeesList
           data={this.state.dataServer}
           onDelete555={this.deleteItem}
-          onToggleIIncrease={this.onToggleIIncrease}
-          onToggleRise={this.onToggleRise}
-        />
+          onToggleProp={this.onToggleProp}
+          />
         <EmployeesAddForm onAdd={this.addItem} />
       </div>
     );
