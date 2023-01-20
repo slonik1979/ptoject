@@ -75,3 +75,28 @@ if (car.age > 5) {
   console.log('Need Repair');
   console.log(car.needRepair);
 }
+
+// Дан объект let item = { name: 'Intel core i7', price: '100$', discount: '15%' }.
+
+// Написать условие если у item есть поле discount и там есть значение которое не NaN а также есть поле price значение которого также не NaN то в объекте item создать поле priceWithDiscount и записать туда цену с учетом скидки и вывести ее в консоль, обратите внимание что поля discount и price это строки и вам из них нужно получить числа чтобы выполнить расчет. иначе если поля discount нет то вывести просто поле price в консоль.
+//item = item.discount && item = item.discount = !NaN
+
+let item = { 
+  name: 'Intel core i7', 
+  price: '100$', 
+  discount: '15%' 
+};
+
+  // if (item.discount && item.['discount'] = '15%' && item.price && item.price = 'NaN') {
+  //   console.log('discount');
+  // }
+
+  if (item.discount && item.discount >= '!NaN' && item.price && item.price >= '!NaN') {
+     let a = parseInt(item.price);
+     let b = parseInt(item.discount);
+
+     item.priceWithDiscount = `${a - (b / 100 * a)}` + `${'$'}`;
+            
+     console.log(item.priceWithDiscount);
+       
+  } else console.log('no price')
