@@ -98,53 +98,10 @@ if (
 
   item.priceWithDiscount = `${a - (b / 100) * a}` + `${'$'}`;
 
-<<<<<<< HEAD
+  item.priceWithDiscount = `${a - (b / 100) * a}` + `${'$'}`;
+
   console.log(item.priceWithDiscount);
-} else if ((item.discount = 'undefined')) {
-  console.log(item.price);
-}
-
-// Дан следующий код:
-
-// let product = {
-
-// name: “Яблоко”,
-
-// price: “10$”
-
-// };
-
-// let min = 10; // минимальная цена
-
-// let max = 20; // максимальная цена
-
-// Написать условие если цена товара больше или равна минимальной цене и меньше или равна максимальной цене то вывести в консоль название этого товара, иначе вывести в консоль что товаров не найдено.
-
-let product = {
-  name: 'Яблоко',
-  price: '10$',
-};
-
-let min = 10; // минимальная цена
-
-let max = 20; // максимальная цена
-
-product.price = parseInt(product.price);
-
-if (product.price >= min && product.price <= max) {
-  console.log(product.name);
-} else console.log('товаров не найдено');
-=======
-     item.priceWithDiscount = `${a - (b / 100 * a)}` + `${'$'}`;
-            
-     console.log(item.priceWithDiscount);
-       
-  } else console.log('no price')
-
-
-
-
-
+} else console.log('no price');
 
 // if (a === ‘block’) {
 //    console.log(‘block’)
@@ -156,19 +113,19 @@ if (product.price >= min && product.price <= max) {
 //    console.log(‘other’)
 // }
 
- let a
-  switch (a) {
-    case 'block':
-      console.log('block');
-      break;
-    case 'none':
-      console.log('none');
-      break;
-    case 'inline':
-          console.log('inline');
-          break;
-    default: 
-      console.log('other');
+let a;
+switch (a) {
+  case 'block':
+    console.log('block');
+    break;
+  case 'none':
+    console.log('none');
+    break;
+  case 'inline':
+    console.log('inline');
+    break;
+  default:
+    console.log('other');
 }
 
 // Записать данное условие в виде тернарного оператора
@@ -185,20 +142,42 @@ if (product.price >= min && product.price <= max) {
 
 // }
 
-
-
 let b = 'hidden';
-(b === 'hidden') ? b = 'visible' : b = 'hidden';
-
-
-
-
-
+b === 'hidden' ? (b = 'visible') : (b = 'hidden');
+console.log(b);
 
 let c = 0;
-c === 0 ? c = 1 : c < 0 ? c = 'less then zero' : c *= 10;
+c === 0 ? (c = 1) : c < 0 ? (c = 'less then zero') : (c *= 10);
+console.log(c);
 
 var firstCheck = false,
-    secondCheck = false,
-    access = firstCheck ? "Доступ запрещён" : secondCheck ? "Доступ запрещён" : "Доступ разрешён";
->>>>>>> 8993c08d9204373cb3efe3556a3d756779e23094
+  secondCheck = false,
+  access = firstCheck
+    ? 'Доступ запрещён'
+    : secondCheck
+    ? 'Доступ запрещён'
+    : 'Доступ разрешён';
+
+// На основе строки “i am in the easycode” сделать новую строку где первые буквы каждого слова
+
+// будут в верхнем регистре. Использовать for или while.
+
+// let colors = ['white', 'black', 'yellow', 'orange'];
+
+// for (let i = 0; i < colors.length; i++) {
+//   colors[i] = colors[i].toUpperCase();
+// }
+
+// let str = 'Hello';
+// let res = '';
+
+// for (let i = 0; i < str.length; i++) {
+//   res += str[i] + '*';
+// }
+
+let str = 'i am in the easycode';
+let res = '';
+for (let i = 0; i < str.length; i++) {
+  res = str.toUpperCase();
+  console.log(res);
+}
