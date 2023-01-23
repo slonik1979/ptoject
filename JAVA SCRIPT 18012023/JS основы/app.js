@@ -40,8 +40,8 @@
 // };
 // console.log(phone);
 
-let a = true + undefined;
-console.log(a);
+// let a = true + undefined;
+// console.log(a);
 
 let hidden = 'hidden';
 
@@ -98,6 +98,7 @@ if (
 
   item.priceWithDiscount = `${a - (b / 100) * a}` + `${'$'}`;
 
+<<<<<<< HEAD
   console.log(item.priceWithDiscount);
 } else if ((item.discount = 'undefined')) {
   console.log(item.price);
@@ -133,3 +134,71 @@ product.price = parseInt(product.price);
 if (product.price >= min && product.price <= max) {
   console.log(product.name);
 } else console.log('товаров не найдено');
+=======
+     item.priceWithDiscount = `${a - (b / 100 * a)}` + `${'$'}`;
+            
+     console.log(item.priceWithDiscount);
+       
+  } else console.log('no price')
+
+
+
+
+
+
+// if (a === ‘block’) {
+//    console.log(‘block’)
+// } else if (a === ‘none’) {
+//    console.log(‘none’)
+// } else if (a === ‘inline’) {
+//    console.log(‘inline’)
+// } else {
+//    console.log(‘other’)
+// }
+
+ let a
+  switch (a) {
+    case 'block':
+      console.log('block');
+      break;
+    case 'none':
+      console.log('none');
+      break;
+    case 'inline':
+          console.log('inline');
+          break;
+    default: 
+      console.log('other');
+}
+
+// Записать данное условие в виде тернарного оператора
+
+// let b = 'hidden';
+
+// if (b === 'hidden') {
+
+//   b = 'visible';
+
+// } else {
+
+//   b = 'hidden';
+
+// }
+
+
+
+let b = 'hidden';
+(b === 'hidden') ? b = 'visible' : b = 'hidden';
+
+
+
+
+
+
+let c = 0;
+c === 0 ? c = 1 : c < 0 ? c = 'less then zero' : c *= 10;
+
+var firstCheck = false,
+    secondCheck = false,
+    access = firstCheck ? "Доступ запрещён" : secondCheck ? "Доступ запрещён" : "Доступ разрешён";
+>>>>>>> 8993c08d9204373cb3efe3556a3d756779e23094
