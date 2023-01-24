@@ -43,65 +43,65 @@
 // let a = true + undefined;
 // console.log(a);
 
-let hidden = 'hidden';
+// let hidden = 'hidden';
 
-if (hidden == 'hidden1') {
-  hidden = 'visible';
-  console.log(hidden);
-} else hidden == 'hidden';
-console.log(hidden);
+// if (hidden == 'hidden1') {
+//   hidden = 'visible';
+//   console.log(hidden);
+// } else hidden == 'hidden';
+// console.log(hidden);
 
-let number = -1;
-if (number == 0) {
-  number = 1;
-  console.log(number);
-} else if (number < 0) {
-  number = 'less then zero';
-  console.log(number);
-} else if (number > 0) {
-  number *= 10;
-  console.log(number);
-}
+// let number = -1;
+// if (number == 0) {
+//   number = 1;
+//   console.log(number);
+// } else if (number < 0) {
+//   number = 'less then zero';
+//   console.log(number);
+// } else if (number > 0) {
+//   number *= 10;
+//   console.log(number);
+// }
 
-let car = {
-  name: 'Lexus',
-  age: 1,
-  create: 2008,
-  needRepair: false,
-};
+// let car = {
+//   name: 'Lexus',
+//   age: 1,
+//   create: 2008,
+//   needRepair: false,
+// };
 
-if (car.age > 5) {
-  car.needRepair = true;
-  console.log('Need Repair');
-  console.log(car.needRepair);
-}
+// if (car.age > 5) {
+//   car.needRepair = true;
+//   console.log('Need Repair');
+//   console.log(car.needRepair);
+// }
 
 // Дан объект let item = { name: 'Intel core i7', price: '100$', discount: '15%' }.
 
 // Написать условие если у item есть поле discount и там есть значение которое не NaN а также есть поле price значение которого также не NaN то в объекте item создать поле priceWithDiscount и записать туда цену с учетом скидки и вывести ее в консоль, обратите внимание что поля discount и price это строки и вам из них нужно получить числа чтобы выполнить расчет. иначе если поля discount нет то вывести просто поле price в консоль.
 //item = item.discount && item = item.discount = !NaN
 
-let item = {
-  name: 'Intel core i7',
-  price: '100$',
-  discount: '15%',
-};
+// let item = {
+//   name: 'Intel core i7',
+//   price: '100$',
+//   discount: '15%',
+// };
 
-if (
-  item.discount &&
-  item.discount >= '!NaN' &&
-  item.price &&
-  item.price >= '!NaN'
-) {
-  let a = parseInt(item.price);
-  let b = parseInt(item.discount);
+// if (
+//   item.discount &&
+//   item.discount >= '!NaN' &&
+//   item.price &&
+//   item.price >= '!NaN'
+// ) {
+//   let a = parseInt(item.price);
+//   let b = parseInt(item.discount);
 
-  item.priceWithDiscount = `${a - (b / 100) * a}` + `${'$'}`;
+//   item.priceWithDiscount = `${a - (b / 100) * a}` + `${'$'}`;
 
-  item.priceWithDiscount = `${a - (b / 100) * a}` + `${'$'}`;
+//   item.priceWithDiscount = `${a - (b / 100) * a}` + `${'$'}`;
 
-  console.log(item.priceWithDiscount);
-} else console.log('no price');
+//   console.log(item.priceWithDiscount);
+// } else console.log('no price');
 
 // if (a === ‘block’) {
 //    console.log(‘block’)
@@ -113,20 +113,20 @@ if (
 //    console.log(‘other’)
 // }
 
-let a;
-switch (a) {
-  case 'block':
-    console.log('block');
-    break;
-  case 'none':
-    console.log('none');
-    break;
-  case 'inline':
-    console.log('inline');
-    break;
-  default:
-    console.log('other');
-}
+// let a;
+// switch (a) {
+//   case 'block':
+//     console.log('block');
+//     break;
+//   case 'none':
+//     console.log('none');
+//     break;
+//   case 'inline':
+//     console.log('inline');
+//     break;
+//   default:
+//     console.log('other');
+// }
 
 // Записать данное условие в виде тернарного оператора
 
@@ -142,21 +142,21 @@ switch (a) {
 
 // }
 
-let b = 'hidden';
-b === 'hidden' ? (b = 'visible') : (b = 'hidden');
-console.log(b);
+// let b = 'hidden';
+// b === 'hidden' ? (b = 'visible') : (b = 'hidden');
+// console.log(b);
 
-let c = 0;
-c === 0 ? (c = 1) : c < 0 ? (c = 'less then zero') : (c *= 10);
-console.log(c);
+// let c = 0;
+// c === 0 ? (c = 1) : c < 0 ? (c = 'less then zero') : (c *= 10);
+// console.log(c);
 
-var firstCheck = false,
-  secondCheck = false,
-  access = firstCheck
-    ? 'Доступ запрещён'
-    : secondCheck
-    ? 'Доступ запрещён'
-    : 'Доступ разрешён';
+// var firstCheck = false,
+//   secondCheck = false,
+//   access = firstCheck
+//     ? 'Доступ запрещён'
+//     : secondCheck
+//     ? 'Доступ запрещён'
+//     : 'Доступ разрешён';
 
 // На основе строки “i am in the easycode” сделать новую строку где первые буквы каждого слова
 
@@ -175,9 +175,66 @@ var firstCheck = false,
 //   res += str[i] + '*';
 // }
 
-let str = 'i am in the easycode';
-let res = '';
-for (let i = 0; i < str.length; i++) {
-  res = str.toUpperCase();
-  console.log(res);
+// let str = 'i am in the easycode';
+// let res = '';
+// for (let i = 0; i < str.length; i++) {
+//   res += (str[i - 1] == ' ') ? str[i].toUpperCase() : str[i];
+  
+// }
+
+// console.log(res);
+
+// let str = 'i am in the easycode';
+// let words = str.split(' ');
+// for (let i = 0; i < words.length; i++) {
+// 	// Увеличим регистр каждого слова:
+// 	words[i] = words[i].slice(0, 1).toUpperCase() + words[i].slice(1);
+// }
+// console.log(words);
+
+// let user = {"name":"Smith", age: 30};
+// console.log(user['name'] == user.name);
+
+// console.log(+'-' + 2)
+
+// let foo = { str: 'test' }; 
+// console.log(foo && foo.str);
+
+// function reverseString(str) {
+//  const newString = '';
+//   for (let i = str.length - 1; i >= 0; i--) {
+//     newString += str[i];
+//   }
+//   return newString;
+// }
+// function reverseString(str) {
+//   let newString = "";
+//   for (let i = str.length - 1; i >= 0; i--) {
+//       newString += str[i];
+//   }
+//   return newString;
+// }
+
+// reverseString('test');
+// reverseString('hello')
+// reverseString('');
+// reverseString(null);
+// reverseString(undefined);
+// reverseString();
+
+function reverseString(str) {
+  var newString = "";
+  str = String(str);
+  for (var i = str.length - 1; i >= 0; i--) {
+      newString += str[i];
+  }
+  console.log(newString);
+  return newString;
+  
 }
+
+reverseString('test');
+reverseString('ghy');
+reverseString(null);
+reverseString(undefined);
+reverseString();
