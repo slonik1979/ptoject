@@ -238,3 +238,35 @@ reverseString('ghy');
 reverseString(null);
 reverseString(undefined);
 reverseString();
+
+// Создать функцию, которая принимает число n и возвращает массив, заполненный числами от 1 до n:
+//getArray(10); // [1,2,3,4,5,6,7,8,9,10]
+
+function getArray(num) {
+  let arrNum = [];
+  for (let i = 1; i <= num; i++)
+  arrNum.push(i);
+  return arrNum;
+}
+console.log(getArray(10));
+
+// Создать функцию, которая принимает массив, а возвращает новый массив с дублированными элементами входного массива.
+// doubleArray([1,2,3]) // [1,2,3,1,2,3]
+
+function doubleArray(arr) {
+  let doubleArrayNum = [] ;
+  doubleArrayNum =arr.concat(arr);
+  return doubleArrayNum;
+}
+console.log(doubleArray([1,2,3]));
+
+
+function changeCollection() {
+  let changeCollectionNumber = [];
+  changeCollectionNumber = changeCollectionNumber.concat(changeCollectionNumber);
+  return changeCollectionNumber;
+}
+
+console.log(changeCollection([1,2,3]))
+
+
