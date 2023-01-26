@@ -63,3 +63,46 @@ function thirdTask() {
 }
 
 thirdTask();
+
+function sayHello(name) {
+  let hello = `Привет, ${name}`;
+  console.log(hello);
+  return hello;
+}
+
+sayHello('Petr');
+
+// Место для второй задачи
+function returnNeighboringNumbers(number) {
+  let arr = [number - 1, number, number + 1];
+
+  console.log(arr);
+  return arr;
+}
+
+returnNeighboringNumbers(5);
+
+// Место для третьей задачи
+function getMathResult(num, times) {
+  if (typeof times !== 'number' || times <= 0) {
+    console.log(num);
+    return num;
+  }
+
+  let str = '';
+
+  for (let i = 1; i <= times; i++) {
+    if (i === times) {
+      str += `${num * i}`;
+      // Тут без черточек в конце
+    } else {
+      str += `${num * i}---`;
+      // Это тоже самое, что и
+      // str = str + num * i + "---"
+    }
+  }
+  console.log(str);
+  return str;
+}
+
+getMathResult(10, 3);
