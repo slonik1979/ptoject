@@ -106,3 +106,70 @@ function getMathResult(num, times) {
 }
 
 getMathResult(10, 3);
+
+
+let fruits = ["Apple", "Orange", "Plum"];
+  console.log(fruits[fruits.length-1]);
+
+  console.log(fruits.at(-1));
+
+  let fruits2 = ["Яблоки", "Груша", "Апельсин"];
+
+// добавляем новое значение в "копию"
+let shoppingCart = fruits2;
+shoppingCart.push("Банан");
+
+// что в fruits?
+console.log( fruits2.length ); // ?
+
+
+// function sumInput() {
+
+//   let numbers = [];
+
+//   while (true) {
+
+//     let value = prompt("Введите число", 0);
+
+//     // Прекращаем ввод?
+//     if (value === "" || value === null || !isFinite(value)) break;
+
+//     numbers.push(+value);
+//   }
+
+//   let sum = 0;
+//   for (let number of numbers) {
+//     sum += number;
+//   }
+//   return sum;
+// }
+
+// alert( sumInput() );
+
+// let sortNumber = [1, -2, 15, 2, 0, 8];
+  const sortArr = (a, b) => {
+    return a - b;
+  }
+//   sortNumber.sortArr();
+//   console.log(sortNumber);
+
+
+
+  // let arr = [ 1, 15, 2 ];
+  // sortArr(arr);
+
+
+  // arr.sort(function(a, b) { return a - b; });
+    // console.log(arr);;  // 1, 2, 15
+
+    sortString = [1, 'Alex', 15, 'Max', 0, 2, 'Anna'];
+    sortString.sort(function(a, b) { return a - b; });
+    
+    console.log(sortString);
+
+    let names = 'Вася Петя, Маша';
+
+let arr = names.split(',');
+
+
+  console.log( `Сообщение получат: ${arr}.` ); // Сообщение получат: Вася (и другие имена)
