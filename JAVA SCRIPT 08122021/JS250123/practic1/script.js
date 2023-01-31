@@ -28,8 +28,6 @@ str.length - и получить её длину)
 "Вы киноман". А если не подошло ни к одному варианту - "Произошла ошибка"
 4) Потренироваться и переписать цикл еще двумя способами*/
 
-
-
 /* Задание на урок:
 1) Первую часть задания повторить по уроку
 2) Создать функцию showMyDB, которая будет проверять свойство privat. Если стоит в позиции
@@ -39,89 +37,112 @@ false - выводит в консоль главный объект прогр�
 genres
 P.S. Функции вызывать не обязательно */
 
-let numberOfFilms;
+// let numberOfFilms;
 
-function start() {
-    numberOfFilms = +prompt('Сколько фильмов вы уже посмотрели?', '');
-  while(numberOfFilms == '' || numberOfFilms == null || isNaN(numberOfFilms)) {
-    numberOfFilms = +prompt('Сколько фильмов вы уже посмотрели?', '');
+// function start() {
+//   numberOfFilms = +prompt('Сколько фильмов вы уже посмотрели?', '');
+//   while (numberOfFilms == '' || numberOfFilms == null || isNaN(numberOfFilms)) {
+//     numberOfFilms = +prompt('Сколько фильмов вы уже посмотрели?', '');
+//   }
+// }
+
+// start();
+
+// const personalMovieDB = {
+//   count: numberOfFilms,
+//   movies: {},
+//   actors: {},
+//   genres: [],
+//   privat: false,
+// };
+
+// function remembeMyFilms() {
+//   for (let i = 0; i < 2; i++) {
+//     const questi1 = prompt('Один из последних просмотренных фильмов?', '');
+//     const questi2 = +prompt('На сколько оцените его?', '');
+
+//     if (
+//       questi1 != null &&
+//       questi2 != null &&
+//       questi1 != '' &&
+//       questi2 != '' &&
+//       questi1.length < 50
+//     ) {
+//       personalMovieDB.movies[questi1] = questi2;
+//     } else {
+//       console.log('erorr');
+//       i--;
+//     }
+//   }
+// }
+
+// remembeMyFilms();
+
+// function detectPersonalLevel() {
+//   if (personalMovieDB.count < 10) {
+//     console.log('Просмотрено довольно мало фильмов');
+//   } else if (personalMovieDB.count >= 10 && personalMovieDB.count <= 30) {
+//     console.log('Вы классический зритель');
+//   } else if (personalMovieDB.count > 30) {
+//     console.log('Вы киноман');
+//   } else {
+//     console.log('Произошла ошибка');
+//   }
+// }
+
+// detectPersonalLevel();
+
+// function showMyDB() {
+//   if (personalMovieDB.privat == false) {
+//     console.log(personalMovieDB);
+//   }
+// }
+
+// showMyDB();
+
+// function writeYourGenres() {
+//   for (let i = 1; i < 4; i++) {
+//     const a = prompt(`Ваш любимый жанр под номером ${i}`, '');
+//     personalMovieDB.genres.push(a);
+//   }
+// }
+
+// writeYourGenres();
+
+// function calculateVolumeAndArea(a) {
+//   if (Number.isInteger(a)) {
+//     b = a * a * a;
+//     c = a * a * 6;
+//     console.log(`Объем куба: ${b}, площадь всей поверхности: ${c}`);
+//   } else console.log('При вычислении произошла ошибка');
+// }
+
+// calculateVolumeAndArea(15);
+// calculateVolumeAndArea(15.5);
+// calculateVolumeAndArea('15');
+
+Math.ceil;
+
+function getCoupeNumber(number, coupe) {
+  if (number > 0 && number <= 36) {
+    const numberCouppe = Math.ceil(number / coupe);
+    console.log(numberCouppe);
+  } else if (number == 0 || number > 36) {
+    console.log('Таких мест в вагоне не существует');
   }
+  // if (number > 36 || number == 0) {
+  //   console.log('Таких мест в вагоне не существует');
+  // } else if (number < 0 || String(number)) {
+  //   console.log('Ошибка. Проверьте правильность введенного номера места');
+  // } else {
+  //   const numberCouppe = Math.ceil(number / coupe);
+  //   console.log(numberCouppe);
+  // }
 }
 
-start();
+getCoupeNumber(37, 4);
 
-const personalMovieDB = {
-  count: numberOfFilms,
-  movies: {},
-  actors: {},
-  genres: [],
-  privat: false,
-};
-
-function remembeMyFilms() {
-  for (let i = 0; i < 2; i++) {
-    const questi1 = prompt('Один из последних просмотренных фильмов?', '');
-    const questi2 = +prompt('На сколько оцените его?', '');
-  
-    if (
-      questi1 != null &&
-      questi2 != null &&
-      questi1 != '' &&
-      questi2 != '' &&
-      questi1.length < 50
-    ) {
-      personalMovieDB.movies[questi1] = questi2;
-    } else {
-      console.log('erorr');
-      i--;
-    }
-  }
-}
-
-remembeMyFilms();
-
-function detectPersonalLevel() {
-  if (personalMovieDB.count < 10) {
-    console.log('Просмотрено довольно мало фильмов');
-  } else if (personalMovieDB.count >= 10 && personalMovieDB.count <= 30) {
-    console.log('Вы классический зритель');
-  } else if (personalMovieDB.count > 30) {
-    console.log('Вы киноман');
-  } else {
-    console.log('Произошла ошибка');
-  }
-}
-
-detectPersonalLevel();
-
-function showMyDB() {
-  if (personalMovieDB.privat == false) {
-    console.log(personalMovieDB);
-  }
-}
-
-showMyDB();
-
-function writeYourGenres() {
-  for ( let i = 1; i < 4; i++) {
-    const a = prompt(`Ваш любимый жанр под номером ${i}`, '')
-    personalMovieDB.genres.push(a);
-  }
-}
-
-writeYourGenres();
-
-
-
-function calculateVolumeAndArea(a) {
-  if (Number.isInteger(a)) {
-      b = a * a * a;
-      c = a * a * 6;
-    console.log(`Объем куба: ${b}, площадь всей поверхности: ${c}`);
-  }
-  else console.log('При вычислении произошла ошибка')
-}
-
-calculateVolumeAndArea(15);
-calculateVolumeAndArea(15.5);
-calculateVolumeAndArea('15');
+// !Number.isInteger(number) ||
+// !Number.isInteger(number) ||
+// || !isNaN(number
+// 0 || number > 36
