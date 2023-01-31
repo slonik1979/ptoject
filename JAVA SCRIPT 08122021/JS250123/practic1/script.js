@@ -130,6 +130,14 @@ function getCoupeNumber(number, coupe) {
   } else if (number == 0 || number > 36) {
     console.log('Таких мест в вагоне не существует');
   }
+  // else if () {
+
+  // }
+
+  // else if () {
+
+  // }
+
   // if (number > 36 || number == 0) {
   //   console.log('Таких мест в вагоне не существует');
   // } else if (number < 0 || String(number)) {
@@ -140,7 +148,7 @@ function getCoupeNumber(number, coupe) {
   // }
 }
 
-getCoupeNumber(37, 4);
+getCoupeNumber(7.7, 4);
 
 // !Number.isInteger(number) ||
 // !Number.isInteger(number) ||
