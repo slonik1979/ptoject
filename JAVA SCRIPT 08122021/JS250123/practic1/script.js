@@ -124,16 +124,20 @@ P.S. Функции вызывать не обязательно */
 Math.ceil;
 
 function getCoupeNumber(number, coupe) {
-  if (number > 0 && number <= 36) {
+  if (number > 0 && number <= 36 && typeof(number) === 'number' && Number.isInteger(number)) {
     const numberCouppe = Math.ceil(number / coupe);
-    console.log(numberCouppe);
-  } else if (number == 0 || number > 36) {
-    console.log('Таких мест в вагоне не существует');
+    console.log(numberCouppe);} 
+      else if (number < 0 || typeof(number) == 'string' || !Number.isInteger(number)) {
+    console.log('Ошибка. Проверьте правильность введенного номера места');
+  }else if (number === 0 || number > 36) {
+  console.log('Таких мест в вагоне не существует');
   }
-  // else if () {
+}
+// } else if (number === 0 || number > 36) {
+//   console.log('Таких мест в вагоне не существует');
+// }
 
-  // }
-
+  
   // else if () {
 
   // }
@@ -146,11 +150,55 @@ function getCoupeNumber(number, coupe) {
   //   const numberCouppe = Math.ceil(number / coupe);
   //   console.log(numberCouppe);
   // }
-}
+
 
 getCoupeNumber(7.7, 4);
 
-// !Number.isInteger(number) ||
-// !Number.isInteger(number) ||
-// || !isNaN(number
-// 0 || number > 36
+
+function getTimeFromMinutes(time) {
+  if (!Number.isInteger(time) || time < 0) {
+    b = "Ошибка, проверьте данные";
+    console.log(b);
+    return (b);
+   }
+  
+  if (time > 60) {
+     hour = Math.floor(time/60);
+     minutes = time % 60;
+  } else {
+    hour = 0;
+    minutes = time;
+  }
+  let clock = '';
+  console.log(hour);
+  console.log(minutes);
+   
+  
+    
+   if (hour === 0 ) {
+      clock = 'часов';
+    } else if (hour === 2 || hour === 3 || hour === 4) {
+      clock = 'часа';
+    } else if (hour === 1) {
+      clock = 'час';
+    } else {clock = 'часов';}
+
+
+  a = `"Это ${hour} ${clock} и ${minutes} минут"`
+  console.log(a);
+  return a;
+  } 
+
+  
+
+
+ getTimeFromMinutes(169);
+
+// function getTime(a) {
+//   hour = Math.floor(a/5);
+//   console.log(hour);
+  
+//   return hour;
+// }
+
+// getTime(0.5);
