@@ -124,47 +124,53 @@ P.S. Функции вызывать не обязательно */
 Math.ceil;
 
 function getCoupeNumber(number, coupe) {
-  if (number > 0 && number <= 36 && typeof(number) === 'number' && Number.isInteger(number)) {
+  if (
+    number > 0 &&
+    number <= 36 &&
+    typeof number === 'number' &&
+    Number.isInteger(number)
+  ) {
     const numberCouppe = Math.ceil(number / coupe);
-    console.log(numberCouppe);} 
-      else if (number < 0 || typeof(number) == 'string' || !Number.isInteger(number)) {
+    console.log(numberCouppe);
+  } else if (
+    number < 0 ||
+    typeof number == 'string' ||
+    !Number.isInteger(number)
+  ) {
     console.log('Ошибка. Проверьте правильность введенного номера места');
-  }else if (number === 0 || number > 36) {
-  console.log('Таких мест в вагоне не существует');
+  } else if (number === 0 || number > 36) {
+    console.log('Таких мест в вагоне не существует');
   }
 }
 // } else if (number === 0 || number > 36) {
 //   console.log('Таких мест в вагоне не существует');
 // }
 
-  
-  // else if () {
+// else if () {
 
-  // }
+// }
 
-  // if (number > 36 || number == 0) {
-  //   console.log('Таких мест в вагоне не существует');
-  // } else if (number < 0 || String(number)) {
-  //   console.log('Ошибка. Проверьте правильность введенного номера места');
-  // } else {
-  //   const numberCouppe = Math.ceil(number / coupe);
-  //   console.log(numberCouppe);
-  // }
-
+// if (number > 36 || number == 0) {
+//   console.log('Таких мест в вагоне не существует');
+// } else if (number < 0 || String(number)) {
+//   console.log('Ошибка. Проверьте правильность введенного номера места');
+// } else {
+//   const numberCouppe = Math.ceil(number / coupe);
+//   console.log(numberCouppe);
+// }
 
 getCoupeNumber(7.7, 4);
 
-
 function getTimeFromMinutes(time) {
   if (!Number.isInteger(time) || time < 0) {
-    b = "Ошибка, проверьте данные";
+    b = 'Ошибка, проверьте данные';
     console.log(b);
-    return (b);
-   }
-  
+    return b;
+  }
+
   if (time > 60) {
-     hour = Math.floor(time/60);
-     minutes = time % 60;
+    hour = Math.floor(time / 60);
+    minutes = time % 60;
   } else {
     hour = 0;
     minutes = time;
@@ -172,33 +178,54 @@ function getTimeFromMinutes(time) {
   let clock = '';
   console.log(hour);
   console.log(minutes);
-   
-  
-    
-   if (hour === 0 ) {
-      clock = 'часов';
-    } else if (hour === 2 || hour === 3 || hour === 4) {
-      clock = 'часа';
-    } else if (hour === 1) {
-      clock = 'час';
-    } else {clock = 'часов';}
 
+  if (hour === 0) {
+    clock = 'часов';
+  } else if (hour === 2 || hour === 3 || hour === 4) {
+    clock = 'часа';
+  } else if (hour === 1) {
+    clock = 'час';
+  } else {
+    clock = 'часов';
+  }
 
-  a = `"Это ${hour} ${clock} и ${minutes} минут"`
+  a = `"Это ${hour} ${clock} и ${minutes} минут"`;
   console.log(a);
   return a;
-  } 
+}
 
-  
+getTimeFromMinutes(169);
 
+function findMaxNumber(a, b, c, d) {
+  if (
+    !Number.isInteger(a) ||
+    !Number.isInteger(b) ||
+    !Number.isInteger(c) ||
+    !Number.isInteger(d) ||
+    a == ''
+  ) {
+    zero = 0;
+    console.log(zero);
+    return zero;
+  }
+  numberMax = Math.max(a, b, c, d);
+  console.log(numberMax);
+  return numberMax;
+}
 
- getTimeFromMinutes(169);
+findMaxNumber(-5, 10, 15, 4);
 
-// function getTime(a) {
-//   hour = Math.floor(a/5);
-//   console.log(hour);
-  
-//   return hour;
-// }
+function fib(n) {
+  let a = 1;
+  let b = 1;
+  for (let i = 3; i <= n; i++) {
+    let c = a + b;
+    a = b;
+    b = c;
+    console.log(a, b, c);
+  }
+  console.log(b);
+  return b;
+}
 
-// getTime(0.5);
+fib(4);
