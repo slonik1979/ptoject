@@ -229,3 +229,183 @@ function fib(n) {
 }
 
 fib(4);
+
+const user = {
+ }
+user['name'] = 'John';
+user['surname'] = 'Smith';
+user['name'] = 'Pete';
+delete user['name'];
+
+console.log(user);
+
+let schedule = {
+   name: 'Max',
+};
+
+function isEmpty(obj) {
+  
+  for (key in obj) {
+    console.log(false);
+    return false;
+  }
+  console.log(true);
+  return true;
+}
+
+isEmpty(schedule);
+
+let salaries = {
+  John: 100,
+  Ann: 160,
+  Pete: 130,
+}
+
+
+
+function isSalaries(obj)  {
+  let sum = 0;
+  for (key in obj) {
+    sum += obj[key];
+    
+  } console.log(sum);
+  return sum;
+  // console.log(0);
+  // return 0;
+}
+
+isSalaries(salaries);
+
+let menu = {
+  width: 200,
+  height: 300,
+  title: "My menu"
+};
+
+function multiplyNumeric(menu) {
+  for (let key in menu) {
+     if (typeof(menu[key]) == 'number') {
+      menu[key] = menu[key] * 2;
+    }
+  } console.log(menu);
+};
+
+multiplyNumeric(menu);
+
+function fakeBin(x = 1){
+  
+  
+  if (x < 5) {
+    x = 0;
+    console.log(x);
+    return x;
+  } else if (x > 5) {
+    x = 1;
+    console.log(x);
+    return x;
+    
+  }
+}
+fakeBin(10);
+
+function simpleMultiplication(number) {
+      if (number % 2 == 0) {
+        number *= 8;
+        console.log(number);
+        return number;
+  } else {number *= 9} 
+  console.log(number);
+  return number;
+}
+
+simpleMultiplication(5);
+
+function hero(bullets, dragons){
+   dragons *= 2;
+   if (bullets >= dragons) {
+    console.log(true);
+    return true;
+   } else console.log(false);
+   return false;
+  }
+
+hero(3, 2);
+
+function lovefunc(flower1, flower2){
+  if (flower1 % 2 == 0 && flower2 % 2 == 1 || flower1 % 2 == 1 && flower2 % 2 == 0) {
+    console.log(true);
+    return true;
+  } else console.log(false);
+  return false;
+}
+
+lovefunc(10, 10);
+
+function makeNegative(num) {
+  if (num > 0) {
+    console.log(num);
+    return num -= (num * 2);
+  } else console.log(num);
+  return num -= (num);
+    
+}
+
+makeNegative(-5);
+
+
+//let arr = [-2, 4, -10, 9]
+
+function positiveSum(arr) {
+  let res = 0;
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] > 0) {
+      res += arr[i]}
+  } console.log(res);  return (res) 
+}
+
+positiveSum([-2, 4, -10, 9]);
+
+
+let array = [-2, 4, -10, 8];
+
+function positiveSum2(array) {
+  let result = 0;
+for (let i = 0; i < array.length; i++) {
+    if (array[i] > 0) {
+        result += array[i];
+    }
+}
+console.log(result);
+return result;
+}
+
+positiveSum2(array);
+
+
+function removeExclamationMarks(s) {
+  s = s.split('!').join('');
+  console.log(s);
+  return s;
+}
+
+removeExclamationMarks('vvv!VV!');
+
+
+  
+    function findAverage(array) {
+      let num = 0;
+    
+      if (array.length == 0) {
+        console.log(0);
+        return 0;
+          } 
+    
+      for (let i = 0; i < array.length; i++) {
+           num += array[i]; 
+        }
+        console.log(num);
+        return num;
+          }
+     
+
+  findAverage([-5, 2, 4, 21]);
