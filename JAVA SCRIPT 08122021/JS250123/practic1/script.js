@@ -230,8 +230,7 @@ function fib(n) {
 
 fib(4);
 
-const user = {
- }
+const user = {};
 user['name'] = 'John';
 user['surname'] = 'Smith';
 user['name'] = 'Pete';
@@ -240,11 +239,10 @@ delete user['name'];
 console.log(user);
 
 let schedule = {
-   name: 'Max',
+  name: 'Max',
 };
 
 function isEmpty(obj) {
-  
   for (key in obj) {
     console.log(false);
     return false;
@@ -259,16 +257,14 @@ let salaries = {
   John: 100,
   Ann: 160,
   Pete: 130,
-}
+};
 
-
-
-function isSalaries(obj)  {
+function isSalaries(obj) {
   let sum = 0;
   for (key in obj) {
     sum += obj[key];
-    
-  } console.log(sum);
+  }
+  console.log(sum);
   return sum;
   // console.log(0);
   // return 0;
@@ -279,22 +275,21 @@ isSalaries(salaries);
 let menu = {
   width: 200,
   height: 300,
-  title: "My menu"
+  title: 'My menu',
 };
 
 function multiplyNumeric(menu) {
   for (let key in menu) {
-     if (typeof(menu[key]) == 'number') {
+    if (typeof menu[key] == 'number') {
       menu[key] = menu[key] * 2;
     }
-  } console.log(menu);
-};
+  }
+  console.log(menu);
+}
 
 multiplyNumeric(menu);
 
-function fakeBin(x = 1){
-  
-  
+function fakeBin(x = 1) {
   if (x < 5) {
     x = 0;
     console.log(x);
@@ -303,36 +298,40 @@ function fakeBin(x = 1){
     x = 1;
     console.log(x);
     return x;
-    
   }
 }
 fakeBin(10);
 
 function simpleMultiplication(number) {
-      if (number % 2 == 0) {
-        number *= 8;
-        console.log(number);
-        return number;
-  } else {number *= 9} 
+  if (number % 2 == 0) {
+    number *= 8;
+    console.log(number);
+    return number;
+  } else {
+    number *= 9;
+  }
   console.log(number);
   return number;
 }
 
 simpleMultiplication(5);
 
-function hero(bullets, dragons){
-   dragons *= 2;
-   if (bullets >= dragons) {
+function hero(bullets, dragons) {
+  dragons *= 2;
+  if (bullets >= dragons) {
     console.log(true);
     return true;
-   } else console.log(false);
-   return false;
-  }
+  } else console.log(false);
+  return false;
+}
 
 hero(3, 2);
 
-function lovefunc(flower1, flower2){
-  if (flower1 % 2 == 0 && flower2 % 2 == 1 || flower1 % 2 == 1 && flower2 % 2 == 0) {
+function lovefunc(flower1, flower2) {
+  if (
+    (flower1 % 2 == 0 && flower2 % 2 == 1) ||
+    (flower1 % 2 == 1 && flower2 % 2 == 0)
+  ) {
     console.log(true);
     return true;
   } else console.log(false);
@@ -344,14 +343,12 @@ lovefunc(10, 10);
 function makeNegative(num) {
   if (num > 0) {
     console.log(num);
-    return num -= (num * 2);
+    return (num -= num * 2);
   } else console.log(num);
-  return num -= (num);
-    
+  return (num -= num);
 }
 
-makeNegative(-5);
-
+makeNegative(5);
 
 //let arr = [-2, 4, -10, 9]
 
@@ -359,28 +356,29 @@ function positiveSum(arr) {
   let res = 0;
   for (let i = 0; i < arr.length; i++) {
     if (arr[i] > 0) {
-      res += arr[i]}
-  } console.log(res);  return (res) 
+      res += arr[i];
+    }
+  }
+  console.log(res);
+  return res;
 }
 
 positiveSum([-2, 4, -10, 9]);
-
 
 let array = [-2, 4, -10, 8];
 
 function positiveSum2(array) {
   let result = 0;
-for (let i = 0; i < array.length; i++) {
+  for (let i = 0; i < array.length; i++) {
     if (array[i] > 0) {
-        result += array[i];
+      result += array[i];
     }
-}
-console.log(result);
-return result;
+  }
+  console.log(result);
+  return result;
 }
 
 positiveSum2(array);
-
 
 function removeExclamationMarks(s) {
   s = s.split('!').join('');
@@ -390,22 +388,141 @@ function removeExclamationMarks(s) {
 
 removeExclamationMarks('vvv!VV!');
 
+function findAverage(array) {
+  let num = 0;
 
-  
-    function findAverage(array) {
-      let num = 0;
-    
-      if (array.length == 0) {
-        console.log(0);
-        return 0;
-          } 
-    
-      for (let i = 0; i < array.length; i++) {
-           num += array[i]; 
-        }
-        console.log(num);
-        return num;
-          }
-     
+  if (array.length == 0) {
+    console.log(0);
+    return 0;
+  }
 
-  findAverage([-5, 2, 4, 21]);
+  for (let i = 0; i < array.length; i++) {
+    num += array[i];
+  }
+  console.log(num);
+  return num;
+}
+
+findAverage([-5, 2, 4, 21]);
+
+function countSheeps(arrayOfSheep) {
+  let res = 0;
+  for (let i = 0; i < arrayOfSheep.length; i++) {
+    if (arrayOfSheep[i] == true) {
+      res += arrayOfSheep[i];
+    }
+  }
+  console.log(res);
+  return res;
+}
+
+countSheeps([
+  true,
+  true,
+  true,
+  false,
+  true,
+  true,
+  true,
+  true,
+  true,
+  false,
+  true,
+  false,
+  true,
+  false,
+  false,
+  true,
+  true,
+  true,
+  true,
+  true,
+  false,
+  false,
+  true,
+  true,
+]);
+
+function checkForFactor(base, factor) {
+  if (base % factor == 0) {
+    console.log(true);
+    return true;
+  } else {
+    console.log(false);
+    return false;
+  }
+}
+
+function checkForFactor(base, factor) {
+  base % factor == 0 ? true : false;
+}
+
+checkForFactor(10, 2);
+checkForFactor(11, 2);
+
+// -5 : 5
+// 10 : -10
+function opposite(number) {
+  num = number * -1;
+  console.log(num);
+  return num;
+}
+
+opposite(-55);
+
+function findAverage(array) {
+  return 0;
+}
+
+function century(year) {
+  number = Math.floor((year - 1) / 100 + 1);
+  console.log(number);
+  return number;
+}
+
+century(1800);
+
+function bmi(weight, height) {
+  index = weight / (height ^ 2);
+  if (index <= 18.5) {
+    console.log('Underweight');
+    return 'Underweight';
+  } else if (index <= 25) {
+    console.log('Normal');
+    return 'Normal';
+  } else if (index <= 30) {
+    console.log('Overweight');
+    return 'Overweight';
+  } else if (index > 30) {
+    console.log('Obese');
+    return 'Obese';
+  }
+}
+
+bmi(80, 1.8);
+
+function sumStr(a, b) {
+  let sum = 0;
+  a = Number(a);
+  b = Number(b);
+  sum = a + b;
+  sum = String(sum);
+  console.log(typeof sum);
+  return sum;
+}
+
+sumStr('2', '5');
+
+function areYouPlayingBanjo(name) {
+  // for (let i = 0; i, i < name.length; i++) {
+  if (name.includes('R') || name.includes('r')) {
+    playsBanjo = name + ' plays banjo';
+    console.log(playsBanjo);
+    return playsBanjo;
+  } else doesNotPlayBanjo = name + ' does not play banjo';
+  console.log(doesNotPlayBanjo);
+  return doesNotPlayBanjo;
+}
+// }
+
+areYouPlayingBanjo('bravo');
