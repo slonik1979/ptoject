@@ -350,8 +350,8 @@ function makeNegative(num) {
 
 makeNegative(5);
 
+//let arr = [-2, 4, -10, 9]
 
-// Вы получаете массив чисел, возвращаете сумму всех положительных.
 function positiveSum(arr) {
   let res = 0;
   for (let i = 0; i < arr.length; i++) {
@@ -523,149 +523,51 @@ function areYouPlayingBanjo(name) {
   console.log(doesNotPlayBanjo);
   return doesNotPlayBanjo;
 }
-// }
+// }indexOf
 
 areYouPlayingBanjo('bravo');
 
-function greet(name) {
-  console.log(`Hello, ${name} how are you doing today?`);
-  return `Hello, ${name} how are you doing today?`;
-}
-
-greet('Roman');
-
-function rentalCarCost(d) {
-  if (d >= 7) {
-    sum = (d * 40) - 50;
-    console.log(sum);
-    return sum;
-  } else if (d >= 3) {
-    sum = (d * 40) - 20;
-    console.log(sum);
-    return sum;
-  } else {sum = (d * 40);
-    console.log(sum);
-    return sum;}
- 
-}
-
-rentalCarCost(2);
-
-function makeUpperCase(str) {
-  console.log(str.toUpperCase());
-  return str.toUpperCase();
-}
-
-makeUpperCase('gfgfh');
-
-// function findShort(s){
-//   sSplit = s.split(' ');
-//   sLong = 0;
-//   for (let key of s) {
-//     if (sSplit[key].length > sLong) {
-//       sLong = sSplit[key].length;
-//     }
-//     console.log(key);
-//   }
-//   console.log(sLong);
-//   return sLong;
-// }
-
-// findShort("The quick brown fox jumped over the lazy dog");
-
-
-function findShort(s){
-  sSplit = s.split(' ');
-  strMin = sSplit[0];
-  console.log(sSplit);
-  for (const key of sSplit) {
-    if (key.length < strMin.length) {
-      strMin = key;
-    } 
-  }console.log(strMin.length);
-  return strMin.length;
-      }
-
- findShort("quick brown fo jumped over the lazy dog");
-
-function enough(cap, on, wait) {
-let extra = 0;
-let empty = cap - on;
-  if (empty >= wait) {
-    console.log(0);
-    return 0;
-  } console.log(extra = wait -empty);
-    return extra = wait -empty;
-}
-
-enough(100, 90, 15)
-
-function goals (laLigaGoals, copaDelReyGoals, championsLeagueGoals) {
-  sum = Number(laLigaGoals) +Number(copaDelReyGoals) + Number(championsLeagueGoals);
-  console.log(sum);
-  return sum;
-}
-
-goals(5, 10, 6);
-
-function isTriangle(a,b,c) {
-  if (a > 0 && b > 0 && c > 0 && a < b + c && b < a + c && c < a + b){
+function validatePIN(pin) {
+  if (pin.length == 4 || pin.length == 6) {
     console.log(true);
     return true;
-  } else 
-  
-    console.log(false);
-    return false;
-  
- }
-
- isTriangle(7,2,2);
-
- function hoopCount(n) {
-  if (n >= 10) {
-    console.log('Отлично, теперь переходим к трюкам');
-    return 'Отлично, теперь переходим к трюкам';
-  } else {
-    console.log('Продолжай, пока не наберешь');
-    return 'Продолжай, пока не наберешь';
-  }
+  } else console.log(false);
+  return false;
 }
 
-hoopCount (5);
+validatePIN('6542');
 
-const areaOrPerimeter = function(l , w) {
-    if ( l == w) {
-      console.log(l * w);
-      return l * w;
-    } else console.log((l * w) * 2);
-    return (l + w) * 2;
-};
-
-areaOrPerimeter(5, 4);
-
-function friend(friends){
-  
-  friends.forEach(function(item) {
-    friendsNew = [];
-    if (item.length == 4) {
-      console.log(item);
-      return item;
-         }
-    })
+// удаление пробелов из строки
+function noSpace(x) {
+  console.log(x.split(' ').join(''));
+  return x.split(' ').join('');
 }
 
-friend(["Ryan", "Kieran", "Mark"]);
+noSpace('   ggg hhh 111    ');
 
-
-function square(a) {
-  return a = a ** a; 
+function otherAngle(a, b) {
+  let c = '';
+  console.log((c = 180 - a - b));
+  return (c = 180 - a - b);
 }
 
-function sortByLength (array) {
-  array.sort();
-  console.log(array)
-  return array;
-};
+otherAngle(50, 60);
 
-sortByLength(["Telescopes", "Glasses", "Eyes", "Monocles"]);
+// переворачивает строку наоборо  ( спомощью методов для массива)
+function solution(str) {
+  str = str.split(''); // разьиваем на массив
+  str = str.reverse(); // переворачиваем массив
+  str = str.join(''); // соединяем массив
+  console.log(str);
+  return str;
+}
 
+solution('Penis');
+
+function numberToString(num) {
+  num = String(num);
+  console.log(num);
+  return num;
+}
+
+numberToString(123);
