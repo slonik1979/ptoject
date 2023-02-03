@@ -350,8 +350,8 @@ function makeNegative(num) {
 
 makeNegative(5);
 
-//let arr = [-2, 4, -10, 9]
 
+// Вы получаете массив чисел, возвращаете сумму всех положительных.
 function positiveSum(arr) {
   let res = 0;
   for (let i = 0; i < arr.length; i++) {
@@ -526,3 +526,146 @@ function areYouPlayingBanjo(name) {
 // }
 
 areYouPlayingBanjo('bravo');
+
+function greet(name) {
+  console.log(`Hello, ${name} how are you doing today?`);
+  return `Hello, ${name} how are you doing today?`;
+}
+
+greet('Roman');
+
+function rentalCarCost(d) {
+  if (d >= 7) {
+    sum = (d * 40) - 50;
+    console.log(sum);
+    return sum;
+  } else if (d >= 3) {
+    sum = (d * 40) - 20;
+    console.log(sum);
+    return sum;
+  } else {sum = (d * 40);
+    console.log(sum);
+    return sum;}
+ 
+}
+
+rentalCarCost(2);
+
+function makeUpperCase(str) {
+  console.log(str.toUpperCase());
+  return str.toUpperCase();
+}
+
+makeUpperCase('gfgfh');
+
+// function findShort(s){
+//   sSplit = s.split(' ');
+//   sLong = 0;
+//   for (let key of s) {
+//     if (sSplit[key].length > sLong) {
+//       sLong = sSplit[key].length;
+//     }
+//     console.log(key);
+//   }
+//   console.log(sLong);
+//   return sLong;
+// }
+
+// findShort("The quick brown fox jumped over the lazy dog");
+
+
+function findShort(s){
+  sSplit = s.split(' ');
+  strMin = sSplit[0];
+  console.log(sSplit);
+  for (const key of sSplit) {
+    if (key.length < strMin.length) {
+      strMin = key;
+    } 
+  }console.log(strMin.length);
+  return strMin.length;
+      }
+
+ findShort("quick brown fo jumped over the lazy dog");
+
+function enough(cap, on, wait) {
+let extra = 0;
+let empty = cap - on;
+  if (empty >= wait) {
+    console.log(0);
+    return 0;
+  } console.log(extra = wait -empty);
+    return extra = wait -empty;
+}
+
+enough(100, 90, 15)
+
+function goals (laLigaGoals, copaDelReyGoals, championsLeagueGoals) {
+  sum = Number(laLigaGoals) +Number(copaDelReyGoals) + Number(championsLeagueGoals);
+  console.log(sum);
+  return sum;
+}
+
+goals(5, 10, 6);
+
+function isTriangle(a,b,c) {
+  if (a > 0 && b > 0 && c > 0 && a < b + c && b < a + c && c < a + b){
+    console.log(true);
+    return true;
+  } else 
+  
+    console.log(false);
+    return false;
+  
+ }
+
+ isTriangle(7,2,2);
+
+ function hoopCount(n) {
+  if (n >= 10) {
+    console.log('Отлично, теперь переходим к трюкам');
+    return 'Отлично, теперь переходим к трюкам';
+  } else {
+    console.log('Продолжай, пока не наберешь');
+    return 'Продолжай, пока не наберешь';
+  }
+}
+
+hoopCount (5);
+
+const areaOrPerimeter = function(l , w) {
+    if ( l == w) {
+      console.log(l * w);
+      return l * w;
+    } else console.log((l * w) * 2);
+    return (l + w) * 2;
+};
+
+areaOrPerimeter(5, 4);
+
+function friend(friends){
+  
+  friends.forEach(function(item) {
+    friendsNew = [];
+    if (item.length == 4) {
+      console.log(item);
+      return item;
+         }
+    })
+}
+
+friend(["Ryan", "Kieran", "Mark"]);
+
+
+function square(a) {
+  return a = a ** a; 
+}
+
+function sortByLength (array) {
+  array.sort();
+  console.log(array)
+  return array;
+};
+
+sortByLength(["Telescopes", "Glasses", "Eyes", "Monocles"]);
+
