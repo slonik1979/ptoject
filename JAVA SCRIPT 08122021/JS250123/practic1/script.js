@@ -58,7 +58,7 @@ P.S. Функции вызывать не обязательно */
 
 // function remembeMyFilms() {
 //   for (let i = 0; i < 2; i++) {
-//     const questi1 = prompt('Один из последних просмотренных фильмов?', '');
+//     const questi1 = prompt('Один из последних просмотренных фильмов?', '').trim();
 //     const questi2 = +prompt('На сколько оцените его?', '');
 
 //     if (
@@ -142,22 +142,6 @@ function getCoupeNumber(number, coupe) {
     console.log('Таких мест в вагоне не существует');
   }
 }
-// } else if (number === 0 || number > 36) {
-//   console.log('Таких мест в вагоне не существует');
-// }
-
-// else if () {
-
-// }
-
-// if (number > 36 || number == 0) {
-//   console.log('Таких мест в вагоне не существует');
-// } else if (number < 0 || String(number)) {
-//   console.log('Ошибка. Проверьте правильность введенного номера места');
-// } else {
-//   const numberCouppe = Math.ceil(number / coupe);
-//   console.log(numberCouppe);
-// }
 
 getCoupeNumber(7.7, 4);
 
