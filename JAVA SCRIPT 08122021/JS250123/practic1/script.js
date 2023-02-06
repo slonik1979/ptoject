@@ -507,7 +507,6 @@ function areYouPlayingBanjo(name) {
   console.log(doesNotPlayBanjo);
   return doesNotPlayBanjo;
 }
-// }indexOf
 
 areYouPlayingBanjo('bravo');
 
@@ -537,7 +536,7 @@ function otherAngle(a, b) {
 
 otherAngle(50, 60);
 
-// переворачивает строку наоборо  ( спомощью методов для массива)
+// переворачивает строку наоборот  ( спомощью методов для массива)
 function solution(str) {
   str = str.split(''); // разьиваем на массив
   str = str.reverse(); // переворачиваем массив
@@ -555,3 +554,38 @@ function numberToString(num) {
 }
 
 numberToString(123);
+
+function unusualFive() {
+  let str = 'aaaaa';
+  let num = str.length;
+  console.log(num);
+  return num;
+}
+
+unusualFive();
+
+// переумножаем все числа в массиве
+function grow(x) {
+  let res = x.reduce((sum, current) => sum * current, 1);
+  console.log(res);
+  return res;
+}
+
+grow([1, 2, 3, 4]);
+
+// перебор массива и создание копии массива
+function arr(arr) {
+  let arrNew = [];
+  arr.forEach(function (item) {
+    arrNew = item;
+    console.log(arrNew);
+  });
+}
+
+arr([1, 'return', 'poter']);
+
+function maps(x) {
+  let res = x.reduce((sum, current) => sum * current, 1);
+  console.log(res);
+  return res;
+}
