@@ -121,471 +121,499 @@ P.S. Функции вызывать не обязательно */
 // calculateVolumeAndArea(15.5);
 // calculateVolumeAndArea('15');
 
-Math.ceil;
+// Math.ceil;
 
-function getCoupeNumber(number, coupe) {
-  if (
-    number > 0 &&
-    number <= 36 &&
-    typeof number === 'number' &&
-    Number.isInteger(number)
-  ) {
-    const numberCouppe = Math.ceil(number / coupe);
-    console.log(numberCouppe);
-  } else if (
-    number < 0 ||
-    typeof number == 'string' ||
-    !Number.isInteger(number)
-  ) {
-    console.log('Ошибка. Проверьте правильность введенного номера места');
-  } else if (number === 0 || number > 36) {
-    console.log('Таких мест в вагоне не существует');
-  }
+// function getCoupeNumber(number, coupe) {
+//   if (
+//     number > 0 &&
+//     number <= 36 &&
+//     typeof number === 'number' &&
+//     Number.isInteger(number)
+//   ) {
+//     const numberCouppe = Math.ceil(number / coupe);
+//     console.log(numberCouppe);
+//   } else if (
+//     number < 0 ||
+//     typeof number == 'string' ||
+//     !Number.isInteger(number)
+//   ) {
+//     console.log('Ошибка. Проверьте правильность введенного номера места');
+//   } else if (number === 0 || number > 36) {
+//     console.log('Таких мест в вагоне не существует');
+//   }
+// }
+
+// getCoupeNumber(7.7, 4);
+
+// function getTimeFromMinutes(time) {
+//   if (!Number.isInteger(time) || time < 0) {
+//     b = 'Ошибка, проверьте данные';
+//     console.log(b);
+//     return b;
+//   }
+
+//   if (time > 60) {
+//     hour = Math.floor(time / 60);
+//     minutes = time % 60;
+//   } else {
+//     hour = 0;
+//     minutes = time;
+//   }
+//   let clock = '';
+//   console.log(hour);
+//   console.log(minutes);
+
+//   if (hour === 0) {
+//     clock = 'часов';
+//   } else if (hour === 2 || hour === 3 || hour === 4) {
+//     clock = 'часа';
+//   } else if (hour === 1) {
+//     clock = 'час';
+//   } else {
+//     clock = 'часов';
+//   }
+
+//   a = `"Это ${hour} ${clock} и ${minutes} минут"`;
+//   console.log(a);
+//   return a;
+// }
+
+// getTimeFromMinutes(169);
+
+// function findMaxNumber(a, b, c, d) {
+//   if (
+//     !Number.isInteger(a) ||
+//     !Number.isInteger(b) ||
+//     !Number.isInteger(c) ||
+//     !Number.isInteger(d) ||
+//     a == ''
+//   ) {
+//     zero = 0;
+//     console.log(zero);
+//     return zero;
+//   }
+//   numberMax = Math.max(a, b, c, d);
+//   console.log(numberMax);
+//   return numberMax;
+// }
+
+// findMaxNumber(-5, 10, 15, 4);
+
+// function fib(n) {
+//   let a = 1;
+//   let b = 1;
+//   for (let i = 3; i <= n; i++) {
+//     let c = a + b;
+//     a = b;
+//     b = c;
+//     console.log(a, b, c);
+//   }
+//   console.log(b);
+//   return b;
+// }
+
+// fib(4);
+
+// const user = {};
+// user['name'] = 'John';
+// user['surname'] = 'Smith';
+// user['name'] = 'Pete';
+// delete user['name'];
+
+// console.log(user);
+
+// let schedule = {
+//   name: 'Max',
+// };
+
+// function isEmpty(obj) {
+//   for (key in obj) {
+//     console.log(false);
+//     return false;
+//   }
+//   console.log(true);
+//   return true;
+// }
+
+// isEmpty(schedule);
+
+// let salaries = {
+//   John: 100,
+//   Ann: 160,
+//   Pete: 130,
+// };
+
+// function isSalaries(obj) {
+//   let sum = 0;
+//   for (key in obj) {
+//     sum += obj[key];
+//   }
+//   console.log(sum);
+//   return sum;
+//   // console.log(0);
+//   // return 0;
+// }
+
+// isSalaries(salaries);
+
+// let menu = {
+//   width: 200,
+//   height: 300,
+//   title: 'My menu',
+// };
+
+// function multiplyNumeric(menu) {
+//   for (let key in menu) {
+//     if (typeof menu[key] == 'number') {
+//       menu[key] = menu[key] * 2;
+//     }
+//   }
+//   console.log(menu);
+// }
+
+// multiplyNumeric(menu);
+
+// function fakeBin(x = 1) {
+//   if (x < 5) {
+//     x = 0;
+//     console.log(x);
+//     return x;
+//   } else if (x > 5) {
+//     x = 1;
+//     console.log(x);
+//     return x;
+//   }
+// }
+// fakeBin(10);
+
+// function simpleMultiplication(number) {
+//   if (number % 2 == 0) {
+//     number *= 8;
+//     console.log(number);
+//     return number;
+//   } else {
+//     number *= 9;
+//   }
+//   console.log(number);
+//   return number;
+// }
+
+// simpleMultiplication(5);
+
+// function hero(bullets, dragons) {
+//   dragons *= 2;
+//   if (bullets >= dragons) {
+//     console.log(true);
+//     return true;
+//   } else console.log(false);
+//   return false;
+// }
+
+// hero(3, 2);
+
+// function lovefunc(flower1, flower2) {
+//   if (
+//     (flower1 % 2 == 0 && flower2 % 2 == 1) ||
+//     (flower1 % 2 == 1 && flower2 % 2 == 0)
+//   ) {
+//     console.log(true);
+//     return true;
+//   } else console.log(false);
+//   return false;
+// }
+
+// lovefunc(10, 10);
+
+// function makeNegative(num) {
+//   if (num > 0) {
+//     console.log(num);
+//     return (num -= num * 2);
+//   } else console.log(num);
+//   return (num -= num);
+// }
+
+// makeNegative(5);
+
+// //let arr = [-2, 4, -10, 9]
+
+// function positiveSum(arr) {
+//   let res = 0;
+//   for (let i = 0; i < arr.length; i++) {
+//     if (arr[i] > 0) {
+//       res += arr[i];
+//     }
+//   }
+//   console.log(res);
+//   return res;
+// }
+
+// positiveSum([-2, 4, -10, 9]);
+
+// let array = [-2, 4, -10, 8];
+
+// function positiveSum2(array) {
+//   let result = 0;
+//   for (let i = 0; i < array.length; i++) {
+//     if (array[i] > 0) {
+//       result += array[i];
+//     }
+//   }
+//   console.log(result);
+//   return result;
+// }
+
+// positiveSum2(array);
+
+// function removeExclamationMarks(s) {
+//   s = s.split('!').join('');
+//   console.log(s);
+//   return s;
+// }
+
+// removeExclamationMarks('vvv!VV!');
+
+// function findAverage(array) {
+//   let num = 0;
+
+//   if (array.length == 0) {
+//     console.log(0);
+//     return 0;
+//   }
+
+//   for (let i = 0; i < array.length; i++) {
+//     num += array[i];
+//   }
+//   console.log(num);
+//   return num;
+// }
+
+// findAverage([-5, 2, 4, 21]);
+
+// function countSheeps(arrayOfSheep) {
+//   let res = 0;
+//   for (let i = 0; i < arrayOfSheep.length; i++) {
+//     if (arrayOfSheep[i] == true) {
+//       res += arrayOfSheep[i];
+//     }
+//   }
+//   console.log(res);
+//   return res;
+// }
+
+// countSheeps([
+//   true,
+//   true,
+//   true,
+//   false,
+//   true,
+//   true,
+//   true,
+//   true,
+//   true,
+//   false,
+//   true,
+//   false,
+//   true,
+//   false,
+//   false,
+//   true,
+//   true,
+//   true,
+//   true,
+//   true,
+//   false,
+//   false,
+//   true,
+//   true,
+// ]);
+
+// function checkForFactor(base, factor) {
+//   if (base % factor == 0) {
+//     console.log(true);
+//     return true;
+//   } else {
+//     console.log(false);
+//     return false;
+//   }
+// }
+
+// function checkForFactor(base, factor) {
+//   base % factor == 0 ? true : false;
+// }
+
+// checkForFactor(10, 2);
+// checkForFactor(11, 2);
+
+// // -5 : 5
+// // 10 : -10
+// function opposite(number) {
+//   num = number * -1;
+//   console.log(num);
+//   return num;
+// }
+
+// opposite(-55);
+
+// function findAverage(array) {
+//   return 0;
+// }
+
+// function century(year) {
+//   number = Math.floor((year - 1) / 100 + 1);
+//   console.log(number);
+//   return number;
+// }
+
+// century(1800);
+
+// function bmi(weight, height) {
+//   index = weight / (height ^ 2);
+//   if (index <= 18.5) {
+//     console.log('Underweight');
+//     return 'Underweight';
+//   } else if (index <= 25) {
+//     console.log('Normal');
+//     return 'Normal';
+//   } else if (index <= 30) {
+//     console.log('Overweight');
+//     return 'Overweight';
+//   } else if (index > 30) {
+//     console.log('Obese');
+//     return 'Obese';
+//   }
+// }
+
+// bmi(80, 1.8);
+
+// function sumStr(a, b) {
+//   let sum = 0;
+//   a = Number(a);
+//   b = Number(b);
+//   sum = a + b;
+//   sum = String(sum);
+//   console.log(typeof sum);
+//   return sum;
+// }
+
+// sumStr('2', '5');
+
+// function areYouPlayingBanjo(name) {
+//   // for (let i = 0; i, i < name.length; i++) {
+//   if (name.includes('R') || name.includes('r')) {
+//     playsBanjo = name + ' plays banjo';
+//     console.log(playsBanjo);
+//     return playsBanjo;
+//   } else doesNotPlayBanjo = name + ' does not play banjo';
+//   console.log(doesNotPlayBanjo);
+//   return doesNotPlayBanjo;
+// }
+
+// areYouPlayingBanjo('bravo');
+
+// function validatePIN(pin) {
+//   if (pin.length == 4 || pin.length == 6) {
+//     console.log(true);
+//     return true;
+//   } else console.log(false);
+//   return false;
+// }
+
+// validatePIN('6542');
+
+// // удаление пробелов из строки
+// function noSpace(x) {
+//   console.log(x.split(' ').join(''));
+//   return x.split(' ').join('');
+// }
+
+// noSpace('   ggg hhh 111    ');
+
+// function otherAngle(a, b) {
+//   let c = '';
+//   console.log((c = 180 - a - b));
+//   return (c = 180 - a - b);
+// }
+
+// otherAngle(50, 60);
+
+// // переворачивает строку наоборот  ( спомощью методов для массива)
+// function solution(str) {
+//   str = str.split(''); // разьиваем на массив
+//   str = str.reverse(); // переворачиваем массив
+//   str = str.join(''); // соединяем массив
+//   console.log(str);
+//   return str;
+// }
+
+// solution('Penis');
+
+// function numberToString(num) {
+//   num = String(num);
+//   console.log(num);
+//   return num;
+// }
+
+// numberToString(123);
+
+// function unusualFive() {
+//   let str = 'aaaaa';
+//   let num = str.length;
+//   console.log(num);
+//   return num;
+// }
+
+// unusualFive();
+
+// // переумножаем все числа в массиве
+// function grow(x) {
+//   let res = x.reduce((sum, current) => sum * current, 1);
+//   console.log(res);
+//   return res;
+// }
+
+// grow([1, 2, 3, 4]);
+
+// // перебор массива и создание копии массива
+// function arr(arr) {
+//   let arrNew = [];
+//   arr.forEach(function (item) {
+//     arrNew = item;
+//     console.log(arrNew);
+//   });
+// }
+
+// arr([1, 'return', 'poter']);
+
+// function maps(x) {
+//   let res = x.reduce((sum, current) => sum * current, 1);
+//   console.log(res);
+//   return res;
+// }
+
+// функции - это объекты
+
+// function foo() {
+//   console.log('Hello World');
+// }
+
+// foo();
+
+// foo.field = 'Maxim';
+
+// console.log(foo.field);
+
+const arr = ['maks', 'Ivan', 'Olga', 'Denis'];
+
+let newArr = [];
+for (let i = 0; i < arr.length; i++) {
+  newArr.push(arr[i].length);
 }
 
-getCoupeNumber(7.7, 4);
+console.log(newArr);
 
-function getTimeFromMinutes(time) {
-  if (!Number.isInteger(time) || time < 0) {
-    b = 'Ошибка, проверьте данные';
-    console.log(b);
-    return b;
-  }
-
-  if (time > 60) {
-    hour = Math.floor(time / 60);
-    minutes = time % 60;
-  } else {
-    hour = 0;
-    minutes = time;
-  }
-  let clock = '';
-  console.log(hour);
-  console.log(minutes);
-
-  if (hour === 0) {
-    clock = 'часов';
-  } else if (hour === 2 || hour === 3 || hour === 4) {
-    clock = 'часа';
-  } else if (hour === 1) {
-    clock = 'час';
-  } else {
-    clock = 'часов';
-  }
-
-  a = `"Это ${hour} ${clock} и ${minutes} минут"`;
-  console.log(a);
-  return a;
+let newArr2 = [];
+for (let i = 0; i < arr.length; i++) {
+  newArr2.push(arr[i]);
 }
 
-getTimeFromMinutes(169);
-
-function findMaxNumber(a, b, c, d) {
-  if (
-    !Number.isInteger(a) ||
-    !Number.isInteger(b) ||
-    !Number.isInteger(c) ||
-    !Number.isInteger(d) ||
-    a == ''
-  ) {
-    zero = 0;
-    console.log(zero);
-    return zero;
-  }
-  numberMax = Math.max(a, b, c, d);
-  console.log(numberMax);
-  return numberMax;
-}
-
-findMaxNumber(-5, 10, 15, 4);
-
-function fib(n) {
-  let a = 1;
-  let b = 1;
-  for (let i = 3; i <= n; i++) {
-    let c = a + b;
-    a = b;
-    b = c;
-    console.log(a, b, c);
-  }
-  console.log(b);
-  return b;
-}
-
-fib(4);
-
-const user = {};
-user['name'] = 'John';
-user['surname'] = 'Smith';
-user['name'] = 'Pete';
-delete user['name'];
-
-console.log(user);
-
-let schedule = {
-  name: 'Max',
-};
-
-function isEmpty(obj) {
-  for (key in obj) {
-    console.log(false);
-    return false;
-  }
-  console.log(true);
-  return true;
-}
-
-isEmpty(schedule);
-
-let salaries = {
-  John: 100,
-  Ann: 160,
-  Pete: 130,
-};
-
-function isSalaries(obj) {
-  let sum = 0;
-  for (key in obj) {
-    sum += obj[key];
-  }
-  console.log(sum);
-  return sum;
-  // console.log(0);
-  // return 0;
-}
-
-isSalaries(salaries);
-
-let menu = {
-  width: 200,
-  height: 300,
-  title: 'My menu',
-};
-
-function multiplyNumeric(menu) {
-  for (let key in menu) {
-    if (typeof menu[key] == 'number') {
-      menu[key] = menu[key] * 2;
-    }
-  }
-  console.log(menu);
-}
-
-multiplyNumeric(menu);
-
-function fakeBin(x = 1) {
-  if (x < 5) {
-    x = 0;
-    console.log(x);
-    return x;
-  } else if (x > 5) {
-    x = 1;
-    console.log(x);
-    return x;
-  }
-}
-fakeBin(10);
-
-function simpleMultiplication(number) {
-  if (number % 2 == 0) {
-    number *= 8;
-    console.log(number);
-    return number;
-  } else {
-    number *= 9;
-  }
-  console.log(number);
-  return number;
-}
-
-simpleMultiplication(5);
-
-function hero(bullets, dragons) {
-  dragons *= 2;
-  if (bullets >= dragons) {
-    console.log(true);
-    return true;
-  } else console.log(false);
-  return false;
-}
-
-hero(3, 2);
-
-function lovefunc(flower1, flower2) {
-  if (
-    (flower1 % 2 == 0 && flower2 % 2 == 1) ||
-    (flower1 % 2 == 1 && flower2 % 2 == 0)
-  ) {
-    console.log(true);
-    return true;
-  } else console.log(false);
-  return false;
-}
-
-lovefunc(10, 10);
-
-function makeNegative(num) {
-  if (num > 0) {
-    console.log(num);
-    return (num -= num * 2);
-  } else console.log(num);
-  return (num -= num);
-}
-
-makeNegative(5);
-
-//let arr = [-2, 4, -10, 9]
-
-function positiveSum(arr) {
-  let res = 0;
-  for (let i = 0; i < arr.length; i++) {
-    if (arr[i] > 0) {
-      res += arr[i];
-    }
-  }
-  console.log(res);
-  return res;
-}
-
-positiveSum([-2, 4, -10, 9]);
-
-let array = [-2, 4, -10, 8];
-
-function positiveSum2(array) {
-  let result = 0;
-  for (let i = 0; i < array.length; i++) {
-    if (array[i] > 0) {
-      result += array[i];
-    }
-  }
-  console.log(result);
-  return result;
-}
-
-positiveSum2(array);
-
-function removeExclamationMarks(s) {
-  s = s.split('!').join('');
-  console.log(s);
-  return s;
-}
-
-removeExclamationMarks('vvv!VV!');
-
-function findAverage(array) {
-  let num = 0;
-
-  if (array.length == 0) {
-    console.log(0);
-    return 0;
-  }
-
-  for (let i = 0; i < array.length; i++) {
-    num += array[i];
-  }
-  console.log(num);
-  return num;
-}
-
-findAverage([-5, 2, 4, 21]);
-
-function countSheeps(arrayOfSheep) {
-  let res = 0;
-  for (let i = 0; i < arrayOfSheep.length; i++) {
-    if (arrayOfSheep[i] == true) {
-      res += arrayOfSheep[i];
-    }
-  }
-  console.log(res);
-  return res;
-}
-
-countSheeps([
-  true,
-  true,
-  true,
-  false,
-  true,
-  true,
-  true,
-  true,
-  true,
-  false,
-  true,
-  false,
-  true,
-  false,
-  false,
-  true,
-  true,
-  true,
-  true,
-  true,
-  false,
-  false,
-  true,
-  true,
-]);
-
-function checkForFactor(base, factor) {
-  if (base % factor == 0) {
-    console.log(true);
-    return true;
-  } else {
-    console.log(false);
-    return false;
-  }
-}
-
-function checkForFactor(base, factor) {
-  base % factor == 0 ? true : false;
-}
-
-checkForFactor(10, 2);
-checkForFactor(11, 2);
-
-// -5 : 5
-// 10 : -10
-function opposite(number) {
-  num = number * -1;
-  console.log(num);
-  return num;
-}
-
-opposite(-55);
-
-function findAverage(array) {
-  return 0;
-}
-
-function century(year) {
-  number = Math.floor((year - 1) / 100 + 1);
-  console.log(number);
-  return number;
-}
-
-century(1800);
-
-function bmi(weight, height) {
-  index = weight / (height ^ 2);
-  if (index <= 18.5) {
-    console.log('Underweight');
-    return 'Underweight';
-  } else if (index <= 25) {
-    console.log('Normal');
-    return 'Normal';
-  } else if (index <= 30) {
-    console.log('Overweight');
-    return 'Overweight';
-  } else if (index > 30) {
-    console.log('Obese');
-    return 'Obese';
-  }
-}
-
-bmi(80, 1.8);
-
-function sumStr(a, b) {
-  let sum = 0;
-  a = Number(a);
-  b = Number(b);
-  sum = a + b;
-  sum = String(sum);
-  console.log(typeof sum);
-  return sum;
-}
-
-sumStr('2', '5');
-
-function areYouPlayingBanjo(name) {
-  // for (let i = 0; i, i < name.length; i++) {
-  if (name.includes('R') || name.includes('r')) {
-    playsBanjo = name + ' plays banjo';
-    console.log(playsBanjo);
-    return playsBanjo;
-  } else doesNotPlayBanjo = name + ' does not play banjo';
-  console.log(doesNotPlayBanjo);
-  return doesNotPlayBanjo;
-}
-
-areYouPlayingBanjo('bravo');
-
-function validatePIN(pin) {
-  if (pin.length == 4 || pin.length == 6) {
-    console.log(true);
-    return true;
-  } else console.log(false);
-  return false;
-}
-
-validatePIN('6542');
-
-// удаление пробелов из строки
-function noSpace(x) {
-  console.log(x.split(' ').join(''));
-  return x.split(' ').join('');
-}
-
-noSpace('   ggg hhh 111    ');
-
-function otherAngle(a, b) {
-  let c = '';
-  console.log((c = 180 - a - b));
-  return (c = 180 - a - b);
-}
-
-otherAngle(50, 60);
-
-// переворачивает строку наоборот  ( спомощью методов для массива)
-function solution(str) {
-  str = str.split(''); // разьиваем на массив
-  str = str.reverse(); // переворачиваем массив
-  str = str.join(''); // соединяем массив
-  console.log(str);
-  return str;
-}
-
-solution('Penis');
-
-function numberToString(num) {
-  num = String(num);
-  console.log(num);
-  return num;
-}
-
-numberToString(123);
-
-function unusualFive() {
-  let str = 'aaaaa';
-  let num = str.length;
-  console.log(num);
-  return num;
-}
-
-unusualFive();
-
-// переумножаем все числа в массиве
-function grow(x) {
-  let res = x.reduce((sum, current) => sum * current, 1);
-  console.log(res);
-  return res;
-}
-
-grow([1, 2, 3, 4]);
-
-// перебор массива и создание копии массива
-function arr(arr) {
-  let arrNew = [];
-  arr.forEach(function (item) {
-    arrNew = item;
-    console.log(arrNew);
-  });
-}
-
-arr([1, 'return', 'poter']);
-
-function maps(x) {
-  let res = x.reduce((sum, current) => sum * current, 1);
-  console.log(res);
-  return res;
-}
+console.log(newArr2);
