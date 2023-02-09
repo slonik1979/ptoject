@@ -590,6 +590,13 @@ P.S. Функции вызывать не обязательно */
 //   return res;
 // }
 
+
+
+
+// Callback. Функции высшего порядка. 
+
+
+
 // функции - это объекты
 
 // function foo() {
@@ -602,18 +609,110 @@ P.S. Функции вызывать не обязательно */
 
 // console.log(foo.field);
 
-const arr = ['maks', 'Ivan', 'Olga', 'Denis'];
+// const arr = ['maks', 'Ivan', 'Olga', 'Denis'];
 
-let newArr = [];
-for (let i = 0; i < arr.length; i++) {
-  newArr.push(arr[i].length);
+// let newArr = [];
+// for (let i = 0; i < arr.length; i++) {
+//   newArr.push(arr[i].length);
+// }
+
+// console.log(newArr);
+
+// let newArr2 = [];
+// for (let i = 0; i < arr.length; i++) {
+//   newArr2.push(arr[i].toLocaleUpperCase());
+// }
+
+// console.log(newArr2);
+
+const names = ['maks', 'Ivan', 'Olga', 'Denis'];
+
+function mapArray(arr, fn) {
+  let res = [];
+  for (let i = 0; i < arr.length; i++) {
+    res.push(fn(arr[i]));
+  }
+   return res;
 }
 
-console.log(newArr);
-
-let newArr2 = [];
-for (let i = 0; i < arr.length; i++) {
-  newArr2.push(arr[i]);
+function nameLenght(element) {
+  console.log(element);
+  return element;
 }
 
-console.log(newArr2);
+function nameToUpperCase(element) {
+  console.log(element.toLocaleUpperCase());
+  return element;
+}
+
+
+const result = mapArray(names, nameLenght);
+const result2 = mapArray(names, nameToUpperCase);
+
+//console.log(result);
+console.log(result2);
+
+// function question(job) {
+//   if (job === 'developer') {
+//     return function (name) {
+//       return `${name}, что такое JS`;
+//     };
+//   } else if (job === "teacher") {
+//     return function (name) {
+//       return `${name}, какой предмет Вы ведете`;
+//     }
+//   };
+// }
+
+// const developerQuestion = question('developer');
+// console.log(developerQuestion('Maks'));
+
+// const teacherQuestion = question('teacher');
+// console.log(teacherQuestion('Ivan'));
+
+function question(job) {
+    const jobDictionary = {
+      developer : 'что такое JS',
+      teacher : 'какой предмет Вы ведете',
+    }
+    return function (name) {
+      return `${name}, ${jobDictionary[job]}`
+  }
+}
+  
+  const developerQuestion = question('developer');
+  console.log(developerQuestion('Maks'));
+  
+  const teacherQuestion = question('teacher');
+  console.log(teacherQuestion('Ivan'));
+
+
+  // 1
+function firstFunc(arr, fn) {
+  let res = [];
+  for (let i = 0; i < arr.length; i++) {
+    res.push(fn(arr[i]));
+  }
+   return res;
+}
+
+function handler1(el) {
+  return `New value: el.`
+}
+
+console.log(firstFunc(['my', 'name', 'is', 'Trinity'], handler1));
+
+function handler2(el) {
+}
+
+console.log(firstFunc([10, 20, 30], handler2) )
+
+function handler3(el) {
+}
+
+console.log(firstFunc([{age: 45, name: 'Jhon'}, {age: 20, name: 'Aaron'}], handler3));
+
+function handler4(el) {
+}
+
+console.log(firstFunc(['abs', '123'], handler4));
