@@ -590,12 +590,7 @@ P.S. Функции вызывать не обязательно */
 //   return res;
 // }
 
-
-
-
-// Callback. Функции высшего порядка. 
-
-
+// Callback. Функции высшего порядка.
 
 // функции - это объекты
 
@@ -616,51 +611,66 @@ P.S. Функции вызывать не обязательно */
 //   newArr.push(arr[i].length);
 // }
 
-// console.log(newArr);
+// // console.log(newArr);
 
-// let newArr2 = [];
-// for (let i = 0; i < arr.length; i++) {
-//   newArr2.push(arr[i].toLocaleUpperCase());
+// // let newArr2 = [];
+// // for (let i = 0; i < arr.length; i++) {
+// //   newArr2.push(arr[i].toLocaleUpperCase());
+// // }
+
+// // console.log(newArr2);
+
+// const names = ['maks', 'Ivan', 'Olga', 'Denis'];
+
+// function mapArray(arr, fn) {
+//   let res = [];
+//   for (let i = 0; i < arr.length; i++) {
+//     res.push(fn(arr[i]));
+//   }
+//   return res;
 // }
 
-// console.log(newArr2);
+// function nameLenght(element) {
+//   console.log(element);
+//   return element;
+// }
 
-const names = ['maks', 'Ivan', 'Olga', 'Denis'];
+// function nameToUpperCase(element) {
+//   console.log(element.toLocaleUpperCase());
+//   return element;
+// }
 
-function mapArray(arr, fn) {
-  let res = [];
-  for (let i = 0; i < arr.length; i++) {
-    res.push(fn(arr[i]));
-  }
-   return res;
-}
+// const result = mapArray(names, nameLenght);
+// const result2 = mapArray(names, nameToUpperCase);
 
-function nameLenght(element) {
-  console.log(element);
-  return element;
-}
+// //console.log(result);
+// console.log(result2);
 
-function nameToUpperCase(element) {
-  console.log(element.toLocaleUpperCase());
-  return element;
-}
+// // function question(job) {
+// //   if (job === 'developer') {
+// //     return function (name) {
+// //       return `${name}, что такое JS`;
+// //     };
+// //   } else if (job === "teacher") {
+// //     return function (name) {
+// //       return `${name}, какой предмет Вы ведете`;
+// //     }
+// //   };
+// // }
 
+// // const developerQuestion = question('developer');
+// // console.log(developerQuestion('Maks'));
 
-const result = mapArray(names, nameLenght);
-const result2 = mapArray(names, nameToUpperCase);
-
-//console.log(result);
-console.log(result2);
+// // const teacherQuestion = question('teacher');
+// // console.log(teacherQuestion('Ivan'));
 
 // function question(job) {
-//   if (job === 'developer') {
-//     return function (name) {
-//       return `${name}, что такое JS`;
-//     };
-//   } else if (job === "teacher") {
-//     return function (name) {
-//       return `${name}, какой предмет Вы ведете`;
-//     }
+//   const jobDictionary = {
+//     developer: 'что такое JS',
+//     teacher: 'какой предмет Вы ведете',
+//   };
+//   return function (name) {
+//     return `${name}, ${jobDictionary[job]}`;
 //   };
 // }
 
@@ -670,49 +680,111 @@ console.log(result2);
 // const teacherQuestion = question('teacher');
 // console.log(teacherQuestion('Ivan'));
 
-function question(job) {
-    const jobDictionary = {
-      developer : 'что такое JS',
-      teacher : 'какой предмет Вы ведете',
-    }
-    return function (name) {
-      return `${name}, ${jobDictionary[job]}`
-  }
+// const arrNames = ['my', 'name', 'is', 'Trinity'];
+
+// function firstFunc1(arr) {
+//   //let res = [];
+//   for (let name of arr) {
+//     name = name.toLowerCase();
+//     name = name[0].toUpperCase() + name.substr(1);
+//     console.log(name);
+//     return name;
+//   }
+// for (let i = 0; i < arr.length; i++) {
+//   res.push(arr[i]);
+//   //res += arr[i]; // объединяем массив
+// }
+//console.log(res);
+//return res;
+//}
+
+///firstFunc1(arrNames);
+
+// 1
+// function firstFunc(arr, fn) {
+//   let res = [];
+//   for (let i = 0; i < arr.length; i++) {
+//     res.push(fn(arr[i]));
+//   }
+//   return res;
+// }
+
+// function handler1(el) {
+//   return `New value: el.`;
+// }
+
+// console.log(firstFunc(['my', 'name', 'is', 'Trinity'], handler1));
+
+// function handler2(el) {}
+
+// console.log(firstFunc([10, 20, 30], handler2));
+
+// function handler3(el) {}
+
+// console.log(
+//   firstFunc(
+//     [
+//       { age: 45, name: 'Jhon' },
+//       { age: 20, name: 'Aaron' },
+//     ],
+//     handler3
+//   )
+// );
+
+// function handler4(el) {}
+
+// console.log(firstFunc(['abs', '123'], handler4));
+
+// let namesNames = ['KosTya', 'serGey', 'JoRDan', 'aleksandr'];
+
+// for (let name of namesNames) {
+//   name = name.toLowerCase();
+//   name = name[0].toUpperCase() + name.substr(1);
+//   console.log(name);
+// }
+
+//const arrNames = ['my', 'name', 'is', 'Trinity'];
+
+//function firstFunc1(arr) {
+// let res = [];
+// for (let name of arrNames) {
+//   name = name.toLowerCase();
+//   name = name[0].toUpperCase() + name.substr(1);
+//   res += name;
+
+//   //}
+//   console.log(name);
+//   console.log(res);
+
+// // перебор массива и создание копии массива
+
+const arrNames = ['my', 'name', 'is', 'Trinity'];
+
+function arr(arr) {
+  let arrNew = [];
+  let arrNew2 = [];
+  arr.forEach(function (item) {
+    arrNew = item[0].toUpperCase() + item.substr(1);
+    arrNew2 += arrNew;
+  });
+  console.log(arrNew2);
+  return arrNew2;
 }
-  
-  const developerQuestion = question('developer');
-  console.log(developerQuestion('Maks'));
-  
-  const teacherQuestion = question('teacher');
-  console.log(teacherQuestion('Ivan'));
 
+arr(arrNames); // MyNameIsTrinity
 
-  // 1
-function firstFunc(arr, fn) {
-  let res = [];
-  for (let i = 0; i < arr.length; i++) {
-    res.push(fn(arr[i]));
-  }
-   return res;
-}
+// перебор массива и создание копии массива
 
-function handler1(el) {
-  return `New value: el.`
-}
+// const arrNames = ['my', 'name', 'is', 'Trinity'];
 
-console.log(firstFunc(['my', 'name', 'is', 'Trinity'], handler1));
+// function arr(arr) {
+//   let arrNew = [];
+//   //let arrNew2 = [];
+//   arr.forEach(function (item, i) {
+//     arrNew = item;
+//     console.log(arrNew);
+//     return arrNew;
+//   });
+// }
 
-function handler2(el) {
-}
-
-console.log(firstFunc([10, 20, 30], handler2) )
-
-function handler3(el) {
-}
-
-console.log(firstFunc([{age: 45, name: 'Jhon'}, {age: 20, name: 'Aaron'}], handler3));
-
-function handler4(el) {
-}
-
-console.log(firstFunc(['abs', '123'], handler4));
+// arr(arrNames); // MyNameIsTrinity
