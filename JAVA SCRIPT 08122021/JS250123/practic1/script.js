@@ -632,12 +632,12 @@ P.S. Функции вызывать не обязательно */
 
 // function nameLenght(element) {
 //   console.log(element);
-//   return element;
+  
 // }
 
 // function nameToUpperCase(element) {
 //   console.log(element.toLocaleUpperCase());
-//   return element;
+ 
 // }
 
 // const result = mapArray(names, nameLenght);
@@ -758,20 +758,20 @@ P.S. Функции вызывать не обязательно */
 
 // // перебор массива и создание копии массива
 
-const arrNames = ['my', 'name', 'is', 'Trinity'];
+// const arrNames = ['my', 'name', 'is', 'Trinity'];
 
-function arr(arr) {
-  let arrNew = [];
-  let arrNew2 = [];
-  arr.forEach(function (item) {
-    arrNew = item[0].toUpperCase() + item.substr(1);
-    arrNew2 += arrNew;
-  });
-  console.log(arrNew2);
-  return arrNew2;
-}
+// function arr(arr) {
+//   let arrNew = [];
+//   let arrNew2 = [];
+//   arr.forEach(function (item) {
+//     arrNew = item[0].toUpperCase() + item.substr(1);
+//     arrNew2 += arrNew;
+//   });
+//   console.log(arrNew2);
+//   return arrNew2;
+// }
 
-arr(arrNames); // MyNameIsTrinity
+// arr(arrNames); // MyNameIsTrinity
 
 // перебор массива и создание копии массива
 
@@ -780,11 +780,85 @@ arr(arrNames); // MyNameIsTrinity
 // function arr(arr) {
 //   let arrNew = [];
 //   //let arrNew2 = [];
-//   arr.forEach(function (item, i) {
+//   arr.forEach(function (item) {
 //     arrNew = item;
 //     console.log(arrNew);
-//     return arrNew;
+//     //return arrNew;
 //   });
 // }
 
 // arr(arrNames); // MyNameIsTrinity
+
+// const arrNames = ['my', 'name', 'is', 'Trinity'];
+
+// console.log(arrNames);
+
+// function arrNames1(arr) {
+//   arr.forEach(function(item) {
+//     console.log([item]);
+//   })
+// }
+
+// arrNames1(arrNames);
+
+const arrNames = ['my', 'name', 'is', 'Trinity'];
+
+function firstFunc(arr, fn) {
+  // let res = [];
+  // for (let i = 0; i < arr.length; i++) {
+  //   res.push(fn(arr[i]));
+  // }
+  let arrNew = [];
+  arr.forEach(function(item) {
+    arrNew = fn(item);
+    return arrNew;
+  });
+  
+  }
+
+function handler1(el) {
+ let str2 = [];
+ let str = [];
+  str = el[0].toLocaleUpperCase() + el.slice(1);
+  str2 += str;
+  //str2 = str.split(',');
+  //split(' ').join('');
+  // str2 = [str].join('')
+  //console.log(str);
+  console.log(str2);
+}
+  firstFunc(arrNames, handler1);
+  
+
+  // let arrNew = el.join(';');
+  // console.log(arrNew);
+  // let arrNew = [];
+  // let arrNew2 = [];
+  // //arrNew =  el.join(';');
+  // str = el.join(';');
+  //arrNew = el[0].toLocaleUpperCase() + el.slice(1);
+  // el.forEach(function (item) {
+  //   arrNew = item[0].toLocaleUpperCase() + item.slice(1);
+  //arrNew2 = arrNew.join('');
+  // }); console.log(arrNew2);
+   //console.log(arrNew);
+  //let arrNew = [];
+  //let arrNew2 = [];
+
+
+
+
+
+// function arrName(arr) {
+//   let arrNew = [];
+//   let arrNew2 = [];
+//   arr.forEach(function (item) {
+//     arrNew = (item[0].toLocaleUpperCase() + item.slice(1));
+//     arrNew2 += arrNew;
+//   }); console.log(arrNew2);
+// }
+
+// arrName(arrNames);
+
+//arrNew = item[0].toUpperCase() + item.substr(1);
+//     arrNew2 += arrNew
