@@ -179,25 +179,25 @@
 // let res = '';
 // for (let i = 0; i < str.length; i++) {
 //   res += (str[i - 1] == ' ') ? str[i].toUpperCase() : str[i];
-  
+
 // }
 
 // console.log(res);
 
-// let str = 'i am in the easycode';
-// let words = str.split(' ');
-// for (let i = 0; i < words.length; i++) {
-// 	// Увеличим регистр каждого слова:
-// 	words[i] = words[i].slice(0, 1).toUpperCase() + words[i].slice(1);
-// }
-// console.log(words);
+let str = 'i am in the easycode';
+let words = str.split(' ');
+for (let i = 0; i < words.length; i++) {
+  // Увеличим регистр каждого слова:
+  words[i] = words[i].slice(0, 1).toUpperCase() + words[i].slice(1);
+}
+console.log(words);
 
 // let user = {"name":"Smith", age: 30};
 // console.log(user['name'] == user.name);
 
 // console.log(+'-' + 2)
 
-// let foo = { str: 'test' }; 
+// let foo = { str: 'test' };
 // console.log(foo && foo.str);
 
 // function reverseString(str) {
@@ -223,14 +223,13 @@
 // reverseString();
 
 function reverseString(str) {
-  var newString = "";
+  var newString = '';
   str = String(str);
   for (var i = str.length - 1; i >= 0; i--) {
-      newString += str[i];
+    newString += str[i];
   }
   console.log(newString);
   return newString;
-  
 }
 
 reverseString('test');
@@ -244,8 +243,7 @@ reverseString();
 
 function getArray(num) {
   let arrNum = [];
-  for (let i = 1; i <= num; i++)
-  arrNum.push(i);
+  for (let i = 1; i <= num; i++) arrNum.push(i);
   return arrNum;
 }
 console.log(getArray(10));
@@ -254,19 +252,18 @@ console.log(getArray(10));
 // doubleArray([1,2,3]) // [1,2,3,1,2,3]
 
 function doubleArray(arr) {
-  let doubleArrayNum = [] ;
-  doubleArrayNum =arr.concat(arr);
+  let doubleArrayNum = [];
+  doubleArrayNum = arr.concat(arr);
   return doubleArrayNum;
 }
-console.log(doubleArray([1,2,3]));
-
+console.log(doubleArray([1, 2, 3]));
 
 function changeCollection() {
   let changeCollectionNumber = [];
-  changeCollectionNumber = changeCollectionNumber.concat(changeCollectionNumber);
+  changeCollectionNumber = changeCollectionNumber.concat(
+    changeCollectionNumber
+  );
   return changeCollectionNumber;
 }
 
-console.log(changeCollection([1,2,3]))
-
-
+console.log(changeCollection([1, 2, 3]));
