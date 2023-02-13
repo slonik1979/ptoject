@@ -716,3 +716,25 @@ P.S. Функции вызывать не обязательно */
 // }
 // firstFunc(arrNumber, handler2);
 
+let arr = ['my', 'name', 'is', 'Trinity']
+
+function firstFunc(arr, handler1) {
+    let newArr = [];
+ 
+    for (let i = 0; i < arr.length; i++){
+        newArr += handler1(arr[i]);
+    }
+    return console.log('New value:',newArr);
+}
+ 
+firstFunc(arr, function (newArr) {
+   let arr = [];
+    arr += newArr[0].toUpperCase() + newArr.slice(1);
+   return arr;
+})
+
+
+
+ 
+
+
