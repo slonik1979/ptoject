@@ -267,38 +267,40 @@ function changeCollection() {
   return changeCollectionNumber;
 }
 
+
+
+// Создать функции:
+
+// - первая функция принимает массив и колбэк (одна для всех вызовов)
+
+// - вторая функция (колбэк) обрабатывает каждый элемент массива (для каждого вызова свой callback)
+
+// Первая функция возвращает строку “New value: ” и результат обработки:
+
+// firstFunc([‘my’, ‘name’, ‘is’, ‘Trinity’], handler1) → “New value: MyNameIsTrinity”
+
 console.log(changeCollection([1,2,3]))
 
-let arr2 = [10, 20, 30];
+//let arr = ['my', 'name', 'is', 'Trinity']
+let arr = [10, 20, 30];
 
-// function firstFunc(arr) {
-//   let arrNum = [];
-//   for (let i = 0; i <= arr.length-1; i++)
-//   arrNum.push((arr[i]));
-//   console.log(arrNum);
-//   return arrNum;
-// }
-
-// firstFunc(arr2);
-
-function firstFunc(arr, handler2) {
-    let arrNum = [];
-    for (let key of arr)
-    arrNum.push(handler2(key));
-    console.log(`"New value: ${handler2} "`);
-    return arrNum;
-  }
-  
-  firstFunc(arr2, handler2);
-
-
- function handler2(arrNum) {
+function firstFunc(arr, handler) {
+    let newArr = [];
  
-    //console.log(arrNum);
-  // let arrNum2 = [];
-  // for (let key of arr)
-  //  arrNum2.push(key);
-  //   return arrNum2;
+    for (let i = 0; i < arr.length; i++){
+        newArr += handler(arr[i]);
+    }
+    return console.log('New value:',newArr);
 }
+ 
+// firstFunc(arr, function (newArr) {
+//    let arr = [];
+//     arr += newArr[0].toUpperCase() + newArr.slice(1);
+//    return arr;
+// })
 
-//console.log(firstFunc([10, 20, 30], handler2) )
+firstFunc(arr, function (newArr) {
+  let arr = [];
+   arr += (newArr * 10).split(',');
+  return arr;
+})
