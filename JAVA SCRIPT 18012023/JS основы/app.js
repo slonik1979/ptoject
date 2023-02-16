@@ -222,50 +222,50 @@
 // reverseString(undefined);
 // reverseString();
 
-function reverseString(str) {
-  var newString = "";
-  str = String(str);
-  for (var i = str.length - 1; i >= 0; i--) {
-      newString += str[i];
-  }
-  console.log(newString);
-  return newString;
+// function reverseString(str) {
+//   var newString = "";
+//   str = String(str);
+//   for (var i = str.length - 1; i >= 0; i--) {
+//       newString += str[i];
+//   }
+//   console.log(newString);
+//   return newString;
   
-}
+// }
 
-reverseString('test');
-reverseString('ghy');
-reverseString(null);
-reverseString(undefined);
-reverseString();
+// reverseString('test');
+// reverseString('ghy');
+// reverseString(null);
+// reverseString(undefined);
+// reverseString();
 
-// Создать функцию, которая принимает число n и возвращает массив, заполненный числами от 1 до n:
-//getArray(10); // [1,2,3,4,5,6,7,8,9,10]
+// // Создать функцию, которая принимает число n и возвращает массив, заполненный числами от 1 до n:
+// //getArray(10); // [1,2,3,4,5,6,7,8,9,10]
 
-function getArray(num) {
-  let arrNum = [];
-  for (let i = 1; i <= num; i++)
-  arrNum.push(i);
-  return arrNum;
-}
-console.log(getArray(10));
+// function getArray(num) {
+//   let arrNum = [];
+//   for (let i = 1; i <= num; i++)
+//   arrNum.push(i);
+//   return arrNum;
+// }
+// console.log(getArray(10));
 
-// Создать функцию, которая принимает массив, а возвращает новый массив с дублированными элементами входного массива.
-// doubleArray([1,2,3]) // [1,2,3,1,2,3]
+// // Создать функцию, которая принимает массив, а возвращает новый массив с дублированными элементами входного массива.
+// // doubleArray([1,2,3]) // [1,2,3,1,2,3]
 
-function doubleArray(arr) {
-  let doubleArrayNum = [] ;
-  doubleArrayNum =arr.concat(arr);
-  return doubleArrayNum;
-}
-console.log(doubleArray([1,2,3]));
+// function doubleArray(arr) {
+//   let doubleArrayNum = [] ;
+//   doubleArrayNum =arr.concat(arr);
+//   return doubleArrayNum;
+// }
+// console.log(doubleArray([1,2,3]));
 
 
-function changeCollection() {
-  let changeCollectionNumber = [];
-  changeCollectionNumber = changeCollectionNumber.concat(changeCollectionNumber);
-  return changeCollectionNumber;
-}
+// function changeCollection() {
+//   let changeCollectionNumber = [];
+//   changeCollectionNumber = changeCollectionNumber.concat(changeCollectionNumber);
+//   return changeCollectionNumber;
+// }
 
 
 
@@ -279,28 +279,65 @@ function changeCollection() {
 
 // firstFunc([‘my’, ‘name’, ‘is’, ‘Trinity’], handler1) → “New value: MyNameIsTrinity”
 
-console.log(changeCollection([1,2,3]))
+//console.log(changeCollection([1,2,3]))
 
 //let arr = ['my', 'name', 'is', 'Trinity']
-let arr = [10, 20, 30];
+//let arr = [10, 20, 30];
 
-function firstFunc(arr, handler) {
-    let newArr = [];
+function changeString(arr, getNewString) {
  
-    for (let i = 0; i < arr.length; i++){
-        newArr += handler(arr[i]);
-    }
-    return console.log('New value:',newArr);
+  let newString = 'New value: ';
+
+  for (let i = 0; i < arr.length; i++) {
+      newString += getNewString(arr[i]);
+  }
+
+  return console.log(newString);
 }
- 
-// firstFunc(arr, function (newArr) {
-//    let arr = [];
-//     arr += newArr[0].toUpperCase() + newArr.slice(1);
-//    return arr;
-// })
 
-firstFunc(arr, function (newArr) {
-  let arr = [];
-   arr += (newArr * 10).split(',');
-  return arr;
-})
+// function stickCamelCaseString(item) {
+//   let itemNew;
+//   itemNew = item[0].toUpperCase() + item.slice(1);
+
+//   return itemNew;
+// }
+
+// function numberZero(item) {
+//   let itemNew;
+//   itemNew = ' ' + item * 10 + ',';
+
+//   return itemNew;
+// }
+
+// function nameAge(item) {
+//   let nameAge = ' ' + item.name + ' is ' + item.age + ',';
+//   return nameAge;
+// }
+
+function solution(str) {
+  str = str.split('');
+  str = str.reverse();
+  str = str.join('');
+  str += ', ';
+  return str;
+}
+
+function invertString(item) {
+ 
+  let newItem = '';
+
+  for (let i = item.length - 1; i >= 0; i--) {
+      newItem += item[i];
+  }
+
+  return ' ' + newItem + ',';
+}
+
+
+//changeString(['my', 'name', 'is', 'Trinity'], stickCamelCaseString);
+//changeString([10, 20, 30], numberZero);
+//changeString([{age: 45, name: 'Jhon'}, {age: 20, name: 'Aaron'}], nameAge);
+changeString(['abc', '123'], solution);
+
+
+
