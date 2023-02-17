@@ -470,7 +470,7 @@
     "pump": "^2.0.1",
     "pumpify": "^1.5.1",
     "q": "^1.5.1",
-    "qs": "^6.2.3",
+    "qs": "^6.2.4",
     "query-string": "^5.1.1",
     "queue-microtask": "^1.2.3",
     "range-parser": "^1.2.1",
