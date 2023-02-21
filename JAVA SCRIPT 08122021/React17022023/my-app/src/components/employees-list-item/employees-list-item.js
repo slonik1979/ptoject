@@ -1,13 +1,54 @@
+import { Component } from 'react';
 import './employees-list-item.css'
 
-const EmployeesListItem = () => {
+class EmployeesListItem extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            increase: false,
+            like: false
+        }
+    }
+
+    // onIncrease = () => {
+    //     this.setState(({increase}) => ({
+    //         increase: !increase
+    //     }))
+    // }
+
+    onIncrease = () => {
+        this.setState(state => ({
+            increase: !state.increase
+          }))
+      }
+
+      onLike = () => {
+        this.setState(({like}) => ({
+            like: !like
+          }))
+      }
+
+
+    render() {
+        const {name, salary} = this.props;
+        const {increase, like} = this.state;
+        let newIncrease = 'list-group-item';
+        // let newLike = 'list-group-item';
+     if (increase) {
+        newIncrease += ' increase';
+    }
+    if (like) {
+        newIncrease += ' like';
+    }
+    
     return (
-        <li className="list-group-item d-flex justify-content-between">
-            <span className="list-group-item-label">John Smith</span>
-            <input type="text" className="list-group-item-input" defaultValue="1000$"/>
+        <li className={newIncrease + ' d-flex justify-content-between'}>
+            <span className="list-group-item-label" onClick={this.onLike}>{name} </span>
+            <input type="text" className="list-group-item-input" defaultValue={salary + ' $'}/>
             <div className='d-flex justify-content-center align-items-center'>
                 <button type="button"
-                    className="btn-cookie btn-sm ">
+                    className="btn-cookie btn-sm "
+                    onClick={this.onIncrease}>
                     <i className="fas fa-cookie"></i>
                 </button>
 
@@ -19,6 +60,7 @@ const EmployeesListItem = () => {
             </div>
         </li>
     )
+    }
 }
 
 export default EmployeesListItem;
