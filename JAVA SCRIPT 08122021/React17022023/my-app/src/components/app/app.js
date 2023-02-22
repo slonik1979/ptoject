@@ -38,6 +38,7 @@ class App extends Component {
     const newItem = {
         name, 
         salary,
+        like: false,
         increase: false,
         id: this.maxId++
     }
@@ -49,11 +50,28 @@ class App extends Component {
     });
 }
 
+onToggleProp = (id, prop) => {
+  this.setState(({dataServer}) => ({
+    dataServer: dataServer.map(item => {
+      if(item.id === id) {
+        return {...item, [prop]: !item[prop]}
+      } return item;
+    })
+  }))
+}
+
+
   render() {
+    const employees = this.state.dataServer.length;
+    const increased = this.state.dataServer.filter(item => item.increase).length;
+    const likes = this.state.dataServer.filter(item => item.like).length;
      return (
       <div className="app">
-        <AppInfo />
-  
+        <AppInfo 
+        employees={employees}
+        increased={increased}
+        likes={likes}/>
+      
         <div className="search-panel">
           <SearchPanel />
           <AppFilter />
@@ -61,7 +79,8 @@ class App extends Component {
         <EmployeesList 
         data = {this.state.dataServer}
         onElement = {this.deleteItem}
-        onAdd = {this.onAdd}/>
+        onAdd = {this.onAdd}
+        onToggleProp = {this.onToggleProp}/>
         <EmployeesAddForm onAdd={this.addItem}/>
       </div>
     );
