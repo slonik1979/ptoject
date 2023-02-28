@@ -1,4 +1,5 @@
 import s from './profile.module.css';
+import Post from './MyPosts/Post/post';
 
 const Profile = () => {
   return (
@@ -7,15 +8,21 @@ const Profile = () => {
         <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRSWv-TxW1o4uq321qA2W4ISMiHZklZURmCJQ&usqp=CAU" />
       </div>
       <div>
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR2U111p3Zn5l3ZurcpiOzfZOOhBrmqc7zinA&usqp=CAU" />
         avatar + descr
       </div>
       <div>
         My post
+        <div>
+          <textarea></textarea>
+          <button>Add post</button>
+        </div>
         <div>New post</div>
         <div className={s.posts}>
-          <div className={s.item}>post 1</div>
-          <div className={s.item}>post 2</div>
+          <Post message='Hi' like='15'/>
+          <Post message='My names Peter' like='10'/>
+          <Post/>
+          <Post/>
+          <Post/>
         </div>
       </div>
     </div>
