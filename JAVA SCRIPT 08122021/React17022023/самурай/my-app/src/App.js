@@ -3,9 +3,11 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import './App.css';
 import Dialogs from './components/dialog/dialog';
 import Header from './components/header/header';
-import NavBar from './components/nav-bar/nav-bar';
+import NavBar from './components/navbar/navbar';
 import Profile from './components/profile/profile';
-
+import News from './components/news/news';
+import Music from './components/music/music';
+import Setting from './components/setting/setting';
 
 function App() {
   return (
@@ -13,10 +15,13 @@ function App() {
       <div className="app-wrapper">
         <Header />
         <NavBar />
-        <div className="app-content">
+        <div className="content">
           <Routes>
-            <Route path='/profile' element={<Profile />}/>
-            <Route path='/message' element={<Dialogs />}/>
+            <Route path="/profile" element={<Profile />} />
+            <Route path="/message" element={<Dialogs />} />
+            <Route path="/news" element={<News />} />
+            <Route path="/music" element={<Music />} />
+            <Route path="/setting" element={<Setting />} />
           </Routes>
         </div>
       </div>
