@@ -3,9 +3,17 @@
     grid-template-columns: 2fr 10fr;
 }
 
-.dialogs_items {
+.dialogs_items  {
     padding: 10px;
+   
 }
+
+.dialogs_items a  {
+    color: azure;
+    text-decoration: none;
+    
+}
+
 
 .dialogs_items .active {
     color: gold;
