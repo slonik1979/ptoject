@@ -2,6 +2,17 @@ import s from './profile.module.css';
 import Post from './MyPosts/Post/post';
 
 const Profile = () => {
+
+  const postData = [
+    {id: '1', message: "Hi", like: 15},
+    {id: '2', message: "My names Peter", like: 10},
+   ]
+
+   const postsElements = postData.map((el) => (
+    <Post message={el.message} id={el.id} like={el.like}/>
+   ))
+
+
   return (
     <div className={s.content}>
       <div className={s.img}>
@@ -18,11 +29,8 @@ const Profile = () => {
         </div>
         <div>New post</div>
         <div className={s.posts}>
-          <Post message='Hi' like='15'/>
-          <Post message='My names Peter' like='10'/>
-          <Post/>
-          <Post/>
-          <Post/>
+          {postsElements}
+          {postsElements}
         </div>
       </div>
     </div>
