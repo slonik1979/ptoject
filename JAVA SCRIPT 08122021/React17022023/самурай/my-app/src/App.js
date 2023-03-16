@@ -9,7 +9,13 @@ import News from './components/news/news';
 import Music from './components/music/music';
 import Setting from './components/setting/setting';
 
-function App() {
+
+
+function App({postData, messegesData, dialogData}) {
+
+
+  
+
   return (
     <BrowserRouter>
       <div className="app-wrapper">
@@ -17,8 +23,8 @@ function App() {
         <NavBar />
         <div className="content">
           <Routes>
-            <Route path="/profile" element={<Profile />} />
-            <Route path="/message" element={<Dialogs />} />
+            <Route path="/profile" element={<Profile postData={postData} />} />
+            <Route path="/message" element={<Dialogs dialogData={dialogData} messegesData={messegesData}/>} />
             <Route path="/news" element={<News />} />
             <Route path="/music" element={<Music />} />
             <Route path="/setting" element={<Setting />} />
