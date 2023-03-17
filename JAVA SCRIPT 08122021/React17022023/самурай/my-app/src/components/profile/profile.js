@@ -6,6 +6,10 @@ const Profile = ({ postData, state }) => {
     <Post message={el.message} id={el.id} like={el.like} />
   ));
 
+   const addPost = () => {
+      console.log('ok')
+    }
+
   return (
     <div className={s.content}>
       <div className={s.img}>
@@ -16,7 +20,7 @@ const Profile = ({ postData, state }) => {
         My post
         <div>
           <textarea></textarea>
-          <button>Add post</button>
+          <button onClick={ addPost}>Add post</button>
         </div>
         <div>New post</div>
         <div className={s.posts}>

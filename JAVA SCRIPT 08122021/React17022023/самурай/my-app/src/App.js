@@ -10,6 +10,7 @@ import Music from './components/music/music';
 import Setting from './components/setting/setting';
 
 function App({ postData, messegesData, dialogData, state }) {
+
   return (
     <BrowserRouter>
       <div className="app-wrapper">
