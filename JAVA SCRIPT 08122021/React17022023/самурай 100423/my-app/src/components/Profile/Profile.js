@@ -1,20 +1,14 @@
-
+import Myposts from './MyPosts/Myposts';
+import s from './Profile.module.css';
 
 const Profile = () => {
     return (
-      <div className="content">
+      <div>
       <div>
         <img src="https://tinypng.com/images/social/website.jpg" />
       </div>
       <div>ava + descr</div>
-      <div>
-        My post
-        <div>New post</div>
-        <div>
-          <div>post 1</div>
-          <div>post 2</div>
-        </div>
-      </div>
+     <Myposts/>
     </div>
     )
 }
