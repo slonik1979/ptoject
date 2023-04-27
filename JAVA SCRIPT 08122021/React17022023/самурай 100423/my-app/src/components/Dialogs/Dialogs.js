@@ -1,27 +1,34 @@
 import { NavLink } from 'react-router-dom';
 import s from './Dialogs.module.css';
 
+const DialogItem = ({ name, id }) => {
+  let patch = '/dialogs/' + id;
+  return (
+    <div className={s.dialog + ' ' + s.active}>
+      <NavLink to={patch}>{name}</NavLink>
+    </div>
+  );
+};
+
+const Messege = ({ messege }) => {
+  return <div className={s.messege}>{messege}</div>;
+};
+
 const Dialogs = () => {
   return (
     <div className={s.dialogs}>
       <div className={s.dialogsItems}>
-        <div className={s.dialog + ' ' + s.active}>
-          <NavLink to="/dialogs/1">Ivan</NavLink>
-        </div>
-        <div className={s.dialog}>
-          <NavLink to="/dialogs/2">Peter</NavLink>
-        </div>
-        <div className={s.dialog}>
-          <NavLink to="/dialogs/3">Mike</NavLink>
-        </div>
-        <div className={s.dialog}>
-          <NavLink to="/dialogs/3">Victor</NavLink>
-        </div>
+        <DialogItem name="Ivan" id="1" />
+        <DialogItem name="Peter" id="2" />
+        <DialogItem name="Mike" id="3" />
+        <DialogItem name="Victor" id="4" />
       </div>
       <div iv className={s.messeges}>
-        <div className={s.messege}>Hi</div>
-        <div className={s.messege}>Hi2</div>
-        <div className={s.messege}>Hi3</div>
+        <Messege messege="Hi" />
+        <Messege messege="Hi2" />
+        <Messege messege="Hi3" />
+        <Messege messege="Hi4" />
+        <Messege messege="Hi5" />
       </div>
     </div>
   );

@@ -1,16 +1,14 @@
 import Myposts from './MyPosts/Myposts';
 import s from './Profile.module.css';
+import ProfileInfo from './ProfileInfo/ProfileInfo';
 
 const Profile = () => {
-    return (
-      <div>
-      <div>
-        <img src="https://tinypng.com/images/social/website.jpg" />
-      </div>
-      <div>ava + descr</div>
-     <Myposts/>
+  return (
+    <div>
+      <ProfileInfo />
+      <Myposts />
     </div>
-    )
-}
+  );
+};
 
 export default Profile;
