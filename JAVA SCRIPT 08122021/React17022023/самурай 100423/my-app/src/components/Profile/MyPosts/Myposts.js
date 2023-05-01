@@ -10,8 +10,7 @@ const Myposts = () => {
   ];
 
   let postsElement = postsData.map((el) => {
-    return;
-    <Post message={el.message} like={el.like} />;
+    return <Post message={el.message} like={el.like} />;
   });
 
   return (
@@ -25,12 +24,7 @@ const Myposts = () => {
           <button className={s.button_Block}>Add post</button>
         </div>
       </div>
-      <div className={s.posts}>
-        <Post message="Привет" like="10" />
-        <Post message="Как дела?" like="15" />
-        <Post message="Все хорошо" like="5" />
-        <Post message="Что делаешь?" like="20" />
-      </div>
+      <div className={s.posts}>{postsElement}</div>
     </div>
   );
 };
