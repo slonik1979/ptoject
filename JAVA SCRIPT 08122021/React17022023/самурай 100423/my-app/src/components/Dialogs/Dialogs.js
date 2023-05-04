@@ -1,23 +1,8 @@
-import { NavLink } from 'react-router-dom';
 import s from './Dialogs.module.css';
 import DialogItem from './DialosItems/DialogItem';
 import Messege from './Messege/Messege';
 
-const Dialogs = () => {
-  let dialogsData = [
-    { id: 1, name: 'Ivan' },
-    { id: 2, name: 'Peter' },
-    { id: 3, name: 'Mike' },
-    { id: 4, name: 'Victor' },
-  ];
-
-  let messegesData = [
-    { id: 1, messege: 'Hi' },
-    { id: 2, messege: 'Hi2' },
-    { id: 3, messege: 'Hi3' },
-    { id: 4, messege: 'Hi4' },
-  ];
-
+const Dialogs = ({ dialogsData, messegesData }) => {
   let dialogsElement = dialogsData.map((el) => {
     return <DialogItem name={el.name} id={el.id} />;
   });

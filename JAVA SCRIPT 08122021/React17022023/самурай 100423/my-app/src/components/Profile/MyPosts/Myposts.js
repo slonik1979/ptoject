@@ -1,14 +1,7 @@
 import s from './Myposts.module.css';
 import Post from './Post/Post';
 
-const Myposts = () => {
-  let postsData = [
-    { message: 'Привет', like: '10' },
-    { message: 'Как дела?', like: '15' },
-    { message: 'Все хорошо', like: '5' },
-    { message: 'Что делаешь?', like: '20' },
-  ];
-
+const Myposts = ({ postsData }) => {
   let postsElement = postsData.map((el) => {
     return <Post message={el.message} like={el.like} />;
   });
