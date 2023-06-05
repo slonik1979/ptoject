@@ -28,10 +28,6 @@ function App({ postsData, dialogsData, messegesData }) {
               element={<Dialogs dialogsData={dialogsData} />}
             />
 
-            <Route
-              path="/dialogs/*"
-              element={<Dialogs messegesData={messegesData} />}
-            />
             <Route path="/News" element={<News />} />
             <Route path="/Music" element={<Music />} />
             <Route path="/Settings" element={<Settings />} />
