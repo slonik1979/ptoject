@@ -1,16 +1,14 @@
 .nav {
-    grid-area: n;
-    background-color: greenyellow;
-  }
+  grid-area: n;
+  background-color: #cc3e44;
+}
 
-  .item a{
-    color: aliceblue;
-    font-size: 20px;
-    text-decoration: none;
-  }
+.item a {
+  color: aliceblue;
+  font-size: 20px;
+  text-decoration: none;
+}
 
-  .item a.active {
-    color: gold;
-  }
-
-  
+.item a.active {
+  color: gold;
+}
