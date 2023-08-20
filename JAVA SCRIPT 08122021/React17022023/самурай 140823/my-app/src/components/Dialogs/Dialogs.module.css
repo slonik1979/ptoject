@@ -1,21 +1,23 @@
 .dialogs {
- display: grid;
- 
- grid-template-columns: 2fr 10fr;
+  display: grid;
+
+  grid-template-columns: 2fr 10fr;
 }
 
-/* .dialogsItems {
-   
+.dialogsItems {
+  padding: 10px;
+}
+
+.dialogsItems .active {
+  color: gold;
 }
 
 .dialog {
-
 }
 
 .messeges {
- 
+  padding: 10px;
 }
 
 .message {
-
-} */
+}
