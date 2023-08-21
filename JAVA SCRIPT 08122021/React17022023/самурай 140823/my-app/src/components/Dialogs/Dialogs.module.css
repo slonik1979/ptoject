@@ -9,17 +9,13 @@
 }
 
 .dialogsItems .active {
-<<<<<<< Updated upstream
-  color:#cc3e44;
-=======
   color: #cc3e44;
->>>>>>> Stashed changes
 }
 
 .dialog {
 }
 
-.messeges {
+.messages {
   padding: 10px;
 }
 
