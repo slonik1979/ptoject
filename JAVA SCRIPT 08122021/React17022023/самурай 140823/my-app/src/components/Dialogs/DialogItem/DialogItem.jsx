@@ -6,13 +6,15 @@ const DialogItem = ({ name, id }) => {
   let patch = '/dialog/' + id;
   return (
     <div className={`${s.dialog} ${s.active}`}>
-      <NavLink NavLink to={patch}>
+      <NavLink
+        NavLink
+        to={patch}
+        className={(navData) => (navData.isActive ? s.active : s.item)}
+      >
         {name}
       </NavLink>
     </div>
   );
 };
-
-
 
 export default DialogItem;

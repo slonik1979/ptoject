@@ -8,16 +8,15 @@
   padding: 10px;
 }
 
+.dialogsItems a {
+  color: blue;
+  text-decoration: none;
+}
+
 .dialogsItems .active {
   color: #cc3e44;
 }
 
-.dialog {
-}
-
 .messages {
   padding: 10px;
-}
-
-.message {
 }
