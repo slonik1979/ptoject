@@ -10,12 +10,6 @@ import Settings from './components/Settings/Settings';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 function App() {
-
-  let postsData = [
-    { id: 1, message: 'Hi', like: 15 },
-    { id: 1, message: 'My names Maxim', like: 10 },
-  ];
-  
   return (
     <BrowserRouter>
       <div className="app-wrapper">
@@ -23,7 +17,7 @@ function App() {
         <Navbar />
         <div className="app-wrapper-content">
           <Routes>
-            <Route path="/profile" element={<Profile posts={postsData}/>} />  
+            <Route path="/profile" element={<Profile />} />
             <Route path="/dialogs/" element={<Dialogs />} />
             <Route path="/news" element={<News />} />
             <Route path="/music" element={<Music />} />

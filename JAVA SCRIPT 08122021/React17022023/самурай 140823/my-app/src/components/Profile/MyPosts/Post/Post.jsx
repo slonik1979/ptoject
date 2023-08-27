@@ -1,9 +1,7 @@
 import React from 'react';
 import s from './Post.module.css';
 
-
 const Post = ({ message, like }) => {
-
   return (
     <div>
       <div className={s.item}>
