@@ -9,7 +9,7 @@ import Music from './components/Music/Music';
 import Settings from './components/Settings/Settings';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
-function App({ posts1 }) {
+function App({ posts }) {
   return (
     <BrowserRouter>
       <div className="app-wrapper">
@@ -17,7 +17,7 @@ function App({ posts1 }) {
         <Navbar />
         <div className="app-wrapper-content">
           <Routes>
-            <Route path="/profile" element={<Profile posts2={posts1} />} />
+            <Route path="/profile" element={<Profile posts={posts} />} />
             <Route path="/dialogs/" element={<Dialogs />} />
             <Route path="/news" element={<News />} />
             <Route path="/music" element={<Music />} />

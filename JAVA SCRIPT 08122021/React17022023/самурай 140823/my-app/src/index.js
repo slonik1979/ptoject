@@ -4,15 +4,17 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
 let postsData = [
   { id: 1, message: 'Hi', like: 15 },
   { id: 2, message: 'My names Maxim', like: 10 },
   { id: 3, message: 'Props', like: 52 },
 ];
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+
 root.render(
   <React.StrictMode>
-    <App posts1={postsData} />
+    <App posts={postsData} />
   </React.StrictMode>
 );
 

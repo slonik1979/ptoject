@@ -2,8 +2,8 @@ import React from 'react';
 import s from './MyPosts.module.css';
 import Post from './Post/Post';
 
-const MyPosts = ({ posts3 }) => {
-  let postsElements = posts3.map((el) => {
+const MyPosts = ({ posts }) => {
+  let postsElements = posts.map((el) => {
     return <Post message={el.message} like={el.like} />;
   });
 
