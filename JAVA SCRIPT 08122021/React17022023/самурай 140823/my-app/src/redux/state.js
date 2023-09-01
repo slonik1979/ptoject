@@ -1,7 +1,4 @@
-
-
 let state = {
-
   profilePage: {
     postsData: [
       { id: 1, message: 'Hi', like: 15 },
@@ -21,8 +18,16 @@ let state = {
       { id: 1, message: 'Hi' },
       { id: 2, message: 'Fuck' },
       { id: 3, message: 'Привет' },
-    ]
-  }  
+    ],
+  },
+
+  // sidebarPage: {
+  //   sidebarData: [
+  //     { id: 1, name: 'Ivan' },
+  //     { id: 2, name: 'Sveta' },
+  //     { id: 3, name: 'Darina' },
+  //   ],
+  // },
 };
 
 export default state;

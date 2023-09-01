@@ -5,7 +5,6 @@ import ProfileInfo from './ProfileInfo/ProfileInfo';
 import MyPosts from './MyPosts/MyPosts';
 
 const Profile = ({ state }) => {
-  debugger;
   return (
     <div className={s.content}>
       <ProfileInfo />
