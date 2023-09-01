@@ -1,6 +1,7 @@
 import React from 'react';
 import s from './Navbar.module.css'
 import { NavLink } from 'react-router-dom';
+import Sidebar from '../Sidebar/Sidebar';
 
 const Navbar = () => {
     return <nav className={s.nav}>
@@ -18,6 +19,9 @@ const Navbar = () => {
     </div>
     <div className={s.item}>
       <NavLink to='/settings' className = { navData => navData.isActive ? s.active : s.item }>Settings</NavLink>
+    </div>
+    <div className={s.item}>
+    <Sidebar/>
     </div>
   </nav>
 }
