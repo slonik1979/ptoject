@@ -7,9 +7,9 @@ import Dialogs from './components/Dialogs/Dialogs';
 import News from './components/News/News';
 import Music from './components/Music/Music';
 import Settings from './components/Settings/Settings';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 
-function App({ state }) {
+function App(props) {
   return (
     <div className="app-wrapper">
       <Header />
@@ -19,11 +19,10 @@ function App({ state }) {
         <Routes>
           <Route
             path="/profile"
-            element={<Profile state={state.profilePage} />}
-          />
+            element={<Profile state={props.state.profilePage}     />} />
           <Route
             path="/dialogs/"
-            element={<Dialogs state={state.messagesPage} />}
+            element={<Dialogs state={props.state.messagesPage} />}
           />
 
           <Route path="/news" element={<News />} />

@@ -6,7 +6,13 @@ const MyPosts = ({ state }) => {
   let postsElements = state.postsData.map((el) => {
     return <Post message={el.message} like={el.like} />;
   });
-
+  
+  // let addPost1 = () => {
+  //   return (props.addPost);
+   
+  // }
+  
+ 
   return (
     <div className={s.myPost}>
       <h3>My posts</h3>
@@ -15,7 +21,7 @@ const MyPosts = ({ state }) => {
           <textarea></textarea>
         </div>
         <div>
-          <button>Add post</button>
+          <button >Add post</button>
         </div>
       </div>
       <div>News posts</div>

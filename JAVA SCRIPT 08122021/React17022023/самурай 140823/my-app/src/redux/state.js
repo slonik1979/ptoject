@@ -20,14 +20,17 @@ let state = {
       { id: 3, message: 'Привет' },
     ],
   },
-
-  // sidebarPage: {
-  //   sidebarData: [
-  //     { id: 1, name: 'Ivan' },
-  //     { id: 2, name: 'Sveta' },
-  //     { id: 3, name: 'Darina' },
-  //   ],
-  // },
+ 
 };
+
+// export let addPost = (postMesagge) => {
+//   debugger;
+//   let newPost = {
+//     id: 4,
+//     message: postMesagge,
+//     like: 0
+//   }
+//   state.profilePage.postsData.push(newPost);
+// }
 
 export default state;
