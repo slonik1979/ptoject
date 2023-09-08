@@ -2,8 +2,8 @@ import React from 'react';
 import s from './MyPosts.module.css';
 import Post from './Post/Post';
 
-const MyPosts = ({ state }) => {
-  let postsElements = state.postsData.map((el) => {
+const MyPosts = ( props ) => {
+  let postsElements = props.state.postsData.map((el) => {
     return <Post message={el.message} like={el.like} />;
   });
 
@@ -15,9 +15,10 @@ const MyPosts = ({ state }) => {
   let newPostElement = React.createRef();
 
   let addPost = () => {
-    debugger;
+   
     let text = newPostElement.current.value;
-    alert(text);
+    props.addPost(text);
+    newPostElement.current.value='';
   };
 
   return (
