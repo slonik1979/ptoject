@@ -5,11 +5,14 @@ import ProfileInfo from './ProfileInfo/ProfileInfo';
 import MyPosts from './MyPosts/MyPosts';
 
 const Profile = (props) => {
-  
   return (
     <div className={s.content}>
       <ProfileInfo />
-      <MyPosts state={props.state} addPost={props.addPost}/>
+      <MyPosts
+        state={props.profilePage}
+        newPostText={props.profilePage.newPostText}
+        addPost={props.addPost}
+      />
     </div>
   );
 };
