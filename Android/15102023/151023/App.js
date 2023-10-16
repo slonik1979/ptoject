@@ -1,21 +1,18 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { Text, View } from 'react-native';
+import styled from 'styled-components/native';
+
+const PostView = styled.View`
+  padding: 15px;
+  background-color: green;
+  height: 100px;
+  width: 100px;
+`;
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Данил должен изучать программирование!</Text>
-
-      <StatusBar style="auto" />
+    <View>
+      <PostView />
     </View>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
