@@ -41,7 +41,7 @@ export const Post = () => {
       />
       <PostDetails>
         <PostTitle>Тестовая статья</PostTitle>
-        <PostDate>17/10/82023</PostDate>
+        <PostDate>17/10/2023</PostDate>
       </PostDetails>
     </PostView>
   );
