@@ -31,17 +31,17 @@ const PostDetails = styled.View`
   justify-content: center;
 `;
 
-export const Post = () => {
+export const Post = ({ title, image, createData }) => {
   return (
     <PostView>
       <PostImage
         source={{
-          uri: 'https://img.freepik.com/free-photo/a-cupcake-with-a-strawberry-on-top-and-a-strawberry-on-the-top_1340-35087.jpg?w=740&t=st=1697538899~exp=1697539499~hmac=8ad1cf3c296ba1ddc8fe334873089ca842dec9193008691c897e57f558fff791',
+          uri: { image },
         }}
       />
       <PostDetails>
-        <PostTitle>Тестовая статья</PostTitle>
-        <PostDate>17/10/2023</PostDate>
+        <PostTitle>{title}</PostTitle>
+        <PostDate>{createData}</PostDate>
       </PostDetails>
     </PostView>
   );

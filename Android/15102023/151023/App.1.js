@@ -1,11 +1,10 @@
-import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import axios from 'axios';
-import { Text, View, Alert } from 'react-native';
+import { View, Alert } from 'react-native';
 import { Post } from './components/Post';
 
 export default function App() {
-  const [items, setItems] = React.useState([]);
+  const [items, setItems] = React.useState();
 
   React.useEffect(() => {
     axios
