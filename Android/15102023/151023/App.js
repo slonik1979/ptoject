@@ -25,8 +25,11 @@ export default function App() {
 
   return (
     <View>
-
-      <Post  title ='Тест' image ='https://img.freepik.com/free-photo/a-cupcake-with-a-strawberry-on-top-and-a-strawberry-on-the-top_1340-35087.jpg?w=740&t=st=1698126696~exp=1698127296~hmac=98392d6c036b56cf934f30a95ede67cc16075fac53b6c843ee9481f19f15c151' createData='24/10/2023'/>
+      <Post
+        title="Тест"
+        image="https://img.freepik.com/free-photo/a-cupcake-with-a-strawberry-on-top-and-a-strawberry-on-the-top_1340-35087.jpg"
+        createData="25/10/2023"
+      />
     </View>
   );
 }
