@@ -34,8 +34,7 @@ const PostDetails = styled.View`
 export const Post = ({ title, image, createData }) => {
   return (
     <PostView>
-      <PostImage source={{ uri:  image }}
-      />
+      <PostImage source={{ uri: image }} />
       <PostDetails>
         <PostTitle>{title}</PostTitle>
         <PostDate>{createData}</PostDate>
