@@ -25,12 +25,9 @@ export default function App() {
 
   return (
     <View>
-      <FlatList
-      
-      />
-      {/* {items.map((obj) => (
+      {items.map((obj) => (
         <Post title={obj.title} image={obj.image} createData={obj.createData} />
-      ))} */}
+      ))}
     </View>
   );
 }
