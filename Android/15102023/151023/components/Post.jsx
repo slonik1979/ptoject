@@ -19,6 +19,7 @@ const PostImage = styled.Image`
 const PostTitle = styled.Text`
   font-size: 17px;
   font-weight: 700;
+  width: 300px;
 `;
 
 const PostDate = styled.Text`
@@ -31,12 +32,19 @@ const PostDetails = styled.View`
   justify-content: center;
 `;
 
+const truncateTitle = (str) => {
+  if (str.lenght > 50) {
+    return substring(0, 50) + '...';
+  }
+  return str;
+};
+
 export const Post = ({ title, image, createData }) => {
   return (
     <PostView>
       <PostImage source={{ uri: image }} />
       <PostDetails>
-        <PostTitle>{title}</PostTitle>
+        <PostTitle>{truncateTitle(title)}</PostTitle>
         <PostDate>{createData}</PostDate>
       </PostDetails>
     </PostView>
