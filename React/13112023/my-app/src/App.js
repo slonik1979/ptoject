@@ -1,25 +1,15 @@
 import { useState } from 'react';
+import Counter from './component/Counter';
 
 function App() {
-  const [likes, doLikes] = useState(5);
+ 
+  const [value, setValue] = useState("Текст в инпуте");
 
-  const inc = () => {
-    if (likes < 10) {
-      doLikes(likes + 1);
-    }
-  };
 
-  const dec = () => {
-    if (likes > 0) {
-      doLikes(likes - 1);
-    }
-  };
 
   return (
     <div className="App">
-      <h1>{likes}</h1>
-      <button onClick={inc}>inc</button>
-      <button onClick={dec}>dec</button>
+     <Counter/>
     </div>
   );
 }
