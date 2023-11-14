@@ -1,11 +1,12 @@
 import React from 'react';
 
-const PostItems = () => {
+const PostItems = ({ post }) => {
   return (
     <div className="post">
       <div className="post__content">
-        <strong>1. JavaScript</strong>
-        <div>JavaScript - язык программирования</div>
+        <strong>{post.id}</strong>
+        <div>{post.title}</div>
+        <div>{post.body}</div>
       </div>
       <div className="post__btns">
         <button>Удалить</button>
