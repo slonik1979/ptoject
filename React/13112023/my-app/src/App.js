@@ -19,24 +19,22 @@ function App() {
       title: 'JavaScript - язык программирования2',
       body: 'descr2',
     },
-    ]);
+  ]);
 
-const [title, setTitle] = useState('1111')
+  const [title, setTitle] = useState('1111');
 
-const addNewPost = (e) => {
-  e.prev
-
-}
+  const addNewPost = (e) => {
+    e.preventDefault();
+  };
 
   return (
     <div className="App">
       <form>
-        <MyInput value={title} input type='text' placeholder='Название поста'/>
-        <MyInput input type='text' placeholder='Описание поста'/>
-        <MyButton onClick={addNewPost} >Создать пост</MyButton>
+        <MyInput value={title} input type="text" placeholder="Название поста" />
+        <MyInput input type="text" placeholder="Описание поста" />
+        <MyButton onClick={addNewPost}>Создать пост</MyButton>
       </form>
-      <PostList posts={posts} title='Список постов 1'/>
-      
+      <PostList posts={posts} title="Список постов 1" />
     </div>
   );
 }
