@@ -5,6 +5,13 @@ import DialogsItems from './DialogsItems/DialogsItems';
 import Message from './Message/Message';
 
 const Dialogs = () => {
+
+  let dialogsData = [
+    {id: 1, name: "Max"},
+    {id: 2, name: "Petr"},
+    {id: 3, name: "Mikle"}
+  ]
+
   return (
     <div className={classes.dialogs}>
       <div className={classes.dialogsItems}>
