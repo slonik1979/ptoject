@@ -28,7 +28,7 @@ function App({ myPostsData, dialogsData, messagesData, newsData }) {
                 />
               }
             />
-            <Route path="/news" element={<News newsData={newsData} />} />
+            <Route path="/news" element={<News />} />
             <Route path="/music" element={<Music />} />
           </Routes>
         </div>
