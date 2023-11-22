@@ -7,7 +7,7 @@ import NavBar from './components/NavBar/NavBar';
 import News from './components/News/News';
 import Music from './components/Music/Music';
 
-function App({ myPostsData, dialogsData, messagesData }) {
+function App({ myPostsData, dialogsData, messagesData, newsData }) {
   return (
     <BrowserRouter>
       <div className="app-wrapper">
@@ -28,7 +28,7 @@ function App({ myPostsData, dialogsData, messagesData }) {
                 />
               }
             />
-            <Route path="/news" element={<News />} />
+            <Route path="/news" element={<News newsData={newsData} />} />
             <Route path="/music" element={<Music />} />
           </Routes>
         </div>
