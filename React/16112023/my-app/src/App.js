@@ -7,7 +7,7 @@ import NavBar from './components/NavBar/NavBar';
 import News from './components/News/News';
 import Music from './components/Music/Music';
 
-function App() {
+function App({ myPostsData, dialogsData, messagesData }) {
   return (
     <BrowserRouter>
       <div className="app-wrapper">
@@ -15,8 +15,19 @@ function App() {
         <NavBar />
         <div className="app-wrapper-content">
           <Routes>
-            <Route path="/profile" element={<Content />} />
-            <Route path="/dialogs" element={<Dialogs />} />
+            <Route
+              path="/profile"
+              element={<Content myPostsData={myPostsData} />}
+            />
+            <Route
+              path="/dialogs"
+              element={
+                <Dialogs
+                  dialogsData={dialogsData}
+                  messagesData={messagesData}
+                />
+              }
+            />
             <Route path="/news" element={<News />} />
             <Route path="/music" element={<Music />} />
           </Routes>
