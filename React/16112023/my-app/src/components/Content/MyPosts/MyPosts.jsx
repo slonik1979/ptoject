@@ -7,7 +7,7 @@ const MyPosts = ({ myPostsData }) => {
   ));
 
   return (
-    <div l>
+    <div>
       <textarea></textarea>
       <button>Add post</button>
       <div>New post</div>

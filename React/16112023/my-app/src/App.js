@@ -8,9 +8,7 @@ import News from './components/News/News';
 import Music from './components/Music/Music';
 import Goods from './components/Goods/Goods';
 
-
-
-function App({ myPostsData, dialogsData, messagesData, newsData, misicData, goodsData }) {
+function App({ appState }) {
   return (
     <BrowserRouter>
       <div className="app-wrapper">
@@ -20,20 +18,21 @@ function App({ myPostsData, dialogsData, messagesData, newsData, misicData, good
           <Routes>
             <Route
               path="/profile"
-              element={<Content myPostsData={myPostsData} />}
+              element={<Content state={appState.profilePage} />}
             />
             <Route
               path="/dialogs"
-              element={
-                <Dialogs
-                  dialogsData={dialogsData}
-                  messagesData={messagesData}
-                />
-              }
+              element={<Dialogs state={appState.dialogsPage} />}
             />
-            <Route path="/news" element={<News  newsData={newsData}/>} />
-            <Route path="/music" element={<Music misicData={misicData}/>} />
-            <Route path="/goods" element={<Goods goodsData={goodsData}/>} />
+            <Route path="/news" element={<News state={appState.newsPage} />} />
+            <Route
+              path="/music"
+              element={<Music state={appState.misicPage} />}
+            />
+            <Route
+              path="/goods"
+              element={<Goods state={appState.goodsPage} />}
+            />
           </Routes>
         </div>
       </div>
