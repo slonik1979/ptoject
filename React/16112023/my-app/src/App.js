@@ -6,8 +6,11 @@ import Header from './components/Header/Header';
 import NavBar from './components/NavBar/NavBar';
 import News from './components/News/News';
 import Music from './components/Music/Music';
+import Goods from './components/Goods/Goods';
 
-function App({ myPostsData, dialogsData, messagesData, newsData }) {
+
+
+function App({ myPostsData, dialogsData, messagesData, newsData, misicData, goodsData }) {
   return (
     <BrowserRouter>
       <div className="app-wrapper">
@@ -28,8 +31,9 @@ function App({ myPostsData, dialogsData, messagesData, newsData }) {
                 />
               }
             />
-            <Route path="/news" element={<News />} />
-            <Route path="/music" element={<Music />} />
+            <Route path="/news" element={<News  newsData={newsData}/>} />
+            <Route path="/music" element={<Music misicData={misicData}/>} />
+            <Route path="/goods" element={<Goods goodsData={goodsData}/>} />
           </Routes>
         </div>
       </div>

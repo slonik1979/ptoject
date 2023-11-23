@@ -45,6 +45,16 @@ const NavBar = () => {
           Music
         </NavLink>
       </div>
+      <div className={classes.item}>
+        <NavLink
+          to="/goods"
+          className={(navData) =>
+            navData.isActive ? classes.active : classes.item
+          }
+        >
+          Goods
+        </NavLink>
+      </div>
     </nav>
   );
 };
