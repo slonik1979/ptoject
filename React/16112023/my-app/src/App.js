@@ -8,7 +8,7 @@ import News from './components/News/News';
 import Music from './components/Music/Music';
 import Goods from './components/Goods/Goods';
 
-function App({ appState }) {
+function App({ appState, addPost }) {
   return (
     <BrowserRouter>
       <div className="app-wrapper">
@@ -18,7 +18,7 @@ function App({ appState }) {
           <Routes>
             <Route
               path="/profile"
-              element={<Content state={appState.profilePage} />}
+              element={<Content state={appState.profilePage} addPost={addPost}/>}
             />
             <Route
               path="/dialogs"

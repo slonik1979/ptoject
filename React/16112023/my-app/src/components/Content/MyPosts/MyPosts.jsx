@@ -1,15 +1,22 @@
 import React from 'react';
 import Post from './Post/Post';
 
-const MyPosts = ({ myPostsData }) => {
-  let newMyPostsData = myPostsData.map((el) => (
+const MyPosts = (props) => {
+  let newMyPostsData = props.myPostsData.map((el) => (
     <Post id={el.id} message={el.message} like={el.like} />
   ));
 
+    let newPostElement = React.createRef();
+
+    let addPost1 = () => {
+      let text = newPostElement.current.value;
+      props.addPost(text);
+    }
+
   return (
     <div>
-      <textarea></textarea>
-      <button>Add post</button>
+      <textarea ref={newPostElement}></textarea>
+      <button onClick={addPost1}>Add post</button>
       <div>New post</div>
       {newMyPostsData}
     </div>

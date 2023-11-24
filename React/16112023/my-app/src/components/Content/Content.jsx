@@ -4,11 +4,11 @@ import classes from './Content.module.css';
 import MyPosts from './MyPosts/MyPosts';
 import ContentInfo from './ContentInfo/ContentInfo';
 
-const Content = ({ state }) => {
+const Content = ({ state, addPost }) => {
   return (
     <div className={classes.content}>
       <ContentInfo />
-      <MyPosts myPostsData={state.myPostsData} />
+      <MyPosts myPostsData={state.myPostsData} addPost={addPost}/>
     </div>
   );
 };
