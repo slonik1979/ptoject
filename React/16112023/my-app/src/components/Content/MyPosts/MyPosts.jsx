@@ -6,12 +6,13 @@ const MyPosts = (props) => {
     <Post id={el.id} message={el.message} like={el.like} />
   ));
 
-    let newPostElement = React.createRef();
+  let newPostElement = React.createRef();
 
-    let addPost1 = () => {
-      let text = newPostElement.current.value;
-      props.addPost(text);
-    }
+  let addPost1 = () => {
+    let text = newPostElement.current.value;
+    props.addPost(text);
+    newPostElement.current.value = '';
+  };
 
   return (
     <div>
