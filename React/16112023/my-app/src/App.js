@@ -18,7 +18,9 @@ function App({ appState, addPost }) {
           <Routes>
             <Route
               path="/profile"
-              element={<Content state={appState.profilePage} addPost={addPost}/>}
+              element={
+                <Content profilePage={appState.profilePage} addPost={addPost} />
+              }
             />
             <Route
               path="/dialogs"

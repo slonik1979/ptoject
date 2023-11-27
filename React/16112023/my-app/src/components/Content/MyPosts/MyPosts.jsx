@@ -16,7 +16,7 @@ const MyPosts = (props) => {
 
   return (
     <div>
-      <textarea ref={newPostElement} value="fffffff" />
+      <textarea ref={newPostElement} value={props.newPostText} />
       <button onClick={addPost1}>Add post</button>
       <div>New post</div>
       {newMyPostsData}
