@@ -8,7 +8,7 @@ import News from './components/News/News';
 import Music from './components/Music/Music';
 import Goods from './components/Goods/Goods';
 
-function App({ appState, addPost }) {
+function App({ appState, addPost, updateNewPostText }) {
   return (
     <BrowserRouter>
       <div className="app-wrapper">
@@ -19,7 +19,11 @@ function App({ appState, addPost }) {
             <Route
               path="/profile"
               element={
-                <Content profilePage={appState.profilePage} addPost={addPost} />
+                <Content
+                  profilePage={appState.profilePage}
+                  addPost={addPost}
+                  updateNewPostText={updateNewPostText}
+                />
               }
             />
             <Route
