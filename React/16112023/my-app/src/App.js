@@ -8,7 +8,14 @@ import News from './components/News/News';
 import Music from './components/Music/Music';
 import Goods from './components/Goods/Goods';
 
-function App({ appState, addPost, updateNewPostText }) {
+function App({
+  appState,
+  addPost,
+  updateNewPostText,
+  addMessage,
+  updateNewMessageText,
+  newMessageText,
+}) {
   return (
     <BrowserRouter>
       <div className="app-wrapper">
@@ -28,7 +35,14 @@ function App({ appState, addPost, updateNewPostText }) {
             />
             <Route
               path="/dialogs"
-              element={<Dialogs state={appState.dialogsPage} />}
+              element={
+                <Dialogs
+                  state={appState.dialogsPage}
+                  addMessage={addMessage}
+                  updateNewMessageText={updateNewMessageText}
+                  newMessageText={appState.dialogsPage.newMessageText}
+                />
+              }
             />
             <Route path="/news" element={<News state={appState.newsPage} />} />
             <Route

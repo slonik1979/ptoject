@@ -6,7 +6,7 @@ let state = {
       { id: 1, message: 'Привет', like: '15' },
       { id: 2, message: 'Как дела', like: '25' },
     ],
-    newPostText: 'Максим',
+    newPostText: '',
   },
 
   dialogsPage: {
@@ -21,6 +21,7 @@ let state = {
       { id: 2, message: 'Как дела?' },
       { id: 3, message: 'Круто' },
     ],
+    newMessageText: 'dfdsfds',
   },
 
   newsPage: {
@@ -63,3 +64,18 @@ export let updateNewPostText = (newText) => {
   rerenderEntireTree(state);
 };
 export default state;
+
+export let addMessage = () => {
+  let newMessage = {
+    id: 5,
+    message: state.dialogsPage.newMessageText,
+  };
+  state.dialogsPage.messagesData.push(newMessage);
+  state.dialogsPage.newMessageText = '';
+  rerenderEntireTree(state);
+};
+
+export let updateNewMessageText = (newText) => {
+  state.dialogsPage.newMessageText = newText;
+  rerenderEntireTree(state);
+};
