@@ -3,26 +3,16 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
-import state, {    
-  addMessage,
-  addPost,
-  subscribe,
-  updateNewMessageText,
-  updateNewPostText,
-} from './redux/state';
-
-
-  
+import store from './redux/state';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
- let rerenderEntireTree = () => {
+let rerenderEntireTree = () => {
   root.render(
     <App
-      appState={state}
-      addPost={addPost}
-      updateNewPostText={updateNewPostText}
-      addMessage={addMessage}
-      updateNewMessageText={updateNewMessageText}
+      appState={store.getState()}
+      dispatch={store.dispatch.bind(store)}
+      addMessage={store.addMessage.bind(store)}
+      updateNewMessageText={store.updateNewMessageText.bind(store)}
       // myPostsData={myPostsData}
       // dialogsData={dialogsData}
       // messagesData={messagesData}
@@ -33,7 +23,6 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
   );
 };
 
+rerenderEntireTree(store.getState());
 
-rerenderEntireTree();
-
-subscribe(rerenderEntireTree);
+store.subscribe(rerenderEntireTree);

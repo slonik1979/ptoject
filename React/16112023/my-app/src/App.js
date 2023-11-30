@@ -8,14 +8,7 @@ import News from './components/News/News';
 import Music from './components/Music/Music';
 import Goods from './components/Goods/Goods';
 
-function App({
-  appState,
-  addPost,
-  updateNewPostText,
-  addMessage,
-  updateNewMessageText,
-  newMessageText,
-}) {
+function App(props) {
   return (
     <BrowserRouter>
       <div className="app-wrapper">
@@ -27,9 +20,9 @@ function App({
               path="/profile"
               element={
                 <Content
-                  profilePage={appState.profilePage}
-                  addPost={addPost}
-                  updateNewPostText={updateNewPostText}
+                  profilePage={props.appState.profilePage}
+                  dispatch={props.dispatch}
+                  updateNewPostText={props.updateNewPostText}
                 />
               }
             />
@@ -37,21 +30,24 @@ function App({
               path="/dialogs"
               element={
                 <Dialogs
-                  state={appState.dialogsPage}
-                  addMessage={addMessage}
-                  updateNewMessageText={updateNewMessageText}
-                  newMessageText={appState.dialogsPage.newMessageText}
+                  state={props.appState.dialogsPage}
+                  addMessage={props.addMessage}
+                  updateNewMessageText={props.updateNewMessageText}
+                  newMessageText={props.appState.dialogsPage.newMessageText}
                 />
               }
             />
-            <Route path="/news" element={<News state={appState.newsPage} />} />
+            <Route
+              path="/news"
+              element={<News state={props.appState.newsPage} />}
+            />
             <Route
               path="/music"
-              element={<Music state={appState.misicPage} />}
+              element={<Music state={props.appState.misicPage} />}
             />
             <Route
               path="/goods"
-              element={<Goods state={appState.goodsPage} />}
+              element={<Goods state={props.appState.goodsPage} />}
             />
           </Routes>
         </div>
