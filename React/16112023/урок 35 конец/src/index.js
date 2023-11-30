@@ -1,16 +1,21 @@
+import './index.css';
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
-import {
+import state, {    
   addMessage,
   addPost,
+  subscribe,
   updateNewMessageText,
   updateNewPostText,
 } from './redux/state';
 
+
+  
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
-export let rerenderEntireTree = (state) => {
+ let rerenderEntireTree = () => {
   root.render(
     <App
       appState={state}
@@ -27,3 +32,8 @@ export let rerenderEntireTree = (state) => {
     />
   );
 };
+
+
+rerenderEntireTree();
+
+subscribe(rerenderEntireTree);
