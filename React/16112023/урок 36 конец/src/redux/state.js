@@ -52,21 +52,21 @@ let store = {
     ;
     return this._state;
   },
-
-  _callSubscribe() {
-},
-addPost() {
-  ;
+  subscribe(observer) {
+    this._callSubscribe = observer;
+  },
   
-  let newPost = {
-    id: 5,
-    message: this._state.profilePage.newPostText,
-    like: 0,
-  };
-  this._state.profilePage.myPostsData.push(newPost);
-  this._state.profilePage.newPostText = '';
-  this._callSubscribe(this._state);
-},
+  addPost() {
+    let newPost = {
+      id: 5,
+      message: this._state.profilePage.newPostText,
+      like: 0,
+    }
+    this._state.profilePage.myPostsData.push(newPost);
+    this._state.profilePage.newPostText = '';
+    this._callSubscribe(this._state);
+  },
+ 
 updateNewPostText (newText){
   this._state.profilePage.newPostText = newText;
   this._callSubscribe(this._state);
@@ -84,9 +84,7 @@ updateNewMessageText(newText) {
   this._state.dialogsPage.newMessageText = newText;
   this._callSubscribe(this._state);
 },
-subscribe(observer) {
-  this._callSubscribe = observer;
-}
+
 };
 
 export default store;

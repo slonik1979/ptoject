@@ -4,15 +4,15 @@ import classes from './Content.module.css';
 import MyPosts from './MyPosts/MyPosts';
 import ContentInfo from './ContentInfo/ContentInfo';
 
-const Content = ({ profilePage, addPost, updateNewPostText }) => {
+const Content = (proprs) => {
   return (
     <div className={classes.content}>
       <ContentInfo />
       <MyPosts
-        myPostsData={profilePage.myPostsData}
-        addPost={addPost}
+        myPostsData={this.props.profilePage.myPostsData}
         newPostText={profilePage.newPostText}
-        updateNewPostText={updateNewPostText}
+        dispatch={dispatch}
+        
       />
     </div>
   );

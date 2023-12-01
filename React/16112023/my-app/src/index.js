@@ -13,10 +13,10 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
   root.render(
     <App
       appState={store.getState()}
-      addPost={store.addPost.bind(store)}
-      updateNewPostText={store.updateNewPostText.bind(store)}
-      addMessage={store.addMessage}
-      updateNewMessageText={store.updateNewMessageText}
+      addPost={store.dispatch.bind(store)}
+      updateNewPostText={store.dispatch.bind(store)}
+      addMessage={store.addMessage.bind(store)}
+      updateNewMessageText={store.updateNewMessageText.bind(store)}
       // myPostsData={myPostsData}
       // dialogsData={dialogsData}
       // messagesData={messagesData}

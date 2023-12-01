@@ -8,14 +8,7 @@ import News from './components/News/News';
 import Music from './components/Music/Music';
 import Goods from './components/Goods/Goods';
 
-function App({
-  appState,
-  addPost,
-  updateNewPostText,
-  addMessage,
-  updateNewMessageText,
-  newMessageText,
-}) {
+function App(proprs) {
   return (
     <BrowserRouter>
       <div className="app-wrapper">
@@ -27,9 +20,9 @@ function App({
               path="/profile"
               element={
                 <Content
-                  profilePage={appState.profilePage}
-                  addPost={addPost}
-                  updateNewPostText={updateNewPostText}
+                  profilePage={proprs.appState.profilePage}
+                  dispatch={proprs.dispatch}
+                  
                 />
               }
             />
