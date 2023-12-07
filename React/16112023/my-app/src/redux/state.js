@@ -1,7 +1,5 @@
-const ADD_POST = 'ADD-POST';
-const UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT';
-const ADD_MESAGGE = 'ADD-MESAGGE';
-const UPDATE_NEW_MESAGGE_TEXT = 'UPDATE-NEW-MESAGGE-TEXT';
+import dialogsPageReducer from './dialogsPage-reducer';
+import profilePageReducer from './profilePage-reducer';
 
 let store = {
   _state: {
@@ -88,57 +86,17 @@ let store = {
   //   this._callSubscribe(this._state);
   // },
   dispatch(action) {
-    if (action.type === 'ADD-POST') {
-      let newPost = {
-        id: 5,
-        message: this._state.profilePage.newPostText,
-        like: 0,
-      };
-      this._state.profilePage.myPostsData.push(newPost);
-      this._state.profilePage.newPostText = '';
-      this._callSubscribe(this._state);
-    } else if (action.type === 'UPDATE-NEW-POST-TEXT') {
-      this._state.profilePage.newPostText = action.newText;
-      this._callSubscribe(this._state);
-    } else if (action.type === 'ADD-MESAGGE') {
-      let newMessage = {
-        id: 5,
-        message: this._state.dialogsPage.newMessageText,
-      };
-      this._state.dialogsPage.messagesData.push(newMessage);
-      this._state.dialogsPage.newMessageText = '';
-      this._callSubscribe(this._state);
-    } else if (action.type === 'UPDATE-NEW-MESAGGE-TEXT') {
-      this._state.dialogsPage.newMessageText = action.newText;
-      this._callSubscribe(this._state);
-    }
+    this._state.profilePage = profilePageReducer(
+      this._state.profilePage,
+      action
+    );
+    this._state.dialogsPage = dialogsPageReducer(
+      this._state.dialogsPage,
+      action
+    );
+
+    this._callSubscribe(this._state);
   },
-};
-
-export const addPostActionCreator = () => {
-  return {
-    type: ADD_POST,
-  };
-};
-
-export const updateNewPostTextActionCreator = (text) => {
-  return {
-    type: UPDATE_NEW_POST_TEXT,
-    newText: text,
-  };
-};
-
-export const addMessageActionCreator = () => {
-  return {
-    type: ADD_MESAGGE,
-  };
-};
-
-export const updateNewMessageTextActionCreator = (text) => {
-  return {
-    type: UPDATE_NEW_MESAGGE_TEXT,
-    newText: text,
-  };
 };
 
 export default store;
