@@ -1,0 +1,34 @@
+.dialogs {
+  display: grid;
+  grid-template-columns: 2fr 10fr;
+}
+
+.dialogsItems {
+  padding: 10px;
+}
+
+.dialogsItems .active {
+  color: darkorange;
+}
+
+a:-webkit-any-link {
+  text-decoration: none;
+  color: black;
+}
+
+.dialog {
+  padding: 2px;
+  text-decoration: none;
+}
+
+.dialog NavLink {
+  text-decoration: none;
+}
+
+.messages {
+  padding: 10px;
+}
+
+.message {
+  padding: 2px;
+}
