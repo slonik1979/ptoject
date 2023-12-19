@@ -1,29 +1,29 @@
-.dialogItem {
-  color: white;
-}
-
 .dialogs {
   display: grid;
   grid-template-columns: 2fr 10fr;
-  color: white;
 }
 
 .dialogsItems {
   padding: 10px;
-  color: white;
- 
 }
 
-/* .dialogsItems .active {
+.dialogsItems .active {
   color: darkorange;
-} */
+}
 
 a:-webkit-any-link {
   text-decoration: none;
   color: black;
 }
 
+.dialog {
+  padding: 2px;
+  text-decoration: none;
+}
 
+.dialog NavLink {
+  text-decoration: none;
+}
 
 .messages {
   padding: 10px;

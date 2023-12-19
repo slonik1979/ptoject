@@ -6,7 +6,7 @@ const DialogItem = (props) => {
   let aaa = 'dialogs/' + props.id;
   let bbb = props.name;
   return (
-    <div className={classes.dialog}>
+    <div className={classes.dialog + ' ' + classes.active}>
       <NavLink to={aaa}>{bbb}</NavLink>
     </div>
   );
@@ -30,18 +30,17 @@ let messagesData = [
   {id: 3, name: "Здорово"},
 ]
 
-  let dialogsElement = dialogsData.map( el => <DialogItem name={el.name} id={el.id} />);
-
-  let messagesElement = messagesData.map( el => <Mesagge name={el.name} id={el.id} />);
-
   return (
     <div>
       <div className={classes.dialogs}>
         <div className={classes.dialogsItems}>
-         {dialogsElement}   
+          <DialogItem name={dialogsData[0].name} id={dialogsData[0].id} />
+          <DialogItem name={dialogsData[1].name} id={dialogsData[1].id} />
         </div>
         <div className={classes.messages}>
-          {messagesElement}
+          <Mesagge name={messagesData[0].name} />
+          <Mesagge name={messagesData[1].name} />
+          <Mesagge name={messagesData[2].name} />
         </div>
       </div>
     </div>

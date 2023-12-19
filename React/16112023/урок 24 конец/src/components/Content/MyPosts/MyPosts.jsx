@@ -10,8 +10,6 @@ const MyPosts = () => {
     {id: 3, name: "Здорово", like: 10},
   ]
 
-  let messagesElement = messagesData.map( el => <Post message={el.name} like={el.like} /> )
-
   return (
     <div className={classes.myPostBlock}>
       <h3>My Posts</h3>
@@ -23,7 +21,8 @@ const MyPosts = () => {
       </div>
       <div>New post</div>
       <div className={classes.posts}>
-        {messagesElement}
+        <Post message={messagesData[0].name} like={messagesData[0].like} />
+        <Post message={messagesData[1].name} like={messagesData[1].like} />
       </div>
     </div>
   );
