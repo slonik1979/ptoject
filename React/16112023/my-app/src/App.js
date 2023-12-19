@@ -8,7 +8,7 @@ import News from './components/News/News';
 import Music from './components/Music/Music';
 import Goods from './components/Goods/Goods';
 
-function App() {
+function App(props) {
   return (
     <BrowserRouter>
       <div className="app-wrapper">
@@ -16,7 +16,10 @@ function App() {
         <NavBar />
         <div className="app-wrapper-content">
           <Routes>
-            <Route path="/profile" element={<Content />} />
+            <Route
+              path="/profile"
+              element={<Content postData={props.postData} />}
+            />
             <Route path="/dialogs" element={<Dialogs />} />
             <Route path="/news" element={<News />} />
             <Route path="/music" element={<Music />} />
