@@ -6,7 +6,6 @@ import Header from './components/Header/Header';
 import NavBar from './components/NavBar/NavBar';
 import News from './components/News/News';
 import Music from './components/Music/Music';
-import Goods from './components/Goods/Goods';
 
 function App() {
   return (
@@ -20,7 +19,6 @@ function App() {
             <Route path="/dialogs" element={<Dialogs />} />
             <Route path="/news" element={<News />} />
             <Route path="/music" element={<Music />} />
-            <Route path="/goods" element={<Goods />} />
           </Routes>
         </div>
       </div>
