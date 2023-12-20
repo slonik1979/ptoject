@@ -3,8 +3,7 @@ import Post from './Post/Post';
 import classes from './MyPosts.module.css';
 
 const MyPosts = (props) => {
-
-  let messagesElement = props.posts.map((el) => (
+  let messagesElement = props.postData.map((el) => (
     <Post message={el.name} like={el.like} />
   ));
 

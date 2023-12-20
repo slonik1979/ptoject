@@ -4,7 +4,7 @@ import GoodsItem from './GoodsItem.jsx/GoodsItem';
 
 const Goods = (props) => {
   
-  let GoodsElement = props.goods.map((el) => (
+  let GoodsElement = props.goodsData.map((el) => (
     <GoodsItem id={el.id} name={el.name} price={el.price} />
   ));
 
