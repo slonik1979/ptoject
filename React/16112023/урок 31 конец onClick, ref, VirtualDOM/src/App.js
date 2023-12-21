@@ -18,23 +18,12 @@ function App(props) {
           <Routes>
             <Route
               path="/profile"
-              element={
-                <Content
-                  state={props.state.contentPage}
-                  addPost={props.addPost}
-                />
-              }
+              element={<Content state={props.state.contentPage} />}
             />
-            <Route
-              path="/dialogs"
-              element={<Dialogs state={props.state.messagePage} />}
-            />
+            <Route path="/dialogs" element={<Dialogs state={props.state.messagePage} />} />
             <Route path="/news" element={<News />} />
             <Route path="/music" element={<Music />} />
-            <Route
-              path="/goods"
-              element={<Goods goods={props.state.goodsPage.goods} />}
-            />
+            <Route path="/goods" element={<Goods goods={props.state.goodsPage.goods}/>} />
           </Routes>
         </div>
       </div>
