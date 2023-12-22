@@ -7,7 +7,7 @@ const Content = (props) => {
   return (
     <div className="content">
       <ContentInfo />
-      <MyPosts posts={props.state.posts} addPost={props.addPost} />
+      <MyPosts posts={props.state.posts} />
     </div>
   );
 };

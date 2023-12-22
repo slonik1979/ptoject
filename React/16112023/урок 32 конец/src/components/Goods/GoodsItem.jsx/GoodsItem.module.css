@@ -1,0 +1,9 @@
+.goodsItem {
+  display: grid;
+  grid-template-columns: 2fr 10fr;
+  color: white;
+}
+
+.price {
+  color: yellow;
+}
