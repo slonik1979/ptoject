@@ -6,4 +6,9 @@ import state from './redux/state';
 import { addPost } from './redux/state';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(<App state={state} addPost={addPost} />);
+
+let rerenderEntireTree = () => {
+  root.render(<App state={state} addPost={addPost} />);
+};
+
+rerenderEntireTree();
