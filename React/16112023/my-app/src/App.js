@@ -21,8 +21,7 @@ function App(props) {
               element={
                 <Content
                   contentPage={props.state.contentPage}
-                  addPost={props.addPost}
-                  updateNewPostText={props.updateNewPostText}
+                  dispatch={props.dispatch}
                 />
               }
             />

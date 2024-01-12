@@ -10,8 +10,7 @@ const Content = (props) => {
       <MyPosts
         posts={props.contentPage.posts}
         newPostText={props.contentPage.newPostText}
-        addPost={props.addPost}
-        updateNewPostText={props.updateNewPostText}
+        dispatch={props.dispatch}
       />
     </div>
   );

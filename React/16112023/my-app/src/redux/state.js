@@ -1,5 +1,3 @@
-
-
 let store = {
   _state: {
     contentPage: {
@@ -30,12 +28,17 @@ let store = {
       ],
     },
   },
-  getState () {
-    return this._state
-  },
   _callSubscriber() {},
-  addPost () {
-    let newPost = {
+  getState() {
+    return this._state;
+  },
+  subscribe(observer) {
+    this._callSubscriber = observer;
+  },
+
+  dispatch(action) {
+    if (action.type === 'ADD-POST') {
+      let newPost = {
         id: 4,
         name: this._state.contentPage.newPostText,
         like: 0,
@@ -43,14 +46,11 @@ let store = {
       this._state.contentPage.posts.push(newPost);
       this._state.contentPage.newPostText = '';
       this._callSubscriber(this._state);
+    } else if (action.type === 'UPDATE-NEW-POST-TEXT') {
+      this._state.contentPage.newPostText = action.newText;
+      this._callSubscriber(this._state);
+    }
   },
-  updateNewPostText (randomText) {
-    this._state.contentPage.newPostText = randomText;
-    this._callSubscriber(this._state);
-  },
-  subscribe (observer) {
-    this._callSubscriber = observer;
-  }
-}
+};
 
 export default store;
