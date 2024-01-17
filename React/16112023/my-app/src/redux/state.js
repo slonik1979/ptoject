@@ -1,5 +1,5 @@
 const ADD_POST = {};
-const UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT';
+const UPDATE_NEW_POST_TEXT = {};
 
 let store = {
   _state: {
