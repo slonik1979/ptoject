@@ -56,7 +56,7 @@ let store = {
       this._state.contentPage.newPostText = action.newText;
       this._callSubscriber(this._state);
     } else if (action.type === UPDATE_NEW_MESSAGE_TEXT) {
-      this._state.messagePage.newMessagesText = action.newBody;
+      this._state.messagePage.newMessagesText = action.body;
       this._callSubscriber(this._state);
     } else if (action.type === ADD_MESSAGE) {
       let newMessage = {
@@ -64,7 +64,7 @@ let store = {
         name: this._state.messagePage.newMessagesText,
       };
       this._state.messagePage.messages.push(newMessage);
-      this._state.messagePage.newMessagesText = '111111111';
+      this._state.messagePage.newMessagesText = '';
       this._callSubscriber(this._state);
     }
   },
@@ -82,8 +82,8 @@ export const addMessageActionCreator = () => {
   return { type: ADD_MESSAGE };
 };
 
-export const updateNewMessageTextActionCreator = (text) => {
-  return { type: UPDATE_NEW_MESSAGE_TEXT, newBody: text };
+export const updateNewMessageTextActionCreator = (body) => {
+  return { type: UPDATE_NEW_MESSAGE_TEXT, body: body };
 };
 
 export default store;
