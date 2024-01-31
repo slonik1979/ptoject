@@ -56,15 +56,27 @@ let store = {
       this._state.contentPage.newPostText = action.newText;
       this._callSubscriber(this._state);
     } else if (action.type === UPDATE_NEW_MESSAGE_TEXT) {
+<<<<<<< Updated upstream
       this._state.messagePage.newMessagesText = action.body;
+=======
+      this._state.contentPage.newMessagesText = action.newMessages;
+>>>>>>> Stashed changes
       this._callSubscriber(this._state);
     } else if (action.type === ADD_MESSAGE) {
       let newMessage = {
         id: 4,
+<<<<<<< Updated upstream
         name: this._state.messagePage.newMessagesText,
       };
       this._state.messagePage.messages.push(newMessage);
       this._state.messagePage.newMessagesText = '';
+=======
+        name: this._state.contentPage.newMessagesText,
+        like: 0,
+      };
+      this._state.contentPage.posts.push(newMessage);
+      this._state.contentPage.newMessagesText = '';
+>>>>>>> Stashed changes
       this._callSubscriber(this._state);
     }
   },
@@ -78,12 +90,21 @@ export const updateNewPostTextActionCreator = (text) => {
   return { type: UPDATE_NEW_POST_TEXT, newText: text };
 };
 
+<<<<<<< Updated upstream
 export const addMessageActionCreator = () => {
   return { type: ADD_MESSAGE };
 };
 
 export const updateNewMessageTextActionCreator = (body) => {
   return { type: UPDATE_NEW_MESSAGE_TEXT, body: body };
+=======
+export const addMessagestActionCreator = () => {
+  return { type: ADD_MESSAGE };
+};
+
+export const updateNewMessagesTextActionCreator = (message) => {
+  return { type: UPDATE_NEW_MESSAGE_TEXT, newMessages: message };
+>>>>>>> Stashed changes
 };
 
 export default store;

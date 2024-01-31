@@ -1,7 +1,14 @@
 import React from 'react';
 import classes from './Dialogs.module.css';
 import { NavLink } from 'react-router-dom';
+<<<<<<< Updated upstream
 import { addMessageActionCreator, updateNewMessageTextActionCreator } from '../../redux/state';
+=======
+import {
+  addMessagestActionCreator,
+  updateNewMessagesTextActionCreator,
+} from '../../redux/state';
+>>>>>>> Stashed changes
 
 const DialogItem = (props) => {
   let aaa = 'dialogs/' + props.id;
@@ -18,10 +25,29 @@ const Mesagge = (props) => {
 };
 
 const Dialogs = (props) => {
+  let dialogsElement = props.state.dialogs.map((el) => (
+    <DialogItem name={el.name} id={el.id} />
+  ));
 
+<<<<<<< Updated upstream
   let dialogsElement = props.state.dialogs.map( el => <DialogItem name={el.name} id={el.id} />);
+=======
+  let messagesElement = props.state.messages.map((el) => (
+    <Mesagge name={el.name} id={el.id} />
+  ));
 
-  let messagesElement = props.state.messages.map( el => <Mesagge name={el.name} id={el.id} />);
+  let newPostElement = React.createRef();
+
+  let onMessageChange = () => {
+    let message = newPostElement.current.value;
+    let action = updateNewMessagesTextActionCreator(message);
+    props.dispatch(action);
+  };
+>>>>>>> Stashed changes
+
+  let addMessage = () => {
+    props.dispatch(addMessagestActionCreator());
+  };
 
   let newMessagesText = props.state.newMessagesText;
 
@@ -40,12 +66,11 @@ const Dialogs = (props) => {
   return (
     <div>
       <div className={classes.dialogs}>
-        <div className={classes.dialogsItems}>
-         {dialogsElement}   
-        </div>
+        <div className={classes.dialogsItems}>{dialogsElement}</div>
         <div className={classes.messages}>
           <div>{messagesElement}</div>
           <div>
+<<<<<<< Updated upstream
             <div><textarea 
             placeholder='Введите'
             onChange={onMessageChange}
@@ -55,6 +80,19 @@ const Dialogs = (props) => {
             <div><button onClick={addMessage}>add message</button></div>
           </div>
           
+=======
+            <div>
+              <textarea
+                onChange={onMessageChange}
+                ref={newPostElement}
+                value={props.newMessagesText}
+              />
+            </div>
+            <div>
+              <button onClick={addMessage}>Add post</button>
+            </div>
+          </div>
+>>>>>>> Stashed changes
         </div>
       </div>
     </div>
