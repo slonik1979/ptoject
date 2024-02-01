@@ -18,8 +18,9 @@ const contentReducer = (state, action) => {
 
     return state;
 
- 
+
 }
+
 
 export default contentReducer;
 

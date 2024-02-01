@@ -8,13 +8,12 @@ const messageReducer = (state, action) => {
       } else if (action.type === ADD_MESSAGE) {
         let newMessage = {
           id: 4,
-          name: state.newPostText,
-          like: 0,
+          name: state.newMessagesText,
+          
         };
         state.messages.push(newMessage);
         state.newMessagesText = '';
-        
-      }
+        }
     return state;
 }
 
