@@ -1,14 +1,13 @@
 import React from 'react';
 import classes from './Dialogs.module.css';
 import { NavLink } from 'react-router-dom';
-<<<<<<< Updated upstream
-import { addMessageActionCreator, updateNewMessageTextActionCreator } from '../../redux/state';
-=======
+
 import {
   addMessagestActionCreator,
-  updateNewMessagesTextActionCreator,
+  updateNewMessageTextActionCreator,
+ 
 } from '../../redux/state';
->>>>>>> Stashed changes
+
 
 const DialogItem = (props) => {
   let aaa = 'dialogs/' + props.id;
@@ -29,21 +28,14 @@ const Dialogs = (props) => {
     <DialogItem name={el.name} id={el.id} />
   ));
 
-<<<<<<< Updated upstream
-  let dialogsElement = props.state.dialogs.map( el => <DialogItem name={el.name} id={el.id} />);
-=======
+
   let messagesElement = props.state.messages.map((el) => (
     <Mesagge name={el.name} id={el.id} />
   ));
 
   let newPostElement = React.createRef();
 
-  let onMessageChange = () => {
-    let message = newPostElement.current.value;
-    let action = updateNewMessagesTextActionCreator(message);
-    props.dispatch(action);
-  };
->>>>>>> Stashed changes
+
 
   let addMessage = () => {
     props.dispatch(addMessagestActionCreator());
@@ -51,11 +43,7 @@ const Dialogs = (props) => {
 
   let newMessagesText = props.state.newMessagesText;
 
-  let newPostElement = React.createRef();
 
-  let addMessage = () => {
-    props.dispatch(addMessageActionCreator());
-  };
 
   let onMessageChange = () => {
     let text = newPostElement.current.value;
@@ -70,7 +58,7 @@ const Dialogs = (props) => {
         <div className={classes.messages}>
           <div>{messagesElement}</div>
           <div>
-<<<<<<< Updated upstream
+
             <div><textarea 
             placeholder='Введите'
             onChange={onMessageChange}
@@ -79,22 +67,12 @@ const Dialogs = (props) => {
         /></div>
             <div><button onClick={addMessage}>add message</button></div>
           </div>
-          
-=======
-            <div>
-              <textarea
-                onChange={onMessageChange}
-                ref={newPostElement}
-                value={props.newMessagesText}
-              />
-            </div>
-            <div>
-              <button onClick={addMessage}>Add post</button>
-            </div>
-          </div>
->>>>>>> Stashed changes
-        </div>
+
+  
+
+      
       </div>
+    </div>
     </div>
   );
 };

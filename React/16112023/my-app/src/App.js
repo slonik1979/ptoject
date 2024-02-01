@@ -26,17 +26,10 @@ function App(props) {
           />
           <Route
             path="/dialogs"
-<<<<<<< Updated upstream
             element={<Dialogs state={props.state.messagePage}
-            dispatch={props.dispatch} />}
-=======
-            element={
-              <Dialogs
-                messagePage={props.state.messagePage}
-                dispatch={props.dispatch}
-              />
-            }
->>>>>>> Stashed changes
+            dispatch={props.dispatch}
+             />}
+   
           />
           <Route path="/news" element={<News />} />
           <Route path="/music" element={<Music />} />
