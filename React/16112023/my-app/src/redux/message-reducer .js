@@ -1,7 +1,23 @@
 const ADD_MESSAGE = {};
 const UPDATE_NEW_MESSAGE_TEXT = {};
 
-const messageReducer = (state, action) => {
+let initialState = {
+  messagePage: {
+    dialogs: [
+      { id: 1, name: 'Inna' },
+      { id: 2, name: 'Eleha' },
+      { id: 3, name: 'Olga' },
+    ],
+    messages: [
+      { id: 1, name: 'Привет' },
+      { id: 2, name: 'Как дела' },
+      { id: 3, name: 'Здорово' },
+    ],
+    newMessagesText: '',
+  },
+}
+
+const messageReducer = (state = initialState, action) => {
    if (action.type === UPDATE_NEW_MESSAGE_TEXT) {
     state.newMessagesText = action.body;
         

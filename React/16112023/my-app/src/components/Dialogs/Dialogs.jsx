@@ -1,12 +1,9 @@
 import React from 'react';
 import classes from './Dialogs.module.css';
 import { NavLink } from 'react-router-dom';
+import { addMessagestActionCreator, updateNewMessageTextActionCreator } from '../../redux/store';
 
-import {
-  addMessagestActionCreator,
-  updateNewMessageTextActionCreator,
- 
-} from '../../redux/state';
+
 
 
 const DialogItem = (props) => {
@@ -46,6 +43,7 @@ const Dialogs = (props) => {
 
 
   let onMessageChange = () => {
+    
     let text = newPostElement.current.value;
     let action = updateNewMessageTextActionCreator(text);
     props.dispatch(action);

@@ -47,12 +47,12 @@ let store = {
   },
 
   dispatch(action) {
+
     this._state.contentPage = contentReducer(this._state.contentPage, action);
+   
     this._state.messagePage = messageReducer(this._state.messagePage, action);
     
     this._callSubscriber(this._state);
-
-    
   }
 };
 
