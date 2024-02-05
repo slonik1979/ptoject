@@ -1,6 +1,6 @@
-import contentReducer from "./content-reducer";
+import contentReducer from './contentReducer';
 
-import messageReducer from "./message-reducer ";
+import messageReducer from './messageReducer ';
 
 const ADD_POST = {};
 const UPDATE_NEW_POST_TEXT = {};
@@ -47,46 +47,42 @@ let store = {
   },
 
   dispatch(action) {
-
     this._state.contentPage = contentReducer(this._state.contentPage, action);
-   
+
     this._state.messagePage = messageReducer(this._state.messagePage, action);
-    
+
     this._callSubscriber(this._state);
-  // }
-
-
-    if (action.type === ADD_POST) {
-      let newPost = {
-        id: 4,
-        name: this._state.contentPage.newPostText,
-        like: 0,
-      };
-      this._state.contentPage.posts.push(newPost);
-      this._state.contentPage.newPostText = '';
-      this._callSubscriber(this._state);
-    } else if (action.type === UPDATE_NEW_POST_TEXT) {
-      this._state.contentPage.newPostText = action.newText;
-      this._callSubscriber(this._state);
-    } else if (action.type === UPDATE_NEW_MESSAGE_TEXT) {
-      this._state.messagePage.newMessagesText = action.body;
-      this._callSubscriber(this._state);
-    } else if (action.type === ADD_MESSAGE) {
-      let newMessage = {
-        // let body = this._state.messagePage.newMessagesText;
-        // this._state.messagePage.newMessagesText = '';
-        id: 4,
-        name: this._state.messagePage.newMessagesText,
-        like: 0,
-      };
-      this._state.messagePage.messages.push(newMessage);
-      this._state.messagePage.newMessagesText = '';
-      this._callSubscriber(this._state);
-    }
   },
+
+  // if (action.type === ADD_POST) {
+  //   let newPost = {
+  //     id: 4,
+  //     name: this._state.contentPage.newPostText,
+  //     like: 0,
+  //   };
+  //   this._state.contentPage.posts.push(newPost);
+  //   this._state.contentPage.newPostText = '';
+  //   this._callSubscriber(this._state);
+  // } else if (action.type === UPDATE_NEW_POST_TEXT) {
+  //   this._state.contentPage.newPostText = action.newText;
+  //   this._callSubscriber(this._state);
+  // } else if (action.type === UPDATE_NEW_MESSAGE_TEXT) {
+  //   this._state.messagePage.newMessagesText = action.body;
+  //   this._callSubscriber(this._state);
+  // } else if (action.type === ADD_MESSAGE) {
+  //   let newMessage = {
+  //     // let body = this._state.messagePage.newMessagesText;
+  //     // this._state.messagePage.newMessagesText = '';
+  //     id: 4,
+  //     name: this._state.messagePage.newMessagesText,
+  //     like: 0,
+  //   };
+  //   this._state.messagePage.messages.push(newMessage);
+  //   this._state.messagePage.newMessagesText = '';
+  //   this._callSubscriber(this._state);
+  // }
+  // },
 };
-
-
 
 export const addPostActionCreator = () => {
   return { type: ADD_POST };
@@ -103,7 +99,5 @@ export const updateNewMessageTextActionCreator = (body) => {
 export const addMessagestActionCreator = () => {
   return { type: ADD_MESSAGE };
 };
-
-
 
 export default store;
