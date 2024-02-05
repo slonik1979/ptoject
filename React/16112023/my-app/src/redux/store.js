@@ -24,9 +24,9 @@ let store = {
         { id: 3, name: 'Olga' },
       ],
       messages: [
-        { id: 1, name: 'Привет' },
-        { id: 2, name: 'Как дела' },
-        { id: 3, name: 'Здорово' },
+        { id: 1, name: 'Привет человек' },
+        { id: 2, name: 'Как дела человек' },
+        { id: 3, name: 'Здорово человек' },
       ],
       newMessagesText: '',
     },
@@ -53,38 +53,39 @@ let store = {
     this._state.messagePage = messageReducer(this._state.messagePage, action);
     
     this._callSubscriber(this._state);
-  }
+  // }
+
+
+    if (action.type === ADD_POST) {
+      let newPost = {
+        id: 4,
+        name: this._state.contentPage.newPostText,
+        like: 0,
+      };
+      this._state.contentPage.posts.push(newPost);
+      this._state.contentPage.newPostText = '';
+      this._callSubscriber(this._state);
+    } else if (action.type === UPDATE_NEW_POST_TEXT) {
+      this._state.contentPage.newPostText = action.newText;
+      this._callSubscriber(this._state);
+    } else if (action.type === UPDATE_NEW_MESSAGE_TEXT) {
+      this._state.messagePage.newMessagesText = action.body;
+      this._callSubscriber(this._state);
+    } else if (action.type === ADD_MESSAGE) {
+      let newMessage = {
+        // let body = this._state.messagePage.newMessagesText;
+        // this._state.messagePage.newMessagesText = '';
+        id: 4,
+        name: this._state.messagePage.newMessagesText,
+        like: 0,
+      };
+      this._state.messagePage.messages.push(newMessage);
+      this._state.messagePage.newMessagesText = '';
+      this._callSubscriber(this._state);
+    }
+  },
 };
 
-//     if (action.type === ADD_POST) {
-//       let newPost = {
-//         id: 4,
-//         name: this._state.contentPage.newPostText,
-//         like: 0,
-//       };
-//       this._state.contentPage.posts.push(newPost);
-//       this._state.contentPage.newPostText = '';
-//       this._callSubscriber(this._state);
-//     } else if (action.type === UPDATE_NEW_POST_TEXT) {
-//       this._state.contentPage.newPostText = action.newText;
-//       this._callSubscriber(this._state);
-//     } else if (action.type === UPDATE_NEW_MESSAGE_TEXT) {
-//       this._state.messagePage.newMessagesText = action.body;
-//       this._callSubscriber(this._state);
-//     } else if (action.type === ADD_MESSAGE) {
-//       let newMessage = {
-//         // let body = this._state.messagePage.newMessagesText;
-//         // this._state.messagePage.newMessagesText = '';
-//         id: 4,
-//         name: this._state.messagePage.newMessagesText,
-//         like: 0,
-//       };
-//       this._state.messagePage.messages.push(newMessage);
-//       this._state.messagePage.newMessagesText = '';
-//       this._callSubscriber(this._state);
-//     }
-//   },
-// };
 
 
 export const addPostActionCreator = () => {

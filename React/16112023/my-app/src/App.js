@@ -9,7 +9,7 @@ import Music from './components/Music/Music';
 import Goods from './components/Goods/Goods';
 
 function App(props) {
-  debugger
+  
   return (
     <div className="app-wrapper">
       <Header />

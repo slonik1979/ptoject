@@ -13,6 +13,7 @@ let initialState = {
 }
 
 const contentReducer = (state = initialState, action) => {
+  
     if (action.type === ADD_POST) {
         let newPost = {
           id: 4,
@@ -28,10 +29,7 @@ const contentReducer = (state = initialState, action) => {
       } 
 
     return state;
-
-
 }
-
 
 export default contentReducer;
 
