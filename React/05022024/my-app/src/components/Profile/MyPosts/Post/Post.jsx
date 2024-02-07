@@ -1,16 +1,15 @@
-import classes from './MyPosts.module.css';
+import classes from './Post.module.css';
 
-const MyPosts = () => {
-    return <div>
-        My posts
-        <div>
-          New post
-        </div>
-        <div>
-          <div className={classes.item}>post 1</div>
-          <div className={classes.item}>post 2</div>
-        </div>
+const Post = ({ message, like }) => {
+  return (
+    <div className={classes.item}>
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTGz2DLZQTZfmNgM2UgIGOJkmvXvIZJrm7X_YKUzkQQFtVxu3PNO11aIXGufpVphRplOKI&usqp=CAU" />
+      {message}
+      <div>
+        <span>{like}</span>
       </div>
-}
+    </div>
+  );
+};
 
-export default MyPosts;
+export default Post;
