@@ -1,16 +1,15 @@
 import './App.css';
+import Header from './components/Header/Header';
+import Navbar from './components/Navbar/Navbar';
+import Profile from './components/Profile/Profile';
 
 function App() {
   return (
     <div className="app-wrapper">
-      <header className="header">
-        <img src="https://cdn1.flamp.ru/f735b37894df0305765b7b1c981171c0_300_300.jpg" />
-      </header>
-      <nav className="nav">
-        <div>Profile</div>
-        <div>Message</div>
-      </nav>
-      <div className="content">Main content</div>
+     <Header/>
+     <Navbar/>
+     <Profile/>
+     
     </div>
   );
 }
