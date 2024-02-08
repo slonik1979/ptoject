@@ -7,24 +7,26 @@ import Profile from './components/Profile/Profile';
 import News from './components/News/News';
 import Music from './components/Music/Music';
 import Setting from './components/Setting/Setting';
+import Products from './components/Products/Products';
 
 function App() {
   return (
     <BrowserRouter>
-    <div className="app-wrapper">
-      <Header />
-      <Navbar />
-      {/* <Profile/> */}
-      <div className="app-wrapper-content">
-        <Routes>
-          <Route path="/profile" element={<Profile/>}/>
-          <Route path="/dialogs/*" element={<Dialogs/>}/>
-          <Route path="/news" element={<News/>}/>
-          <Route path="/music" element={<Music/>}/>
-          <Route path="/setting" element={<Setting/>}/>
-        </Routes>
+      <div className="app-wrapper">
+        <Header />
+        <Navbar />
+        {/* <Profile/> */}
+        <div className="app-wrapper-content">
+          <Routes>
+            <Route path="/profile" element={<Profile />} />
+            <Route path="/dialogs/*" element={<Dialogs />} />
+            <Route path="/news" element={<News />} />
+            <Route path="/music" element={<Music />} />
+            <Route path="/setting" element={<Setting />} />
+            <Route path="/products" element={<Products />} />
+          </Routes>
+        </div>
       </div>
-    </div>
     </BrowserRouter>
   );
 }
