@@ -23,7 +23,18 @@ const Products = () => {
       />
     );
   });
-  return <div className={classes.products}>{productsElements}</div>;
+  return (
+    <div>
+      <div className={classes.products}>{productsElements}</div>
+
+      <div>
+        <textarea></textarea>
+        <textarea></textarea>
+        <textarea></textarea>
+        <button>Add post</button>
+      </div>
+    </div>
+  );
 };
 
 export default Products;
