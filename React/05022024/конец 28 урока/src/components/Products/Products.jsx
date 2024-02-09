@@ -3,7 +3,7 @@ import classes from './Products.module.css';
 
 const Products = (props) => {
   
-  const productsElements = props.state.products.map((p) => {
+  const productsElements = props.products.map((p) => {
     return (
       <Product
         id={p.id}

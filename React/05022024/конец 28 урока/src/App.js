@@ -21,12 +21,12 @@ function App(props) {
         {/* <Profile/> */}
         <div className="app-wrapper-content">
           <Routes>
-            <Route path="/profile" element={<Profile state={props.state.profilePage} />} />
-            <Route path="/dialogs/*" element={<Dialogs state={props.state.dialogsPage} messages={props.state.dialogsPage}/>} />
+            <Route path="/profile" element={<Profile posts={props.posts} />} />
+            <Route path="/dialogs/*" element={<Dialogs dialogs={props.dialogs} messages={props.messages}/>} />
             <Route path="/news" element={<News />} />
             <Route path="/music" element={<Music />} />
             <Route path="/setting" element={<Setting />} />
-            <Route path="/products" element={<Products state={props.state.productsPage}/>} />
+            <Route path="/products" element={<Products products={props.products}/>} />
           </Routes>
         </div>
       </div>
