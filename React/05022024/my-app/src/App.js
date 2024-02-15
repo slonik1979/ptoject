@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 import './App.css';
 import Dialogs from './components/Dialogs/Dialogs';
 import Header from './components/Header/Header';
@@ -19,7 +19,12 @@ function App(props) {
         <Routes>
           <Route
             path="/profile"
-            element={<Profile state={props.state.profilePage} />}
+            element={
+              <Profile
+                state={props.state.profilePage}
+                addPost={props.addPost}
+              />
+            }
           />
           <Route
             path="/dialogs/*"
