@@ -19,7 +19,7 @@ const MyPosts = (props) => {
     <div>
       My posts
       <div>
-        <textarea ref={newPostElement}></textarea>
+        <textarea ref={newPostElement} value="1111" />
         <button onClick={addPost}>Add post</button>
       </div>
       <div className={classes.posts}>{postsElements}</div>
