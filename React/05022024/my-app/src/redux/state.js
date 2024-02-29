@@ -1,5 +1,4 @@
-import { rerenderEntireTree } from "../render";
-
+import { rerenderEntireTree } from '../render';
 
 const state = {
   profilePage: {
@@ -7,6 +6,7 @@ const state = {
       { id: 1, message: 'Привет', like: 10 },
       { id: 2, message: 'Пока', like: 25 },
     ],
+    newPostText: 'it yes',
   },
   dialogsPage: {
     dialogs: [
@@ -42,6 +42,11 @@ export let addPost = (newAddPost) => {
     like: 0,
   };
   state.profilePage.posts.push(newPost);
+  rerenderEntireTree(state);
+};
+
+export let updateNewPostText = (randomText) => {
+  state.profilePage.newPostText = randomText;
   rerenderEntireTree(state);
 };
 
