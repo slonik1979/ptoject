@@ -36,7 +36,10 @@ let store = {
   getState() {
     return this._state;
   },
-  rerenderEntireTree() {},
+  subscribe(observer) {
+    this._callSubscriber = observer;
+  },
+  _callSubscriber() {},
   addPost() {
     let newPost = {
       id: 4,
@@ -45,14 +48,27 @@ let store = {
     };
     this._state.profilePage.posts.push(newPost);
     this._state.profilePage.newPostText = '';
-    this._rerenderEntireTree(this._state);
+    this._callSubscriber(this._state);
   },
   updateNewPostText(randomText) {
     this._state.profilePage.newPostText = randomText;
-    this._rerenderEntireTree(this._state);
+    this._callSubscriber(this._state);
   },
-  subscribe(observer) {
-    this._rerenderEntireTree = observer;
+
+  dispatch(action) {
+    if (action.type === ADD_POST) {
+      let newPost = {
+        id: 4,
+        message: this._state.profilePage.newPostText,
+        like: 0,
+      };
+      this._state.profilePage.posts.push(newPost);
+      this._state.profilePage.newPostText = '';
+      this._callSubscriber(this._state);
+    } else if (action.type === UPDATE - NEW - POST - TEXT) {
+      this._state.profilePage.newPostText = randomText;
+      this._callSubscriber(this._state);
+    }
   },
 };
 
