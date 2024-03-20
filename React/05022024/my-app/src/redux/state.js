@@ -1,5 +1,7 @@
 const ADD_POST = 'ADD-POST';
 const UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT';
+const UPDATE_NEW_MESSAGE_TEXT = 'UPDATE-NEW-MESSAGE-TEXT';
+const ADD_MESSAGE = 'ADD-MESSAGE';
 
 let store = {
   _state: {
@@ -21,6 +23,7 @@ let store = {
         { message: 'Как дела', id: 2 },
         { message: 'Как Вас зовут', id: 3 },
       ],
+      newMessageText: '',
     },
     productsPage: {
       products: [
@@ -57,6 +60,17 @@ let store = {
     } else if (action.type === UPDATE_NEW_POST_TEXT) {
       this._state.profilePage.newPostText = action.randomText;
       this._callSubscriber(this._state);
+    } else if (action.type === UPDATE_NEW_MESSAGE_TEXT) {
+      this._state.dialogsPage.newPostText = action.randomText;
+      this._callSubscriber(this._state);
+    } else if (action.type === ADD_MESSAGE) {
+      let newMessage = {
+        id: 4,
+        message: this._state.dialogsPage.newMessageText,
+      };
+      this._state.dialogsPage.posts.push(newMessage);
+      this._state.dialogsPage.newMessageText = '';
+      this._callSubscriber(this._state);
     }
   },
 };
@@ -70,6 +84,19 @@ export const addPostActionCreator = () => {
 export let updateNewPostTextActionCreator = (text) => {
   return {
     type: UPDATE_NEW_POST_TEXT,
+    randomText: text,
+  };
+};
+
+export const addMessageActionCreator = () => {
+  return {
+    type: ADD_MESSAGE,
+  };
+};
+
+export let updateNewMessageTextActionCreator = (text) => {
+  return {
+    type: UPDATE_NEW_MESSAGE_TEXT,
     randomText: text,
   };
 };
