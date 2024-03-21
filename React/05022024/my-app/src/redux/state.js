@@ -10,7 +10,7 @@ let store = {
         { id: 1, message: 'Привет', like: 10 },
         { id: 2, message: 'Пока', like: 25 },
       ],
-      newPostText: '',
+      newPostText: '111',
     },
     dialogsPage: {
       dialogs: [
@@ -23,7 +23,7 @@ let store = {
         { message: 'Как дела', id: 2 },
         { message: 'Как Вас зовут', id: 3 },
       ],
-      newMessageText: '',
+      newMessageText: '111',
     },
     productsPage: {
       products: [
@@ -64,12 +64,9 @@ let store = {
       this._state.dialogsPage.newPostText = action.randomText;
       this._callSubscriber(this._state);
     } else if (action.type === ADD_MESSAGE) {
-      let newMessage = {
-        id: 4,
-        message: this._state.dialogsPage.newMessageText,
-      };
-      this._state.dialogsPage.posts.push(newMessage);
+      let newMessage = this._state.dialogsPage.newMessageText;
       this._state.dialogsPage.newMessageText = '';
+      this._state.dialogsPage.posts.push({ id: 4, message: newMessage });
       this._callSubscriber(this._state);
     }
   },

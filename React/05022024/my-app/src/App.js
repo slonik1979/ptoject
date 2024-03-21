@@ -30,8 +30,8 @@ function App(props) {
             path="/dialogs/*"
             element={
               <Dialogs
-                dialogsPage={props.state.dialogsPage}
-                dispatch={props.dispatch}
+                state={props.state.dialogsPage}
+                messages={props.state.dialogsPage}
               />
             }
           />
