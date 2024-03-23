@@ -8,7 +8,7 @@ import News from './components/News/News';
 import Music from './components/Music/Music';
 import Goods from './components/Goods/Goods';
 
-function App(proprs) {
+function App(props) {
   return (
     <BrowserRouter>
       <div className="app-wrapper">
@@ -20,8 +20,8 @@ function App(proprs) {
               path="/profile"
               element={
                 <Content
-                  profilePage={proprs.appState.profilePage}
-                  dispatch={proprs.dispatch}
+                  profilePage={props.appState.profilePage}
+                  dispatch={props.dispatch}
                 />
               }
             />
@@ -29,24 +29,26 @@ function App(proprs) {
               path="/dialogs"
               element={
                 <Dialogs
-                  state={proprs.appState.dialogsPage}
-                  addMessage={proprs.addMessage}
-                  updateNewMessageText={proprs.updateNewMessageText}
-                  newMessageText={proprs.appState.dialogsPage.newMessageText}
+                  dialogsPage={props.appState.dialogsPage}
+                  dispatch={props.dispatch}
+                  state={props.appState.dialogsPage}
+                  addMessage={props.addMessage}
+                  updateNewMessageText={props.updateNewMessageText}
+                  newMessageText={props.appState.dialogsPage.newMessageText}
                 />
               }
             />
             <Route
               path="/news"
-              element={<News state={proprs.appState.newsPage} />}
+              element={<News state={props.appState.newsPage} />}
             />
             <Route
               path="/music"
-              element={<Music state={proprs.appState.misicPage} />}
+              element={<Music state={props.appState.misicPage} />}
             />
             <Route
               path="/goods"
-              element={<Goods state={proprs.appState.goodsPage} />}
+              element={<Goods state={props.appState.goodsPage} />}
             />
           </Routes>
         </div>
