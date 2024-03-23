@@ -47,17 +47,7 @@ const NavBar = () => {
       </div>
       <div className={classes.item}>
         <NavLink
-          to="/Settings"
-          className={(navData) =>
-            navData.isActive ? classes.active : classes.item
-          }
-        >
-          Settings
-        </NavLink>
-      </div>
-      <div className={classes.item}>
-        <NavLink
-          to="/Goods"
+          to="/goods"
           className={(navData) =>
             navData.isActive ? classes.active : classes.item
           }

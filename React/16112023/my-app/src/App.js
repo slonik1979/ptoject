@@ -1,4 +1,4 @@
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, BrowserRouter } from 'react-router-dom';
 import './App.css';
 import Content from './components/Content/Content';
 import Dialogs from './components/Dialogs/Dialogs';
@@ -8,39 +8,50 @@ import News from './components/News/News';
 import Music from './components/Music/Music';
 import Goods from './components/Goods/Goods';
 
-function App(props) {
-  
+function App(proprs) {
   return (
-    <div className="app-wrapper">
-      <Header />
-      <NavBar />
-      <div className="app-wrapper-content">
-        <Routes>
-          <Route
-            path="/profile"
-            element={
-              <Content
-                contentPage={props.state.contentPage}
-                dispatch={props.dispatch}
-              />
-            }
-          />
-          <Route
-            path="/dialogs"
-            element={<Dialogs state={props.state.messagePage}
-            dispatch={props.dispatch}
-             />}
-   
-          />
-          <Route path="/news" element={<News />} />
-          <Route path="/music" element={<Music />} />
-          <Route
-            path="/goods"
-            element={<Goods goods={props.state.goodsPage.goods} />}
-          />
-        </Routes>
+    <BrowserRouter>
+      <div className="app-wrapper">
+        <Header />
+        <NavBar />
+        <div className="app-wrapper-content">
+          <Routes>
+            <Route
+              path="/profile"
+              element={
+                <Content
+                  profilePage={proprs.appState.profilePage}
+                  dispatch={proprs.dispatch}
+                />
+              }
+            />
+            <Route
+              path="/dialogs"
+              element={
+                <Dialogs
+                  state={proprs.appState.dialogsPage}
+                  addMessage={proprs.addMessage}
+                  updateNewMessageText={proprs.updateNewMessageText}
+                  newMessageText={proprs.appState.dialogsPage.newMessageText}
+                />
+              }
+            />
+            <Route
+              path="/news"
+              element={<News state={proprs.appState.newsPage} />}
+            />
+            <Route
+              path="/music"
+              element={<Music state={proprs.appState.misicPage} />}
+            />
+            <Route
+              path="/goods"
+              element={<Goods state={proprs.appState.goodsPage} />}
+            />
+          </Routes>
+        </div>
       </div>
-    </div>
+    </BrowserRouter>
   );
 }
 

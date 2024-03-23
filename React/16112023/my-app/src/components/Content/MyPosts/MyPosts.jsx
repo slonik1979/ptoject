@@ -1,42 +1,33 @@
 import React from 'react';
 import Post from './Post/Post';
-import classes from './MyPosts.module.css';
-import { addPostActionCreator, updateNewPostTextActionCreator } from '../../../redux/store';
-
 
 const MyPosts = (props) => {
-  let messagesElement = props.posts.map((el) => (
-    <Post message={el.name} like={el.like} />
+  let newMyPostsData = props.myPostsData.map((el) => (
+    <Post id={el.id} message={el.message} like={el.like} />
   ));
 
   let newPostElement = React.createRef();
 
-  let addPost = () => {
-    props.dispatch(addPostActionCreator());
-    
+  let addPost1 = () => {
+    props.dispatch({ type: 'ADD-POST' });
   };
 
   let onPostChange = () => {
     let text = newPostElement.current.value;
-    let action = updateNewPostTextActionCreator(text);
-    props.dispatch(action);
+    const newLocal = { type: 'UPDATE-NEW-POST-TEXT', newText: text };
+    props.dispatch(newLocal);
   };
 
   return (
-    <div className={classes.myPostBlock}>
-      <h3>My Posts</h3>
-      <div>
-        <textarea
-          onChange={onPostChange}
-          ref={newPostElement}
-          value={props.newPostText}
-        />
-      </div>
-      <div>
-        <button onClick={addPost}>Add post</button>
-      </div>
+    <div>
+      <textarea
+        onChange={onPostChange}
+        ref={newPostElement}
+        value={props.newPostText}
+      />
+      <button onClick={addPost1}>Add post</button>
       <div>New post</div>
-      <div className={classes.posts}>{messagesElement}</div>
+      {newMyPostsData}
     </div>
   );
 };
