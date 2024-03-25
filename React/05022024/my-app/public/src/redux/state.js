@@ -1,10 +1,8 @@
-import { rerenderEntireTree } from '../render';
-
 const state = {
   profilePage: {
     posts: [
-      { id: 1, message: 'Привет', like: 10 },
-      { id: 2, message: 'Пока', like: 25 },
+      { message: 'Привет', id: 1, like: 10 },
+      { message: 'Пока', id: 2, like: 25 },
     ],
   },
   dialogsPage: {
@@ -18,7 +16,6 @@ const state = {
       { message: 'Как дела', id: 2 },
       { message: 'Как Вас зовут', id: 3 },
     ],
-    newPostText: '',
   },
   productsPage: {
     products: [
@@ -35,15 +32,13 @@ const state = {
   },
 };
 
-export let addPost = () => {
+export let addPost = (postMessage) => {
   let newPost = {
-    id: 4,
-    message: state.profilePage.newPostText,
+    message: { postMessage },
+    id: 3,
     like: 0,
   };
   state.profilePage.posts.push(newPost);
-  state.profilePage.newPostText = '';
-  rerenderEntireTree(state);
 };
 
 export default state;
