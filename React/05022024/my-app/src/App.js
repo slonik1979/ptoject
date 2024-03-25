@@ -1,4 +1,4 @@
-import { Route, Routes } from 'react-router-dom';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import './App.css';
 import Dialogs from './components/Dialogs/Dialogs';
 import Header from './components/Header/Header';
@@ -8,6 +8,7 @@ import News from './components/News/News';
 import Music from './components/Music/Music';
 import Setting from './components/Setting/Setting';
 import Products from './components/Products/Products';
+import { addPost } from './redux/state';
 
 function App(props) {
   return (
@@ -20,18 +21,15 @@ function App(props) {
           <Route
             path="/profile"
             element={
-              <Profile
-                profilePage={props.state.profilePage}
-                dispatch={props.dispatch}
-              />
+              <Profile state={props.state.profilePage} addPost={addPost} />
             }
           />
           <Route
             path="/dialogs/*"
             element={
               <Dialogs
-                dialogsPage={props.state.dialogsPage}
-                dispatch={props.dispatch}
+                state={props.state.dialogsPage}
+                messages={props.state.dialogsPage}
               />
             }
           />

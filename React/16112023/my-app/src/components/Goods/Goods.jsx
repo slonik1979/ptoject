@@ -1,14 +1,11 @@
 import React from 'react';
-import classes from './Goods.module.css';
-import GoodsItem from './GoodsItem.jsx/GoodsItem';
+import GoodsItem from './GoodsItem/GoodItem';
 
-const Goods = (props) => {
-  
-  let GoodsElement = props.goods.map((el) => (
+const Goods = ({ state }) => {
+  let newGoodsData = state.goodsData.map((el) => (
     <GoodsItem id={el.id} name={el.name} price={el.price} />
   ));
-
-  return <div className={classes.goods}>{GoodsElement}</div>;
+  return <div>{newGoodsData}</div>;
 };
 
 export default Goods;

@@ -1,15 +1,16 @@
 import React from 'react';
-import './Content.css';
+import classes from './Content.module.css';
+
 import MyPosts from './MyPosts/MyPosts';
 import ContentInfo from './ContentInfo/ContentInfo';
 
 const Content = (props) => {
   return (
-    <div className="content">
+    <div className={classes.content}>
       <ContentInfo />
       <MyPosts
-        posts={props.contentPage.posts}
-        newPostText={props.contentPage.newPostText}
+        myPostsData={props.profilePage.myPostsData}
+        newPostText={props.profilePage.newPostText}
         dispatch={props.dispatch}
       />
     </div>
