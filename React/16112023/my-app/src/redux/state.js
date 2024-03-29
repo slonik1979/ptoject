@@ -1,5 +1,4 @@
-const ADD_POST = 'ADD-POST';
-const UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT';
+
 
 let store = {
   _state: {
@@ -8,9 +7,9 @@ let store = {
         { id: 1, message: 'Привет', like: '15' },
         { id: 2, message: 'Как дела', like: '25' },
       ],
-      newPostText: 'ddddddd',
+      newPostText: '',
     },
-
+  
     dialogsPage: {
       dialogsData: [
         { id: 1, name: 'Max' },
@@ -25,14 +24,14 @@ let store = {
       ],
       newMessageText: 'dfdsfds',
     },
-
+  
     newsPage: {
       newsData: [
         { id: 1, name: 'Россия' },
         { id: 2, name: 'США' },
       ],
     },
-
+  
     misicPage: {
       misicData: [
         { id: 1, name: 'Попса' },
@@ -40,7 +39,7 @@ let store = {
         { id: 3, name: '80-е' },
       ],
     },
-
+  
     goodsPage: {
       goodsData: [
         { id: 1, name: 'Пиво', price: 150 },
@@ -49,81 +48,43 @@ let store = {
       ],
     },
   },
-  _callSubscribe() {},
   getState() {
+    ;
     return this._state;
   },
   subscribe(observer) {
     this._callSubscribe = observer;
   },
-
-  //   addPost() {
-  //     let newPost = {
-  //       id: 5,
-  //       message: this._state.profilePage.newPostText,
-  //       like: 0,
-  //     }
-  //     this._state.profilePage.myPostsData.push(newPost);
-  //     this._state.profilePage.newPostText = '';
-  //     this._callSubscribe(this._state);
-  //   },
-
-  updateNewPostText(newText) {
-    this._state.profilePage.newPostText = newText;
-    this._callSubscribe(this._state);
-  },
-  addMessage() {
-    let newMessage = {
+  
+  addPost() {
+    let newPost = {
       id: 5,
-      message: this._state.dialogsPage.newMessageText,
-    };
-    this._state.dialogsPage.messagesData.push(newMessage);
-    this._state.dialogsPage.newMessageText = '';
-    this._callSubscribe(this._state);
-  },
-  updateNewMessageText(newText) {
-    this._state.dialogsPage.newMessageText = newText;
-    this._callSubscribe(this._state);
-  },
-  dispatch(action) {
-    if (action.type === ADD_POST) {
-      let newPost = {
-        id: 5,
-        message: this._state.profilePage.newPostText,
-        like: 0,
-      };
-      this._state.profilePage.myPostsData.push(newPost);
-      this._state.profilePage.newPostText = '';
-      this._callSubscribe(this._state);
-    } else if (action.type === UPDATE_NEW_POST_TEXT) {
-      this._state.profilePage.newPostText = action.newText;
-      this._callSubscribe(this._state);
-    } else if (action.type === 'ADD-MESSAGE') {
-      let newMessage = {
-        id: 4,
-        message: this._state.dialogsPage.newMessageText,
-      };
-      this._state.dialogsPage.messagesData.push(newMessage);
-      this._state.dialogsPage.messagesData = '';
-      this._callSubscribe(this._state);
-    } else if (action.type === 'UPDATE-NEW-MESSAGE-TEXT') {
-      this._state.dialogsPage.messagesData = action.newText;
-      this._callSubscribe(this._state);
+      message: this._state.profilePage.newPostText,
+      like: 0,
     }
+    this._state.profilePage.myPostsData.push(newPost);
+    this._state.profilePage.newPostText = '';
+    this._callSubscribe(this._state);
   },
-};
-
-export let addPostActionCreator = () => {
-  return {
-    type: 'ADD-POST',
+ 
+updateNewPostText (newText){
+  this._state.profilePage.newPostText = newText;
+  this._callSubscribe(this._state);
+},
+addMessage() {
+  let newMessage = {
+    id: 5,
+    message: this._state.dialogsPage.newMessageText,
   };
-};
+  this._state.dialogsPage.messagesData.push(newMessage);
+  this._state.dialogsPage.newMessageText = '';
+  this._callSubscribe(this._state);
+},
+updateNewMessageText(newText) {
+  this._state.dialogsPage.newMessageText = newText;
+  this._callSubscribe(this._state);
+},
 
-export let updateNewPostTextActionCreator = (text) => {
-  return {
-    type: 'UPDATE-NEW-POST-TEXT',
-    newText: text,
-  };
 };
 
 export default store;
