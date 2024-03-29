@@ -1,4 +1,6 @@
-import { rerenderEntireTree } from "../render";
+let rerenderEntireTree = () => {
+  console.log('fgfdgdf')
+}
 
 const state = {
   profilePage: {
@@ -26,9 +28,8 @@ const state = {
       { id: 1, product: 'Яблоки', price: 250, discount: 10 },
       { id: 2, product: 'Бананы', price: 150, discount: 10 },
       { id: 3, product: 'Мандарины', price: 100, discount: 10 },
-      
-     
-    ],
+     ],
+     newProductName: 'fhhhff',
   },
 };
 
@@ -66,6 +67,26 @@ export let updateNewMessageText = (newText) => {
   rerenderEntireTree(state);
 };
 
+export let addProduct = () => {
+  let newProduct = {
+    id: 1,
+    product: state.productsPage.newProductName,
+    price: 250,
+    discount: 10
+  };
+  state.productsPage.products.push(newProduct);
+  state.productsPage.newProductName='';
+  rerenderEntireTree(state);
+}
 
+export let updateNewProductName = (newName) => {
+  state.productsPage.newProductName = newName;
+  rerenderEntireTree(state);
+};
+
+
+export const subscribe = (observer) => {
+  rerenderEntireTree = observer;
+}
 
 export default state;

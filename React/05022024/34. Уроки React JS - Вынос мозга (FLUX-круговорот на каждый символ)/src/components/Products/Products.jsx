@@ -1,9 +1,9 @@
+import React from 'react';
 import Product from './Product/Product';
 import classes from './Products.module.css';
 
 const Products = (props) => {
-  
-  const productsElements = props.state.products.map((p) => {
+  const productsElements = props.productsPage.products.map((p) => {
     return (
       <Product
         id={p.id}
@@ -13,15 +13,28 @@ const Products = (props) => {
       />
     );
   });
+
+  let newProductElement = React.createRef();
+
+  let addProduct = () => {
+    props.addProduct();
+  };
+
+  let onProductChange = () => {
+    let text = newProductElement.current.value;
+      props.updateNewProductName(text);
+    
+  };
+
   return (
     <div>
       <div className={classes.products}>{productsElements}</div>
 
       <div>
-        <textarea></textarea>
-        <textarea></textarea>
-        <textarea></textarea>
-        <button>Add post</button>
+        <textarea onChange={onProductChange}
+        value={props.newProductName} ref={newProductElement}></textarea>
+
+        <button onClick={addProduct}>Add post</button>
       </div>
     </div>
   );

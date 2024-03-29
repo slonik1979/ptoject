@@ -34,7 +34,12 @@ function App(props) {
             <Route path="/news" element={<News />} />
             <Route path="/music" element={<Music />} />
             <Route path="/setting" element={<Setting />} />
-            <Route path="/products" element={<Products state={props.state.productsPage}/>} />
+            <Route path="/products" element={<Products
+                                    productsPage={props.state.productsPage}
+                                    newProductName={props.state.productsPage.newProductName}
+                                    addProduct={props.addProduct}
+                                    updateNewProductName={props.updateNewProductName}
+                                    />} />
           </Routes>
         </div>
       </div>
