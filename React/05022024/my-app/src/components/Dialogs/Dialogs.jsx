@@ -2,21 +2,27 @@ import React from 'react';
 import classes from './Dialogs.module.css';
 import DialogsItems from './DialogsItems/DialogsItems';
 import Message from './Message/Message';
+import { dialogsPage } from '../../redux/state';
 
 const Dialogs = (props) => {
-  const dialogsElements = props.state.dialogs.map((dialog) => (
+  const dialogsElements = props.dialogsPage.dialogs.map((dialog) => (
     <DialogsItems name={dialog.name} id={dialog.id} />
   ));
-  const messagesElements = props.state.messages.map((message) => (
+  const messagesElements = props.dialogsPage.messages.map((message) => (
     <Message message={message.message} />
   ));
 
-  let newPostElement = React.createRef();
+  let newMessageElement = React.createRef();
 
   let addMessage = () => {
-    let text = newPostElement.current.value;
-    alert(text);
+    props.addMessage();
   };
+
+  let onMessageChange = () => {
+      let text = newMessageElement.current.value;
+      props.updateNewMessageText(text);
+    
+  }
 
   return (
     <div className={classes.dialogs}>
@@ -24,7 +30,8 @@ const Dialogs = (props) => {
       <div className={classes.messages}>
         {messagesElements}
         <div>
-          <textarea ref={newPostElement}></textarea>
+          <textarea onChange={onMessageChange}
+        value={props.newMessageText} ref={newMessageElement}></textarea>
         </div>
         <div>
           <button onClick={addMessage}>Add message</button>

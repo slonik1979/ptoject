@@ -9,6 +9,7 @@ import Music from './components/Music/Music';
 import Setting from './components/Setting/Setting';
 import Products from './components/Products/Products';
 
+
 function App(props) {
 
 
@@ -22,8 +23,14 @@ function App(props) {
         {/* <Profile/> */}
         <div className="app-wrapper-content">
           <Routes>
-            <Route path="/profile" element={<Profile state={props.state.profilePage} />} />
-            <Route path="/dialogs/*" element={<Dialogs state={props.state.dialogsPage} messages={props.state.dialogsPage}/>} />
+            <Route path="/profile" element={<Profile 
+            profilePage={props.state.profilePage}
+            addPost={props.addPost}
+            updateNewPostText={props.updateNewPostText}
+            newPostText={props.state.profilePage.newPostText}/>} />
+            <Route path="/dialogs/*" element={<Dialogs dialogsPage={props.state.dialogsPage} addMessage={props.addMessage}
+                   updateNewMessageText={props.updateNewMessageText}
+                   newMessageText={props.state.dialogsPage.newMessageText}/>} />
             <Route path="/news" element={<News />} />
             <Route path="/music" element={<Music />} />
             <Route path="/setting" element={<Setting />} />

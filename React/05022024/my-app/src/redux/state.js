@@ -5,7 +5,8 @@ const state = {
     posts: [
       { message: 'Привет', id: 1, like: 10 },
       { message: 'Пока', id: 2, like: 25 },
-    ],
+    ], 
+    newPostText: '8888',
   },
   dialogsPage: {
     dialogs: [
@@ -18,32 +19,51 @@ const state = {
       { message: 'Как дела', id: 2 },
       { message: 'Как Вас зовут', id: 3 },
     ],
+    newMessageText: '999',
   },
   productsPage: {
     products: [
       { id: 1, product: 'Яблоки', price: 250, discount: 10 },
       { id: 2, product: 'Бананы', price: 150, discount: 10 },
       { id: 3, product: 'Мандарины', price: 100, discount: 10 },
-      { id: 3, product: 'Мандарины', price: 100, discount: 10 },
-      { id: 3, product: 'Мандарины', price: 100, discount: 10 },
-      { id: 3, product: 'Мандарины', price: 100, discount: 10 },
-      { id: 3, product: 'Мандарины', price: 100, discount: 10 },
-      { id: 3, product: 'Мандарины', price: 100, discount: 10 },
-      { id: 3, product: 'Мандарины', price: 100, discount: 10 },
+      
+     
     ],
   },
 };
 
-export let addPost = (postMessage) => {
+export let addPost = () => {
   let newPost = {
-    message: postMessage ,
+    message: state.profilePage.newPostText ,
     id: 3,
     like: 99,
   };
-  state.profilePage.posts.push(newPost);
-  state.profilePage.posts.postMessage = "";
+    if (state.profilePage.newPostText !='') {
+    state.profilePage.posts.push(newPost);
+   } 
+    state.profilePage.newPostText='';
   rerenderEntireTree(state);
-  
+};
+
+export let updateNewPostText = (newText) => {
+  state.profilePage.newPostText = newText;
+  rerenderEntireTree(state);
+};
+
+export let addMessage = () => {
+  let newMessage = {
+    message: state.dialogsPage.newMessageText ,
+    id: 4
+    
+  };
+    state.dialogsPage.messages.push(newMessage);
+    state.dialogsPage.newMessageText='';
+  rerenderEntireTree(state);
+};
+
+export let updateNewMessageText = (newText) => {
+  state.dialogsPage.newMessageText = newText;
+  rerenderEntireTree(state);
 };
 
 
