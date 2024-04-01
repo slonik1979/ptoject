@@ -39,7 +39,6 @@ function App(props) {
                                     newProductName={props.state.productsPage.newProductName}
                                     addProduct={props.addProduct}
                                     updateNewProductName={props.updateNewProductName}
-                                    
                                     />} />
           </Routes>
         </div>

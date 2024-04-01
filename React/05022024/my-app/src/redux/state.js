@@ -1,4 +1,6 @@
-import { rerenderEntireTree } from "../render";
+let rerenderEntireTree = () => {
+  console.log('fgfdgdf')
+}
 
 const state = {
   profilePage: {
@@ -81,5 +83,10 @@ export let updateNewProductName = (newName) => {
   state.productsPage.newProductName = newName;
   rerenderEntireTree(state);
 };
+
+
+export const subscribe = (observer) => {
+  rerenderEntireTree = observer;
+}
 
 export default state;
