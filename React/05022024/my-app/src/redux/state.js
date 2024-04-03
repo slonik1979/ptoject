@@ -1,6 +1,7 @@
-let rerenderEntireTree = () => {
-  console.log('fgfdgdf');
-};
+import profileReducer from "./profile-reducer";
+
+const ADD_POST = 'ADD-POST';
+const UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT';
 
 let store = {
   _state: {
@@ -34,59 +35,65 @@ let store = {
     },
   },
 
+  _callSubsCriber() {
+    },
+
   getState() {
     return this._state;
   },
-  rerenderEntireTree() {
-    console.log('fgfdgdf');
-  },
-  addPost() {
-    let newPost = {
-      message: this._state.profilePage.newPostText,
-      id: 3,
-      like: 99,
-    };
-    if (this._state.profilePage.newPostText != '') {
-      this._state.profilePage.posts.push(newPost);
-    }
-    this._state.profilePage.newPostText = '';
-    rerenderEntireTree(this._state);
-  },
-  updateNewPostText(newText) {
-    this._state.profilePage.newPostText = newText;
-    rerenderEntireTree(this._state);
-  },
-  addMessage() {
-    let newMessage = {
-      message: this._state.dialogsPage.newMessageText,
-      id: 4,
-    };
-    this._state.dialogsPage.messages.push(newMessage);
-    this._state.dialogsPage.newMessageText = '';
-    rerenderEntireTree(this._state);
-  },
-  updateNewMessageText(newText) {
-    this._state.dialogsPage.newMessageText = newText;
-    rerenderEntireTree(this._state);
-  },
-  addProduct() {
-    let newProduct = {
-      id: 1,
-      product: this._state.productsPage.newProductName,
-      price: 250,
-      discount: 10,
-    };
-    this._state.productsPage.products.push(newProduct);
-    this._state.productsPage.newProductName = '';
-    rerenderEntireTree(this._state);
-  },
-  updateNewProductName(newName) {
-    this._state.productsPage.newProductName = newName;
-    rerenderEntireTree(this._state);
-  },
+
   subscribe(observer) {
-    rerenderEntireTree = observer;
+    this._callSubsCriber = observer;
   },
-};
+  
+       dispatch (action) {
+
+        this._state.profilePage = profileReducer(this._state.profilePage, action)
+
+        this._callSubsCriber(this._state);
+
+        if (action.type==='ADD-MESSAGE') {
+          let newMessage = {
+            message: this._state.dialogsPage.newMessageText,
+            id: 4,
+          };
+          this._state.dialogsPage.messages.push(newMessage);
+          this._state.dialogsPage.newMessageText = '';
+          this._callSubsCriber(this._state);
+        }  else if (action.type==='UPDATE-NEW-MESSAGE-TEXT') {
+          this._state.dialogsPage.newMessageText = action.newText;
+          this._callSubsCriber(this._state);
+        } else if (action.type==='ADD-PRODUCT') {
+      let newProduct = {
+        id: 1,
+        product: this._state.productsPage.newProductName,
+        price: 250,
+        discount: 10,
+      };
+      if (this._state.productsPage.newProductName != '') {
+        this._state.productsPage.products.push(newProduct);
+      }
+      
+      this._state.productsPage.newProductName = '';
+      this._callSubsCriber(this._state);
+    }  else if (action.type==='UPDATE-NEW-PRODUCT-NAME') {
+      this._state.productsPage.newProductName = action.newName;
+      this._callSubsCriber(this._state);
+    }
+  },
+
+ };
+
+ export const addPostActionCreator = () => {
+  return {
+    type:ADD_POST
+  }
+}
+
+export const updateNewPostTextActionCreator = (text) => {
+  return {
+    type:UPDATE_NEW_POST_TEXT, newText: text
+  }
+}
 
 export default store;

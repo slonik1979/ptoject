@@ -25,11 +25,10 @@ function App(props) {
           <Routes>
             <Route path="/profile" element={<Profile 
             profilePage={props.state.profilePage}
-            addPost={props.addPost}
-            updateNewPostText={props.updateNewPostText}
+            dispatch={props.dispatch}
+            // updateNewPostText={props.updateNewPostText}
             newPostText={props.state.profilePage.newPostText}/>} />
-            <Route path="/dialogs/*" element={<Dialogs dialogsPage={props.state.dialogsPage} addMessage={props.addMessage}
-                   updateNewMessageText={props.updateNewMessageText}
+            <Route path="/dialogs/*" element={<Dialogs dialogsPage={props.state.dialogsPage} dispatch={props.dispatch}
                    newMessageText={props.state.dialogsPage.newMessageText}/>} />
             <Route path="/news" element={<News />} />
             <Route path="/music" element={<Music />} />
@@ -37,8 +36,7 @@ function App(props) {
             <Route path="/products" element={<Products
                                     productsPage={props.state.productsPage}
                                     newProductName={props.state.productsPage.newProductName}
-                                    addProduct={props.addProduct}
-                                    updateNewProductName={props.updateNewProductName}
+                                    dispatch={props.dispatch}
                                     />} />
           </Routes>
         </div>

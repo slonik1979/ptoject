@@ -17,12 +17,13 @@ const Products = (props) => {
   let newProductElement = React.createRef();
 
   let addProduct = () => {
-    props.addProduct();
+    props.dispatch({type:'ADD-PRODUCT'})
   };
 
   let onProductChange = () => {
     let text = newProductElement.current.value;
-      props.updateNewProductName(text);
+    let action = {type:'UPDATE-NEW-PRODUCT-NAME', newName: text}
+    props.dispatch(action)
     
   };
 

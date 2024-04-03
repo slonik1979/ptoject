@@ -11,12 +11,12 @@ let rerenderEntireTree = (state) => {
   root.render(
     <App
       state={store.getState()}
-      addPost={store.addPost}
-      updateNewPostText={store.updateNewPostText}
-      addMessage={store.addMessage}
-      updateNewMessageText={store.updateNewMessageText}
-      addProduct={store.addProduct}
-      updateNewProductName={store.updateNewProductName}
+      dispatch={store.dispatch.bind(store)}
+      // updateNewPostText={store.updateNewPostText.bind(store)}
+      // addMessage={store.addMessage.bind(store)}
+      // updateNewMessageText={store.updateNewMessageText.bind(store)}
+      // addProduct={store.addProduct.bind(store)}
+      // updateNewProductName={store.updateNewProductName.bind(store)}
     />
   );
 };
