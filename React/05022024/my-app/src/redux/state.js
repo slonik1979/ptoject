@@ -1,4 +1,6 @@
-import profileReducer from "./profile-reducer";
+import dialogsReducer from './dialogs-reducer';
+import productsReducer from './products-reducer';
+import profileReducer from './profile-reducer';
 
 const ADD_POST = 'ADD-POST';
 const UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT';
@@ -35,8 +37,7 @@ let store = {
     },
   },
 
-  _callSubsCriber() {
-    },
+  _callSubsCriber() {},
 
   getState() {
     return this._state;
@@ -45,25 +46,18 @@ let store = {
   subscribe(observer) {
     this._callSubsCriber = observer;
   },
-  
-       dispatch (action) {
 
-        this._state.profilePage = profileReducer(this._state.profilePage, action)
+  dispatch(action) {
+    this._state.profilePage = profileReducer(this._state.profilePage, action);
+    this._state.dialogsPage = dialogsReducer(this._state.dialogsPage, action);
+    this._state.productsPage = productsReducer(
+      this._state.productsPage,
+      action
+    );
 
-        this._callSubsCriber(this._state);
+    this._callSubsCriber(this._state);
 
-        if (action.type==='ADD-MESSAGE') {
-          let newMessage = {
-            message: this._state.dialogsPage.newMessageText,
-            id: 4,
-          };
-          this._state.dialogsPage.messages.push(newMessage);
-          this._state.dialogsPage.newMessageText = '';
-          this._callSubsCriber(this._state);
-        }  else if (action.type==='UPDATE-NEW-MESSAGE-TEXT') {
-          this._state.dialogsPage.newMessageText = action.newText;
-          this._callSubsCriber(this._state);
-        } else if (action.type==='ADD-PRODUCT') {
+    if (action.type === 'ADD-PRODUCT') {
       let newProduct = {
         id: 1,
         product: this._state.productsPage.newProductName,
@@ -73,27 +67,27 @@ let store = {
       if (this._state.productsPage.newProductName != '') {
         this._state.productsPage.products.push(newProduct);
       }
-      
+
       this._state.productsPage.newProductName = '';
       this._callSubsCriber(this._state);
-    }  else if (action.type==='UPDATE-NEW-PRODUCT-NAME') {
+    } else if (action.type === 'UPDATE-NEW-PRODUCT-NAME') {
       this._state.productsPage.newProductName = action.newName;
       this._callSubsCriber(this._state);
     }
   },
+};
 
- };
-
- export const addPostActionCreator = () => {
+export const addPostActionCreator = () => {
   return {
-    type:ADD_POST
-  }
-}
+    type: ADD_POST,
+  };
+};
 
 export const updateNewPostTextActionCreator = (text) => {
   return {
-    type:UPDATE_NEW_POST_TEXT, newText: text
-  }
-}
+    type: UPDATE_NEW_POST_TEXT,
+    newText: text,
+  };
+};
 
 export default store;
