@@ -6,7 +6,7 @@ import {
   updateNewPostTextActionCreator,
 } from '../../../redux/profile-reducer';
 
-const MyPosts = (props) => {
+const MyPostsContainer = (props) => {
   const postsElements = props.posts.map((post) => {
     return <Post message={post.message} like={post.like} id={post.id} />;
   });
@@ -41,4 +41,4 @@ const MyPosts = (props) => {
   );
 };
 
-export default MyPosts;
+export default MyPostsContainer;
