@@ -2,8 +2,7 @@ import dialogsReducer from './dialogs-reducer';
 import productsReducer from './products-reducer';
 import profileReducer from './profile-reducer';
 
-const ADD_POST = 'ADD-POST';
-const UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT';
+
 
 let store = {
   _state: {
@@ -57,37 +56,10 @@ let store = {
 
     this._callSubsCriber(this._state);
 
-    if (action.type === 'ADD-PRODUCT') {
-      let newProduct = {
-        id: 1,
-        product: this._state.productsPage.newProductName,
-        price: 250,
-        discount: 10,
-      };
-      if (this._state.productsPage.newProductName != '') {
-        this._state.productsPage.products.push(newProduct);
-      }
 
-      this._state.productsPage.newProductName = '';
-      this._callSubsCriber(this._state);
-    } else if (action.type === 'UPDATE-NEW-PRODUCT-NAME') {
-      this._state.productsPage.newProductName = action.newName;
-      this._callSubsCriber(this._state);
-    }
   },
 };
 
-export const addPostActionCreator = () => {
-  return {
-    type: ADD_POST,
-  };
-};
 
-export const updateNewPostTextActionCreator = (text) => {
-  return {
-    type: UPDATE_NEW_POST_TEXT,
-    newText: text,
-  };
-};
 
 export default store;
