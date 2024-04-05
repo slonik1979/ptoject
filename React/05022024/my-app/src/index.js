@@ -10,6 +10,7 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 let rerenderEntireTree = (state) => {
   root.render(
     <App
+      
       state={store.getState()}
       dispatch={store.dispatch.bind(store)}
       // updateNewPostText={store.updateNewPostText.bind(store)}
