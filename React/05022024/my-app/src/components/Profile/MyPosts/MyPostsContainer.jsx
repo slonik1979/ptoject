@@ -23,7 +23,7 @@ const MyPostsContainer = (props) => {
     <MyPosts
       addPost={addPost}
       posts={props.posts}
-      dispatch={props.dispatch}
+      //dispatch={props.dispatch}
       newPostText={props.newPostText}
       updateNewPostText={onPostChange}
     />

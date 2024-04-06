@@ -8,6 +8,7 @@ import News from './components/News/News';
 import Music from './components/Music/Music';
 import Setting from './components/Setting/Setting';
 import Products from './components/Products/Products';
+import DialogsContainer from './components/Dialogs/DialogsContainer';
 
 function App(props) {
   return (
@@ -27,15 +28,17 @@ function App(props) {
                   //dispatch={props.dispatch}
                   // updateNewPostText={props.updateNewPostText}
                   newPostText={props.state.profilePage.newPostText}
+                  dialogs={props.dialogs}
                 />
               }
             />
             <Route
               path="/dialogs/*"
               element={
-                <Dialogs
+                <DialogsContainer
+                  store={props.store}
                   dialogsPage={props.state.dialogsPage}
-                  dispatch={props.dispatch}
+                  //dispatch={props.dispatch}
                   newMessageText={props.state.dialogsPage.newMessageText}
                 />
               }
@@ -47,9 +50,10 @@ function App(props) {
               path="/products"
               element={
                 <Products
+                  store={props.store}
                   productsPage={props.state.productsPage}
                   newProductName={props.state.productsPage.newProductName}
-                  dispatch={props.dispatch}
+                  //dispatch={props.dispatch}
                 />
               }
             />

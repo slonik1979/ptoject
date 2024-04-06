@@ -1,8 +1,10 @@
 import React from 'react';
 import Product from './Product/Product';
 import classes from './Products.module.css';
-import { addProductActionCreator, updateNewProductNameActionCreator } from '../../redux/products-reducer';
-
+import {
+  addProductActionCreator,
+  updateNewProductNameActionCreator,
+} from '../../redux/products-reducer';
 
 const Products = (props) => {
   const productsElements = props.productsPage.products.map((p) => {
@@ -19,30 +21,30 @@ const Products = (props) => {
   let newProductElement = React.createRef();
 
   let addProduct = () => {
-    props.dispatch(addProductActionCreator())
-  }
+    props.store.dispatch(addProductActionCreator());
+  };
 
   let onProductChange = () => {
     let text = newProductElement.current.value;
-    let action = updateNewProductNameActionCreator(text)
-    props.dispatch(action)
-    
-  }
+    let action = updateNewProductNameActionCreator(text);
+    props.store.dispatch(action);
+  };
 
   return (
     <div>
       <div className={classes.products}>{productsElements}</div>
 
       <div>
-        <textarea onChange={onProductChange}
-        value={props.newProductName} ref={newProductElement}></textarea>
+        <textarea
+          onChange={onProductChange}
+          value={props.newProductName}
+          ref={newProductElement}
+        ></textarea>
 
         <button onClick={addProduct}>Add post</button>
       </div>
     </div>
   );
 };
-
-
 
 export default Products;
