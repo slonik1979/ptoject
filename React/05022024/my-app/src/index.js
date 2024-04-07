@@ -4,21 +4,26 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import store from './redux/redux-store';
+import StoreContext from './StoreContext';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
 let rerenderEntireTree = (state) => {
   root.render(
-    <App
-      state={state}
-      //dispatch={store.dispatch.bind(store)}
-      store={store}
-      // updateNewPostText={store.updateNewPostText.bind(store)}
-      // addMessage={store.addMessage.bind(store)}
-      // updateNewMessageText={store.updateNewMessageText.bind(store)}
-      // addProduct={store.addProduct.bind(store)}
-      // updateNewProductName={store.updateNewProductName.bind(store)}
-    />
+    <StoreContext.Provider value={store}>
+      <App
+        state={state}
+        store={store}
+
+        //dispatch={store.dispatch.bind(store)}
+
+        // updateNewPostText={store.updateNewPostText.bind(store)}
+        // addMessage={store.addMessage.bind(store)}
+        // updateNewMessageText={store.updateNewMessageText.bind(store)}
+        // addProduct={store.addProduct.bind(store)}
+        // updateNewProductName={store.updateNewProductName.bind(store)}
+      />
+    </StoreContext.Provider>
   );
 };
 

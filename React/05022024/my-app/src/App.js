@@ -26,8 +26,6 @@ function App(props) {
                 <Profile
                   profilePage={props.state.profilePage}
                   store={props.store}
-                  //dispatch={props.dispatch}
-                  // updateNewPostText={props.updateNewPostText}
                   newPostText={props.state.profilePage.newPostText}
                   dialogs={props.dialogs}
                 />
@@ -39,7 +37,6 @@ function App(props) {
                 <DialogsContainer
                   store={props.store}
                   dialogsPage={props.state.dialogsPage}
-                  //dispatch={props.dispatch}
                   newMessageText={props.state.dialogsPage.newMessageText}
                 />
               }
@@ -54,7 +51,6 @@ function App(props) {
                   store={props.store}
                   productsPage={props.state.productsPage}
                   newProductName={props.state.productsPage.newProductName}
-                  //dispatch={props.dispatch}
                 />
               }
             />
