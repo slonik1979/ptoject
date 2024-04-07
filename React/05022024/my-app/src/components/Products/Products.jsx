@@ -1,13 +1,9 @@
 import React from 'react';
 import Product from './Product/Product';
 import classes from './Products.module.css';
-import {
-  addProductActionCreator,
-  updateNewProductNameActionCreator,
-} from '../../redux/products-reducer';
 
 const Products = (props) => {
-  const productsElements = props.productsPage.products.map((p) => {
+  const productsElements = props.products.map((p) => {
     return (
       <Product
         id={p.id}
@@ -21,13 +17,12 @@ const Products = (props) => {
   let newProductElement = React.createRef();
 
   let addProduct = () => {
-    props.store.dispatch(addProductActionCreator());
+    props.addProduct();
   };
 
   let onProductChange = () => {
     let text = newProductElement.current.value;
-    let action = updateNewProductNameActionCreator(text);
-    props.store.dispatch(action);
+    props.updateNewProduct(text);
   };
 
   return (

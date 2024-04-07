@@ -1,10 +1,10 @@
 import React from 'react';
-import Product from './Product/Product';
-import classes from './Products.module.css';
+
 import {
   addProductActionCreator,
   updateNewProductNameActionCreator,
 } from '../../redux/products-reducer';
+import Products from './Products';
 
 const ProductsContainer = (props) => {
   let addProduct = () => {
@@ -16,7 +16,14 @@ const ProductsContainer = (props) => {
     props.store.dispatch(action);
   };
 
-  return <Products />;
+  return (
+    <Products
+      addProduct={addProduct}
+      updateNewProduct={onProductChange}
+      newProductName={props.newProductName}
+      products={props.productsPage.products}
+    />
+  );
 };
 
 export default ProductsContainer;

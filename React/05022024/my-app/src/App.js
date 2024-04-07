@@ -9,6 +9,7 @@ import Music from './components/Music/Music';
 import Setting from './components/Setting/Setting';
 import Products from './components/Products/Products';
 import DialogsContainer from './components/Dialogs/DialogsContainer';
+import ProductsContainer from './components/Products/ProductsContainer';
 
 function App(props) {
   return (
@@ -49,7 +50,7 @@ function App(props) {
             <Route
               path="/products"
               element={
-                <Products
+                <ProductsContainer
                   store={props.store}
                   productsPage={props.state.productsPage}
                   newProductName={props.state.productsPage.newProductName}
