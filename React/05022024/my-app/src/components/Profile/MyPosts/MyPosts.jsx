@@ -7,8 +7,6 @@ import {
 } from '../../../redux/profile-reducer';
 
 const MyPosts = (props) => {
-
-  
   const postsElements = props.posts.map((post) => {
     return <Post message={post.message} like={post.like} id={post.id} />;
   });
@@ -17,16 +15,14 @@ const MyPosts = (props) => {
 
   let onAddPost = () => {
     props.addPost();
-    
   };
 
   let onPostChange = () => {
     let text = newPostElement.current.value;
-    props.updateNewPostText(text)
-    
+    props.updateNewPostText(text);
+
     // let action = updateNewPostTextActionCreator(text);
     // props.dispatch(action);
-    
   };
 
   return (
