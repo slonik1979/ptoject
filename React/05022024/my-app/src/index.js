@@ -10,7 +10,7 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 
 let rerenderEntireTree = (state) => {
   root.render(
-    <StoreContext.Provider value={store}>
+    <StoreContext.Provider store={store}>
       <App
         state={state}
         store={store}
