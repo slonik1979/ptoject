@@ -2,12 +2,13 @@ import React from 'react';
 import classes from './Dialogs.module.css';
 import DialogsItems from './DialogsItems/DialogsItems';
 import Message from './Message/Message';
-
+//import { connect } from 'react-redux';
 import {
   addMessageActionCreator,
   updateNewMessageTextActionCreator,
 } from '../../redux/dialogs-reducer';
 import Dialogs from './Dialogs';
+
 
 const DialogsContainer = (props) => {
   let addMessage = () => {
@@ -29,5 +30,19 @@ const DialogsContainer = (props) => {
     />
   );
 };
+
+let f1 = (state) => {
+  return {
+    
+  }
+}
+
+let f2 = () => {
+    return {
+    
+  }
+}
+
+ //const SuperdialogsContainer = connect (f1, f2) (Dialogs);
 
 export default DialogsContainer;
