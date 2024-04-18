@@ -25,11 +25,25 @@
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.1/css/bootstrap.min.css" integrity="sha512-Ez0cGzNzHR1tYAv56860NLspgUGuQw16GiOOp/I2LuTmpSK9xDXlgJz3XN4cnpXWDmkNBKXR/VDMTCnAaEooxA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.1/css/bootstrap.min.css"
+      integrity="sha512-Ez0cGzNzHR1tYAv56860NLspgUGuQw16GiOOp/I2LuTmpSK9xDXlgJz3XN4cnpXWDmkNBKXR/VDMTCnAaEooxA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     <title>REDUX</title>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
+
+    <div class="jumbotron">
+      <h1 id="counter">0</h1>
+      <button id="dec" class="btn btn-primary">DEC</button>
+      <button id="inc" class="btn btn-primary">INC</button>
+      <button id="rnd" class="btn btn-primary">RND</button>
+    </div>
+
     <div id="root"></div>
     <!--
       This HTML file is a template.
