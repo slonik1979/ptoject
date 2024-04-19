@@ -1,43 +1,33 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './App';
+
 import { bindActionCreators, legacy_createStore } from 'redux';
 import * as actions from './action';
 import reducer from './reducer';
-
+import Counter from './components/Counter';
 
 const store = legacy_createStore(reducer);
 
-const {dispatch, subscribe, getState} = store;
+const { dispatch, subscribe, getState } = store;
+const { inc, dec, rnd } = bindActionCreators(actions, dispatch);
 
 const update = () => {
-  document.getElementById('counter').textContent = getState().value;
+  const root = ReactDOM.createRoot(document.getElementById('root'));
+  root.render(
+    <React.StrictMode>
+      <Counter
+        counter={getState().value}
+        inc={inc}
+        dec={dec}
+        rnd={() => {
+          const value = Math.floor(Math.random() * 10);
+          rnd(value);
+        }}
+      />
+    </React.StrictMode>
+  );
 };
 
+update();
 subscribe(update);
-
-
-const {inc, dec, rnd} = bindActionCreators(actions, dispatch);
-
-document.getElementById('inc').addEventListener('click', inc);
-
-document.getElementById('dec').addEventListener('click', dec);
-
-document.getElementById('rnd').addEventListener('click', () => {
-  const value = Math.floor(Math.random() * 10);
-  rnd(value);
-});
-
-//let state = reducer(intialState, { type: 'INC' });
-
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
