@@ -1,4 +1,4 @@
-const intialState = { value: 0 };
+const intialState = { value: 5 };
 
 const reducer = (state = intialState, action) => {
   switch (action.type) {
@@ -23,6 +23,5 @@ const reducer = (state = intialState, action) => {
       return state;
   }
 };
-
 
 export default reducer;
