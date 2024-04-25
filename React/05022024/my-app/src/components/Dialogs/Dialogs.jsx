@@ -2,26 +2,31 @@ import React from 'react';
 import classes from './Dialogs.module.css';
 import DialogsItems from './DialogsItems/DialogsItems';
 import Message from './Message/Message';
-import { dialogsPage } from '../../redux/state';
+import { dialogsPage, sendMessageCreator, updateNewMessageBodyCreator } from '../../redux/state';
 
 const Dialogs = (props) => {
-  const dialogsElements = props.dialogsPage.dialogs.map((dialog) => (
+
+let state= props.store.getState().dialogsPage;
+
+  const dialogsElements = state.dialogs.map((dialog) => (
     <DialogsItems name={dialog.name} id={dialog.id} />
   ));
-  const messagesElements = props.dialogsPage.messages.map((message) => (
+  const messagesElements = state.messages.map((message) => (
     <Message message={message.message} />
   ));
 
-  let newMessageElement = React.createRef();
+  let newMessageBody = state.newMessageBody;
 
-  let addMessage = () => {
-    props.dispatch({type:'ADD-MESSAGE'})
+  
+
+  let onSendMessageClick = () => {
+    
+    props.store.dispatch(sendMessageCreator())
   };
 
-  let onMessageChange = () => {
-    let text = newMessageElement.current.value;
-    let action = {type:'UPDATE-NEW-MESSAGE-TEXT', newText: text}
-    props.dispatch(action)
+  let onNewMessageChange = (e) => {
+    let body = e.target.value;
+    props.store.dispatch(updateNewMessageBodyCreator(body))
     
   }
 
@@ -31,11 +36,11 @@ const Dialogs = (props) => {
       <div className={classes.messages}>
         {messagesElements}
         <div>
-          <textarea onChange={onMessageChange}
-        value={props.newMessageText} ref={newMessageElement}></textarea>
+          <textarea onChange={onNewMessageChange}
+        value={newMessageBody} ></textarea>
         </div>
         <div>
-          <button onClick={addMessage}>Add message</button>
+          <button onClick={onSendMessageClick}>Send</button>
         </div>
       </div>
     </div>

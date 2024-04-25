@@ -28,7 +28,8 @@ function App(props) {
             dispatch={props.dispatch}
             // updateNewPostText={props.updateNewPostText}
             newPostText={props.state.profilePage.newPostText}/>} />
-            <Route path="/dialogs/*" element={<Dialogs dialogsPage={props.state.dialogsPage} dispatch={props.dispatch}
+            <Route path="/dialogs/*" element={<Dialogs store={props.store}
+            //dialogsPage={props.state.dialogsPage} dispatch={props.dispatch}
                    newMessageText={props.state.dialogsPage.newMessageText}/>} />
             <Route path="/news" element={<News />} />
             <Route path="/music" element={<Music />} />

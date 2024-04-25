@@ -2,6 +2,8 @@ const ADD_POST = 'ADD-POST';
 const UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT';
 
 const UPDATE_NEW_MESSAGE_BODY = 'UPDATE-NEW-MESSAGE-BODY';
+const SEND_MESSAGE = 'SEND-MESSAGE';
+
 
 let store = {
   _state: {
@@ -61,16 +63,16 @@ let store = {
         } else if (action.type===UPDATE_NEW_POST_TEXT) {
           this._state.profilePage.newPostText = action.newText;
           this._callSubsCriber(this._state);
-        } else if (action.type==='ADD-MESSAGE') {
+        } else if (action.type===SEND_MESSAGE) {
           let newMessage = {
-            message: this._state.dialogsPage.newMessageText,
+            message: this._state.dialogsPage.newMessageBody,
             id: 4,
           };
           this._state.dialogsPage.messages.push(newMessage);
-          this._state.dialogsPage.newMessageText = '';
+          this._state.dialogsPage.newMessageBody = '';
           this._callSubsCriber(this._state);
-        }  else if (action.type==='UPDATE-NEW-MESSAGE-TEXT') {
-          this._state.dialogsPage.newMessageText = action.newText;
+        }  else if (action.type===UPDATE_NEW_MESSAGE_BODY) {
+          this._state.dialogsPage.newMessageBody = action.body;
           this._callSubsCriber(this._state);
         } else if (action.type==='ADD-PRODUCT') {
       let newProduct = {
@@ -98,10 +100,21 @@ let store = {
     type:ADD_POST
   }
 }
-
 export const updateNewPostTextActionCreator = (text) => {
   return {
     type:UPDATE_NEW_POST_TEXT, newText: text
+  }
+}
+
+export const sendMessageCreator = () => {
+  return {
+    type:SEND_MESSAGE
+  }
+}
+
+export const updateNewMessageBodyCreator = (text) => {
+  return {
+    type:UPDATE_NEW_MESSAGE_BODY, body: text
   }
 }
 
