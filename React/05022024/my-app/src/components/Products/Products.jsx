@@ -1,7 +1,10 @@
 import React from 'react';
 import Product from './Product/Product';
 import classes from './Products.module.css';
-import { updateNewAddProduct, sendAddProduct } from '../../redux/state';
+import {
+  updateNewAddProduct,
+  sendAddProduct,
+} from '../../redux/products-reducer';
 
 const Products = (props) => {
   let state = props.store.getState().productsPage;

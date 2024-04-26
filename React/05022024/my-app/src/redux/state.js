@@ -1,8 +1,6 @@
 import dialogsReducer from './dialogs-reducer';
+import productsReducer from './products-reducer';
 import profileReducer from './profile-reducer';
-
-const ADD_PRODUCT = 'ADD-PRODUCT';
-const UPDATE_NEW_PRODUCT = 'UPDATE-NEW-PRODUCT';
 
 let store = {
   _state: {
@@ -49,40 +47,13 @@ let store = {
   dispatch(action) {
     this._state.profilePage = profileReducer(this._state.profilePage, action);
     this._state.dialogsPage = dialogsReducer(this._state.dialogsPage, action);
+    this._state.productsPage = productsReducer(
+      this._state.productsPage,
+      action
+    );
 
     this._callSubsCriber(this._state);
-
-    if (action.type === ADD_PRODUCT) {
-      let newProduct = {
-        id: 1,
-        product: this._state.productsPage.newProductName,
-        price: 250,
-        discount: 10,
-      };
-      if (this._state.productsPage.newProductName != '') {
-        this._state.productsPage.products.push(newProduct);
-      }
-
-      this._state.productsPage.newProductName = '';
-      this._callSubsCriber(this._state);
-    } else if (action.type === UPDATE_NEW_PRODUCT) {
-      this._state.productsPage.newProductName = action.name;
-      this._callSubsCriber(this._state);
-    }
   },
-};
-
-export const sendAddProduct = () => {
-  return {
-    type: ADD_PRODUCT,
-  };
-};
-
-export const updateNewAddProduct = (text) => {
-  return {
-    type: UPDATE_NEW_PRODUCT,
-    name: text,
-  };
 };
 
 export default store;
