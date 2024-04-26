@@ -1,3 +1,5 @@
+import profileReducer from "./profile-reducer";
+
 const ADD_POST = 'ADD-POST';
 const UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT';
 
@@ -50,21 +52,18 @@ let store = {
   },
 
   dispatch(action) {
-    if (action.type === ADD_POST) {
-      let newPost = {
-        message: this._state.profilePage.newPostText,
-        id: 3,
-        like: 99,
-      };
-      if (this._state.profilePage.newPostText != '') {
-        this._state.profilePage.posts.push(newPost);
-      }
-      this._state.profilePage.newPostText = '';
-      this._callSubsCriber(this._state);
-    } else if (action.type === UPDATE_NEW_POST_TEXT) {
-      this._state.profilePage.newPostText = action.newText;
-      this._callSubsCriber(this._state);
-    } else if (action.type === SEND_MESSAGE) {
+
+    this._state.profilePage = profileReducer(this._state.profilePage, action)
+
+
+    this._callSubsCriber(this._state);
+
+
+   
+
+
+
+     if (action.type === SEND_MESSAGE) {
       let newMessage = {
         message: this._state.dialogsPage.newMessageBody,
         id: 4,
@@ -95,17 +94,7 @@ let store = {
   },
 };
 
-export const addPostActionCreator = () => {
-  return {
-    type: ADD_POST,
-  };
-};
-export const updateNewPostTextActionCreator = (text) => {
-  return {
-    type: UPDATE_NEW_POST_TEXT,
-    newText: text,
-  };
-};
+
 
 export const sendMessageCreator = () => {
   return {
