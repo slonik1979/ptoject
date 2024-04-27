@@ -21,10 +21,11 @@ function App(props) {
             path="/profile"
             element={
               <Profile
+              store={props.store}
                 profilePage={props.state.profilePage}
                 dispatch={props.dispatch}
                 // updateNewPostText={props.updateNewPostText}
-                newPostText={props.state.profilePage.newPostText}
+                //newPostText={props.state.profilePage.newPostText}
               />
             }
           />
@@ -34,7 +35,7 @@ function App(props) {
               <Dialogs
                 store={props.store}
                 //dialogsPage={props.state.dialogsPage} dispatch={props.dispatch}
-                newMessageText={props.state.dialogsPage.newMessageText}
+                //newMessageText={props.state.dialogsPage.newMessageText}
               />
             }
           />

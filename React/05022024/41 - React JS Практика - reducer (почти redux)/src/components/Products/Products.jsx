@@ -1,11 +1,15 @@
 import React from 'react';
 import Product from './Product/Product';
 import classes from './Products.module.css';
-import { addProductActionCreator, updateNewProductNameActionCreator } from '../../redux/products-reducer';
-
+import {
+  updateNewAddProduct,
+  sendAddProduct,
+} from '../../redux/products-reducer';
 
 const Products = (props) => {
-  const productsElements = props.productsPage.products.map((p) => {
+  let state = props.store.getState().productsPage;
+
+  const productsElements = state.products.map((p) => {
     return (
       <Product
         id={p.id}
@@ -16,33 +20,28 @@ const Products = (props) => {
     );
   });
 
-  let newProductElement = React.createRef();
+  let newProductName = state.newProductName;
 
   let addProduct = () => {
-    props.dispatch(addProductActionCreator())
-  }
+    props.store.dispatch(sendAddProduct());
+  };
 
-  let onProductChange = () => {
-    let text = newProductElement.current.value;
-    let action = updateNewProductNameActionCreator(text)
-    props.dispatch(action)
-    
-  }
+  let onProductChange = (e) => {
+    let name = e.target.value;
+    props.store.dispatch(updateNewAddProduct(name));
+  };
 
   return (
     <div>
       <div className={classes.products}>{productsElements}</div>
 
       <div>
-        <textarea onChange={onProductChange}
-        value={props.newProductName} ref={newProductElement}></textarea>
+        <textarea onChange={onProductChange} value={newProductName}></textarea>
 
         <button onClick={addProduct}>Add post</button>
       </div>
     </div>
   );
 };
-
-
 
 export default Products;
