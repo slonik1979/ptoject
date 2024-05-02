@@ -1,16 +1,7 @@
 const ADD_PRODUCT = 'ADD-PRODUCT';
 const UPDATE_NEW_PRODUCT = 'UPDATE-NEW-PRODUCT';
 
-let inialState = {
-  products: [
-    { id: 1, product: 'Яблоки', price: 250, discount: 10 },
-    { id: 2, product: 'Бананы', price: 150, discount: 10 },
-    { id: 3, product: 'Мандарины', price: 100, discount: 10 },
-  ],
-  newProductName: 'fhhhff',
-}
-
-const productsReducer = (state=inialState, action) => {
+const productsReducer = (state, action) => {
   switch (action.type) {
     case ADD_PRODUCT:
       let newProduct = {
