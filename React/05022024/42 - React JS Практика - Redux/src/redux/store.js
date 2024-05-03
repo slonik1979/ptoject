@@ -2,8 +2,6 @@ import dialogsReducer from './dialogs-reducer';
 import productsReducer from './products-reducer';
 import profileReducer from './profile-reducer';
 
-
-
 let store = {
   _state: {
     profilePage: {
@@ -24,7 +22,7 @@ let store = {
         { message: 'Как дела', id: 2 },
         { message: 'Как Вас зовут', id: 3 },
       ],
-      newMessageText: '999',
+      newMessageBody: '999',
     },
     productsPage: {
       products: [
@@ -55,11 +53,7 @@ let store = {
     );
 
     this._callSubsCriber(this._state);
-
-
   },
 };
-
-
 
 export default store;

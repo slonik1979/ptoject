@@ -34,7 +34,7 @@ function App(props) {
               <Dialogs
                 store={props.store}
                 //dialogsPage={props.state.dialogsPage} dispatch={props.dispatch}
-                newMessageText={props.state.dialogsPage.newMessageText}
+                //newMessageText={props.state.dialogsPage.newMessageText}
               />
             }
           />
@@ -47,7 +47,7 @@ function App(props) {
               <Products
                 store={props.store}
                 //productsPage={props.state.productsPage}
-                newProductName={props.state.productsPage.newProductName}
+                //newProductName={props.state.productsPage.newProductName}
                 //dispatch={props.dispatch}
               />
             }

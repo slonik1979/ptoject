@@ -1,47 +1,48 @@
 const ADD_PRODUCT = 'ADD-PRODUCT';
-const UPDATE_NEW_PRODUCT_NAME = 'UPDATE-NEW-PRODUCT-NAME';
+const UPDATE_NEW_PRODUCT = 'UPDATE-NEW-PRODUCT';
 
 let initialState = {
- 
-    products: [
-      { id: 1, product: 'Яблоки', price: 250, discount: 10 },
-      { id: 2, product: 'Бананы', price: 150, discount: 10 },
-      { id: 3, product: 'Мандарины', price: 100, discount: 10 },
-    ],
-    newProductName: 'fhhhff',
-  
+  products: [
+    { id: 1, product: 'Яблоки', price: 250, discount: 10 },
+    { id: 2, product: 'Бананы', price: 150, discount: 10 },
+    { id: 3, product: 'Мандарины', price: 100, discount: 10 },
+  ],
+  newProductName: 'fhhhff',
 };
 
 const productsReducer = (state = initialState, action) => {
-  if (action.type === ADD_PRODUCT) {
-    let newProduct = {
-      id: 1,
-      product: state.newProductName,
-      price: 250,
-      discount: 10,
-    };
-    if (state.newProductName != '') {
-      state.products.push(newProduct);
-    }
+  switch (action.type) {
+    case ADD_PRODUCT:
+      let newProduct = {
+        id: 1,
+        product: state.newProductName,
+        price: 250,
+        discount: 10,
+      };
+      if (state.newProductName != '') {
+        state.products.push(newProduct);
+      }
 
-    state.newProductName = '';
-  } else if (action.type === UPDATE_NEW_PRODUCT_NAME) {
-    state.newProductName = action.newName;
+      state.newProductName = '';
+      return state;
+    case UPDATE_NEW_PRODUCT:
+      state.newProductName = action.name;
+      return state;
+    default:
+      return state;
   }
-
-  return state;
 };
 
-export const addProductActionCreator = () => {
+export const sendAddProduct = () => {
   return {
     type: ADD_PRODUCT,
   };
 };
 
-export const updateNewProductNameActionCreator = (text) => {
+export const updateNewAddProduct = (text) => {
   return {
-    type: UPDATE_NEW_PRODUCT_NAME,
-    newName: text,
+    type: UPDATE_NEW_PRODUCT,
+    name: text,
   };
 };
 
