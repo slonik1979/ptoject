@@ -8,9 +8,10 @@ import {
 import MyPosts from './MyPosts';
 
 const MyPostsContainer = (props) => {
-  //let state = props.store.getState();
+  let state = props.store.getState();
 
   let addPost = () => {
+    //props.addPost();
     props.store.dispatch(addPostActionCreator());
   };
 
@@ -20,13 +21,14 @@ const MyPostsContainer = (props) => {
   };
 
   return (
-    <MyPosts
-      addPost={addPost}
-      posts={props.posts}
-      //dispatch={props.dispatch}
-      newPostText={props.newPostText}
-      updateNewPostText={onPostChange}
-    />
+    <div>
+      <MyPosts
+        updateNewPostText={onPostChange}
+        addPost={addPost}
+        posts={state.profilePage.posts}
+        newPostText={state.profilePage.newPostText}
+      />
+    </div>
   );
 };
 

@@ -7,7 +7,7 @@ import {
 } from '../../redux/products-reducer';
 
 const Products = (props) => {
-  let state = props.store.getState().productsPage;
+  let state = props.productsPage;
 
   const productsElements = state.products.map((p) => {
     return (
@@ -23,12 +23,12 @@ const Products = (props) => {
   let newProductName = state.newProductName;
 
   let addProduct = () => {
-    props.store.dispatch(sendAddProduct());
+    props.sendAdd();
   };
 
   let onProductChange = (e) => {
     let name = e.target.value;
-    props.store.dispatch(updateNewAddProduct(name));
+    props.updateNewAddProduct(name);
   };
 
   return (

@@ -1,4 +1,3 @@
-import store from '../../redux/store';
 import MyPosts from './MyPosts/MyPosts';
 import MyPostsContainer from './MyPosts/MyPostsContainer';
 import classes from './Profile.module.css';
@@ -10,9 +9,9 @@ const Profile = (props) => {
       <ProfileInfo />
       <MyPostsContainer
         store={props.store}
-        posts={props.profilePage.posts}
-        newPostText={props.newPostText}
-        //dispatch={props.dispatch}
+        // posts={props.profilePage.posts}
+        // newPostText={props.newPostText}
+        // dispatch={props.dispatch}
         //updateNewPostText={props.updateNewPostText}
       />
     </div>
