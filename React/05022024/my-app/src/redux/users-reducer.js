@@ -3,36 +3,10 @@ const UNFOLLOW = 'UNFOLLOW';
 const SET_USERS = 'SET_USERS';
 
 let initialState = {
-  users: [
-    //   {
-    //     id: 1,
-    //     photoUrl:
-    //       'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQNGNXuN8Ue3J1hG9YGCa8QkYro8Q8PcZcOPg&s',
-    //     followed: false,
-    //     fullname: 'Ivan',
-    //     status: 'I am a boss',
-    //     location: { city: 'Minsk', country: 'Belarus' },
-    //   },
-    //   {
-    //     id: 2,
-    //     photoUrl:
-    //       'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQNGNXuN8Ue3J1hG9YGCa8QkYro8Q8PcZcOPg&s',
-    //     followed: true,
-    //     fullname: 'Sveta',
-    //     status: 'I am a girl',
-    //     location: { city: 'Moscow', country: 'Russia' },
-    //   },
-    //   {
-    //     id: 3,
-    //     photoUrl:
-    //       'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQNGNXuN8Ue3J1hG9YGCa8QkYro8Q8PcZcOPg&s',
-    //     followed: false,
-    //     fullname: 'Petr',
-    //     status: 'I am a boy',
-    //     location: { city: 'Kiev', country: 'Ukraine' },
-    //   },
-  ],
-  newPostText: '8888',
+  users: [],
+  pageSize: 5,
+  totalUsersCount: 25,
+  currentPage: 1,
 };
 
 const usersReducer = (state = initialState, action) => {
