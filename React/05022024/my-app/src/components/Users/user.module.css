@@ -5,10 +5,13 @@
 
 .selectedPage {
   font-weight: bold;
-
-  
 }
 
 /* .selectedNumber {
   text-align: right
 } */
+
+img {
+  width: 150px;
+  height: 150px;
+}
