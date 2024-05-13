@@ -4,6 +4,7 @@ import { followAC, setCurrentPageAC, setTotalUsersCountAC, setUsersAC, unfollowA
 import axios from 'axios';
 import React from 'react';
 import Users from './Users';
+import preloader from '../../assets/images/preloader.svg'
 
 
 
@@ -30,18 +31,19 @@ onPageChanget = (pageNumber) => {
   render() {
    
 
-    return <Users totalUsersCount={this.props.totalUsersCount}
+    return <>
+    {this.props.isFetching ? <img src={preloader}/> : null }
+    <Users totalUsersCount={this.props.totalUsersCount}
     pageSize={this.props.pageSize}
     currentPage={this.props.currentPage}
     onPageChanget={this.onPageChanget}
     users={this.props.users}
     onfollow={this.props.onfollow}
     follow={this.props.follow}
-    
-
-    
-    
+    isFetching={this.props.isFetching}
+       
     />
+    /</>
   }
 }
 
