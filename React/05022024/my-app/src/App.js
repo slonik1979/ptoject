@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 import './App.css';
 import Dialogs from './components/Dialogs/Dialogs';
 import Header from './components/Header/Header';
@@ -21,48 +21,35 @@ function App(props) {
       <Navbar />
       {/* <Profile/> */}
       <div className="app-wrapper-content">
-        <Routes>
-          <Route
-            path="/profile"
-            element={
-              <ProfileContainer
-              //store={props.store}
+        <Route path="/profile/:userId" render={() => <ProfileContainer />} />
+        <Route path="/profile" render={() => <ProfileContainer />} />
+        <Route
+          path="/dialogs/*"
+          element={
+            <DialogsContainer
+            //store={props.store}
 
-              // profilePage={props.state.profilePage}
-              // dispatch={props.dispatch}
-              // updateNewPostText={props.updateNewPostText}
-              // newPostText={props.state.profilePage.newPostText}
-              />
-            }
-          />  <Route path=":userId" element={<ProfileContainer />} />
-          <Route
-            path="/dialogs/*"
-            element={
-              <DialogsContainer
-              //store={props.store}
+            //dialogsPage={props.state.dialogsPage} dispatch={props.dispatch}
+            //newMessageText={props.state.dialogsPage.newMessageText}
+            />
+          }
+        />
+        <Route path="/news" element={<News />} />
+        <Route path="/music" element={<Music />} />
+        <Route path="/setting" element={<Setting />} />
+        <Route
+          path="/products"
+          element={
+            <ProductsConteiner
+            //store={props.store}
 
-              //dialogsPage={props.state.dialogsPage} dispatch={props.dispatch}
-              //newMessageText={props.state.dialogsPage.newMessageText}
-              />
-            }
-          />
-          <Route path="/news" element={<News />} />
-          <Route path="/music" element={<Music />} />
-          <Route path="/setting" element={<Setting />} />
-          <Route
-            path="/products"
-            element={
-              <ProductsConteiner
-              //store={props.store}
-
-              //productsPage={props.state.productsPage}
-              //newProductName={props.state.productsPage.newProductName}
-              //dispatch={props.dispatch}
-              />
-            }
-          />
-          <Route path="/users" element={<UsersConteiner />} />
-        </Routes>
+            //productsPage={props.state.productsPage}
+            //newProductName={props.state.productsPage.newProductName}
+            //dispatch={props.dispatch}
+            />
+          }
+        />
+        <Route path="/users" render={() => <UsersConteiner />} />
       </div>
     </div>
   );
