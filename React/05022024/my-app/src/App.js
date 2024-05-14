@@ -12,6 +12,7 @@ import DialogsContainer from './components/Dialogs/DialogsContainer';
 import ProductsConteiner from './components/Products/ProductsConteiner';
 import Users from './components/Users/Users';
 import UsersConteiner from './components/Users/UsersConteiner';
+import ProfileContainer from './components/Profile/ProfileContainer';
 
 function App(props) {
   return (
@@ -24,7 +25,7 @@ function App(props) {
           <Route
             path="/profile"
             element={
-              <Profile
+              <ProfileContainer
               //store={props.store}
 
               // profilePage={props.state.profilePage}
@@ -33,7 +34,7 @@ function App(props) {
               // newPostText={props.state.profilePage.newPostText}
               />
             }
-          />
+          />  <Route path=":userId" element={<ProfileContainer />} />
           <Route
             path="/dialogs/*"
             element={
