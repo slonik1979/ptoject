@@ -3,14 +3,14 @@ import profileReducer from './profile-reducer';
 import dialogsReducer from './dialogs-reducer';
 import productsReducer from './products-reducer';
 import usersReducer from './users-reducer';
-import { setUserData } from './auth-reducer copy';
+import { setAuthUserData } from './auth-reducer';
 
 let reducers = combineReducers({
   profilePage: profileReducer,
   dialogsPage: dialogsReducer,
   productsPage: productsReducer,
   usersPage: usersReducer,
-  auth: setUserData,
+  auth: setAuthUserData,
 });
 
 let store = legacy_createStore(reducers);
