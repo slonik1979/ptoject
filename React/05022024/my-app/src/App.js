@@ -13,11 +13,12 @@ import ProductsConteiner from './components/Products/ProductsConteiner';
 import Users from './components/Users/Users';
 import UsersConteiner from './components/Users/UsersConteiner';
 import ProfileContainer from './components/Profile/ProfileContainer';
+import HeaderContainer from './components/Header/HeaderContainer';
 
 function App(props) {
   return (
     <div className="app-wrapper">
-      <Header />
+      <HeaderContainer />
       <Navbar />
       {/* <Profile/> */}
       <div className="app-wrapper-content">
