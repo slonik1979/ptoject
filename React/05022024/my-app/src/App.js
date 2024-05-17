@@ -13,17 +13,16 @@ import ProductsConteiner from './components/Products/ProductsConteiner';
 import Users from './components/Users/Users';
 import UsersConteiner from './components/Users/UsersConteiner';
 import ProfileContainer from './components/Profile/ProfileContainer';
-import HeaderContainer from './components/Header/HeaderContainer';
 
 function App(props) {
   return (
     <div className="app-wrapper">
-      <HeaderContainer />
+      <Header />
       <Navbar />
       {/* <Profile/> */}
       <div className="app-wrapper-content">
         <Route path="/profile/:userId" render={() => <ProfileContainer />} />
-        <Route path="/profile" render={() => <ProfileContainer />} />
+
         <Route
           path="/dialogs/*"
           element={
