@@ -23,33 +23,13 @@ function App(props) {
       {/* <Profile/> */}
       <div className="app-wrapper-content">
         <Route path="/profile/:userId" render={() => <ProfileContainer />} />
-
-        <Route
-          path="/dialogs/*"
-          element={
-            <DialogsContainer
-            //store={props.store}
-
-            //dialogsPage={props.state.dialogsPage} dispatch={props.dispatch}
-            //newMessageText={props.state.dialogsPage.newMessageText}
-            />
-          }
-        />
-        <Route path="/news" element={<News />} />
-        <Route path="/music" element={<Music />} />
-        <Route path="/setting" element={<Setting />} />
-        <Route
-          path="/products"
-          element={
-            <ProductsConteiner
-            //store={props.store}
-
-            //productsPage={props.state.productsPage}
-            //newProductName={props.state.productsPage.newProductName}
-            //dispatch={props.dispatch}
-            />
-          }
-        />
+        <Route path="/dialogs" render={() => <DialogsContainer />} />
+      
+        <Route path="/news" render={() => <News />} />
+      
+        <Route path="/music" render={() => <Music />} />
+        <Route path="/setting" render={() => <Setting />} />
+        <Route path="/products" render={() => <ProductsConteiner />} />
         <Route path="/users" render={() => <UsersConteiner />} />
       </div>
     </div>

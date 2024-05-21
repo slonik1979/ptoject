@@ -21,11 +21,13 @@ const productsReducer = (state = initialState, action) => {
       };
       let stateCopy = { ...state };
       stateCopy.products = [...state.products];
+     
       if (stateCopy.newProductName != '') {
         stateCopy.products.push(newProduct);
+               
       }
-
-      state.newProductName = '';
+      stateCopy.newProductName = '';
+     
       return stateCopy;
     }
     case UPDATE_NEW_PRODUCT: {
