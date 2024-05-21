@@ -19,7 +19,12 @@ const profileReducer = (state = initialState, action) => {
         id: 3,
         like: 99,
       };
-      return { ...state, posts: [...state.posts, newPost], newPostText: '' };
+
+      if (state.newPostText != '' && typeof state.newPostText !== "undefined") {
+        
+        return { ...state, posts: [...state.posts, newPost], newPostText: '' };
+      }
+     
     }
     case UPDATE_NEW_POST_TEXT:
       return { ...state, newPostText: action.newText };
