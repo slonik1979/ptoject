@@ -8,17 +8,25 @@
   <body>
     <script>
       let balance = 200;
-      const product1Price = prompt('Введите число');
+      const product1PriceString = +prompt('Введите число');
+      //const product1Price = Number(product1PriceString)
       document.write('<br>');
       document.write('<br>');
       document.write('<br>');
       document.write('<br>');
       document.write('START', '<br>');
-      if (balance >= product1Price) {
+
+if (!isNaN(product1PriceString)) {
+  if (balance >= product1PriceString) {
         document.write('Денег хватит');
       } else {
         document.write('Денег не хватит');
       }
+} else {
+  document.write('Введите число');
+}
+
+     
       document.write('<br>', 'END');
     </script>
   </body>
