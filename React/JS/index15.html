@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const laptop2 = {
+        name: 'macBook',
+        manufacturer: {
+          title: 'APPLE',
+          factoriesCount: 10,
+          factoryAddress: 'China, JohouLee 12',
+        },
+        price: 3000,
+      };
+      console.log(laptop2.manufacturer.factoryAddress.toLocaleUpperCase());
+      laptop2.manufacturer.factoryAddress = 'China, JohouLee 13';
+      console.log(laptop2.manufacturer.factoryAddress);
+
+      const room = {
+        wall1: {
+          hasWindow: true,
+          color: white,
+          conditioner: {
+            manufacturer: 'ASUS',
+            power: 2000,
+          },
+        },
+        wall2: {
+          hasWindow: false,
+          color: white,
+          conditioner: null,
+        },
+        wall3: {
+          hasWindow: false,
+          color: white,
+          conditioner: null,
+        },
+      };
+    </script>
+  </body>
+</html>
