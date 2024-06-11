@@ -7,23 +7,23 @@
   </head>
   <body>
     <script>
-  const vocabulary = {
-    words: {
-      word: {
-        original: 'Hello',
-        translation: 'Привет',
-      },
-      word1: {
-        original: 'Goodbye',
-        translation: 'Пока',
-      },
-      word2: {
-        original: 'Programmer',
-        translation: 'Программист',
-      }
-    },
-    questionCount: 3
-  }
+      const vocabulary = {
+        words: {
+          word: {
+            original: 'Hello',
+            translation: 'Привет',
+          },
+          word1: {
+            original: 'Goodbye',
+            translation: 'Пока',
+          },
+          word2: {
+            original: 'Programmer',
+            translation: 'Программист',
+          },
+        },
+        questionCount: 3,
+      };
 
       const resultMessage = {
         finishMessager: 'Молодец',
@@ -55,9 +55,10 @@
         result.answerCount = result.answerCount + 1;
       }
 
-      const userAnswerProcent = result.answerCount / vocabulary.questionCount;
+      const userAnswerProcent =
+        (result.answerCount / vocabulary.questionCount) * 100;
 
-      if (userAnswerProcent * 100 > setting.minProcent) {
+      if (userAnswerProcent > setting.minProcent) {
         alert(resultMessage.finishMessager);
       } else {
         alert(resultMessage.finishMessager1);
