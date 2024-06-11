@@ -7,46 +7,56 @@
   </head>
   <body>
     <script>
-      const word = 'Hello';
-      const word1 = 'Goodbye';
-      const word2 = 'Programmer';
-
-      const wordTranslation = 'Привет';
-      const wordTranslation1 = 'Пока';
-      const wordTranslation2 = 'Программист';
-
+      const word = {
+        original: 'Hello',
+        translation: 'Привет',
+      };
+      const word1 = {
+        original: 'Goodbye',
+        translation: 'Пока',
+      };
+      const word2 = {
+        original: 'Programmer',
+        translation: 'Программист',
+      };
       const questionCount = 3;
 
-      let answerCount = 0;
+      resultMessage = {
+        finishMessager: 'Молодец',
+        finishMessager1: 'Плохо',
+      };
 
-      const finishMessager = 'Молодец';
-      const finishMessager1 = 'Плохо';
+      const setting = {
+        minProcent: 50,
+      };
 
-      const minProcent = 50;
+      const result = {
+        answerCount: 0,
+      };
 
-      const userAnswer = prompt(word);
-      alert(userAnswer === wordTranslation);
-      if (userAnswer === wordTranslation) {
-        answerCount = answerCount + 1;
+      const userAnswer = prompt(word.original);
+      alert(userAnswer === word.translation);
+      if (userAnswer === word.translation) {
+        result.answerCount = result.answerCount + 1;
       }
 
-      const userAnswer1 = prompt(word1);
-      alert(userAnswer1 === wordTranslation1);
-      if (userAnswer1 === wordTranslation1) {
-        answerCount = answerCount + 1;
+      const userAnswer1 = prompt(word1.original);
+      alert(userAnswer1 === word1.translation);
+      if (userAnswer1 === word1.translation) {
+        result.answerCount = result.answerCount + 1;
       }
-      const userAnswer2 = prompt(word2);
-      alert(userAnswer2 === wordTranslation2);
-      if (userAnswer2 === wordTranslation2) {
-        answerCount = answerCount + 1;
+      const userAnswer2 = prompt(word2.original);
+      alert(userAnswer2 === word2.translation);
+      if (userAnswer2 === word2.translation) {
+        result.answerCount = result.answerCount + 1;
       }
 
-      const userAnswerProcent = answerCount / questionCount;
+      const userAnswerProcent = result.answerCount / questionCount;
 
-      if (userAnswerProcent * 100 > minProcent) {
-        alert(finishMessager);
+      if (userAnswerProcent * 100 > setting.minProcent) {
+        alert(resultMessage.finishMessager);
       } else {
-        alert(finishMessager1);
+        alert(resultMessage.finishMessager1);
       }
     </script>
   </body>
