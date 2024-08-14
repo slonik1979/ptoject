@@ -2,3 +2,7 @@
   grid-area: c;
   background-color: rgb(156, 156, 245);
 }
+
+.item {
+  color: chartreuse;
+}
