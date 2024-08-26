@@ -5,29 +5,14 @@ import Profile from './components/Profile/Profile';
 import Navbar from './components/Navbar/Navbar';
 import Dialogs from './components/Dialogs/Dialogs';
 import { BrowserRouter, Route } from 'react-router-dom';
-<<<<<<< HEAD
-=======
 import News from './components/News/News';
 import Music from './components/Music/Music';
 import Settings from './components/Settings/Settings';
 import Goods from './components/Goods/Goods';
->>>>>>> 203e59401fca706bacfa9a58a16f6fe69d63f63c
 
 function App() {
   return (
     <BrowserRouter>
-<<<<<<< HEAD
-      <div className="app-wrapper">
-        <Header />
-        <Navbar />
-        <div className="app-wrapper-content">
-          <Route path="/dialogs" component={Dialogs} />
-          <Route path="/profile" component={Profile} />
-        </div>
-
-        {/* <Profile /> */}
-      </div>
-=======
    
     <div className="app-wrapper">
       <Header />
@@ -46,7 +31,6 @@ function App() {
 
       {/* <Profile /> */}
     </div>
->>>>>>> 203e59401fca706bacfa9a58a16f6fe69d63f63c
     </BrowserRouter>
   );
 }
