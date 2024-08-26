@@ -1,14 +1,14 @@
 
 
 
-a = int(input())
-b = int(input())
-if a > b:
-    m = 1
-elif a < b:
-    m = 2
-else:
-    m = 0
-print(m)
+a=int(input())
 
-  
+for i in range(10):
+  print(a%10) 
+  a=a//10
+
+
+       
+        
+        
+   
