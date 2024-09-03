@@ -8,7 +8,7 @@ import News from './components/News/News';
 import Music from './components/Music/Music';
 import Settings from './components/Settings/Settings';
 import Goods from './components/Goods/Goods';
-import { BrowserRouter, Route } from 'react-router-dom';
+import { Route } from 'react-router-dom';
 
 function App(props) {
   return (
@@ -22,7 +22,9 @@ function App(props) {
         />
         <Route
           path="/profile"
-          render={() => <Profile state={props.state.profilePage} />}
+          render={() => (
+            <Profile state={props.state.profilePage} addPost={props.addPost} />
+          )}
         />
         <Route path="/news" render={News} />
         <Route path="/music" render={Music} />

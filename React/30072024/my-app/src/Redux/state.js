@@ -1,3 +1,5 @@
+import renender from '..';
+
 let state = {
   profilePage: {
     postsData: [
@@ -19,6 +21,16 @@ let state = {
       { id: 3, message: 'Хай' },
     ],
   },
+};
+
+export let addPost = (postMessage) => {
+  let newPost = {
+    id: 3,
+    message: postMessage,
+    likesCount: 121,
+  };
+  state.profilePage.postsData.push(newPost);
+  renender();
 };
 
 export default state;
