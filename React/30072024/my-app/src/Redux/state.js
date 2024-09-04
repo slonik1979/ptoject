@@ -7,7 +7,7 @@ let state = {
       { id: 2, message: 'Как дела', likesCount: 1 },
       { id: 3, message: 'Отлично', likesCount: 121 },
     ],
-    newPostText: '777'
+    newPostText: '88888888',
   },
   dialogsPage: {
     dialogsData: [
@@ -24,18 +24,20 @@ let state = {
   },
 };
 
-export let addPost = (postMessage) => {
+export let addPost = () => {
+  debugger;
   let newPost = {
     id: 3,
-    message: postMessage,
+    message: state.profilePage.newPostText,
     likesCount: 121,
   };
   state.profilePage.postsData.push(newPost);
+  state.profilePage.newPostText = '';
   renender();
 };
 
 export let updateNewPostText = (newText) => {
-  state.profilePage.newPostText = newText
+  state.profilePage.newPostText = newText;
   renender();
 };
 
