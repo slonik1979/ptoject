@@ -64,16 +64,6 @@ const Navbar = () => {
           Products
         </NavLink>
       </div>
-      <div className={classes.item}>
-        <NavLink
-          to="/users"
-          className={(navData) =>
-            navData.isActive ? classes.active : classes.item
-          }
-        >
-          Users
-        </NavLink>
-      </div>
     </nav>
   );
 };
