@@ -12,12 +12,7 @@ let renender = () => {
   root.render(
     <React.StrictMode>
       <BrowserRouter>
-        <App
-          state={store.getState()}
-          addPost={store.addPost.bind(store)}
-          updateNewPostText={store.updateNewPostText.bind(store)}
-
-        />
+        <App state={store.getState()} dispatch={store.dispatch.bind(store)} />
       </BrowserRouter>
     </React.StrictMode>
   );
@@ -27,7 +22,7 @@ renender(store);
 
 export default renender;
 
-store.subscribe(renender)
+store.subscribe(renender);
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
