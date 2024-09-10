@@ -11,7 +11,6 @@ import Goods from './components/Goods/Goods';
 import { Route } from 'react-router-dom';
 
 function App(props) {
-  
   return (
     <div className="app-wrapper">
       <Header />
@@ -19,15 +18,7 @@ function App(props) {
       <div className="app-wrapper-content">
         <Route
           path="/dialogs"
-          render={() => <Dialogs 
-            
-            store={props.store}
-            // dispatch={props.dispatch} 
-            // messagesData={props.state.dialogsPage.messagesData} 
-            // newMessageBody={props.state.dialogsPage.newMessageBody}
-            // dialogsData={props.state.dialogsPage.dialogsData} 
-            
-            />}
+          render={() => <Dialogs state={props.state.dialogsPage} />}
         />
         <Route
           path="/profile"

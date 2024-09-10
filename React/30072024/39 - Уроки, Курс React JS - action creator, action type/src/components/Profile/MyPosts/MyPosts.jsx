@@ -7,7 +7,6 @@ import {
 } from '../../../Redux/state';
 
 const MyPosts = (props) => {
-  
   let posts = props.postsData.map((p) => (
     <Post id={p.id} message={p.message} likesCount={p.likesCount} />
   ));
