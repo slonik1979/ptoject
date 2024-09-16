@@ -1,4 +1,5 @@
 import React from 'react';
+
 import {
   addPostActionCreator,
   updateNewPostTextActionCreate,
@@ -6,20 +7,23 @@ import {
 import MyPosts from './MyPosts';
 
 const MyPostsContainer = (props) => {
-  
+  let state = props.store.getState();
+
   let addPost = () => {
-    props.addPost();
-    //props.dispatch(addPostActionCreator());
+    props.store.dispatch(addPostActionCreator());
   };
 
   let onPostChange = (text) => {
-    
-    props.dispatch(updateNewPostTextActionCreate(text));
+    props.store.dispatch(updateNewPostTextActionCreate(text));
   };
 
- 
   return (
-    <MyPosts updateNewPostText={onPostChange} addPost={addPost} postsData={props.postsData}/>
+    <MyPosts
+      updateNewPostText={onPostChange}
+      addPost={addPost}
+      postsData={state.profilePage.postsData}
+      newPostText={state.profilePage.newPostText}
+    />
   );
 };
 

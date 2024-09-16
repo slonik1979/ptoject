@@ -9,9 +9,9 @@ import Music from './components/Music/Music';
 import Settings from './components/Settings/Settings';
 import Goods from './components/Goods/Goods';
 import { Route } from 'react-router-dom';
+import DialogsContainer from './components/Dialogs/DialogsContainer';
 
 function App(props) {
-  
   return (
     <div className="app-wrapper">
       <Header />
@@ -19,25 +19,17 @@ function App(props) {
       <div className="app-wrapper-content">
         <Route
           path="/dialogs"
-          render={() => <Dialogs 
-            
-            store={props.store}
-            // dispatch={props.dispatch} 
-            // messagesData={props.state.dialogsPage.messagesData} 
-            // newMessageBody={props.state.dialogsPage.newMessageBody}
-            // dialogsData={props.state.dialogsPage.dialogsData} 
-            
-            />}
-        />
-        <Route
-          path="/profile"
           render={() => (
-            <Profile
-              profilePage={props.state.profilePage}
-              dispatch={props.dispatch}
+            <DialogsContainer
+              store={props.store}
+              // dispatch={props.dispatch}
+              // messagesData={props.state.dialogsPage.messagesData}
+              // newMessageBody={props.state.dialogsPage.newMessageBody}
+              // dialogsData={props.state.dialogsPage.dialogsData}
             />
           )}
         />
+        <Route path="/profile" render={() => <Profile store={props.store} />} />
         <Route path="/news" render={News} />
         <Route path="/music" render={Music} />
         <Route path="/settings" render={Settings} />
