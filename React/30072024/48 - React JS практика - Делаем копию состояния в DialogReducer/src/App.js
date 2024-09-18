@@ -37,14 +37,6 @@ function App(props) {
             />
           )}
         />
-         <Route
-          path="/users"
-          render={() => (
-            <div
-           
-            />
-          )}
-        />
         <Route path="/news" render={News} />
         <Route path="/music" render={Music} />
         <Route path="/settings" render={Settings} />

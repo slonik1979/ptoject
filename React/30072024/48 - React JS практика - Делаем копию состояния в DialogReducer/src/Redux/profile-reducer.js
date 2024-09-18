@@ -2,7 +2,7 @@ const ADD_POST = 'ADD-POST';
 const UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT';
 
 let initialState = {
-  users: [
+  postsData: [
     { id: 1, message: 'Привет', likesCount: 12 },
     { id: 2, message: 'Как дела', likesCount: 1 },
     { id: 3, message: 'Отлично', likesCount: 121 },
