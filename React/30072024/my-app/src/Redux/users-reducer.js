@@ -25,24 +25,29 @@ let initialState = {
       location: { city: 'Kiev', country: 'Ukraine' },
     },
   ],
-  newPostText: '88888888',
 };
 
 const usersReducer = (state = initialState, action) => {
   switch (action.type) {
     case FOLLOW:
-    //   let text = state.newPostText
-    //   return {
-    //     ...state,
-    //     newPostText: '',
-    //     postsData: [...state.postsData, {id: 3, message: state.newPostText, likesCount: 121,}]
+      return {
+        ...state,
+        users: state.users.map((u) => {
+          if (u.id === action.userId) {
+            return { ...u, followed: true };
+          }
+        }),
+      };
 
     case ONFOLLOW:
-    //   return {
-    //     ...state,
-    //     newPostText: action.newText
-    //   }
-    // }
+      return {
+        ...state,
+        users: state.users.map((u) => {
+          if (u.id === action.userId) {
+            return { ...u, onfollowed: true };
+          }
+        }),
+      };
     default:
       return state;
   }
