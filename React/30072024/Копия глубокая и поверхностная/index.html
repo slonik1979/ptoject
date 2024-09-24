@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let a = {
+        name: 'it',
+        protocol: 'hp',
+        maxStudentCount: 10,
+        isOnline: true,
+        students: ['Ivan', 'Banka', 'Anna'],
+        classroom: {
+          teatchers: {
+            name: 'test',
+            age: 18,
+          },
+        },
+      };
+      let b = { ...a };
+      b.students = { ...a.students };
+      b.classroom = { ...a.classroom };
+      b.classroom.teatchers = { ...a.classroom.teatchers };
+      b.classroom.teatchers.age = 50;
+      //   b.students = ['Ivan1', 'Banka1', 'Anna1'];
+      //   b.classroom = { ...a.classroom };
+      //   b.classroom.teatchers = { ...a.classroom.teatchers };
+
+      //   b.classroom.teatchers.name = 'uuu';
+      console.log(a.classroom.teatchers.age);
+    </script>
+  </body>
+</html>
