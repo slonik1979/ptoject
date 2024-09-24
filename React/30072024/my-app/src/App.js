@@ -10,7 +10,6 @@ import Settings from './components/Settings/Settings';
 import Goods from './components/Goods/Goods';
 import { Route } from 'react-router-dom';
 import DialogsContainer from './components/Dialogs/DialogsContainer';
-import Users from './components/Users/Users';
 
 function App(props) {
   return (
@@ -38,7 +37,6 @@ function App(props) {
             />
           )}
         />
-        <Route path="/users" render={Users} />
         <Route path="/news" render={News} />
         <Route path="/music" render={Music} />
         <Route path="/settings" render={Settings} />

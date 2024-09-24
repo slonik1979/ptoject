@@ -10,7 +10,7 @@ import { Provider } from 'react-redux';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
-
+let renender = () => {
   root.render(
     <React.StrictMode>
       <BrowserRouter>
@@ -26,12 +26,13 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
       </BrowserRouter>
     </React.StrictMode>
   );
+};
 
+renender(store);
 
+export default renender;
 
-
-
-
+store.subscribe(renender);
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
