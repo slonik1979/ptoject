@@ -18,12 +18,16 @@ const profileReducer = (state = initialState, action) => {
         message: state.newPostText,
         likesCount: 121,
       };
-      state.postsData.push(newPost);
-      state.newPostText = '';
-      return state;
+
+      return {
+        ...state,
+        newPostText: '',
+        postsData: [...state.postsData, newPost],
+      };
+
     case UPDATE_NEW_POST_TEXT:
-      state.newPostText = action.newText;
-      return state;
+      return { ...state, newPostText: action.newText };
+
     default:
       return state;
   }
