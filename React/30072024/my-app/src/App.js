@@ -10,6 +10,7 @@ import Settings from './components/Settings/Settings';
 import Goods from './components/Goods/Goods';
 import { Route } from 'react-router-dom';
 import DialogsContainer from './components/Dialogs/DialogsContainer';
+import UserContainer from './components/Users/UserContainer';
 
 function App(props) {
   return (
@@ -17,30 +18,14 @@ function App(props) {
       <Header />
       <Navbar />
       <div className="app-wrapper-content">
-        <Route
-          path="/dialogs"
-          render={() => (
-            <DialogsContainer
-            //store={props.store}
-            // dispatch={props.dispatch}
-            // messagesData={props.state.dialogsPage.messagesData}
-            // newMessageBody={props.state.dialogsPage.newMessageBody}
-            // dialogsData={props.state.dialogsPage.dialogsData}
-            />
-          )}
-        />
-        <Route
-          path="/profile"
-          render={() => (
-            <Profile
-            //store={props.store}
-            />
-          )}
-        />
+        <Route path="/dialogs" render={() => <DialogsContainer />} />
+        <Route path="/profile" render={() => <Profile />} />
         <Route path="/news" render={News} />
         <Route path="/music" render={Music} />
         <Route path="/settings" render={Settings} />
         <Route path="/goods" render={Goods} />
+
+        <Route path="/users" render={() => <UserContainer />} />
       </div>
     </div>
   );
