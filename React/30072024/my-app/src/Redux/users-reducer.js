@@ -26,7 +26,7 @@ let initialState = {
       id: 1,
       photoUrl:
         'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR7TVUWnDnFrpXpLaFsMPnjYNT_99YHKu4kud5AkAS7xeiykJz_6iXYPUIBHXWlM3DLhrY&usqp=CAU',
-      followed: false,
+      followed: true,
       fullname: 'Петр',
       status: 'Я москаль',
       location: { city: 'Moscow', country: 'Russia' },
