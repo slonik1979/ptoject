@@ -8,7 +8,6 @@ const Users = (props) => {
         <div key={u.id}>
           <span>
             <div>
-              //
               <img src={u.photoUrl} className={s.userPhoto} />
             </div>
             <div>
