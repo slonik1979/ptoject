@@ -1,8 +1,8 @@
-const ADD_POST = 'ADD-POST';
-const UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT';
+const BUY = 'BUY';
+const NOTBUY = 'NOTBUY';
 
 let initialState = {
-  users: [
+  goods: [
     {
       id: 1,
       buy: true,
@@ -29,31 +29,34 @@ let initialState = {
 };
 
 const goodsReducer = (state = initialState, action) => {
-  // switch (action.type) {
-  //   case ADD_POST:
-  //     let newPost = {
-  //       id: 3,
-  //       message: state.newPostText,
-  //       likesCount: 121,
-  //     };
-  //     return {
-  //       ...state,
-  //       newPostText: '',
-  //       postsData: [...state.postsData, newPost],
-  //     };
-  //   case UPDATE_NEW_POST_TEXT:
-  //     return { ...state, newPostText: action.newText };
-  //   default:
-  //     return state;
-  // }
+  switch (action.type) {
+     case BUY:
+        return {
+          ...state,
+          goods: state.goods.map(u => {
+            if (u.id === action.goodsId) {
+              return {...u, buy: true }
+            }
+            return u;
+          })
+        };
+        case BUY:
+          return {
+            ...state,
+            goods: state.goods.map(u => {
+              if (u.id === action.goodsId) {
+                return {...u, buy: false }
+              }
+              return u;
+            })
+          };
+    default:
+      return state;
+  }
 };
 
 export default goodsReducer;
 
-// export const addPostActionCreator = () => ({ type: ADD_POST });
+ export const buyAC = (goodsId) => ({ type: BUY, goodsId });
 
-// export const updateNewPostTextActionCreate = (text) => ({
-//   type: UPDATE_NEW_POST_TEXT,
-//   newText: text,
-//}
-//);
+export const notbuyAC = (goodsId) => ({ type: NOTBUY, goodsId});

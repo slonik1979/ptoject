@@ -23,7 +23,7 @@ function App(props) {
         <Route path="/news" render={News} />
         <Route path="/music" render={Music} />
         <Route path="/settings" render={Settings} />
-        <Route path="/goods" render={Goods} />
+        <Route path="/goods" render={() => <Goods />} />
 
         <Route path="/users" render={() => <UserContainer />} />
       </div>
