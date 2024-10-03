@@ -11,6 +11,7 @@ import Goods from './components/Goods/Goods';
 import { Route } from 'react-router-dom';
 import DialogsContainer from './components/Dialogs/DialogsContainer';
 import UserContainer from './components/Users/UserContainer';
+import CoodsContainer from './components/Goods/GoodsContainer';
 
 function App(props) {
   return (
@@ -23,7 +24,7 @@ function App(props) {
         <Route path="/news" render={News} />
         <Route path="/music" render={Music} />
         <Route path="/settings" render={Settings} />
-        <Route path="/goods" render={() => <Goods />} />
+        <Route path="/goods" render={() => <CoodsContainer />} />
 
         <Route path="/users" render={() => <UserContainer />} />
       </div>
