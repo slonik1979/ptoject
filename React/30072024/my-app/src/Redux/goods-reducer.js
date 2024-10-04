@@ -35,7 +35,7 @@ let initialState = {
 };
 
 const goodsReducer = (state = initialState, action) => {
-  debugger
+  
   switch (action.type) {
      case BUY:
         return {
