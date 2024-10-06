@@ -1,6 +1,7 @@
 import React from 'react';
 import s from './Users.module.css';
-//import axios from 'axios';
+import axios from 'axios';
+import userPhoto from '../../assets/images/users-vector-icon-png_260862.jpg';
 
 const Users = (props) => {
   //if (props.users.length === 0) {
@@ -11,35 +12,11 @@ const Users = (props) => {
   //     });
   //}
   if (props.users.length === 0) {
-    props.setUsers([
-      {
-        id: 1,
-        photoUrl:
-          'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR7TVUWnDnFrpXpLaFsMPnjYNT_99YHKu4kud5AkAS7xeiykJz_6iXYPUIBHXWlM3DLhrY&usqp=CAU',
-        followed: false,
-        fullname: 'Дмитрий',
-        status: 'Я босс',
-        location: { city: 'Minsk', country: 'Belarus' },
-      },
-      {
-        id: 2,
-        photoUrl:
-          'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR7TVUWnDnFrpXpLaFsMPnjYNT_99YHKu4kud5AkAS7xeiykJz_6iXYPUIBHXWlM3DLhrY&usqp=CAU',
-        followed: true,
-        fullname: 'Микола',
-        status: 'Я хохол',
-        location: { city: 'Kiev', country: 'Ukraine' },
-      },
-      {
-        id: 3,
-        photoUrl:
-          'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR7TVUWnDnFrpXpLaFsMPnjYNT_99YHKu4kud5AkAS7xeiykJz_6iXYPUIBHXWlM3DLhrY&usqp=CAU',
-        followed: true,
-        fullname: 'Петр',
-        status: 'Я москаль',
-        location: { city: 'Moscow', country: 'Russia' },
-      },
-    ]);
+    axios
+      .get('https://social-network.samuraijs.com/api/1.0/users')
+      .then((response) => {
+        props.setUsers(response.data.items);
+      });
   }
 
   return (
@@ -48,7 +25,10 @@ const Users = (props) => {
         <div key={u.id}>
           <span>
             <div>
-              <img src={u.photoUrl} className={s.userPhoto} />
+              <img
+                src={u.photos.small != null ? u.photos.small : userPhoto}
+                className={s.userPhoto}
+              />
             </div>
             <div>
               {u.followed ? (
