@@ -4,23 +4,22 @@ import axios from 'axios';
 import userPhoto from '../../assets/images/users-vector-icon-png_260862.jpg';
 
 const Users = (props) => {
-  //if (props.users.length === 0) {
-  //props.setUsers();
-  //   debugger
-  //   axios.get('https://social-network.samuraijs.com/api/1.0/users').then(response => {
-  //       props.setUsers(response.data.items);
-  //     });
-  //}
-  if (props.users.length === 0) {
+
+  let getUsers = () => {
+    if (props.users.length === 0) {
     axios
       .get('https://social-network.samuraijs.com/api/1.0/users')
       .then((response) => {
         props.setUsers(response.data.items);
       });
   }
+  }
+ 
+  
 
   return (
     <div>
+      <button onClick={getUsers}>getUsers</button>
       {props.users.map((u) => (
         <div key={u.id}>
           <span>
