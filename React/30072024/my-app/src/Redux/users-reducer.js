@@ -4,6 +4,7 @@ const SET_USERS = 'SET_USERS';
 
 let initialState = {
   users: [
+
     //   {
     //     id: 1,
     //     photoUrl:
@@ -32,7 +33,10 @@ let initialState = {
     //     location: { city: 'Moscow', country: 'Russia' },
     //   },
   ],
-  // newPostText: '88888888',
+  pageSize: 5,
+  totalUsersCount: 21,
+  currentPage: 1
+  
 };
 
 const usersReducer = (state = initialState, action) => {
