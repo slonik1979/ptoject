@@ -5,3 +5,7 @@
 .selectPage {
   font-weight: bold;
 }
+
+.number {
+  padding-right: 10px;
+}
