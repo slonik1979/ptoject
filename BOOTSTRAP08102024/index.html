@@ -93,30 +93,106 @@
               </div>
             </div>
           </div>
-        </div> 
+        </div>
         <!-- ========header-top============= -->
         <div class="header-middle bg-white py-4">
           <dib class="container-fluid">
             <div class="row">
-              <div class="col-md-4">
+              <div class="col-6 col-md-4">
                 <a href="" class="header-logo h1">E-shop</a>
               </div>
-              <div class="col-md-4">
-                <form action=""><div class="input-group">
-                  <input type="text" class="form-control" name="s" placeholder="Search" aria-label="Search" aria-describedby="button-search">
-                  <button class="btn btn-outline-warning" type="button" id="button-search"><i class="fa-solid fa-magnifying-glass"></i></button>
-                </div></form>
-              </div>
-              <div class="col-md-4 cart-buttons text-end">
-                <a href="#" class="btn"><i class="fa-solid fa-heart"></i></a>
-                <button class="btn" type="submit">
+
+              <div class="col-6 col-md-4 order-md-2 cart-buttons text-end">
+                <a href="#" class="btn p-1"
+                  ><i class="fa-solid fa-heart"></i>
+                  <span
+                    class="badge text-bg-warning cart-badge bg-warning rounded-circle"
+                    >3</span
+                  >
+                </a>
+
+                <button
+                  class="btn p-1"
+                  type="button"
+                  data-bs-toggle="offcanvas"
+                  data-bs-target="#offcanvasCart"
+                  aria-controls="offcanvasCart"
+                >
                   <i class="fa-solid fa-cart-shopping"></i>
+                  <span
+                    class="badge text-bg-warning cart-badge bg-warning rounded-circle"
+                    >5</span
+                  >
                 </button>
+                <div
+                  class="offcanvas offcanvas-end"
+                  tabindex="-1"
+                  id="offcanvasCart"
+                  aria-labelledby="offcanvasCart"
+                >
+                  <div class="offcanvas-header">
+                    <h5 class="offcanvas-title" id="offcanvasCartLabel">
+                      Offcanvas
+                    </h5>
+                    <button
+                      type="button"
+                      class="btn-close"
+                      data-bs-dismiss="offcanvas"
+                      aria-label="Close"
+                    ></button>
+                  </div>
+                  <div class="offcanvas-body">
+                    <div>
+                      Some text as placeholder. In real life you can have the
+                      elements you have chosen. Like, text, images, lists, etc.
+                    </div>
+                    <div class="dropdown mt-3">
+                      <button
+                        class="btn btn-secondary dropdown-toggle"
+                        type="button"
+                        data-bs-toggle="dropdown"
+                      >
+                        Dropdown button
+                      </button>
+                      <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">Action</a></li>
+                        <li>
+                          <a class="dropdown-item" href="#">Another action</a>
+                        </li>
+                        <li>
+                          <a class="dropdown-item" href="#"
+                            >Something else here</a
+                          >
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
                 </div>
+              </div>
+              <div class="col-md-4 order-md-1 mt-2 mt-md-0">
+                <form action="">
+                  <div class="input-group">
+                    <input
+                      type="text"
+                      class="form-control"
+                      name="s"
+                      placeholder="Search"
+                      aria-label="Search"
+                      aria-describedby="button-search"
+                    />
+                    <button
+                      class="btn btn-outline-warning"
+                      type="button"
+                      id="button-search"
+                    >
+                      <i class="fa-solid fa-magnifying-glass"></i>
+                    </button>
+                  </div>
+                </form>
+              </div>
             </div>
           </dib>
-        
-          </div>
+        </div>
         <!-- ===================header-middle================= -->
       </header>
       <main class="main">Content</main>

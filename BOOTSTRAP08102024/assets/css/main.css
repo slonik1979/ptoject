@@ -33,7 +33,7 @@ img {
 }
 
 .btn,
-.dropdown-menu, 
+.dropdown-menu,
 .form-control {
   border-radius: 0;
 }
@@ -55,6 +55,10 @@ img {
 
 .btn-outline-warning {
   border-color: var(--accent-color);
+}
+
+.bg-warning {
+  border-color: var(--accent-color) !important;
 }
 
 .btn-outline-warning:hover {
@@ -80,7 +84,6 @@ img {
 
 .header-top-phone a:hover {
   text-decoration: underline;
-
 }
 
 ul.social-icons {
@@ -116,15 +119,22 @@ ul.social-icons a:hover {
   background-color: #fff;
 }
 
-
-
 .header-logo {
   text-decoration: none;
   text-transform: uppercase;
   color: var(--accent-color);
-  transition: all .3s;
+  transition: all 0.3s;
 }
 
 .header-logo:hover {
   color: var(--contrast-color);
+}
+
+.cart-buttons .btn {
+  color: var(--contrast-color);
+  transition: all 0.3s;
+}
+
+.cart-buttons .btn:hover {
+  border: 1px solid var(--contrast-color);
 }
