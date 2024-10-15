@@ -76,6 +76,32 @@ img {
   flex: 1 1 auto;
 }
 
+section {
+  padding: 50px 0;
+}
+
+.section-title {
+  position: relative;
+  text-transform: uppercase;
+  color: var(--contrast-color);
+  font-weight: 700;
+}
+
+.section-title span {
+  background-color: var(--bg-color);
+  padding-right: 1rem;
+}
+
+.section-title::after {
+  position: absolute;
+  content: '';
+  width: 100%;
+  top: 50%;
+  left: 0;
+  border-top: 1px dashed var(--text-color);
+  z-index: -1;
+}
+
 /* =======================header rules============= */
 
 .header-top-phone a {
@@ -141,13 +167,12 @@ ul.social-icons a:hover {
 
 .header-bottom {
   border-top: 3px solid var(--accent-color);
-  box-shadow: 0 10px 10px rgba(0, 0, 0, .3);
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.3);
 }
 
 .header-bottom .navbar,
 .header-bottom .navbar .dropdown-menu {
   background-color: var(--contrast-color) !important;
-
 }
 
 .header-bottom .nav-item:first-child .nav-link {
@@ -156,8 +181,8 @@ ul.social-icons a:hover {
 
 .header-bottom .navbar .nav-link {
   color: #fff;
-  transition: .3s all;
-  letter-spacing: .1rem;
+  transition: 0.3s all;
+  letter-spacing: 0.1rem;
 }
 
 .header-bottom .navbar .nav-link:hover {
@@ -172,21 +197,34 @@ ul.social-icons a:hover {
   margin-top: 7px;
 }
 
-
-
-@media only screen and (min-width : 992px) {
+@media only screen and (min-width: 992px) {
   .header-bottom .navbar .dropdown-menu-end {
-      margin-left: 0;
-      border: 0;
+    margin-left: 0;
+    border: 0;
   }
 
   .header-bottom .navbar .nav-link {
-      padding: 1rem;
+    padding: 1rem;
   }
 }
 
-@media only screen and (max-width : 992px) {
+@media only screen and (max-width: 992px) {
   .header-bottom .navbar .dropdown-menu {
-      padding-left: 1rem;
+    padding-left: 1rem;
   }
 }
+
+/* ======================= main ============= */
+
+/* ======================= carusel ============= */
+
+.carousel-caption {
+  text-shadow: 0 0 2px rgba(0, 0, 0, 1);
+}
+
+.carousel-caption p {
+  font-size: 1.5rem;
+}
+/* ======================= carusel ============= */
+
+/* ======================= main ============= */
