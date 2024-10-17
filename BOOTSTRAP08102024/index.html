@@ -24,8 +24,7 @@
       href="https://v5.getbootstrap.com/docs/5.0/assets/brand/bootstrap-logo-shadow.png"
     />
   </head>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/js/main.js"></script>
+
   <body>
     <div class="wrapper">
       <header class="header">
@@ -212,7 +211,7 @@
         </div>
       </header>
 
-      <div class="header-bottom sticky-top">
+      <div class="header-bottom sticky-top" id="header-nav">
         <nav class="navbar navbar-expand-lg bg-dark" data-bs-theme="dark">
           <div class="container-fluid">
             <button
@@ -522,6 +521,40 @@
           </div>
         </section>
 
+        <section class="featured-products">
+          <div class="container-fluid">
+            <div class="row mb-5">
+              <div class="col-12">
+                <h2 class="section-title">
+                  <span>Рекомендуемые товары</span>
+                </h2>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-lg-3 col-md-4 col-sm-6 mb-3">
+                <div class="product-card">
+                  <div class="card" style="width: 18rem">
+                    <img
+                      src="assets/img/products/1.jpg"
+                      class="card-img-top"
+                      alt="..."
+                    />
+                    <div class="card-body">
+                      <h5 class="card-title">Платье вечернее летнее</h5>
+                      <p class="card-text">
+                        Платье вечернее летнее дополнит Вашу красоту. Можно
+                        надеть его в кафе или на прогулку. Оно подчекнет Вашу
+                        красивую фигуру. И мужчины будут от Вас в восторге
+                      </p>
+                      <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
         <div class="container-fluid">
           <p>
             Андрей Вешка: "Сахалинский агропарк повысит скорость доставки и
@@ -532,5 +565,8 @@
 
       <footer class="footer">Footer</footer>
     </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/main.js"></script>
   </body>
 </html>

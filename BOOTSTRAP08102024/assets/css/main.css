@@ -197,6 +197,11 @@ ul.social-icons a:hover {
   margin-top: 7px;
 }
 
+.headernav-scroll.header-bottom .navbar .offcanvas:not(.show) .nav-link {
+  padding-top: 0.3rem;
+  padding-bottom: 0.3rem;
+}
+
 /* ======================= main ============= */
 
 /* ======================= carusel ============= */
