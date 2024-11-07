@@ -327,16 +327,16 @@ ul.social-icons a:hover {
 }
 
 .product-price {
-  font-size: 18px;
+  font-size: 20px;
   color: var(--red-color);
   font-weight: 600;
 }
 
 .product-price small {
-  color: var(--gray-color);
-  font-weight: 400;
+  color: var(--contrast-color);
+  font-weight: 500;
   text-decoration: line-through;
-  font-size: 0.8rem;
+  font-size: 15px;
 }
 /* ======================= product-card ============= */
 
