@@ -7,6 +7,7 @@ window.addEventListener('scroll', function () {
 $(document).ready(function () {
   $('.owl-carousel-full').owlCarousel({
     margin: 20,
+   
 
     responsive: {
       0: {
