@@ -21,7 +21,7 @@ print(fruits)  # Outputs: ['apple', 'banana', 'cherry', 'watermelon', 'fig', 'gr
 
 
 fruits = ['apple', 'banana', 'cherry']
-fruits.reverse()
+fruits.reverse() # развернуть
 print(fruits)  # Outputs: ['cherry', 'banana', 'apple']
 
 
