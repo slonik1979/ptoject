@@ -1,8 +1,10 @@
-greeting = 'Hello, World!'
-count_o = 0
-for char in greeting:
-    if char == 'o':
+numbers_1 = [1, 2, 3, 4, 5]
+numbers_2 = [6, 7, 8, 9, 10]
 
-        count_o += 1
-        #print(char)
-print(count_o)
+
+def find_average(numbers):
+    average = sum(numbers) / len(numbers)
+    return average
+
+print(find_average(numbers_1))
+print(find_average(numbers_2))
