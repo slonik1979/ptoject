@@ -1,0 +1,26 @@
+﻿1CV8LOG(ver 2.0)
+80a70094-63c8-4ff2-9dde-207052a0e097
+
+{1,071523a4-516f-4fce-ba4b-0d11ab7a1893,"",1},
+{2,"WIN-2OULVQMEBM8",1},
+{3,"Designer",1},
+{4,"_$Session$_.Authentication",1},
+{13,1,1},
+{4,"_$Session$_.Start",2},
+{4,"_$Session$_.Finish",3},
+{3,"1CV8",2},
+{4,"_$InfoBase$_.ConfigUpdate",4},
+{4,"_$InfoBase$_.DBConfigUpdateStart",5},
+{4,"_$InfoBase$_.PredefinedDataUpdate",6},
+{5,f5a00721-95dd-4737-b30c-bf70fbb1f9aa,"",1},
+{4,"_$InfoBase$_.DBConfigUpdate",7},
+{4,"_$Access$_.Access",8},
+{4,"_$Transaction$_.Begin",9},
+{4,"_$Data$_.New",10},
+{5,f5a00721-95dd-4737-b30c-bf70fbb1f9aa,"Справочник.Сотрудники",1},
+{4,"_$Transaction$_.Commit",11},
+{3,"BackgroundJob",3},
+{5,afcbed40-3ac6-4cc7-8938-e2016a0fcfd3,"",2},
+{5,afcbed40-3ac6-4cc7-8938-e2016a0fcfd3,"Справочник.Контрагенты",2},
+{4,"_$Data$_.Update",12},
+{4,"_$PerformError$_",13}
