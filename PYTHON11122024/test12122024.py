@@ -22,10 +22,16 @@
 #print("Кроватка:"," ", k, ".", sep="" )
 
 
-number = int(input())
-a = number // 10 // 10 % 10
-b = number // 10 // 10 // 10 % 10
-c = n = number % 10
-d = number // 10 % 10
-print(a, b, c, d, sep="")
+#number = int(input())
+#a = number // 10 // 10 % 10
+#b = number // 10 // 10 // 10 % 10
+#c = n = number % 10
+#d = number // 10 % 10
+#print(a, b, c, d, sep="")
 
+d = int(input())
+k = int(input())
+s = int(k / d)
+o = k % d
+print(s)
+print(o)
