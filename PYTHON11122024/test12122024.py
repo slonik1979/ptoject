@@ -29,9 +29,19 @@
 #d = number // 10 % 10
 #print(a, b, c, d, sep="")
 
-d = int(input())
-k = int(input())
-s = int(k / d)
-o = k % d
-print(s)
-print(o)
+#d = int(input())
+#k = int(input())
+#s = int(k / d)
+#o = k % d
+#print(s)
+#print(o)
+
+a = int(input())
+b = int(input())
+c = int(input())
+
+print(a + c + 1)
+
+
+
+
