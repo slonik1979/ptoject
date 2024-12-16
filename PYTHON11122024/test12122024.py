@@ -36,10 +36,16 @@
 #print(s)
 #print(o)
 
+#a = int(input())
+#b = int(input())
+#c = int(input())
+#print(a + c + 1)
+
 a = int(input())
-b = int(input())
-c = int(input())
-print(a + c + 1)
+b = input()
+c = int(b, 2)
+
+print(a + c)
 
 
 
