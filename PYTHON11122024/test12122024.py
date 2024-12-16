@@ -44,7 +44,6 @@
 a = int(input())
 b = input()
 c = int(b, 2)
-
 print(a + c)
 
 
