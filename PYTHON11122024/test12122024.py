@@ -41,11 +41,24 @@
 #c = int(input())
 #print(a + c + 1)
 
-a = int(input())
-b = input()
-c = int(b, 2)
-print(a + c)
+#a = int(input())
+#b = input()
+#c = int(b, 2)
+#print(a + c)
 
+#c = input()
+#a = int(c, 2)
+#b = int(input())
+#print(b -a)
 
-
-
+good = input()
+weight = int(input())
+price = int(input())
+cash = int(input())
+print('================Чек================')
+print(f'Товар:                      {good}')
+print(f'Цена:                 {weight}кг * {price}руб/кг')
+print(f'Итого:                         {price * weight}руб')
+print(f'Внесено:                     {cash}руб')
+print(f'Сдача:                        {cash - price * weight}руб')
+print('===================================')
