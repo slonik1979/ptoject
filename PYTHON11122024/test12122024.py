@@ -71,6 +71,7 @@ print(f'Сдача: {change_string:>28}')
 print('===================================')
 """
 
+"""
 name = input('Как Вас зовут?',)
 print('Здравствуйте, ', name, "!" , sep="")
 a = input('Как дела?',)
@@ -78,4 +79,62 @@ if a == "хорошо":
     print('Я за вас рада!')
 elif a == "плохо": 
     print('Всё наладится!')
- 
+"""
+
+"""
+a = int(input())
+b = int(input())
+c = int(input())
+
+if a > b and a > c:
+    print('Петя')
+elif b > a and b > c:
+    print('Вася')
+elif c > a and c > b:
+    print('Толя')
+"""
+
+"""
+a = int(input())
+b = int(input())
+c = int(input())
+
+if a > b and a > c and b > c:
+    print('1. Петя')
+    print('2. Вася')
+    print('3. Толя')
+elif a > b and a > c and b < c:
+    print('1. Петя')
+    print('2. Толя')
+    print('3. Вася')
+    
+elif b > a and b > c and a > c:
+    print('1. Вася')
+    print('2. Петя')
+    print('3. Толя')
+elif b > a and b > c and a < c:
+    print('1. Вася')
+    print('2. Толя')
+    print('3. Петя')
+    
+elif c > a and c > b and a > b:
+    print('1. Толя')
+    print('2. Петя')
+    print('3. Вася')
+elif c > a and c > b and a < b:
+    print('1. Толя')
+    print('2. Вася')
+    print('3. Петя')
+"""
+
+
+a = 6
+b = 9
+
+c = int(input())
+d = int(input())
+
+if c + a > b + d:
+    print('Петя')
+else:
+    print('Вася')
