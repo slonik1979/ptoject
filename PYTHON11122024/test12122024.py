@@ -51,14 +51,31 @@
 #b = int(input())
 #print(b -a)
 
+
+############Украшение чека
+"""
 good = input()
-weight = int(input())
 price = int(input())
+weight = int(input())
 cash = int(input())
+price_string = str(weight) + 'кг * ' + str(price) + 'руб/кг'
+sum_string = str(price * weight) + 'руб'
+cash_string = str(cash) + 'руб'
+change_string = str(cash - price * weight) + 'руб'
 print('================Чек================')
-print(f'Товар:                      {good}')
-print(f'Цена:                 {weight}кг * {price}руб/кг')
-print(f'Итого:                         {price * weight}руб')
-print(f'Внесено:                     {cash}руб')
-print(f'Сдача:                        {cash - price * weight}руб')
+print(f'Товар: {good:>28}')
+print(f'Цена: {price_string:>29}')
+print(f'Итого: {sum_string:>28}')
+print(f'Внесено: {cash_string:>26}')
+print(f'Сдача: {change_string:>28}')
 print('===================================')
+"""
+
+name = input('Как Вас зовут?',)
+print('Здравствуйте, ', name, "!" , sep="")
+a = input('Как дела?',)
+if a == "хорошо":
+    print('Я за вас рада!')
+elif a == "плохо": 
+    print('Всё наладится!')
+ 
