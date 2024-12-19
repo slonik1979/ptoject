@@ -127,7 +127,7 @@ elif c > a and c > b and a < b:
     print('3. Петя')
 """
 
-
+"""
 a = 6
 b = 9
 
@@ -138,3 +138,79 @@ if c + a > b + d:
     print('Петя')
 else:
     print('Вася')
+"""
+
+###########високосный год
+"""
+number = int(input())
+if number% 4 == 0 and (year % 100 != 0 or year % 400 == 0):
+    print('YES')
+else:
+    print('NO')
+"""
+
+"""
+#########является ли число палиндромом
+number = int(input())
+if str(number) == str(number)[::-1]:
+    print('YES')
+else:
+    print('NO')
+"""
+
+"""
+########Зайка — 1
+s = input()
+if "зайка" in s:
+    print('YES')
+else:
+    print('NO')
+"""
+
+"""
+#######Первому игроку приготовиться min max
+a = str(input())
+b = str(input())
+c = str(input())
+print(min(a, b, c))
+"""
+
+"""
+########три числа — длины трубочек, каждое с новой строки.
+a = int(input())
+b = int(input())
+c = int(input())
+if a < (b + c) and b < (a + c) and c < (a + b):
+    print('YES')
+else:
+    print('NO')
+"""
+
+"""
+#########Одна цифра — общая у всех трёх чисел в одинаковой позиции
+a = int(input())
+b = int(input())
+c = int(input())
+
+a1 = a // 10 % 10
+b1 = b // 10 % 10
+c1 = c // 10 % 10
+
+a2 = a % 10
+b2 = b % 10
+c2 = c % 10
+
+if a1 == b1 == c1:
+    print(a1)
+elif a2 == b2 == c2:
+    print(a2)
+"""
+
+
+
+name = "Три!"
+while input() != name:
+    print("Режим ожидания...")
+print("Ёлочка, гори!")
+
+
