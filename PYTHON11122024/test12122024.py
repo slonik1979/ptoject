@@ -216,5 +216,35 @@ print("Ёлочка, гори!")
 """
 
 
+"""
+#########Все числа от начала до конца (включительно), записанные через пробел.
+n = int(input())
+t = int(input())
+for i in range(n, t + 1):
+    print(i, end=" ")
+"""
+
+
+cost_goods = float(input())
+x = 0
+while float(cost_goods) != 0:
+    """
+    if float(cost_goods) >= 500:
+        x += float(cost_goods) - (float(cost_goods) / 10)
+    """
+   
+    x += float(cost_goods)
+    cost_goods = input()
+print(x)
+
+
+
+
+
+
+
+
+        
+
 
 
