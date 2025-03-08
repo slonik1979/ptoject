@@ -139,7 +139,7 @@
     "d": "^1.0.1",
     "debug": "^3.1.0",
     "decamelize": "^1.2.0",
-    "decode-uri-component": "^0.2.0",
+    "decode-uri-component": "^0.2.1",
     "decompress": "^4.2.1",
     "decompress-response": "^3.3.0",
     "decompress-tar": "^4.1.1",
